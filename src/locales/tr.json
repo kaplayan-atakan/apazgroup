@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "franchising": "Franchising",
+    "career": "Kariyer",
+    "contact": "İletişim"
+  },
+  "alt": {
+    "logo": "Apaz Group logosu",
+    "franchisingBanner": "Franchising banner görseli",
+    "backToTop": "Yukarı dön"
+  },
+  "labels": {
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X / Twitter",
+      "instagram": "Instagram"
+    }
+  },
+  "form": {
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "position": "Pozisyon (opsiyonel)",
+    "message": "Mesaj",
+    "cv": "CV (henüz aktif değil)",
+    "cv_hint": "İlk sürümde dosya yükleme devre dışı.",
+    "consent": "KVKK aydınlatma metnini okudum ve onaylıyorum",
+    "submit": "Gönder",
+    "submitting": "Gönderiliyor...",
+    "success": "Başvurunuz alındı.",
+    "errors": {
+      "consent_required": "Devam etmek için onay vermelisiniz.",
+      "required": "Bu alan zorunludur.",
+      "min_2": "En az 2 karakter olmalıdır.",
+      "max_120": "En fazla 120 karakter olabilir.",
+      "max_160": "En fazla 160 karakter olabilir.",
+      "email_invalid": "Geçerli bir e-posta girin.",
+      "phone_invalid": "Geçerli bir telefon numarası girin.",
+      "min_10": "En az 10 karakter olmalıdır.",
+      "max_2000": "En fazla 2000 karakter olabilir.",
+      "submit_failed": "Gönderim başarısız oldu.",
+      "network_error": "Ağ hatası. Lütfen tekrar deneyin.",
+      "rate_limited": "Çok fazla istek. Lütfen daha sonra tekrar deneyin.",
+      "invalid_json": "Geçersiz istek verisi."
+    }
+  }
+}

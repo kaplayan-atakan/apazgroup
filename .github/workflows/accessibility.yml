@@ -1,0 +1,108 @@
+name: Accessibility Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+    
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run accessibility tests
+        id: a11y-tests
+        run: npm run audit:ci
+        continue-on-error: true
+        
+      - name: Check accessibility test results
+        if: steps.a11y-tests.outcome == 'failure'
+        run: |
+          echo "::warning::Accessibility tests failed. See logs for details."
+          # This doesn't fail the build but adds a warning
+      
+      - name: Generate accessibility report
+        run: |
+          npm run audit:a11y -- --json > a11y-report.json
+          npm run audit:motion -- --json > motion-report.json
+          
+      - name: Upload accessibility reports as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: accessibility-reports
+          path: |
+            a11y-report.json
+            motion-report.json
+            
+      # For PR comments with results summary
+      - name: Comment on PR with accessibility issues
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            
+            try {
+              const a11yData = JSON.parse(fs.readFileSync('a11y-report.json', 'utf8'));
+              const motionData = JSON.parse(fs.readFileSync('motion-report.json', 'utf8'));
+              
+              let commentBody = '## Accessibility Test Results\n\n';
+              
+              // A11y summary
+              commentBody += '### Accessibility Audit:\n';
+              commentBody += `- Errors: ${a11yData.counts.error}\n`;
+              commentBody += `- Warnings: ${a11yData.counts.warning}\n`;
+              commentBody += `- Info: ${a11yData.counts.info}\n\n`;
+              
+              // Motion preference summary
+              commentBody += '### Motion Preference Test:\n';
+              commentBody += `- Good practices: ${motionData.counts.goodPractices}\n`;
+              commentBody += `- Issues: ${motionData.counts.issues}\n`;
+              commentBody += `- Warnings: ${motionData.counts.warnings}\n\n`;
+              
+              // Show errors if any
+              if (a11yData.counts.error > 0 || motionData.counts.issues > 0) {
+                commentBody += '### Issues to address:\n\n';
+                
+                if (a11yData.counts.error > 0) {
+                  commentBody += '#### Accessibility errors:\n';
+                  const errors = a11yData.issues.filter(i => i.severity === 'error');
+                  errors.slice(0, 5).forEach(issue => {
+                    commentBody += `- ${issue.file}: ${issue.message}\n`;
+                  });
+                  if (errors.length > 5) {
+                    commentBody += `- ...and ${errors.length - 5} more errors\n`;
+                  }
+                  commentBody += '\n';
+                }
+                
+                if (motionData.counts.issues > 0) {
+                  commentBody += '#### Motion preference issues:\n';
+                  // Would need additional parsing for motion issues
+                  commentBody += `- ${motionData.counts.issues} issues found. See artifact for details.\n\n`;
+                }
+              } else {
+                commentBody += '✅ No critical accessibility issues found!\n';
+              }
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: commentBody
+              });
+              
+            } catch (error) {
+              console.error('Error creating PR comment:', error);
+            }

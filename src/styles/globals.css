@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Ana Renkler */
+    --primary: theme('colors.brand.primary');
+    --secondary: theme('colors.brand.secondary');
+    --accent: theme('colors.brand.accent');
+    --neutral-dark: theme('colors.brand.neutral.dark');
+    --neutral-light: theme('colors.brand.neutral.light');
+
+    /* Etkileşim (Hover) Varyasyonları */
+    --primary-hover: theme('colors.brand.primary-hover');
+    --secondary-hover: theme('colors.brand.secondary-hover');
+    --accent-hover: theme('colors.brand.accent-hover');
+
+    /* Buton Varyasyonları */
+    --btn-primary-bg: var(--primary);
+    --btn-primary-text: var(--neutral-light);
+    --btn-primary-hover-bg: var(--primary-hover);
+
+    --btn-secondary-bg: var(--secondary);
+    --btn-secondary-text: var(--neutral-light);
+    --btn-secondary-hover-bg: var(--secondary-hover);
+
+    --btn-accent-bg: var(--accent);
+    --btn-accent-text: var(--neutral-dark);
+    --btn-accent-hover-bg: var(--accent-hover);
+
+    /* Gradientler */
+    --gradient-primary: linear-gradient(to right, #1F3A52, #39648F);
+    --gradient-secondary: linear-gradient(to right, #9B5A3C, #B67451);
+    --gradient-accent: linear-gradient(to right, #C48A65, #E5A37E);
+  }
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-white text-slate-900 antialiased; }
+
+/* Heading anchor styles */
+.prose :where(h2,h3,h4,h5,h6) .anchor-icon {
+	@apply ml-2 text-slate-300 opacity-0 transition-opacity text-xs;
+}
+.prose :where(h2,h3,h4,h5,h6):hover .anchor-icon,
+.prose :where(h2,h3,h4,h5,h6):focus-within .anchor-icon {
+	@apply opacity-100;
+}

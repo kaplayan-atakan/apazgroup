@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "franchising": "Franchising",
+    "career": "Careers",
+    "contact": "Contact"
+  },
+  "alt": {
+    "logo": "Apaz Group logo",
+    "franchisingBanner": "Franchising banner image",
+    "backToTop": "Back to top"
+  },
+  "labels": {
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X / Twitter",
+      "instagram": "Instagram"
+    }
+  },
+  "form": {
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "position": "Position (optional)",
+    "message": "Message",
+    "cv": "CV (disabled for now)",
+    "cv_hint": "File upload is disabled in the first release.",
+    "consent": "I have read and agree to the KVKK notice",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "success": "Your application has been received.",
+    "errors": {
+      "consent_required": "You must provide consent to continue.",
+      "required": "This field is required.",
+      "min_2": "Must be at least 2 characters.",
+      "max_120": "Must be at most 120 characters.",
+      "max_160": "Must be at most 160 characters.",
+      "email_invalid": "Enter a valid email address.",
+      "phone_invalid": "Enter a valid phone number.",
+      "min_10": "Must be at least 10 characters.",
+      "max_2000": "Must be at most 2000 characters.",
+      "submit_failed": "Submission failed.",
+      "network_error": "Network error. Please try again.",
+      "rate_limited": "Too many requests. Please try again later.",
+      "invalid_json": "Invalid request data."
+    }
+  }
+}

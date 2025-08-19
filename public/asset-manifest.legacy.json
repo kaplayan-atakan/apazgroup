@@ -1,0 +1,2367 @@
+{
+  "runs": [
+    {
+      "timestamp": "2025-08-15T14:11:41.143Z",
+      "optimize": false,
+      "force": false,
+      "results": [
+        {
+          "file": "brand/logo--global.png",
+          "status": "skipped"
+        },
+        {
+          "file": "brand/logo-dark--global.png",
+          "status": "skipped"
+        },
+        {
+          "file": "icons/fav-icon--global.png",
+          "status": "downloaded"
+        },
+        {
+          "file": "brands/pidebypide-logo--franchising.png",
+          "status": "downloaded"
+        },
+        {
+          "file": "brands/baydoner-logo--franchising.png",
+          "status": "downloaded"
+        },
+        {
+          "file": "brands/bursaishakbey-logo--franchising.png",
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-15T14:15:22.612Z",
+      "optimize": true,
+      "force": true,
+      "results": [
+        {
+          "file": "brand/logo--global.png",
+          "status": "downloaded",
+          "size": 5447
+        },
+        {
+          "file": "brand/logo--global.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brand/logo--global.png')"
+        },
+        {
+          "file": "brand/logo-dark--global.png",
+          "status": "downloaded",
+          "size": 2768
+        },
+        {
+          "file": "brand/logo-dark--global.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brand/logo-dark--global.png')"
+        },
+        {
+          "file": "icons/fav-icon--global.png",
+          "status": "downloaded",
+          "size": 65164
+        },
+        {
+          "file": "icons/fav-icon--global.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'icons/fav-icon--global.png')"
+        },
+        {
+          "file": "icons/arrow--back-to-top.png",
+          "status": "downloaded",
+          "size": 8500
+        },
+        {
+          "file": "icons/arrow--back-to-top.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'icons/arrow--back-to-top.png')"
+        },
+        {
+          "file": "icons/mouse--home-hero.png",
+          "status": "downloaded",
+          "size": 2965
+        },
+        {
+          "file": "icons/mouse--home-hero.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'icons/mouse--home-hero.png')"
+        },
+        {
+          "file": "icons/play--home-video.png",
+          "status": "downloaded",
+          "size": 65164
+        },
+        {
+          "file": "icons/play--home-video.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'icons/play--home-video.png')"
+        },
+        {
+          "file": "hero/slider--home-hero.jpg",
+          "status": "downloaded",
+          "size": 1251710
+        },
+        {
+          "file": "hero/slider--home-hero.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'hero/slider--home-hero.jpg')"
+        },
+        {
+          "file": "brands/pidebypide-logo--franchising.png",
+          "status": "downloaded",
+          "size": 328103
+        },
+        {
+          "file": "brands/pidebypide-logo--franchising.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/pidebypide-logo--franchising.png')"
+        },
+        {
+          "file": "brands/baydoner-logo--franchising.png",
+          "status": "downloaded",
+          "size": 253227
+        },
+        {
+          "file": "brands/baydoner-logo--franchising.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/baydoner-logo--franchising.png')"
+        },
+        {
+          "file": "brands/bursaishakbey-logo--franchising.png",
+          "status": "downloaded",
+          "size": 308436
+        },
+        {
+          "file": "brands/bursaishakbey-logo--franchising.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/bursaishakbey-logo--franchising.png')"
+        },
+        {
+          "file": "brands/bursaishakbey-tile--franchising.jpg",
+          "status": "downloaded",
+          "size": 78287
+        },
+        {
+          "file": "brands/bursaishakbey-tile--franchising.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/bursaishakbey-tile--franchising.jpg')"
+        },
+        {
+          "file": "brands/pidebypide-tile--franchising.jpg",
+          "status": "downloaded",
+          "size": 80720
+        },
+        {
+          "file": "brands/pidebypide-tile--franchising.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/pidebypide-tile--franchising.jpg')"
+        },
+        {
+          "file": "brands/bursaishakbey-hero--franchising.jpg",
+          "status": "downloaded",
+          "size": 312301
+        },
+        {
+          "file": "brands/bursaishakbey-hero--franchising.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/bursaishakbey-hero--franchising.jpg')"
+        },
+        {
+          "file": "brands/pidebypide-hero--franchising.jpg",
+          "status": "downloaded",
+          "size": 319399
+        },
+        {
+          "file": "brands/pidebypide-hero--franchising.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/pidebypide-hero--franchising.jpg')"
+        },
+        {
+          "file": "brand/group-apaz--about.png",
+          "status": "downloaded",
+          "size": 25386
+        },
+        {
+          "file": "brand/group-apaz--about.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brand/group-apaz--about.png')"
+        },
+        {
+          "file": "brands/baydoner-banner--about.png",
+          "status": "downloaded",
+          "size": 46071
+        },
+        {
+          "file": "brands/baydoner-banner--about.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/baydoner-banner--about.png')"
+        },
+        {
+          "file": "brands/pidebypide-banner--about.png",
+          "status": "downloaded",
+          "size": 33319
+        },
+        {
+          "file": "brands/pidebypide-banner--about.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/pidebypide-banner--about.png')"
+        },
+        {
+          "file": "brands/bursaishakbey-banner--about.png",
+          "status": "downloaded",
+          "size": 28563
+        },
+        {
+          "file": "brands/bursaishakbey-banner--about.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'brands/bursaishakbey-banner--about.png')"
+        },
+        {
+          "file": "policies/ucret-politikamiz--policy.png",
+          "status": "downloaded",
+          "size": 379918
+        },
+        {
+          "file": "policies/ucret-politikamiz--policy.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/ucret-politikamiz--policy.png')"
+        },
+        {
+          "file": "policies/seffaflik--policy.png",
+          "status": "downloaded",
+          "size": 961397
+        },
+        {
+          "file": "policies/seffaflik--policy.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/seffaflik--policy.png')"
+        },
+        {
+          "file": "policies/performans-degerlendirmesi--policy.png",
+          "status": "downloaded",
+          "size": 223994
+        },
+        {
+          "file": "policies/performans-degerlendirmesi--policy.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/performans-degerlendirmesi--policy.png')"
+        },
+        {
+          "file": "policies/calisan-olanaklari--policy.png",
+          "status": "downloaded",
+          "size": 259208
+        },
+        {
+          "file": "policies/calisan-olanaklari--policy.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/calisan-olanaklari--policy.png')"
+        },
+        {
+          "file": "policies/kurum-kulturumuz-ve-etik--policy.png",
+          "status": "downloaded",
+          "size": 323249
+        },
+        {
+          "file": "policies/kurum-kulturumuz-ve-etik--policy.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/kurum-kulturumuz-ve-etik--policy.png')"
+        },
+        {
+          "file": "policies/kurumsal-sosyal-sorumluluk--policy.png",
+          "status": "downloaded",
+          "size": 595064
+        },
+        {
+          "file": "policies/kurumsal-sosyal-sorumluluk--policy.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/kurumsal-sosyal-sorumluluk--policy.png')"
+        },
+        {
+          "file": "policies/kariyer-egitim--policy.png",
+          "status": "downloaded",
+          "size": 283750
+        },
+        {
+          "file": "policies/kariyer-egitim--policy.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/kariyer-egitim--policy.png')"
+        },
+        {
+          "file": "policies/kalite-1--kalite.png",
+          "status": "downloaded",
+          "size": 231687
+        },
+        {
+          "file": "policies/kalite-1--kalite.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/kalite-1--kalite.png')"
+        },
+        {
+          "file": "policies/kalite-2--kalite.png",
+          "status": "downloaded",
+          "size": 260185
+        },
+        {
+          "file": "policies/kalite-2--kalite.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/kalite-2--kalite.png')"
+        },
+        {
+          "file": "policies/kalite-3--kalite.png",
+          "status": "downloaded",
+          "size": 273638
+        },
+        {
+          "file": "policies/kalite-3--kalite.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/kalite-3--kalite.png')"
+        },
+        {
+          "file": "policies/kalite-4--kalite.png",
+          "status": "downloaded",
+          "size": 312723
+        },
+        {
+          "file": "policies/kalite-4--kalite.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/kalite-4--kalite.png')"
+        },
+        {
+          "file": "policies/insan-kaynaklari-politikamiz--policy.png",
+          "status": "downloaded",
+          "size": 411562
+        },
+        {
+          "file": "policies/insan-kaynaklari-politikamiz--policy.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'policies/insan-kaynaklari-politikamiz--policy.png')"
+        },
+        {
+          "file": "hr/ik-apaz--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 8952
+        },
+        {
+          "file": "hr/ik-apaz--bize-katilin.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'hr/ik-apaz--bize-katilin.jpg')"
+        },
+        {
+          "file": "hr/ik-baydoner--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 13064
+        },
+        {
+          "file": "hr/ik-baydoner--bize-katilin.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'hr/ik-baydoner--bize-katilin.jpg')"
+        },
+        {
+          "file": "hr/ik-pidebypide--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 15829
+        },
+        {
+          "file": "hr/ik-pidebypide--bize-katilin.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'hr/ik-pidebypide--bize-katilin.jpg')"
+        },
+        {
+          "file": "hr/ik-bursaishakbey--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 10328
+        },
+        {
+          "file": "hr/ik-bursaishakbey--bize-katilin.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'hr/ik-bursaishakbey--bize-katilin.jpg')"
+        },
+        {
+          "file": "team/levent-yilmaz--yonetim.jpg",
+          "status": "downloaded",
+          "size": 83860
+        },
+        {
+          "file": "team/levent-yilmaz--yonetim.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'team/levent-yilmaz--yonetim.jpg')"
+        },
+        {
+          "file": "team/feridun-tuncer--yonetim.jpg",
+          "status": "downloaded",
+          "size": 118369
+        },
+        {
+          "file": "team/feridun-tuncer--yonetim.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'team/feridun-tuncer--yonetim.jpg')"
+        },
+        {
+          "file": "team/bulent-polat--yonetim.jpg",
+          "status": "downloaded",
+          "size": 132682
+        },
+        {
+          "file": "team/bulent-polat--yonetim.jpg",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'team/bulent-polat--yonetim.jpg')"
+        },
+        {
+          "file": "news/haber-1-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 104027
+        },
+        {
+          "file": "news/haber-1-thumb-square--haberler.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'news/haber-1-thumb-square--haberler.png')"
+        },
+        {
+          "file": "news/haber-2-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 102075
+        },
+        {
+          "file": "news/haber-2-thumb-square--haberler.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'news/haber-2-thumb-square--haberler.png')"
+        },
+        {
+          "file": "news/haber-3-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 95176
+        },
+        {
+          "file": "news/haber-3-thumb-square--haberler.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'news/haber-3-thumb-square--haberler.png')"
+        },
+        {
+          "file": "news/haber-4-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 123907
+        },
+        {
+          "file": "news/haber-4-thumb-square--haberler.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'news/haber-4-thumb-square--haberler.png')"
+        },
+        {
+          "file": "news/haber-1-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 154292
+        },
+        {
+          "file": "news/haber-1-thumb-wide--haberler.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'news/haber-1-thumb-wide--haberler.png')"
+        },
+        {
+          "file": "news/haber-2-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 154496
+        },
+        {
+          "file": "news/haber-2-thumb-wide--haberler.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'news/haber-2-thumb-wide--haberler.png')"
+        },
+        {
+          "file": "news/haber-3-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 127427
+        },
+        {
+          "file": "news/haber-3-thumb-wide--haberler.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'news/haber-3-thumb-wide--haberler.png')"
+        },
+        {
+          "file": "news/haber-4-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 177135
+        },
+        {
+          "file": "news/haber-4-thumb-wide--haberler.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'news/haber-4-thumb-wide--haberler.png')"
+        },
+        {
+          "file": "cuisine/iskender-herkesin-hakki--baydoner.png",
+          "status": "downloaded",
+          "size": 271221
+        },
+        {
+          "file": "cuisine/iskender-herkesin-hakki--baydoner.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'cuisine/iskender-herkesin-hakki--baydoner.png')"
+        },
+        {
+          "file": "cuisine/coss-iskender--baydoner.png",
+          "status": "downloaded",
+          "size": 276557
+        },
+        {
+          "file": "cuisine/coss-iskender--baydoner.png",
+          "status": "error",
+          "error": "Cannot set properties of undefined (setting 'cuisine/coss-iskender--baydoner.png')"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-15T14:16:18.235Z",
+      "optimize": true,
+      "force": true,
+      "results": [
+        {
+          "file": "brand/logo--global.png",
+          "status": "downloaded",
+          "size": 5447
+        },
+        {
+          "file": "brand/logo-dark--global.png",
+          "status": "downloaded",
+          "size": 2768
+        },
+        {
+          "file": "icons/fav-icon--global.png",
+          "status": "downloaded",
+          "size": 65164
+        },
+        {
+          "file": "icons/arrow--back-to-top.png",
+          "status": "downloaded",
+          "size": 8500
+        },
+        {
+          "file": "icons/mouse--home-hero.png",
+          "status": "downloaded",
+          "size": 2965
+        },
+        {
+          "file": "icons/play--home-video.png",
+          "status": "downloaded",
+          "size": 65164
+        },
+        {
+          "file": "hero/slider--home-hero.jpg",
+          "status": "downloaded",
+          "size": 1251710
+        },
+        {
+          "file": "brands/pidebypide-logo--franchising.png",
+          "status": "downloaded",
+          "size": 328103
+        },
+        {
+          "file": "brands/baydoner-logo--franchising.png",
+          "status": "downloaded",
+          "size": 253227
+        },
+        {
+          "file": "brands/bursaishakbey-logo--franchising.png",
+          "status": "downloaded",
+          "size": 308436
+        },
+        {
+          "file": "brands/bursaishakbey-tile--franchising.jpg",
+          "status": "downloaded",
+          "size": 78287
+        },
+        {
+          "file": "brands/pidebypide-tile--franchising.jpg",
+          "status": "downloaded",
+          "size": 80720
+        },
+        {
+          "file": "brands/bursaishakbey-hero--franchising.jpg",
+          "status": "downloaded",
+          "size": 312301
+        },
+        {
+          "file": "brands/pidebypide-hero--franchising.jpg",
+          "status": "downloaded",
+          "size": 319399
+        },
+        {
+          "file": "brand/group-apaz--about.png",
+          "status": "downloaded",
+          "size": 25386
+        },
+        {
+          "file": "brands/baydoner-banner--about.png",
+          "status": "downloaded",
+          "size": 46071
+        },
+        {
+          "file": "brands/pidebypide-banner--about.png",
+          "status": "downloaded",
+          "size": 33319
+        },
+        {
+          "file": "brands/bursaishakbey-banner--about.png",
+          "status": "downloaded",
+          "size": 28563
+        },
+        {
+          "file": "policies/ucret-politikamiz--policy.png",
+          "status": "downloaded",
+          "size": 379918
+        },
+        {
+          "file": "policies/seffaflik--policy.png",
+          "status": "downloaded",
+          "size": 961397
+        },
+        {
+          "file": "policies/performans-degerlendirmesi--policy.png",
+          "status": "downloaded",
+          "size": 223994
+        },
+        {
+          "file": "policies/calisan-olanaklari--policy.png",
+          "status": "downloaded",
+          "size": 259208
+        },
+        {
+          "file": "policies/kurum-kulturumuz-ve-etik--policy.png",
+          "status": "downloaded",
+          "size": 323249
+        },
+        {
+          "file": "policies/kurumsal-sosyal-sorumluluk--policy.png",
+          "status": "downloaded",
+          "size": 595064
+        },
+        {
+          "file": "policies/kariyer-egitim--policy.png",
+          "status": "downloaded",
+          "size": 283750
+        },
+        {
+          "file": "policies/kalite-1--kalite.png",
+          "status": "downloaded",
+          "size": 231687
+        },
+        {
+          "file": "policies/kalite-2--kalite.png",
+          "status": "downloaded",
+          "size": 260185
+        },
+        {
+          "file": "policies/kalite-3--kalite.png",
+          "status": "downloaded",
+          "size": 273638
+        },
+        {
+          "file": "policies/kalite-4--kalite.png",
+          "status": "downloaded",
+          "size": 312723
+        },
+        {
+          "file": "policies/insan-kaynaklari-politikamiz--policy.png",
+          "status": "downloaded",
+          "size": 411562
+        },
+        {
+          "file": "hr/ik-apaz--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 8952
+        },
+        {
+          "file": "hr/ik-baydoner--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 13064
+        },
+        {
+          "file": "hr/ik-pidebypide--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 15829
+        },
+        {
+          "file": "hr/ik-bursaishakbey--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 10328
+        },
+        {
+          "file": "team/levent-yilmaz--yonetim.jpg",
+          "status": "downloaded",
+          "size": 83860
+        },
+        {
+          "file": "team/feridun-tuncer--yonetim.jpg",
+          "status": "downloaded",
+          "size": 118369
+        },
+        {
+          "file": "team/bulent-polat--yonetim.jpg",
+          "status": "downloaded",
+          "size": 132682
+        },
+        {
+          "file": "news/haber-1-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 104027
+        },
+        {
+          "file": "news/haber-2-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 102075
+        },
+        {
+          "file": "news/haber-3-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 95176
+        },
+        {
+          "file": "news/haber-4-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 123907
+        },
+        {
+          "file": "news/haber-1-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 154292
+        },
+        {
+          "file": "news/haber-2-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 154496
+        },
+        {
+          "file": "news/haber-3-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 127427
+        },
+        {
+          "file": "news/haber-4-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 177135
+        },
+        {
+          "file": "cuisine/iskender-herkesin-hakki--baydoner.png",
+          "status": "downloaded",
+          "size": 271221
+        },
+        {
+          "file": "cuisine/coss-iskender--baydoner.png",
+          "status": "downloaded",
+          "size": 276557
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-15T14:27:56.720Z",
+      "optimize": true,
+      "force": true,
+      "results": [
+        {
+          "file": "brand/logo--global.png",
+          "status": "downloaded",
+          "size": 5447
+        },
+        {
+          "file": "brand/logo-dark--global.png",
+          "status": "downloaded",
+          "size": 2768
+        },
+        {
+          "file": "icons/fav-icon--global.png",
+          "status": "downloaded",
+          "size": 65164
+        },
+        {
+          "file": "icons/arrow--back-to-top.png",
+          "status": "downloaded",
+          "size": 8500
+        },
+        {
+          "file": "icons/mouse--home-hero.png",
+          "status": "downloaded",
+          "size": 2965
+        },
+        {
+          "file": "icons/play--home-video.png",
+          "status": "downloaded",
+          "size": 65164
+        },
+        {
+          "file": "hero/slider--home-hero.jpg",
+          "status": "downloaded",
+          "size": 1251710
+        },
+        {
+          "file": "brands/pidebypide-logo--franchising.png",
+          "status": "downloaded",
+          "size": 328103
+        },
+        {
+          "file": "brands/baydoner-logo--franchising.png",
+          "status": "downloaded",
+          "size": 253227
+        },
+        {
+          "file": "brands/bursaishakbey-logo--franchising.png",
+          "status": "downloaded",
+          "size": 308436
+        },
+        {
+          "file": "brands/bursaishakbey-tile--franchising.jpg",
+          "status": "downloaded",
+          "size": 78287
+        },
+        {
+          "file": "brands/pidebypide-tile--franchising.jpg",
+          "status": "downloaded",
+          "size": 80720
+        },
+        {
+          "file": "brands/bursaishakbey-hero--franchising.jpg",
+          "status": "downloaded",
+          "size": 312301
+        },
+        {
+          "file": "brands/pidebypide-hero--franchising.jpg",
+          "status": "downloaded",
+          "size": 319399
+        },
+        {
+          "file": "brand/group-apaz--about.png",
+          "status": "downloaded",
+          "size": 25386
+        },
+        {
+          "file": "brands/baydoner-banner--about.png",
+          "status": "downloaded",
+          "size": 46071
+        },
+        {
+          "file": "brands/pidebypide-banner--about.png",
+          "status": "downloaded",
+          "size": 33319
+        },
+        {
+          "file": "brands/bursaishakbey-banner--about.png",
+          "status": "downloaded",
+          "size": 28563
+        },
+        {
+          "file": "policies/ucret-politikamiz--policy.png",
+          "status": "downloaded",
+          "size": 379918
+        },
+        {
+          "file": "policies/seffaflik--policy.png",
+          "status": "downloaded",
+          "size": 961397
+        },
+        {
+          "file": "policies/performans-degerlendirmesi--policy.png",
+          "status": "downloaded",
+          "size": 223994
+        },
+        {
+          "file": "policies/calisan-olanaklari--policy.png",
+          "status": "downloaded",
+          "size": 259208
+        },
+        {
+          "file": "policies/kurum-kulturumuz-ve-etik--policy.png",
+          "status": "downloaded",
+          "size": 323249
+        },
+        {
+          "file": "policies/kurumsal-sosyal-sorumluluk--policy.png",
+          "status": "downloaded",
+          "size": 595064
+        },
+        {
+          "file": "policies/kariyer-egitim--policy.png",
+          "status": "downloaded",
+          "size": 283750
+        },
+        {
+          "file": "policies/kalite-1--kalite.png",
+          "status": "downloaded",
+          "size": 231687
+        },
+        {
+          "file": "policies/kalite-2--kalite.png",
+          "status": "downloaded",
+          "size": 260185
+        },
+        {
+          "file": "policies/kalite-3--kalite.png",
+          "status": "downloaded",
+          "size": 273638
+        },
+        {
+          "file": "policies/kalite-4--kalite.png",
+          "status": "downloaded",
+          "size": 312723
+        },
+        {
+          "file": "policies/insan-kaynaklari-politikamiz--policy.png",
+          "status": "downloaded",
+          "size": 411562
+        },
+        {
+          "file": "hr/ik-apaz--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 8952
+        },
+        {
+          "file": "hr/ik-baydoner--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 13064
+        },
+        {
+          "file": "hr/ik-pidebypide--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 15829
+        },
+        {
+          "file": "hr/ik-bursaishakbey--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 10328
+        },
+        {
+          "file": "team/levent-yilmaz--yonetim.jpg",
+          "status": "downloaded",
+          "size": 83860
+        },
+        {
+          "file": "team/feridun-tuncer--yonetim.jpg",
+          "status": "downloaded",
+          "size": 118369
+        },
+        {
+          "file": "team/bulent-polat--yonetim.jpg",
+          "status": "downloaded",
+          "size": 132682
+        },
+        {
+          "file": "news/haber-1-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 104027
+        },
+        {
+          "file": "news/haber-2-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 102075
+        },
+        {
+          "file": "news/haber-3-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 95176
+        },
+        {
+          "file": "news/haber-4-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 123907
+        },
+        {
+          "file": "news/haber-1-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 154292
+        },
+        {
+          "file": "news/haber-2-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 154496
+        },
+        {
+          "file": "news/haber-3-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 127427
+        },
+        {
+          "file": "news/haber-4-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 177135
+        },
+        {
+          "file": "cuisine/iskender-herkesin-hakki--baydoner.png",
+          "status": "downloaded",
+          "size": 271221
+        },
+        {
+          "file": "cuisine/coss-iskender--baydoner.png",
+          "status": "downloaded",
+          "size": 276557
+        },
+        {
+          "file": "brands/baydoner-about-1--baydoner.jpg",
+          "status": "downloaded",
+          "size": 73930
+        },
+        {
+          "file": "brands/baydoner-logo-alt--franchising.png",
+          "status": "downloaded",
+          "size": 12906
+        },
+        {
+          "file": "brands/pidebypide-logo-alt--franchising.png",
+          "status": "downloaded",
+          "size": 7695
+        },
+        {
+          "file": "brands/bursaishakbey-logo-alt--franchising.png",
+          "status": "downloaded",
+          "size": 32511
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-15T14:31:02.027Z",
+      "optimize": true,
+      "force": true,
+      "results": [
+        {
+          "file": "brand/logo--global.png",
+          "status": "downloaded",
+          "size": 5447
+        },
+        {
+          "file": "brand/logo-dark--global.png",
+          "status": "downloaded",
+          "size": 2768
+        },
+        {
+          "file": "icons/fav-icon--global.png",
+          "status": "downloaded",
+          "size": 65164
+        },
+        {
+          "file": "icons/arrow--back-to-top.png",
+          "status": "downloaded",
+          "size": 8500
+        },
+        {
+          "file": "icons/mouse--home-hero.png",
+          "status": "downloaded",
+          "size": 2965
+        },
+        {
+          "file": "icons/play--home-video.png",
+          "status": "downloaded",
+          "size": 65164
+        },
+        {
+          "file": "hero/slider--home-hero.jpg",
+          "status": "downloaded",
+          "size": 1251710
+        },
+        {
+          "file": "brands/pidebypide-logo--franchising.png",
+          "status": "downloaded",
+          "size": 328103
+        },
+        {
+          "file": "brands/baydoner-logo--franchising.png",
+          "status": "downloaded",
+          "size": 253227
+        },
+        {
+          "file": "brands/bursaishakbey-logo--franchising.png",
+          "status": "downloaded",
+          "size": 308436
+        },
+        {
+          "file": "brands/bursaishakbey-tile--franchising.jpg",
+          "status": "downloaded",
+          "size": 78287
+        },
+        {
+          "file": "brands/pidebypide-tile--franchising.jpg",
+          "status": "downloaded",
+          "size": 80720
+        },
+        {
+          "file": "brands/bursaishakbey-hero--franchising.jpg",
+          "status": "downloaded",
+          "size": 312301
+        },
+        {
+          "file": "brands/pidebypide-hero--franchising.jpg",
+          "status": "downloaded",
+          "size": 319399
+        },
+        {
+          "file": "brand/group-apaz--about.png",
+          "status": "downloaded",
+          "size": 25386
+        },
+        {
+          "file": "brands/baydoner-banner--about.png",
+          "status": "downloaded",
+          "size": 46071
+        },
+        {
+          "file": "brands/pidebypide-banner--about.png",
+          "status": "downloaded",
+          "size": 33319
+        },
+        {
+          "file": "brands/bursaishakbey-banner--about.png",
+          "status": "downloaded",
+          "size": 28563
+        },
+        {
+          "file": "policies/ucret-politikamiz--policy.png",
+          "status": "downloaded",
+          "size": 379918
+        },
+        {
+          "file": "policies/seffaflik--policy.png",
+          "status": "downloaded",
+          "size": 961397
+        },
+        {
+          "file": "policies/performans-degerlendirmesi--policy.png",
+          "status": "downloaded",
+          "size": 223994
+        },
+        {
+          "file": "policies/calisan-olanaklari--policy.png",
+          "status": "downloaded",
+          "size": 259208
+        },
+        {
+          "file": "policies/kurum-kulturumuz-ve-etik--policy.png",
+          "status": "downloaded",
+          "size": 323249
+        },
+        {
+          "file": "policies/kurumsal-sosyal-sorumluluk--policy.png",
+          "status": "downloaded",
+          "size": 595064
+        },
+        {
+          "file": "policies/kariyer-egitim--policy.png",
+          "status": "downloaded",
+          "size": 283750
+        },
+        {
+          "file": "policies/kalite-1--kalite.png",
+          "status": "downloaded",
+          "size": 231687
+        },
+        {
+          "file": "policies/kalite-2--kalite.png",
+          "status": "downloaded",
+          "size": 260185
+        },
+        {
+          "file": "policies/kalite-3--kalite.png",
+          "status": "downloaded",
+          "size": 273638
+        },
+        {
+          "file": "policies/kalite-4--kalite.png",
+          "status": "downloaded",
+          "size": 312723
+        },
+        {
+          "file": "policies/insan-kaynaklari-politikamiz--policy.png",
+          "status": "downloaded",
+          "size": 411562
+        },
+        {
+          "file": "hr/ik-apaz--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 8952
+        },
+        {
+          "file": "hr/ik-baydoner--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 13064
+        },
+        {
+          "file": "hr/ik-pidebypide--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 15829
+        },
+        {
+          "file": "hr/ik-bursaishakbey--bize-katilin.jpg",
+          "status": "downloaded",
+          "size": 10328
+        },
+        {
+          "file": "team/levent-yilmaz--yonetim.jpg",
+          "status": "downloaded",
+          "size": 83860
+        },
+        {
+          "file": "team/feridun-tuncer--yonetim.jpg",
+          "status": "downloaded",
+          "size": 118369
+        },
+        {
+          "file": "team/bulent-polat--yonetim.jpg",
+          "status": "downloaded",
+          "size": 132682
+        },
+        {
+          "file": "news/haber-1-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 104027
+        },
+        {
+          "file": "news/haber-2-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 102075
+        },
+        {
+          "file": "news/haber-3-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 95176
+        },
+        {
+          "file": "news/haber-4-thumb-square--haberler.png",
+          "status": "downloaded",
+          "size": 123907
+        },
+        {
+          "file": "news/haber-1-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 154292
+        },
+        {
+          "file": "news/haber-2-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 154496
+        },
+        {
+          "file": "news/haber-3-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 127427
+        },
+        {
+          "file": "news/haber-4-thumb-wide--haberler.png",
+          "status": "downloaded",
+          "size": 177135
+        },
+        {
+          "file": "cuisine/iskender-herkesin-hakki--baydoner.png",
+          "status": "downloaded",
+          "size": 271221
+        },
+        {
+          "file": "cuisine/coss-iskender--baydoner.png",
+          "status": "downloaded",
+          "size": 276557
+        },
+        {
+          "file": "brands/baydoner-about-1--baydoner.jpg",
+          "status": "downloaded",
+          "size": 73930
+        },
+        {
+          "file": "brands/baydoner-logo-alt--franchising.png",
+          "status": "downloaded",
+          "size": 12906
+        },
+        {
+          "file": "brands/pidebypide-logo-alt--franchising.png",
+          "status": "downloaded",
+          "size": 7695
+        },
+        {
+          "file": "brands/bursaishakbey-logo-alt--franchising.png",
+          "status": "downloaded",
+          "size": 32511
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-18T08:18:53.585Z",
+      "optimize": true,
+      "force": false,
+      "results": [
+        {
+          "file": "brand/logo--global.png",
+          "status": "skipped",
+          "size": 5447
+        },
+        {
+          "file": "brand/logo-dark--global.png",
+          "status": "skipped",
+          "size": 2768
+        },
+        {
+          "file": "icons/fav-icon--global.png",
+          "status": "skipped",
+          "size": 65164
+        },
+        {
+          "file": "icons/arrow--back-to-top.png",
+          "status": "skipped",
+          "size": 8500
+        },
+        {
+          "file": "icons/mouse--home-hero.png",
+          "status": "skipped",
+          "size": 2965
+        },
+        {
+          "file": "icons/play--home-video.png",
+          "status": "skipped",
+          "size": 65164
+        },
+        {
+          "file": "hero/slider--home-hero.jpg",
+          "status": "skipped",
+          "size": 1251710
+        },
+        {
+          "file": "brands/pidebypide-logo--franchising.png",
+          "status": "skipped",
+          "size": 328103
+        },
+        {
+          "file": "brands/baydoner-logo--franchising.png",
+          "status": "skipped",
+          "size": 253227
+        },
+        {
+          "file": "brands/bursaishakbey-logo--franchising.png",
+          "status": "skipped",
+          "size": 308436
+        },
+        {
+          "file": "brands/bursaishakbey-tile--franchising.jpg",
+          "status": "skipped",
+          "size": 78287
+        },
+        {
+          "file": "brands/pidebypide-tile--franchising.jpg",
+          "status": "skipped",
+          "size": 80720
+        },
+        {
+          "file": "brands/bursaishakbey-hero--franchising.jpg",
+          "status": "skipped",
+          "size": 312301
+        },
+        {
+          "file": "brands/pidebypide-hero--franchising.jpg",
+          "status": "skipped",
+          "size": 319399
+        },
+        {
+          "file": "brand/group-apaz--about.png",
+          "status": "skipped",
+          "size": 25386
+        },
+        {
+          "file": "brands/baydoner-banner--about.png",
+          "status": "skipped",
+          "size": 46071
+        },
+        {
+          "file": "brands/pidebypide-banner--about.png",
+          "status": "skipped",
+          "size": 33319
+        },
+        {
+          "file": "brands/bursaishakbey-banner--about.png",
+          "status": "skipped",
+          "size": 28563
+        },
+        {
+          "file": "policies/ucret-politikamiz--policy.png",
+          "status": "skipped",
+          "size": 379918
+        },
+        {
+          "file": "policies/seffaflik--policy.png",
+          "status": "skipped",
+          "size": 961397
+        },
+        {
+          "file": "policies/performans-degerlendirmesi--policy.png",
+          "status": "skipped",
+          "size": 223994
+        },
+        {
+          "file": "policies/calisan-olanaklari--policy.png",
+          "status": "skipped",
+          "size": 259208
+        },
+        {
+          "file": "policies/kurum-kulturumuz-ve-etik--policy.png",
+          "status": "skipped",
+          "size": 323249
+        },
+        {
+          "file": "policies/kurumsal-sosyal-sorumluluk--policy.png",
+          "status": "skipped",
+          "size": 595064
+        },
+        {
+          "file": "policies/kariyer-egitim--policy.png",
+          "status": "skipped",
+          "size": 283750
+        },
+        {
+          "file": "policies/kalite-1--kalite.png",
+          "status": "skipped",
+          "size": 231687
+        },
+        {
+          "file": "policies/kalite-2--kalite.png",
+          "status": "skipped",
+          "size": 260185
+        },
+        {
+          "file": "policies/kalite-3--kalite.png",
+          "status": "skipped",
+          "size": 273638
+        },
+        {
+          "file": "policies/kalite-4--kalite.png",
+          "status": "skipped",
+          "size": 312723
+        },
+        {
+          "file": "policies/insan-kaynaklari-politikamiz--policy.png",
+          "status": "skipped",
+          "size": 411562
+        },
+        {
+          "file": "hr/ik-apaz--bize-katilin.jpg",
+          "status": "skipped",
+          "size": 8952
+        },
+        {
+          "file": "hr/ik-baydoner--bize-katilin.jpg",
+          "status": "skipped",
+          "size": 13064
+        },
+        {
+          "file": "hr/ik-pidebypide--bize-katilin.jpg",
+          "status": "skipped",
+          "size": 15829
+        },
+        {
+          "file": "hr/ik-bursaishakbey--bize-katilin.jpg",
+          "status": "skipped",
+          "size": 10328
+        },
+        {
+          "file": "team/levent-yilmaz--yonetim.jpg",
+          "status": "skipped",
+          "size": 83860
+        },
+        {
+          "file": "team/feridun-tuncer--yonetim.jpg",
+          "status": "skipped",
+          "size": 118369
+        },
+        {
+          "file": "team/bulent-polat--yonetim.jpg",
+          "status": "skipped",
+          "size": 132682
+        },
+        {
+          "file": "news/haber-1-thumb-square--haberler.png",
+          "status": "skipped",
+          "size": 104027
+        },
+        {
+          "file": "news/haber-2-thumb-square--haberler.png",
+          "status": "skipped",
+          "size": 102075
+        },
+        {
+          "file": "news/haber-3-thumb-square--haberler.png",
+          "status": "skipped",
+          "size": 95176
+        },
+        {
+          "file": "news/haber-4-thumb-square--haberler.png",
+          "status": "skipped",
+          "size": 123907
+        },
+        {
+          "file": "news/haber-1-thumb-wide--haberler.png",
+          "status": "skipped",
+          "size": 154292
+        },
+        {
+          "file": "news/haber-2-thumb-wide--haberler.png",
+          "status": "skipped",
+          "size": 154496
+        },
+        {
+          "file": "news/haber-3-thumb-wide--haberler.png",
+          "status": "skipped",
+          "size": 127427
+        },
+        {
+          "file": "news/haber-4-thumb-wide--haberler.png",
+          "status": "skipped",
+          "size": 177135
+        },
+        {
+          "file": "cuisine/iskender-herkesin-hakki--baydoner.png",
+          "status": "skipped",
+          "size": 271221
+        },
+        {
+          "file": "cuisine/coss-iskender--baydoner.png",
+          "status": "skipped",
+          "size": 276557
+        },
+        {
+          "file": "brands/baydoner-about-1--baydoner.jpg",
+          "status": "skipped",
+          "size": 73930
+        },
+        {
+          "file": "brands/baydoner-logo-alt--franchising.png",
+          "status": "skipped",
+          "size": 12906
+        },
+        {
+          "file": "brands/pidebypide-logo-alt--franchising.png",
+          "status": "skipped",
+          "size": 7695
+        },
+        {
+          "file": "brands/bursaishakbey-logo-alt--franchising.png",
+          "status": "skipped",
+          "size": 32511
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-08-18T12:08:05.403Z",
+      "optimize": true,
+      "force": false,
+      "results": [
+        {
+          "file": "brand/logo--global.png",
+          "status": "skipped",
+          "size": 5447
+        },
+        {
+          "file": "brand/logo-dark--global.png",
+          "status": "skipped",
+          "size": 2768
+        },
+        {
+          "file": "icons/fav-icon--global.png",
+          "status": "skipped",
+          "size": 65164
+        },
+        {
+          "file": "icons/arrow--back-to-top.png",
+          "status": "skipped",
+          "size": 8500
+        },
+        {
+          "file": "icons/mouse--home-hero.png",
+          "status": "skipped",
+          "size": 2965
+        },
+        {
+          "file": "icons/play--home-video.png",
+          "status": "skipped",
+          "size": 65164
+        },
+        {
+          "file": "hero/slider--home-hero.jpg",
+          "status": "skipped",
+          "size": 1251710
+        },
+        {
+          "file": "brands/pidebypide-logo--franchising.png",
+          "status": "skipped",
+          "size": 328103
+        },
+        {
+          "file": "brands/baydoner-logo--franchising.png",
+          "status": "skipped",
+          "size": 253227
+        },
+        {
+          "file": "brands/bursaishakbey-logo--franchising.png",
+          "status": "skipped",
+          "size": 308436
+        },
+        {
+          "file": "brands/bursaishakbey-tile--franchising.jpg",
+          "status": "skipped",
+          "size": 78287
+        },
+        {
+          "file": "brands/pidebypide-tile--franchising.jpg",
+          "status": "skipped",
+          "size": 80720
+        },
+        {
+          "file": "brands/bursaishakbey-hero--franchising.jpg",
+          "status": "skipped",
+          "size": 312301
+        },
+        {
+          "file": "brands/pidebypide-hero--franchising.jpg",
+          "status": "skipped",
+          "size": 319399
+        },
+        {
+          "file": "brand/group-apaz--about.png",
+          "status": "skipped",
+          "size": 25386
+        },
+        {
+          "file": "brands/baydoner-banner--about.png",
+          "status": "skipped",
+          "size": 46071
+        },
+        {
+          "file": "brands/pidebypide-banner--about.png",
+          "status": "skipped",
+          "size": 33319
+        },
+        {
+          "file": "brands/bursaishakbey-banner--about.png",
+          "status": "skipped",
+          "size": 28563
+        },
+        {
+          "file": "policies/ucret-politikamiz--policy.png",
+          "status": "skipped",
+          "size": 379918
+        },
+        {
+          "file": "policies/seffaflik--policy.png",
+          "status": "skipped",
+          "size": 961397
+        },
+        {
+          "file": "policies/performans-degerlendirmesi--policy.png",
+          "status": "skipped",
+          "size": 223994
+        },
+        {
+          "file": "policies/calisan-olanaklari--policy.png",
+          "status": "skipped",
+          "size": 259208
+        },
+        {
+          "file": "policies/kurum-kulturumuz-ve-etik--policy.png",
+          "status": "skipped",
+          "size": 323249
+        },
+        {
+          "file": "policies/kurumsal-sosyal-sorumluluk--policy.png",
+          "status": "skipped",
+          "size": 595064
+        },
+        {
+          "file": "policies/kariyer-egitim--policy.png",
+          "status": "skipped",
+          "size": 283750
+        },
+        {
+          "file": "policies/kalite-1--kalite.png",
+          "status": "skipped",
+          "size": 231687
+        },
+        {
+          "file": "policies/kalite-2--kalite.png",
+          "status": "skipped",
+          "size": 260185
+        },
+        {
+          "file": "policies/kalite-3--kalite.png",
+          "status": "skipped",
+          "size": 273638
+        },
+        {
+          "file": "policies/kalite-4--kalite.png",
+          "status": "skipped",
+          "size": 312723
+        },
+        {
+          "file": "policies/insan-kaynaklari-politikamiz--policy.png",
+          "status": "skipped",
+          "size": 411562
+        },
+        {
+          "file": "hr/ik-apaz--bize-katilin.jpg",
+          "status": "skipped",
+          "size": 8952
+        },
+        {
+          "file": "hr/ik-baydoner--bize-katilin.jpg",
+          "status": "skipped",
+          "size": 13064
+        },
+        {
+          "file": "hr/ik-pidebypide--bize-katilin.jpg",
+          "status": "skipped",
+          "size": 15829
+        },
+        {
+          "file": "hr/ik-bursaishakbey--bize-katilin.jpg",
+          "status": "skipped",
+          "size": 10328
+        },
+        {
+          "file": "team/levent-yilmaz--yonetim.jpg",
+          "status": "skipped",
+          "size": 83860
+        },
+        {
+          "file": "team/feridun-tuncer--yonetim.jpg",
+          "status": "skipped",
+          "size": 118369
+        },
+        {
+          "file": "team/bulent-polat--yonetim.jpg",
+          "status": "skipped",
+          "size": 132682
+        },
+        {
+          "file": "news/haber-1-thumb-square--haberler.png",
+          "status": "skipped",
+          "size": 104027
+        },
+        {
+          "file": "news/haber-2-thumb-square--haberler.png",
+          "status": "skipped",
+          "size": 102075
+        },
+        {
+          "file": "news/haber-3-thumb-square--haberler.png",
+          "status": "skipped",
+          "size": 95176
+        },
+        {
+          "file": "news/haber-4-thumb-square--haberler.png",
+          "status": "skipped",
+          "size": 123907
+        },
+        {
+          "file": "news/haber-1-thumb-wide--haberler.png",
+          "status": "skipped",
+          "size": 154292
+        },
+        {
+          "file": "news/haber-2-thumb-wide--haberler.png",
+          "status": "skipped",
+          "size": 154496
+        },
+        {
+          "file": "news/haber-3-thumb-wide--haberler.png",
+          "status": "skipped",
+          "size": 127427
+        },
+        {
+          "file": "news/haber-4-thumb-wide--haberler.png",
+          "status": "skipped",
+          "size": 177135
+        },
+        {
+          "file": "cuisine/iskender-herkesin-hakki--baydoner.png",
+          "status": "skipped",
+          "size": 271221
+        },
+        {
+          "file": "cuisine/coss-iskender--baydoner.png",
+          "status": "skipped",
+          "size": 276557
+        },
+        {
+          "file": "brands/baydoner-about-1--baydoner.jpg",
+          "status": "skipped",
+          "size": 73930
+        },
+        {
+          "file": "brands/baydoner-logo-alt--franchising.png",
+          "status": "skipped",
+          "size": 12906
+        },
+        {
+          "file": "brands/pidebypide-logo-alt--franchising.png",
+          "status": "skipped",
+          "size": 7695
+        },
+        {
+          "file": "brands/bursaishakbey-logo-alt--franchising.png",
+          "status": "skipped",
+          "size": 32511
+        }
+      ]
+    }
+  ],
+  "lastRun": {
+    "timestamp": "2025-08-18T12:08:05.403Z",
+    "optimize": true,
+    "force": false
+  },
+  "assets": {
+    "brand/logo--global.png": {
+      "source": "https://www.apazgroup.com/img/logo.png",
+      "page": "global",
+      "alt": "Apaz Group Logo (Light)",
+      "size": 5447,
+      "variants": {
+        "webp": "brand/logo--global.webp",
+        "avif": "brand/logo--global.avif"
+      }
+    },
+    "brand/logo-dark--global.png": {
+      "source": "https://www.apazgroup.com/img/logo-dark.png",
+      "page": "global",
+      "alt": "Apaz Group Logo (Dark)",
+      "size": 2768,
+      "variants": {
+        "webp": "brand/logo-dark--global.webp",
+        "avif": "brand/logo-dark--global.avif"
+      }
+    },
+    "icons/fav-icon--global.png": {
+      "source": "https://www.apazgroup.com/img/fav-icon.png",
+      "page": "global",
+      "alt": "Site Favicon",
+      "size": 65164,
+      "variants": {}
+    },
+    "icons/arrow--back-to-top.png": {
+      "source": "https://www.apazgroup.com/img/arrow.png",
+      "page": "global",
+      "alt": "Back to top arrow icon",
+      "size": 8500,
+      "variants": {
+        "webp": "icons/arrow--back-to-top.webp",
+        "avif": "icons/arrow--back-to-top.avif"
+      }
+    },
+    "icons/mouse--home-hero.png": {
+      "source": "https://www.apazgroup.com/img/mouse.png",
+      "page": "home",
+      "alt": "Scroll indicator mouse icon",
+      "size": 2965,
+      "variants": {
+        "webp": "icons/mouse--home-hero.webp",
+        "avif": "icons/mouse--home-hero.avif"
+      }
+    },
+    "icons/play--home-video.png": {
+      "source": "https://www.apazgroup.com/img/icon/video-1.png",
+      "page": "home",
+      "alt": "Play video icon",
+      "size": 65164,
+      "variants": {}
+    },
+    "hero/slider--home-hero.jpg": {
+      "source": "https://www.apazgroup.com/img/home-slider/slider.jpg",
+      "page": "home",
+      "alt": "Hero slider background",
+      "size": 1251710,
+      "variants": {
+        "webp": "hero/slider--home-hero.webp",
+        "avif": "hero/slider--home-hero.avif",
+        "responsiveWebp": [
+          "hero/slider--home-hero@1920w.webp",
+          "hero/slider--home-hero@1280w.webp",
+          "hero/slider--home-hero@960w.webp",
+          "hero/slider--home-hero@1920w.webp",
+          "hero/slider--home-hero@1280w.webp",
+          "hero/slider--home-hero@960w.webp",
+          "hero/slider--home-hero@1920w.webp",
+          "hero/slider--home-hero@1280w.webp",
+          "hero/slider--home-hero@960w.webp"
+        ]
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoMAAUAA8BgJYgCdADdKYRE3AD+8Ohsesmv+zjqwVRFIcrRWVr4mO3OAAA="
+    },
+    "brands/pidebypide-logo--franchising.png": {
+      "source": "https://www.apazgroup.com/img/pidebypide.png",
+      "page": "franchising",
+      "alt": "Pide By Pide Logo",
+      "size": 328103,
+      "variants": {
+        "webp": "brands/pidebypide-logo--franchising.webp",
+        "avif": "brands/pidebypide-logo--franchising.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoMAA0AA8BgJbACdAEPCFYi1sSgAP2QPYJkxTtmMaXzkwUoxERBHIKhPnxVUsaDMdQIxL+Q8bJBf5OTAOF91y0cudbPIsfsC8e7/hmxaekAAA=="
+    },
+    "brands/baydoner-logo--franchising.png": {
+      "source": "https://www.apazgroup.com/img/baydoner.png",
+      "page": "franchising",
+      "alt": "Baydöner Logo",
+      "size": 253227,
+      "variants": {
+        "webp": "brands/baydoner-logo--franchising.webp",
+        "avif": "brands/baydoner-logo--franchising.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAABwAQCdASoMAA0AA8BgJbACdAF1AAD+7NbSoY933vxALr8wPYlnIrjTuZ0tTKV6H61IvFwx3XF3e4P12//EYb7/GERP/+lDmr+ZyywA"
+    },
+    "brands/bursaishakbey-logo--franchising.png": {
+      "source": "https://www.apazgroup.com/img/ishakbey.png",
+      "page": "franchising",
+      "alt": "Bursa İshakbey Logo",
+      "size": 308436,
+      "variants": {
+        "webp": "brands/bursaishakbey-logo--franchising.webp",
+        "avif": "brands/bursaishakbey-logo--franchising.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoMAA0AA8BgJQBYdiHaLfhCWwAA/tIECbbtudxlW6L9SV+MXqa23n6xjOnSzU13FfKY8I4o8CAAAA=="
+    },
+    "brands/bursaishakbey-tile--franchising.jpg": {
+      "source": "https://www.apazgroup.com/img/BIB_GORSEL_WEB_534x598px.jpg",
+      "page": "franchising",
+      "alt": "Bursa İshakbey Tile Image",
+      "size": 78287,
+      "variants": {
+        "webp": "brands/bursaishakbey-tile--franchising.webp",
+        "avif": "brands/bursaishakbey-tile--franchising.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoMAA0AA8BgJbACdAEOaA760AAAzB2JdfcmxewsPQC+18IUYem6TakXZ2z7ND5IU3EkwGPhxz2woBCXqN6hCDD+78pcHb1TUKGfDgAA"
+    },
+    "brands/pidebypide-tile--franchising.jpg": {
+      "source": "https://www.apazgroup.com/img/PBP_GORSEL_WEB_534x598px.jpg",
+      "page": "franchising",
+      "alt": "Pide By Pide Tile Image",
+      "size": 80720,
+      "variants": {
+        "webp": "brands/pidebypide-tile--franchising.webp",
+        "avif": "brands/pidebypide-tile--franchising.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAQCdASoMAA0AA8BgJbACdAEOZfdEAAD9UifBZDa4o0xmBO/K75mRXMz94MpQrxe76XqOTDO80PhzE+A1zOOnEkCU7/pnzBsTyBbvxtz+mAAA"
+    },
+    "brands/bursaishakbey-hero--franchising.jpg": {
+      "source": "https://www.apazgroup.com/img/BIB_GORSEL_WEB_1170x440px.jpg",
+      "page": "franchising",
+      "alt": "Bursa İshakbey Hero Image",
+      "size": 312301,
+      "variants": {
+        "webp": "brands/bursaishakbey-hero--franchising.webp",
+        "avif": "brands/bursaishakbey-hero--franchising.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoMAAUAA8BgJYwCdADZlgtAAP7eFueSxSLTwsxl0yRtbe+L8OksYzKgAAA="
+    },
+    "brands/pidebypide-hero--franchising.jpg": {
+      "source": "https://www.apazgroup.com/img/PBP_GORSEL_WEB_1170x440px.jpg",
+      "page": "franchising",
+      "alt": "Pide By Pide Hero Image",
+      "size": 319399,
+      "variants": {
+        "webp": "brands/pidebypide-hero--franchising.webp",
+        "avif": "brands/pidebypide-hero--franchising.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoMAAUAA8BgJbACdADZlgtAAP6JruVWGRX/asISdRw95epEfRk1uGMG3ffrCBSfm8SaJ+Umm21g0mOnlkAAAA=="
+    },
+    "brand/group-apaz--about.png": {
+      "source": "https://www.apazgroup.com/img/800-400-apaz.png",
+      "page": "about",
+      "alt": "Apaz Group Banner",
+      "size": 25386,
+      "variants": {
+        "webp": "brand/group-apaz--about.webp",
+        "avif": "brand/group-apaz--about.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoMAAYAA8BgJaQAAu0dTfwAAP73ECT+JGb4VAAA"
+    },
+    "brands/baydoner-banner--about.png": {
+      "source": "https://www.apazgroup.com/img/800-400-baydoner.png",
+      "page": "about",
+      "alt": "Baydöner Banner",
+      "size": 46071,
+      "variants": {
+        "webp": "brands/baydoner-banner--about.webp",
+        "avif": "brands/baydoner-banner--about.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACwAQCdASoMAAYAA8BgJQAAXWT//nKAAP70C8ov+oYQ6EQLM/Bdfg/HBjQ0bkAIcAA="
+    },
+    "brands/pidebypide-banner--about.png": {
+      "source": "https://www.apazgroup.com/img/800-400-pidebypide.png",
+      "page": "about",
+      "alt": "Pide By Pide Banner",
+      "size": 33319,
+      "variants": {
+        "webp": "brands/pidebypide-banner--about.webp",
+        "avif": "brands/pidebypide-banner--about.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACQAQCdASoMAAYAA8BgJZQAAuTqLAAA/vVHBVmHUoHDBWigL+JVgAFF5QjEXAAA"
+    },
+    "brands/bursaishakbey-banner--about.png": {
+      "source": "https://www.apazgroup.com/img/800-400-bursaishakbey.png",
+      "page": "about",
+      "alt": "Bursa İshakbey Banner",
+      "size": 28563,
+      "variants": {
+        "webp": "brands/bursaishakbey-banner--about.webp",
+        "avif": "brands/bursaishakbey-banner--about.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAAAwAQCdASoMAAYAA8BgJZwAA3AA/vPLbgbfPchbrwOaDAAA"
+    },
+    "policies/ucret-politikamiz--policy.png": {
+      "source": "https://www.apazgroup.com/img/ucret_politikamiz.png",
+      "page": "ucret-politikamiz",
+      "alt": "Compensation Policy Illustration",
+      "size": 379918,
+      "variants": {
+        "webp": "policies/ucret-politikamiz--policy.webp",
+        "avif": "policies/ucret-politikamiz--policy.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwAgCdASoMAAwAA8BgJbACdAYs3wkFBvCxgAD+0l7VtDXvIHdcLXfZzmxUFXjWdXNR+JT9kaeXxOjsZifYo5zy4gfO8YCz9UpWW8sP4IGPJw0xSn0ryrpes5IzxIuoqkAAAA=="
+    },
+    "policies/seffaflik--policy.png": {
+      "source": "https://www.apazgroup.com/img/seffaflik.png",
+      "page": "seffaflik-ve-hesap-verebilirlik",
+      "alt": "Transparency & Accountability Illustration",
+      "size": 961397,
+      "variants": {
+        "webp": "policies/seffaflik--policy.webp",
+        "avif": "policies/seffaflik--policy.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAgAA8BgJZwAAt0Gz3y94uAA/tg9HTrlBuuMZcjrHM8vEDtdW9ocxopPa1MXpIMz/fE+tzhym08AAAA="
+    },
+    "policies/performans-degerlendirmesi--policy.png": {
+      "source": "https://www.apazgroup.com/img/calisanlarimizin_performans_degerlendirmesi.png",
+      "page": "performans",
+      "alt": "Performance Evaluation Illustration",
+      "size": 223994,
+      "variants": {
+        "webp": "policies/performans-degerlendirmesi--policy.webp",
+        "avif": "policies/performans-degerlendirmesi--policy.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoMAAoAA8BgJagCsAEOQYiUnAD+9Ts0lnqTrVc5hjBZ+kQx7GpPPtkK0DhlX9GorTVYYoTDJYPjGlTiCrlrnqVuiZEJbx+KgMRDaRi7SwAAAA=="
+    },
+    "policies/calisan-olanaklari--policy.png": {
+      "source": "https://www.apazgroup.com/img/calisanlara_sunulan_olanaklar.png",
+      "page": "olanaklar",
+      "alt": "Employee Benefits Illustration",
+      "size": 259208,
+      "variants": {
+        "webp": "policies/calisan-olanaklari--policy.webp",
+        "avif": "policies/calisan-olanaklari--policy.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoMAAoAA8BgJYwCdAD1dCo54v6AAM45r6CJn11W2rX+oQvFh7mMG1eQ8nCiHyo/dlsokR9qxE+5s4M+ulNgefzS96V0M7W/AwehKveHDExA6oAA"
+    },
+    "policies/kurum-kulturumuz-ve-etik--policy.png": {
+      "source": "https://www.apazgroup.com/img/kurum_kulturumuz_ve_etik_politikamiz.png",
+      "page": "kurum-kulturumuz-ve-etik-degerlerimiz",
+      "alt": "Corporate Culture & Ethics Illustration",
+      "size": 323249,
+      "variants": {
+        "webp": "policies/kurum-kulturumuz-ve-etik--policy.webp",
+        "avif": "policies/kurum-kulturumuz-ve-etik--policy.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoMAAoAA8BgJZQCdADcoVOb0gAA/gA2lbRs1aC1h+B4jOqBrhlzHm3f46ou3GWQwUL0+HdbxUSWilqfCtNEvoiMRidFHCDsMAKI56Bi/gAAAA=="
+    },
+    "policies/kurumsal-sosyal-sorumluluk--policy.png": {
+      "source": "https://www.apazgroup.com/img/kurumsal_sosyal_sorumluluk.png",
+      "page": "kurumsal-sosyal-sorumluluk-politikasi",
+      "alt": "Corporate Social Responsibility Illustration",
+      "size": 595064,
+      "variants": {
+        "webp": "policies/kurumsal-sosyal-sorumluluk--policy.webp",
+        "avif": "policies/kurumsal-sosyal-sorumluluk--policy.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoMAAgAA8BgJQBOgB6Ux9tA1giAAP7a04ztsbLM4bIKm0CHOdOvSqEFmaQernm1JqMSlcdRP8GH0kMHctdHwAAA"
+    },
+    "policies/kariyer-egitim--policy.png": {
+      "source": "https://www.apazgroup.com/img/kariyer_ve_egitim_olanaklarimiz.png",
+      "page": "kariyer-ve-egitim-olanaklarimiz",
+      "alt": "Career & Training Opportunities Illustration",
+      "size": 283750,
+      "variants": {
+        "webp": "policies/kariyer-egitim--policy.webp",
+        "avif": "policies/kariyer-egitim--policy.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoMAAwAA8BgJaACdH8AE7Cpi5/c8AD+6FcX1Ro9NbM3fd5gXuMbc+fj6+efqXoHDzcwVTF0FTMsVyIwLWeiM4iAlAUp+F8OK/TnI2AA"
+    },
+    "policies/kalite-1--kalite.png": {
+      "source": "https://www.apazgroup.com/img/kalite_1.png",
+      "page": "kalite",
+      "alt": "Quality Document 1",
+      "size": 231687,
+      "variants": {
+        "webp": "policies/kalite-1--kalite.webp",
+        "avif": "policies/kalite-1--kalite.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoMAAgAA8BgJQBOgB6S9K7bAAD7hoDPBfu8tUOzgssHwa7tMWYOswPqJQ7KvPoBrH1xvw/xkV6RB18AAAA="
+    },
+    "policies/kalite-2--kalite.png": {
+      "source": "https://www.apazgroup.com/img/kalite_2.png",
+      "page": "kalite",
+      "alt": "Quality Document 2",
+      "size": 260185,
+      "variants": {
+        "webp": "policies/kalite-2--kalite.webp",
+        "avif": "policies/kalite-2--kalite.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoMAAgAA8BgJaACdAEDpXRtPVGAAP4JWIMkDsrdB24jm0ZlQGAtWZK2eRJ2mHrSsNsGPOIwnnFurdgeIUAAAA=="
+    },
+    "policies/kalite-3--kalite.png": {
+      "source": "https://www.apazgroup.com/img/kalite_3.png",
+      "page": "kalite",
+      "alt": "Quality Document 3",
+      "size": 273638,
+      "variants": {
+        "webp": "policies/kalite-3--kalite.webp",
+        "avif": "policies/kalite-3--kalite.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoMAAgAA8BgJQBOgCPSUaU4d/AA/jQskaUf2pdBzo/2ATS/7KtDHVu7ZG55eTm+o50RmX13UW4wEge89Iu0CdGoADIwAA=="
+    },
+    "policies/kalite-4--kalite.png": {
+      "source": "https://www.apazgroup.com/img/kalite_4.png",
+      "page": "kalite",
+      "alt": "Quality Document 4",
+      "size": 312723,
+      "variants": {
+        "webp": "policies/kalite-4--kalite.webp",
+        "avif": "policies/kalite-4--kalite.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoMAAgAA8BgJbACdAEWUSEWEQ+AAPqfEPbYgYPWZnCTHeQ7Ztc7bBBd62KlU1DeZwJWWiQtRh85+BRCZLcwSF72RkWFwAAA"
+    },
+    "policies/insan-kaynaklari-politikamiz--policy.png": {
+      "source": "https://www.apazgroup.com/img/insan-kaynaklari-politikamiz-500x600.png",
+      "page": "insan-kaynaklari-politikamiz",
+      "alt": "Human Resources Policy Illustration",
+      "size": 411562,
+      "variants": {
+        "webp": "policies/insan-kaynaklari-politikamiz--policy.webp",
+        "avif": "policies/insan-kaynaklari-politikamiz--policy.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACQAgCdASoMAA8AA8BgJZQC7B2gDZFMsEPV45XyAAD+4XhL72nQDbupw8mc0E8TpJ4tP2ZXRkTsQnju2E9L7g1DJt1H9djE4/sRNqfY/+HxC6LArE+/zzr5k1unVK4Eb2O3mk5AFv7SfNi6mG/QoPWAAAA="
+    },
+    "hr/ik-apaz--bize-katilin.jpg": {
+      "source": "https://www.apazgroup.com/img/ik_apaz.jpg",
+      "page": "bize-katilin",
+      "alt": "Join Us APaz Image",
+      "size": 8952,
+      "variants": {
+        "webp": "hr/ik-apaz--bize-katilin.webp",
+        "avif": "hr/ik-apaz--bize-katilin.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAAAwAQCdASoMAAcAA8BgJaQAA3AA/vOZzaWneS3OxG3CC9Sqe0AAAA=="
+    },
+    "hr/ik-baydoner--bize-katilin.jpg": {
+      "source": "https://www.apazgroup.com/img/ik_baydoner.jpg",
+      "page": "bize-katilin",
+      "alt": "Join Us Baydöner Image",
+      "size": 13064,
+      "variants": {
+        "webp": "hr/ik-baydoner--bize-katilin.webp",
+        "avif": "hr/ik-baydoner--bize-katilin.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoMAAcAA8BgJQBOgCKUE9L7QAD+7j+JcLwuaXI4UOgxYFpTD2Wxhpfj1ZX1QVFiGobZCir78BXFreaagAA="
+    },
+    "hr/ik-pidebypide--bize-katilin.jpg": {
+      "source": "https://www.apazgroup.com/img/ik_pidebypide.jpg",
+      "page": "bize-katilin",
+      "alt": "Join Us Pide By Pide Image",
+      "size": 15829,
+      "variants": {
+        "webp": "hr/ik-pidebypide--bize-katilin.webp",
+        "avif": "hr/ik-pidebypide--bize-katilin.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoMAAcAA8BgJQBOgCKUKZKyAAD+65E5KmUh/njtrhuPRw6dl7cyUzJG+MZalCNkQnfD7PmJ2dhmT4AA"
+    },
+    "hr/ik-bursaishakbey--bize-katilin.jpg": {
+      "source": "https://www.apazgroup.com/img/ik_bursaishakbey.jpg",
+      "page": "bize-katilin",
+      "alt": "Join Us Bursa İshakbey Image",
+      "size": 10328,
+      "variants": {
+        "webp": "hr/ik-bursaishakbey--bize-katilin.webp",
+        "avif": "hr/ik-bursaishakbey--bize-katilin.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACQAQCdASoMAAcAA8BgJZQCxC8AHIAA/vORCUU4YyXzHk8c0RExqg/xCBAAAA=="
+    },
+    "team/levent-yilmaz--yonetim.jpg": {
+      "source": "https://www.apazgroup.com/img/levent_yilmaz.jpg",
+      "page": "yonetim",
+      "alt": "Levent Yılmaz Portrait",
+      "size": 83860,
+      "variants": {
+        "webp": "team/levent-yilmaz--yonetim.webp",
+        "avif": "team/levent-yilmaz--yonetim.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoMAAoAA8BgJbACdADdcyNVV+0AAP5tIFTHdKfbrsLOr+WMjfkb3sVrGep1feYUZeYsg025+3mPY8SljuvUxx+J3kDbEMDVM2V775eRchjszxsmzAAAAA=="
+    },
+    "team/feridun-tuncer--yonetim.jpg": {
+      "source": "https://www.apazgroup.com/img/feridun_tuncer.jpg",
+      "page": "yonetim",
+      "alt": "Feridun Tuncer Portrait",
+      "size": 118369,
+      "variants": {
+        "webp": "team/feridun-tuncer--yonetim.webp",
+        "avif": "team/feridun-tuncer--yonetim.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQAgCdASoMAAoAA8BgJbACdAEYG4JjNRTwAP64MJcslVGGIxSLdg2AtNFBzAI7FeSc+hAeoyls+S/tGourFhoAtDtFeb0EXV5c6QNYMn2Z33AgKpbswRG821nOC/sexXGjI7Ih1INZ3JiP4AA="
+    },
+    "team/bulent-polat--yonetim.jpg": {
+      "source": "https://www.apazgroup.com/img/bulent_polat.jpg",
+      "page": "yonetim",
+      "alt": "Bülent Polat Portrait",
+      "size": 132682,
+      "variants": {
+        "webp": "team/bulent-polat--yonetim.webp",
+        "avif": "team/bulent-polat--yonetim.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoMAAoAA8BgJbACdAEedLz2YUSIAPgzAik4M0acTtOE+sLm79bck73E2p7Ib19gSU9BlPfMqjBxush7T9aJH5gV4vDOH+8bfuHsPd31QAA="
+    },
+    "news/haber-1-thumb-square--haberler.png": {
+      "source": "https://www.apazgroup.com/img/244x244-haber-1.png",
+      "page": "haberler",
+      "alt": "News item 1 (square)",
+      "size": 104027,
+      "variants": {
+        "webp": "news/haber-1-thumb-square--haberler.webp",
+        "avif": "news/haber-1-thumb-square--haberler.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAQCdASoMAAwAA8BgJbACdADz4UH3o4AA/tYgjItToG+d9JDHYQ9ODkx0CV8u4Qayb6EVC238vcyx5y0I+krsQpEF57l5IJcGj728GVExF93IuN2+g9A+K2+4gPeKyAAAAA=="
+    },
+    "news/haber-2-thumb-square--haberler.png": {
+      "source": "https://www.apazgroup.com/img/haber-2-244x244.png",
+      "page": "haberler",
+      "alt": "News item 2 (square)",
+      "size": 102075,
+      "variants": {
+        "webp": "news/haber-2-thumb-square--haberler.webp",
+        "avif": "news/haber-2-thumb-square--haberler.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABwAgCdASoMAAwAA8BgJZgCdAYt9baQlZePzlAAAOJ8KsPvWoJjeLVqclTRDCqSkMzuVcJIbI2PGViGNYalUNCZl72acGnC39VNLEzpxU8bKZ7jSS50PIAAAAA="
+    },
+    "news/haber-3-thumb-square--haberler.png": {
+      "source": "https://www.apazgroup.com/img/haber-3-244x244.png",
+      "page": "haberler",
+      "alt": "News item 3 (square)",
+      "size": 95176,
+      "variants": {
+        "webp": "news/haber-3-thumb-square--haberler.webp",
+        "avif": "news/haber-3-thumb-square--haberler.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAQCdASoMAAwAA8BgJZwAAptpiRSAAP5hao5Ckn1LLcsqep8NC+MfP/8/Iuq0hGFfFn/Nx8n875P6mHHnoD3hqLv1LJR7s/AGeRQA"
+    },
+    "news/haber-4-thumb-square--haberler.png": {
+      "source": "https://www.apazgroup.com/img/haber-4-244x244.png",
+      "page": "haberler",
+      "alt": "News item 4 (square)",
+      "size": 123907,
+      "variants": {
+        "webp": "news/haber-4-thumb-square--haberler.webp",
+        "avif": "news/haber-4-thumb-square--haberler.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoMAAwAA8BgJYgCdADz2ysajYAAzXA/U0W/+8JxfU9YwmXg+6x1NzVOR3UV9eXOKkVRyogRv41QT6C3wsQM2XZCYqR5/n8akaXJaQiahJMjAtoAAAA="
+    },
+    "news/haber-1-thumb-wide--haberler.png": {
+      "source": "https://www.apazgroup.com/img/420x220-haber-1.png",
+      "page": "haberler",
+      "alt": "News item 1 (wide)",
+      "size": 154292,
+      "variants": {
+        "webp": "news/haber-1-thumb-wide--haberler.webp",
+        "avif": "news/haber-1-thumb-wide--haberler.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoMAAYAA8BgJbACdDiMwQp3CbyAAP63Cp4vev9+TbQYj8heRVHOhfgidauUqKc66HV7RLX+eGJwv96UinxmTfQGnZMpcKFVYrb79/YRDDgOf2AA"
+    },
+    "news/haber-2-thumb-wide--haberler.png": {
+      "source": "https://www.apazgroup.com/img/haber-2-420x220.png",
+      "page": "haberler",
+      "alt": "News item 2 (wide)",
+      "size": 154496,
+      "variants": {
+        "webp": "news/haber-2-thumb-wide--haberler.webp",
+        "avif": "news/haber-2-thumb-wide--haberler.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoMAAYAA8BgJaACdADdYj5hk8AA/LTaVqxxYbktLi1FK0yXKnykjStMT2+hA0zUDiqbkz5edv31yAAA"
+    },
+    "news/haber-3-thumb-wide--haberler.png": {
+      "source": "https://www.apazgroup.com/img/haber-3-420x220.png",
+      "page": "haberler",
+      "alt": "News item 3 (wide)",
+      "size": 127427,
+      "variants": {
+        "webp": "news/haber-3-thumb-wide--haberler.webp",
+        "avif": "news/haber-3-thumb-wide--haberler.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoMAAYAA8BgJZQCdADZochLYAD+4na9PVYicFie7pOz6fM5vN2odVlBq+HdQAaAkA2eOkAA"
+    },
+    "news/haber-4-thumb-wide--haberler.png": {
+      "source": "https://www.apazgroup.com/img/haber-4-420x220.png",
+      "page": "haberler",
+      "alt": "News item 4 (wide)",
+      "size": 177135,
+      "variants": {
+        "webp": "news/haber-4-thumb-wide--haberler.webp",
+        "avif": "news/haber-4-thumb-wide--haberler.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoMAAYAA8BgJZgCdAELWCjfL0gA9hG+6ktJvGz+9B9b42HP/To725yAx5LfyijuMuOhMEyq46JazyImUyiTAAAA"
+    },
+    "cuisine/iskender-herkesin-hakki--baydoner.png": {
+      "source": "https://www.apazgroup.com/img/iskender_yemek_herkesin_hakki.png",
+      "page": "baydoner",
+      "alt": "İskender everyone deserves quality visual",
+      "size": 271221,
+      "variants": {
+        "webp": "cuisine/iskender-herkesin-hakki--baydoner.webp",
+        "avif": "cuisine/iskender-herkesin-hakki--baydoner.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAgCdASoMAAYAA8BgJbACdAEPCSXWAXwAAPfZOwy84mB0ojbL3PlI3xe3Q5Lx1MNK2VmKX5SK7OaO8aiR+q2N9eCMAAAA"
+    },
+    "cuisine/coss-iskender--baydoner.png": {
+      "source": "https://www.apazgroup.com/img/coss_iskender.png",
+      "page": "baydoner",
+      "alt": "Coss İskender Product Visual",
+      "size": 276557,
+      "variants": {
+        "webp": "cuisine/coss-iskender--baydoner.webp",
+        "avif": "cuisine/coss-iskender--baydoner.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoMAAYAA8BgJbACdAEWufOl72xgAM43reugWdX1rkwTp3mPtmtcLW1hlr5OPn0RDcKLRTVwSR/4NyNf6MXf0ptgs4H+UiLiyNTNOgAA"
+    },
+    "brands/baydoner-about-1--baydoner.jpg": {
+      "source": "https://www.apazgroup.com/img/baydoner-hakkinda-1.jpg",
+      "page": "baydoner",
+      "alt": "Baydöner About Page Image",
+      "size": 73930,
+      "variants": {
+        "webp": "brands/baydoner-about-1--baydoner.webp",
+        "avif": "brands/baydoner-about-1--baydoner.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoMAAQAA8BgJZgCdADc+C5l0AD+wlIXD1iqoHas72dJN8X/FygiW3WW2GJIBTciU25XAAAA"
+    },
+    "brands/baydoner-logo-alt--franchising.png": {
+      "source": "https://www.apazgroup.com/img/baydoner_logo.png",
+      "page": "franchising",
+      "alt": "Baydöner Alternate Logo",
+      "size": 12906,
+      "variants": {
+        "webp": "brands/baydoner-logo-alt--franchising.webp",
+        "avif": "brands/baydoner-logo-alt--franchising.avif"
+      }
+    },
+    "brands/pidebypide-logo-alt--franchising.png": {
+      "source": "https://www.apazgroup.com/img/pidebypide_logo.png",
+      "page": "franchising",
+      "alt": "Pide By Pide Alternate Logo",
+      "size": 7695,
+      "variants": {
+        "webp": "brands/pidebypide-logo-alt--franchising.webp",
+        "avif": "brands/pidebypide-logo-alt--franchising.avif"
+      }
+    },
+    "brands/bursaishakbey-logo-alt--franchising.png": {
+      "source": "https://www.apazgroup.com/img/bursa_ishakbey_logo.png",
+      "page": "franchising",
+      "alt": "Bursa İshakbey Alternate Logo",
+      "size": 32511,
+      "variants": {
+        "webp": "brands/bursaishakbey-logo-alt--franchising.webp",
+        "avif": "brands/bursaishakbey-logo-alt--franchising.avif"
+      },
+      "blurDataURL": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAABwAQCdASoMAAIAA8BgJaACdAFAAAD+8OaDmFDyWMg+fr/h3c3XrWVZMYEAAA=="
+    }
+  }
+}

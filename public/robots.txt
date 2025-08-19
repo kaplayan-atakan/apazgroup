@@ -1,0 +1,10 @@
+# https://www.apazgroup.com robots.txt
+User-agent: *
+Allow: /
+
+# Disallow placeholder pages
+Disallow: */kisisel-verilerin-korunmasi
+Disallow: */cerez-politikasi
+
+# Sitemaps
+Sitemap: https://www.apazgroup.com/sitemap.xml
