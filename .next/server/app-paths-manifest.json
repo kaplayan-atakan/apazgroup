@@ -1,1 +1,12 @@
-{}
+{
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/(placeholders)/kisisel-verilerin-korunmasi/page": "app/[locale]/(placeholders)/kisisel-verilerin-korunmasi/page.js",
+  "/[locale]/(placeholders)/cerez-politikasi/page": "app/[locale]/(placeholders)/cerez-politikasi/page.js",
+  "/[locale]/[slug]/page": "app/[locale]/[slug]/page.js",
+  "/[locale]/franchising/page": "app/[locale]/franchising/page.js",
+  "/[locale]/(main)/markalarimiz/baydoner/page": "app/[locale]/(main)/markalarimiz/baydoner/page.js",
+  "/[locale]/(main)/markalarimiz/pide-by-pide/page": "app/[locale]/(main)/markalarimiz/pide-by-pide/page.js",
+  "/[locale]/(main)/markalarimiz/bursa-ishakbey/page": "app/[locale]/(main)/markalarimiz/bursa-ishakbey/page.js",
+  "/[locale]/kariyer/insan-kaynaklari-politikamiz/page": "app/[locale]/kariyer/insan-kaynaklari-politikamiz/page.js",
+  "/[locale]/iletisim/page": "app/[locale]/iletisim/page.js"
+}

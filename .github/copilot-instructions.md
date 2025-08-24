@@ -308,3 +308,76 @@ Kalite Kriterleri:
 - Devam Eden:
   - Renk sisteminin tutarlı kullanımı
   - Ek bileşenlerin erişilebilirlik iyileştirmeleri
+
+## 28. Ara Sprintler (Revizyon & İçerik Doldurma)
+
+Bu bölüm, legacy projeden (HTML) içerik ve tasarım referansı alınarak, mevcut Next.js mimarisini bozmadan sayfa revizyonları ve içerik doldurma sürecini tanımlar.
+
+- Sprint R1 — İçerik Revizyonu ve Doldurma
+  - Kapsam: TR/EN markdown sayfalarının legacy HTML kaynaklarından birebir içerikle doldurulması; alt metinler, linkler, tablo/listeler; kırık linklerin düzeltilmesi (hedef URL aynıysa).
+  - Kabul Kriterleri: İçerik paritesi %100 (ekleme/çıkarma yok), kırık link=0, alt metin eksikliği=0, build/lint/test/a11y-ci PASS.
+
+- Sprint R2 — Tasarım İyileştirme
+  - Kapsam: Legacy sayfa düzenlerinin mevcut bileşen seti ve Tailwind ile yaklaştırılması; tipografi/spacing iyileştirmeleri; kontrast (WCAG AA) ve görsel hiyerarşi.
+  - Kabul Kriterleri: Lighthouse A11y ≥ 95, kontrast ihlali (kritik)=0, build/lint/test PASS.
+
+Durum Notu: Sprint 8 geçici olarak On Hold; R1 ve R2 tamamlandıktan sonra performans ve a11y iyileştirmelerine geri dönülecek.
+
+## 29. Legacy HTML'den İçerik ve Tasarım Aktarım Yöntemi
+
+Amaç: Kullanıcı tarafından sırayla paylaşılacak legacy HTML dosyalarından içerik (metin/görsel) ve temel tasarım hiyerarşisini alıp, mevcut proje yapısını bozmadan sayfalara entegre etmek.
+
+Kısıtlar (mutlak):
+- Proje yapısını bozma: Dosya/dizin yapısı, bileşen mimarisi, teknolojik kararlar (Next.js App Router, TypeScript, Tailwind, Framer Motion, Headless UI yoksa ekleme) korunur.
+- İçerik birebir: Legacy HTML’deki metin içeriği birebir alınır; ekleme/çıkarma/yeniden yazım yapılmaz. Başlık seviyeleri, liste öğeleri, tablo içerikleri korunur.
+- Modernizasyon sınırı: Tasarım referansı alınır ancak Bootstrap/jQuery veya legacy eklentiler eklenmez. Mevcut bileşenlerle (ContentArticle, HeroSimple, BrandTeaser, vb.) ve Tailwind ile karşılığı kurulur.
+
+Girdi/Çıktı “mini sözleşme”:
+- Girdi: Legacy HTML dosyası (tek sayfa), hedef locale (tr|en), önerilen slug (kebab-case), varsa görsel dosyalar veya yolları.
+- Çıktı: `src/content/{locale}/pages/{slug}.md` (frontmatter + markdown gövde), gerekli public asset’ler (WebP/AVIF mevcut pipeline ile), gerekli blur map güncellemesi, gerekiyorsa basit section yerleşimi (HeroSimple/brandDetail, vb.).
+
+Adım Adım Uygulama:
+1) Analiz
+  - Legacy HTML’den: başlık hiyerarşisi (h1–h3), paragraflar, listeler, tablolar, alıntılar, linkler, görsel referanslarını çıkar.
+  - Sayfa slug’ını belirle: undersore → kebab-case (örn. `insan_kaynaklari_politikamiz` → `insan-kaynaklari-politikamiz`).
+
+2) İçeriği Markdown’a dönüştürme (ekleme/çıkarma yapmadan)
+  - Frontmatter: `title`, `description` (varsa), opsiyonel `seo.title`/`seo.description` doğrudan HTML’den.
+  - Gövde: Hiyerarşi aynı kalacak şekilde markdown’a aktar. Link metinleri ve href birebir.
+  - Dosyayı `src/content/{locale}/pages/{slug}.md` altına ekle (EN varsa aynı slug altında çeviri sürümü, aksi halde TR fallback geçerli).
+
+3) Görsel/Asset aktarımı
+  - Görseller `public/**` altında mevcut klasör hiyerarşisine yerleştirilir (ör: `/hero`, `/brands`, `/hr`, vb.).
+  - `scripts/fetch-legacy-assets.mjs` veya manuel kopya; gerekiyorsa `src/lib/asset-blur-map.json` içine blurDataURL eklenir.
+  - next/image kullanımında: uygun `sizes` değerleri (grid/hero örnekleri ContentArticle ve franchising sayfasında referans alınabilir), `alt` metinleri birebir.
+
+4) Sayfa bağlama
+  - ContentArticle ile render edilen dinamik rota zaten mevcut (`[locale]/[slug]`). Statik özel sayfalar gerekiyorsa `src/app/[locale]/{slug}/page.tsx` oluşturulup ContentArticle çağrılır.
+  - Navigasyona ekleme gerekiyorsa `src/navigation.config.ts` üzerinden (onay sonrası) yapılır.
+
+5) Tasarım uyarlaması (sadece mevcut bileşenlerle)
+  - Legacy düzen, mevcut bileşen setiyle yaklaşık olarak yeniden kurulur: `HeroSimple`, `brandDetail`, grid/split/list section’ları.
+  - Bootstrap sınıfları → Tailwind karşılıkları; inline style → Tailwind utilities.
+  - İkonlar → mevcut `Icon` bileşeni ile eşleştir.
+
+6) SEO & A11y
+  - `generateMetadata` ile başlık/açıklama; alternates/canonical otomatik şablonla.
+  - Dış linklerde `rel="noopener noreferrer"`, başlık seviyeleri korunur; form kontrollerinde label ilişkisi.
+
+7) Kalite Kontrolleri
+  - `npm run lint`, `npm run typecheck`, `npm test`.
+  - `npm run audit:ci` (a11y + motion).
+
+8) Versiyonlama & PR
+  - Branch adı: `rev/{slug}` (örn. `rev/insan-kaynaklari-politikamiz`).
+  - Commit mesajı: `content({locale}/{slug}): import from legacy HTML (verbatim)`.
+  - PR hedefi: `main` (varsayılan ana dal). Açıklamaya: kaynak HTML adı/konumu ve içerik paritesi iddiası eklenir.
+
+Kenar Durumlar
+- Legacy HTML’deki script/tablo/inline svg özellikleri modernize edilir; davranışsal eklentiler (carousel, popup) ilk aşamada dahil edilmez, görsel eşdeğer yer tutucu kullanılır.
+- Bulunamayan görseller için geçici placeholder + TODO notu; sonradan asset pipeline ile tamamlanır.
+
+Kabul Kriterleri (Sayfa Bazında)
+- İçerik paritesi: 100% (metin ve sıra değişmeden).
+- Görsel/alt metin eşleşmeleri tamam.
+- Build/Lint/Typecheck/Test/A11y CI: PASS.

@@ -29,7 +29,8 @@ const map: Record<string, PageAssetItem[]> = {
   yonetim: [
     { src: '/team/levent-yilmaz--yonetim.jpg', alt: 'Levent Yılmaz', kind: 'person', title: 'Levent Yılmaz', subtitle: 'Yönetim' },
     { src: '/team/feridun-tuncer--yonetim.jpg', alt: 'Feridun Tuncer', kind: 'person', title: 'Feridun Tuncer', subtitle: 'Yönetim' },
-    { src: '/team/bulent-polat--yonetim.jpg', alt: 'Bülent Polat', kind: 'person', title: 'Bülent Polat', subtitle: 'Yönetim' }
+  { src: '/team/bulent-polat--yonetim.jpg', alt: 'Bülent Polat', kind: 'person', title: 'Bülent Polat', subtitle: 'Yönetim' },
+  { src: '/team/celik_basdemir.jpg', alt: 'Çelik Başdemir', kind: 'person', title: 'Çelik Başdemir', subtitle: 'Yönetim' }
   ]
 };
 

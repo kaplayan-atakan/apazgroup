@@ -24,8 +24,8 @@
     "phone": "Phone",
     "position": "Position (optional)",
     "message": "Message",
-    "cv": "CV (disabled for now)",
-    "cv_hint": "File upload is disabled in the first release.",
+  "cv": "CV",
+  "cv_hint": "PDF, DOC or DOCX only, max 5MB.",
     "consent": "I have read and agree to the KVKK notice",
     "submit": "Submit",
     "submitting": "Submitting...",
@@ -43,7 +43,10 @@
       "submit_failed": "Submission failed.",
       "network_error": "Network error. Please try again.",
       "rate_limited": "Too many requests. Please try again later.",
-      "invalid_json": "Invalid request data."
+  "invalid_json": "Invalid request data.",
+  "max_400": "Must be at most 400 characters.",
+  "unsupported_file_type": "Unsupported file type. Please upload PDF, DOC or DOCX.",
+  "file_too_large": "File size must not exceed 5MB."
     }
   }
 }

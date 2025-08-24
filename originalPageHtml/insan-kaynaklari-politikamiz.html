@@ -1,0 +1,113 @@
+<!-- 
+İnsan Kaynakları Politikamız sayfası
+- İK politikasının tanıtımı
+- Politika maddeleri
+- Görseller
+-->
+<Layout>
+  <HeroSimple
+    title="İnsan Kaynakları Politikamız"
+    bgImage="/img/career-bg.jpg"
+  />
+  
+  <section className="py-16">
+    <div className="container mx-auto px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <img 
+            src="/img/insan-kaynaklari-politikamiz-500x600.png"
+            alt="İnsan Kaynakları Politikamız" 
+            className="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+        
+        <div className="prose prose-lg max-w-none">
+          <h2 className="text-3xl font-bold mb-6">İnsan Kaynakları Politikamız</h2>
+          
+          <p>
+            Apaz Group olarak, İnsan Kaynakları politikamızın temelinde "insana saygı" 
+            ve "sürekli gelişim" ilkeleri bulunmaktadır. Çalışanlarımızın potansiyellerini
+            en iyi şekilde değerlendirmelerini sağlayacak bir çalışma ortamı oluşturmayı
+            amaçlıyoruz.
+          </p>
+          
+          <h3 className="text-2xl font-bold mt-8 mb-4">Politikamızın Temel İlkeleri</h3>
+          
+          <ul>
+            <li>
+              <strong>Fırsat Eşitliği:</strong> Tüm çalışanlarımıza eşit fırsatlar sunmak,
+              cinsiyet, yaş, din, dil, ırk gibi farklılıklar gözetmeksizin adil bir çalışma
+              ortamı sağlamak.
+            </li>
+            <li>
+              <strong>Yetkinlik Bazlı İşe Alım:</strong> Doğru işe doğru kişiyi yerleştirmek
+              için yetkinlik bazlı değerlendirme sistemleri kullanmak.
+            </li>
+            <li>
+              <strong>Sürekli Eğitim ve Gelişim:</strong> Çalışanlarımızın mesleki ve kişisel
+              gelişimlerini destekleyici eğitim programları düzenlemek.
+            </li>
+            <li>
+              <strong>Performans Değerlendirme:</strong> Objektif ve şeffaf performans değerlendirme
+              sistemleri ile çalışanlarımızın kariyer gelişimini desteklemek.
+            </li>
+            <li>
+              <strong>İş-Yaşam Dengesi:</strong> Çalışanlarımızın iş ve özel yaşam dengesini
+              gözeterek, motivasyonlarını ve verimliliğini artırmak.
+            </li>
+            <li>
+              <strong>İç İletişim:</strong> Açık iletişim kanalları ile çalışanlarımızın görüş
+              ve önerilerini dikkate almak.
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div className="mt-16 prose prose-lg max-w-none">
+        <h3 className="text-2xl font-bold mb-6">İnsan Kaynakları Süreçlerimiz</h3>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <ProcessCard
+            icon="users"
+            title="İşe Alım ve Oryantasyon"
+            description="Yetkinlik bazlı işe alım süreçleri ve kapsamlı oryantasyon programları ile çalışanlarımızın adaptasyonunu hızlandırıyoruz."
+          />
+          
+          <ProcessCard
+            icon="academic-cap"
+            title="Eğitim ve Gelişim"
+            description="Sürekli öğrenme kültürü çerçevesinde çalışanlarımızın mesleki ve kişisel gelişimlerini destekliyoruz."
+          />
+          
+          <ProcessCard
+            icon="chart-bar"
+            title="Performans Yönetimi"
+            description="Objektif kriterlere dayalı performans değerlendirme sistemimizle, çalışanlarımızın kariyer gelişimini planlıyoruz."
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section className="py-16 bg-gray-50">
+    <div className="container mx-auto px-4">
+      <SectionTitle title="Kariyer Fırsatları" />
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <LinkCard 
+          title="Açık Pozisyonlar"
+          description="Şirketimizde ve markalarımızda açık olan pozisyonları inceleyebilir ve başvuruda bulunabilirsiniz."
+          icon="briefcase"
+          href="/kariyer/bize-katilin"
+        />
+        
+        <LinkCard 
+          title="Başvuru Formu"
+          description="Açık pozisyonlarımız için online başvuru formunu doldurarak kariyerinize Apaz Group'ta başlayabilirsiniz."
+          icon="document-text"
+          href="/kariyer/basvuru-formu"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

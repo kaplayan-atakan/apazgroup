@@ -1,0 +1,73 @@
+<?PHP include("header.php"); ?>
+
+
+    <section class="standart-page py-5">
+        <div class="container">
+            <div class="s_blog_text_inner video_s_blog pb-0">
+                <div class="blog_main_text">
+                    <h5>Apaz Group Hakkında</h5>
+
+                    <div class="row">
+                        <div class="col-md-6 py-2">
+                            <p>
+                                <img class="img-fluid my-2" src="img/bulent_polat_haber1.png"><br>
+                            </p>
+                        </div>
+                        <div class="col-md-6 py-2">
+                            <p>
+                                <br>
+                                Şu an mevcut franchise şube sayısı?<br>
+                                PidebyPide ile hızlı bir büyüme sürecindeyiz. Mevcut anlaşma yaptığımız 4 nokta var. Franchise verdiğimiz bir dönemdeyiz. Büyümeyi franchise ağırlıklı planladığımız için Türkiye genelinde çok sayıda franchise şube açacağız. Gelen talepleri değerlendiriyoruz. PidebyPide Franchise Modeli, kendi işini kurmak isteyen, kısa sürede karlı bir yatırım fırsatı arayan, gelişimin bir parçası olmak isteyen girişimciler için oluşturuldu. Düşük yatırım maliyeti sayesinde yatırımcılara oldukça cazip fırsatlar sunuyor.
+                                Bursa İshakbey ile büyüme planımız doğrultusunda yatırımlarımıza her geçen gün yenilerini ekliyoruz. Yeni şubelerimizi hayata geçirirken franchise adaylarına da kapılarımızı açıyoruz.
+                                <br><br>
+                                Bu yıl franchise şube açma hedefiniz neydi? <br>
+                                Koronovirüs ile birlikte bu sayıyı ne şekilde güncellediniz?<br>
+                                PidebyPide için; 2020 sonunda yaklaşık 20 franchise şubeye ulaşmayı planlıyoruz. Bu kapsamda franchise adaylarına iş birliği yapmak için kapılarımızı açıyoruz. PidebyPide için toplam şube sayımızı yılsonunda 61 olarak planladık. Hızlı bir şekilde büyümek başlıca hedeflerimiz arasında yer alıyor. Koronavirüs, hedefimizde bir değişiklik yapmamıza sebep olmadı. Koronavirüs sonrası yeni dünya koşullarında yeni iş modellerimizle franchise olarak büyümeye devam edeceğiz.
+                                Bursa İshakbey için; markanın ne kadar doğru bir yatırım örneği olduğu Koronavirüs ile birlikte tekrar tescillenmiş oldu. Bu dönemde oluşan akımların etkisiyle yerel markaların önemi bir kez daha artmış oldu. Apaz Group, yıllar boyunca oluşan deneyimiyle birlikte geleneksel ürünümüz olan İskender’i; kurguladığı self servis modeliyle küçük m2’ li alanlara sığdırarak inşaat, ekipman, işçilik vb yatırım maliyetlerini düşürdü. Bu modele bağlı olarak satış fiyatlarını uygun seviyelerde tutmayı başaran Bursa İshakbey markamız ile bir kez daha yatırımcıların dikkatini çekeceğimize inanıyoruz. Caddelerde oluşacak düşük kiralama maliyetlerini fırsat bilerek özellikle araç trafiğine kapalı alanlarda nokta sayımızı artırmak markamızın hedefleri arasında yer alıyor. Önümüzdeki dönemde Türkiye’nin her köşesinde açacağımız restoranlarımızla Bursa İshakbey ile yakaladığımız büyüme ivmemizi sürdüreceğiz. Türkiye genelinde 13 ilde 19 şube ile hizmet veren Bursa İshakbey, yatırımlarını kesintisiz bir şekilde sürdürürken 2021 yılında şube sayısını iki katına çıkarmayı hedefliyor.
+                                <br><br>
+                                <img class="img-fluid my-2" src="img/800-400-pidebypide.png"><br>
+                                Franchise şartlarınızda güncellemeler yapacak mısınız? (Kampanya – indirim vs…)
+                                Bayilerde aranan özellikler;
+                                PidebyPide Franchise Modeli, AVM ve caddelerde büyüme stratejisi üzerine kurulu. Özellikle cadde mağazalarında yaya trafiği yüksek lokasyonlara öncelik veriyoruz. AVM’lerin yemek katında, minimum 50 m2 büyüklüğündeki alanları, cadde lokasyonlarında ise minimum 100-120 m2’lik alanları tercih ediyoruz. PidebyPide, bulunduğu bölgenin en işlek noktalarında müdavimleriyle buluşuyor. Cadde mağazalarımızda paket servis uygulaması da sunuyoruz. PidebyPide markamız ile bizimle aynı yolda yürüyen franchise’larımızı her zaman ailenin bir parçası olarak gördük.  Ailemiz büyürken hayalimize ortak olan herkese, bu zor günlerde yeni şartlar sunmayı planlıyoruz.
+                                Bursa İshakbey restoranlarımız AVM’ lerin yemek katında 50 – 80 m2, caddelerde ise 100-120 m2 aralığındaki alanlarda hizmet verecek şekilde tasarlandı. Markanın geleneksel ürünü uygun fiyata verme stratejisini, paket servis kanalına da taşıyarak satış kanalı sayısını artırmayı planlıyoruz. Oluşturduğumuz model ile kendisini bu hedeflere uygun gören, yeniliklere, gelişime ve geliştirmeye açık, yatırdığı paranın geri dönüşümünü hızlandırmaya katkı sağlayacak girişimcilerle iş birliği yapmayı hedefliyoruz.
+                                <br><br>
+
+                                <img class="img-fluid my-2" src="img/800-400-bursaishakbey.png"><br>
+
+                                Franchise şubelerinize bu dönemde ne gibi destekler vereceksiniz?
+                                Franchise şubelerimize restoranın açılış hazırlıkları süresince ve açılışın ilk gününden itibaren yoğun destek hizmetleri sağlıyoruz. Yeni ürün inovasyonu, pazarlama, satın alma, lojistik, eğitim, insan kaynakları, operasyon, kalite kontrol gibi konular, işletmecilerimize destek verdiğimiz alanlar arasında yer alıyor.
+                                PidebyPide ile her zaman markamıza yatırım yapmış olan franchise’larımızın yanında olduk. Tüm Türkiye’de Koronavirüs ile mücadele ettiğimiz bu dönemde aynı milli dayanışmayı markamız bünyesinde de devam ettiriyoruz. Franchise’larımızın cirosundan alınan %5’lik royalty oranını bu süreçte almıyoruz.
+                                Bursa İshakbey markamız için ise %5 royalty oranı belirledik.
+                                Her iki markamız için de ilk 20 franchise şubesinden sözleşme boyunca isim hakkı bedeli   alınmayacak. Ayrıca PidebyPide ve Bursa İshakbey markalarımız için, franchise adaylarının dikkatini çekecek şekilde yatırım maliyetlerinin düşürülerek zamana yayılması seçeneklerine dair alternatif çalışmalarımız bulunmaktadır.
+                                <br><br>
+                                Franchise giriş bedeli? Toplam yatırım maliyeti?<br>
+                                -Franchise giriş bedeli?<br>
+                                PidebyPide franchise planımızda AVM ve cadde mağazaları olmak üzere, iki model bulunuyor. İsim hakkı bedeli bu döneme özel olarak 75.000 TL + KDV’dir.
+                                <br><br>
+
+                                Bülent POLAT
+                                Apaz Group Yönetim Kurulu Üyesi
+                                <br><br>
+                                Bursa İshakbey markasına yatırım yapmak isteyen girişimciler için 150.000 TL+KDV isim hakkı bedeli bulunuyor.<br>
+                                <br><br>
+                                -Toplam yatırım maliyeti?
+                                Lokasyon ve m2’ye göre değişiyor. Restoran kurulum maliyeti lokasyonlara ve metrekare büyüklüğüne göre farklılık gösterdiğinden dolayı proje aşamasında fiyatlandırılıyor.
+                                <br><br>
+                                Önümüzdeki yıla ilişkin büyüme planı?
+                                PidebyPide ve Bursa İshakbey markalarımızı franchise yatırımcıları ile büyütmeye devam edeceğiz.
+                                <br><br>
+
+
+
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<?PHP include("footer.php"); ?>

@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-type IconName = 'menu' | 'close' | 'arrow-up' | 'play' | 'mouse' | 'linkedin' | 'x' | 'instagram' | 'chevron-up' | 'chevron-down';
+type IconName = 'menu' | 'close' | 'arrow-up' | 'play' | 'mouse' | 'linkedin' | 'x' | 'instagram' | 'chevron-up' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'users' | 'academic-cap' | 'chart-bar' | 'briefcase' | 'document-text';
 
 interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;
@@ -84,6 +84,59 @@ export function Icon({ name, size = 20, className = '', ...props }: IconProps) {
       return (
         <svg {...common} {...props}>
           <path d="M5 8L10 13L15 8" />
+        </svg>
+      );
+    case 'chevron-left':
+      return (
+        <svg {...common} {...props}>
+          <path d="M12 5L7 10l5 5" />
+        </svg>
+      );
+    case 'chevron-right':
+      return (
+        <svg {...common} {...props}>
+          <path d="M8 5l5 5-5 5" />
+        </svg>
+      );
+    case 'users':
+      return (
+        <svg {...common} {...props} viewBox="0 0 24 24">
+          <path d="M16 19v-1a4 4 0 00-4-4H8a4 4 0 00-4 4v1" />
+          <circle cx="12" cy="7" r="3" />
+          <path d="M22 19v-1a4 4 0 00-3-3.87" />
+          <path d="M16 7a3 3 0 010 6" />
+        </svg>
+      );
+    case 'academic-cap':
+      return (
+        <svg {...common} {...props} viewBox="0 0 24 24">
+          <path d="M12 3l9 5-9 5-9-5 9-5z" />
+          <path d="M4 10v4c0 2.21 3.58 4 8 4s8-1.79 8-4v-4" />
+        </svg>
+      );
+    case 'chart-bar':
+      return (
+        <svg {...common} {...props} viewBox="0 0 24 24">
+          <path d="M4 19h16" />
+          <rect x="6" y="10" width="3" height="6" rx="1" />
+          <rect x="11" y="7" width="3" height="9" rx="1" />
+          <rect x="16" y="12" width="3" height="4" rx="1" />
+        </svg>
+      );
+    case 'briefcase':
+      return (
+        <svg {...common} {...props} viewBox="0 0 24 24">
+          <rect x="3" y="7" width="18" height="13" rx="2" />
+          <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" />
+          <path d="M3 12h18" />
+        </svg>
+      );
+    case 'document-text':
+      return (
+        <svg {...common} {...props} viewBox="0 0 24 24">
+          <path d="M7 3h7l5 5v13a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z" />
+          <path d="M14 3v6h6" />
+          <path d="M9 13h6M9 17h6" />
         </svg>
       );
     default:

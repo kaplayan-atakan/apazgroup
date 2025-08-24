@@ -1,5 +1,4 @@
 import { Inter } from 'next/font/google';
-import localFont from 'next/font/local';
 
 // Import Inter with Latin subset for better performance
 export const inter = Inter({
@@ -8,33 +7,9 @@ export const inter = Inter({
   variable: '--font-inter',
 });
 
-// Local brand font with optional configuration
-// Note: Update the src path to match your actual font files
-export const brandFont = localFont({
-  src: [
-    {
-      path: '../../public/fonts/brand-font-regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/brand-font-medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/brand-font-bold.woff2',
-      weight: '700',
-      style: 'normal',
-    }
-  ],
-  display: 'swap',
-  variable: '--font-brand',
-  fallback: ['system-ui', 'sans-serif'],
-});
-
 // CSS variables to be used in tailwind.config.ts
-export const fontVariables = `${inter.variable} ${brandFont.variable}`;
+// Temporary: brand font disabled until files are added; brand maps to Inter.
+export const fontVariables = `${inter.variable}`;
 
 /**
  * Font preload optimization guide:
@@ -53,7 +28,7 @@ export const fontVariables = `${inter.variable} ${brandFont.variable}`;
  *   extend: {
  *     fontFamily: {
  *       sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
- *       brand: ['var(--font-brand)', ...defaultTheme.fontFamily.sans],
+ *       brand: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
  *     },
  *   },
  * },

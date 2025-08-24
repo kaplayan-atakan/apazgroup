@@ -24,8 +24,8 @@
     "phone": "Telefon",
     "position": "Pozisyon (opsiyonel)",
     "message": "Mesaj",
-    "cv": "CV (henüz aktif değil)",
-    "cv_hint": "İlk sürümde dosya yükleme devre dışı.",
+  "cv": "CV",
+  "cv_hint": "Yalnızca PDF, DOC veya DOCX dosyaları, en fazla 5MB.",
     "consent": "KVKK aydınlatma metnini okudum ve onaylıyorum",
     "submit": "Gönder",
     "submitting": "Gönderiliyor...",
@@ -43,7 +43,10 @@
       "submit_failed": "Gönderim başarısız oldu.",
       "network_error": "Ağ hatası. Lütfen tekrar deneyin.",
       "rate_limited": "Çok fazla istek. Lütfen daha sonra tekrar deneyin.",
-      "invalid_json": "Geçersiz istek verisi."
+  "invalid_json": "Geçersiz istek verisi.",
+  "max_400": "En fazla 400 karakter olabilir.",
+  "unsupported_file_type": "Desteklenmeyen dosya türü. Lütfen PDF, DOC veya DOCX yükleyin.",
+  "file_too_large": "Dosya boyutu 5MB'ı aşamaz."
     }
   }
 }

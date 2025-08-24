@@ -1,0 +1,93 @@
+<!-- 
+Hakkımızda ana sayfası
+- Hero başlık
+- Şirket tanıtımı
+- Vizyon, misyon ve değerler
+- Markalar tanıtımı
+-->
+<Layout>
+  <HeroSimple
+    title="Apaz Group Hakkında"
+    bgImage="/img/about-hero.webp"
+  />
+  
+  <section className="py-16">
+    <div className="container mx-auto px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <div className="space-y-4">
+            {/* Brand logos display */}
+            <img className="w-full my-4" src="/img/800-400-apaz.webp" alt="Apaz Group" />
+            <img className="w-full my-4" src="/img/800-400-baydoner.webp" alt="Baydöner" />
+            <img className="w-full my-4" src="/img/800-400-pidebypide.webp" alt="Pide by Pide" />
+            <img className="w-full my-4" src="/img/800-400-bursaishakbey.webp" alt="Bursa İshakbey" />
+          </div>
+        </div>
+        
+        <div className="prose prose-lg max-w-none">
+          <h2 className="text-3xl font-bold mb-6">Apaz Group Hakkında</h2>
+          
+          <p>
+            2007 yılında İzmir'de kurulan Apaz Group, faaliyetlerine ilk olarak Baydöner markası ile başladı. 
+            Geçtiğimiz yıllarda çalışmalarına ara vermeden devam eden Apaz Group, Baydöner ile 
+            Türkiye'nin dört bir yanında büyürken, yeme içme sektörüne 2 yeni marka kazandırdı:
+          </p>
+          
+          <ul>
+            <li>2018 yılında PidebyPide</li>
+            <li>2019 yılında ise Bursa İshakbey</li>
+          </ul>
+          
+          <p>
+            Apaz Group bünyesinde yer alan Baydöner, PidebyPide ve Bursa İshakbey markaları, 
+            Türk mutfağının yöresel lezzetlerini kaliteli hizmet ve uygun fiyat anlayışıyla 
+            lezzet tutkunlarıyla buluşturuyor.
+          </p>
+          
+          <h3 className="text-2xl font-bold mt-8 mb-4">Vizyonumuz</h3>
+          <p>İnovatif ve en iyilerin çalışmak istediği markalara sahip olmak.</p>
+          
+          <h3 className="text-2xl font-bold mt-8 mb-4">Misyonumuz</h3>
+          <p>
+            Yenilikçi ve güçlü fikirlerle müşterilerimizin kendilerini özel hissetmelerini sağlar, 
+            iş arkadaşlarımızın emeğine değer veririz.
+          </p>
+          
+          <h3 className="text-2xl font-bold mt-8 mb-4">Değerlerimiz</h3>
+          <ul>
+            <li>Fırsat eşitliği ve adalet</li>
+            <li>Müşteri memnuniyeti ve kalite odaklılık</li>
+            <li>Yenilikçilik, karşılıklı güven ve insana saygı</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section className="py-16 bg-gray-50">
+    <div className="container mx-auto px-4">
+      <SectionTitle title="Alt Sayfalar" />
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <LinkCard 
+          title="Yönetim"
+          description="Apaz Group'un yönetim kadrosu ve kurucuları hakkında bilgi edinin."
+          icon="users"
+          href="/hakkimizda/yonetim"
+        />
+        <LinkCard 
+          title="Kalite"
+          description="Kalite standartlarımız ve sürdürdüğümüz politikalar hakkında bilgi alın."
+          icon="badge-check"
+          href="/hakkimizda/kalite"
+        />
+        <LinkCard 
+          title="Kurumsal Sosyal Sorumluluk"
+          description="Toplumsal fayda sağlayan projelerimiz ve sosyal sorumluluk anlayışımız."
+          icon="heart"
+          href="/hakkimizda/kurumsal-sosyal-sorumluluk-politikasi"
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -24,6 +24,21 @@ export function listMarkdownFiles(locale: string): string[] {
 
 export function readMarkdownFile(locale: string, relativePath: string): string | null {
   const p = path.join(CONTENT_ROOT, locale, relativePath);
+  // // If there is a marker file with .md.outdated, treat the original as nonexistent
+  // if (p.endsWith('.md')) {
+  //   const outdatedMarker = `${p}.outdated`;
+  //   if (fs.existsSync(outdatedMarker)) {
+  //     // Only treat as outdated if marker explicitly indicates so
+  //     try {
+  //       const marker = fs.readFileSync(outdatedMarker, 'utf8');
+  //       const isOutdated = /(^|\n)\s*outdated\s*:\s*true\s*($|\n)/i.test(marker.trim());
+  //       if (isOutdated) return null;
+  //       // If marker exists but doesn't explicitly set outdated: true, ignore the marker
+  //     } catch {
+  //       // On any read error, be conservative and ignore the marker
+  //     }
+  //   }
+  // }
   if (!fs.existsSync(p)) return null;
   return fs.readFileSync(p, 'utf8');
 }

@@ -1,0 +1,108 @@
+<!-- 
+Franchising sayfası
+- Franchise bilgileri
+- Marka franchise kartları
+- Başvuru CTA
+-->
+<Layout>
+  <section className="relative h-[60vh]">
+    <div className="absolute inset-0">
+      <img 
+        src="/img/franchise-bg.jpg" 
+        alt="Franchising" 
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black/50"></div>
+    </div>
+    
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+      <h1 className="text-4xl md:text-6xl font-bold mb-6">Franchising</h1>
+      <div className="w-24 h-1 bg-brand-yellow mb-8"></div>
+      <p className="text-xl max-w-3xl px-4">
+        Apaz Group markalarıyla başarılı bir iş ortağı olun
+      </p>
+    </div>
+  </section>
+  
+  <section className="py-16">
+    <div className="container mx-auto px-4">
+      <div className="max-w-4xl mx-auto prose prose-lg">
+        <p>
+          Apaz Group olarak, Türk mutfağına hak ettiği değeri verme vizyonuyla çalışmalarımızı 
+          sürdürüyoruz. İstikrarlı bir şekilde büyümeye devam ediyoruz. Bundan sonra yapacağımız 
+          yeni yatırımlarla, büyüme trendimizi sürdüreceğiz.
+        </p>
+        
+        <p>
+          Franchise şubelerimize restoranın açılış hazırlıkları süresince ve açılışın ilk gününden 
+          itibaren yoğun destek hizmetleri sağlıyoruz. Yeni ürün inovasyonu, pazarlama, satın alma, 
+          lojistik, eğitim, insan kaynakları, operasyon, kalite kontrol gibi konular, işletmecilerimize 
+          destek verdiğimiz alanlar arasında yer alıyor.
+        </p>
+        
+        <p>
+          Yıllardır süregelen uzmanlığı ile Türkiye'de İskender severlerin öncelikli tercihlerinden 
+          olan Baydöner, standart hizmet kalitesi, uygun fiyatı, şık restoran deneyimi ve fark yaratan 
+          öncü uygulamaları ile döner müdavimlerini ağırlıyarak hem hizmet verdiği il sayısını hem de 
+          mevcut hizmet verdiği illerdeki şube sayılarını artırmayı planlıyor.
+        </p>
+        
+        <p>
+          Türk mutfağının klasikleşmiş tadı döneri en doyurucu haliyle ve uygun fiyatlarla sunmayı ilke 
+          edinen Bursa İshakbey markamızın şubelerinin de açılışlarına ağırlık verdik. Bursa İshakbey 
+          markamızla, perakende ağımızı genişletmek üzere restoran yatırımlarımıza devam ediyoruz.
+        </p>
+        
+        <p>
+          Türk mutfağının yerel yemeği pidenin hızlı ve doyurucu halini sunan PidebyPide, her geçen gün 
+          restoranlarına yenilerini ekliyor. PidebyPide için hazırladığımız franchise modeli ile 
+          girişimcilere pek çok cazip fırsat sunuyoruz.
+        </p>
+        
+        <p>
+          Cazip yatırım modellerimiz hakkında bilgi almak için aşağıda yer alan iletişim kanallarımız 
+          aracılığıyla bizlere ulaşabilirsiniz.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section className="py-16 bg-gray-50">
+    <div className="container mx-auto px-4">
+      <h2 className="text-3xl font-bold text-center mb-12">Sizde Hemen Başvurun…</h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <FranchiseCard
+          logo="/img/pidebypide_logo.png"
+          title="Pide by Pide"
+          description="Türk mutfağının vazgeçilmez lezzeti pideyi modern bir anlayışla sunan Pide by Pide ile franchising fırsatı."
+          link="https://www.pidebypide.com/franchise"
+        />
+        
+        <FranchiseCard
+          logo="/img/baydoner_logo.png"
+          title="Baydöner"
+          description="Türkiye'nin en büyük İskender zinciri olan Baydöner ile kazançlı bir iş fırsatı."
+          link="https://www.baydoner.com/hakkimizda/franchising"
+        />
+        
+        <FranchiseCard
+          logo="/img/bursaishakbey_logo.png"
+          title="Bursa İshakbey"
+          description="İskender'de uzman Bursa İshakbey ile hızlı geri dönüş sağlayan bir yatırım fırsatı."
+          link="#"
+        />
+      </div>
+    </div>
+  </section>
+  
+  <section className="py-16">
+    <div className="container mx-auto px-4">
+      <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h3 className="text-2xl font-bold mb-8 text-center">Franchise Bilgi Formu</h3>
+        
+        <FranchiseForm />
+      </div>
+    </div>
+  </section>
+</Layout>

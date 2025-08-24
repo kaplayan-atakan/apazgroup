@@ -33,7 +33,7 @@ navigation:
       children:
         - { label: "Yönetim", href: "/yonetim" }
         - { label: "Apaz Group Hakkında", href: "/apaz-group-hakkinda" }
-        - { label: "Kalite", href: "/kalite" }
+  - { label: "Kalite", href: "/hakkimizda/kalite" }
         - { label: "Haberler", href: "/haberler" }
         - { label: "Kurumsal Sosyal Sorumluluk", href: "/kurumsal-sosyal-sorumluluk-politikasi" }
         - { label: "Şeffaflık ve Hesap Verebilirlik", href: "/seffaflik-ve-hesap-verebilirlik" }

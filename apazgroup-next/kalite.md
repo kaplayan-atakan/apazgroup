@@ -1,6 +1,6 @@
 ---
 title: "Kalite"
-route: "/kalite"
+route: "/hakkimizda/kalite"
 originalUrl: "https://www.apazgroup.com/kalite"
 seo:
   title: "Kalite Politikası | Apaz Group"

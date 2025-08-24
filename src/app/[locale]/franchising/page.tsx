@@ -1,63 +1,161 @@
-import Image from 'next/image';
 import type { Metadata } from 'next';
 
-import { t } from '../../../lib/i18n-dict';
-import type { Locale } from '../../../lib/i18n';
-import { isLocale, defaultLocale } from '../../../lib/i18n';
-import { getPageBySlug } from '../../../lib/content';
-import { ContentArticle } from '../../../components/content/ContentArticle';
-import blurMap from '../../../lib/asset-blur-map.json';
+import { isLocale, type Locale } from '../../../lib/i18n';
+import { generateSeoMetadata } from '../../../lib/seo';
+import { FranchiseCard } from '../../../components/cards/FranchiseCard';
 
-interface PageProps { params: { locale: string } }
-const BM = blurMap as Record<string, string>;
+interface PageProps {
+  params: { locale: string };
+}
+
+export function generateStaticParams() {
+  return [{ locale: 'tr' }, { locale: 'en' }];
+}
 
 export function generateMetadata({ params }: PageProps): Metadata {
-  const slug = 'franchising';
   const { locale } = params;
   if (!isLocale(locale)) return {};
-  const page = getPageBySlug(locale, slug);
-  if (!page) return {};
-  const title = page.frontmatter.seo?.title || page.frontmatter.title;
-  const description = page.frontmatter.seo?.description;
-  const isFallback = locale !== defaultLocale && page.locale === defaultLocale;
-  const urlPath = `/${locale}/${slug}`;
-  const altLangs: Record<string, string> = { 'tr-TR': `/tr/${slug}` };
-  if (locale === 'tr') {
-    altLangs['en-US'] = `/en/${slug}`;
-  } else {
-    altLangs['en-US'] = `/en/${slug}`;
-    altLangs['tr-TR'] = `/tr/${slug}`;
-  }
-  return {
-    title,
-    description,
-    alternates: { canonical: urlPath, languages: altLangs },
-    openGraph: { title, description, url: urlPath, type: 'article' },
-    robots: isFallback ? { index: false, follow: true } : undefined
-  };
+  return generateSeoMetadata({
+    title: 'Franchising',
+    description:
+      locale === 'tr'
+        ? 'Apaz Group markaları ile franchising fırsatları ve başvuru bilgileri.'
+        : 'Franchising opportunities and application details for Apaz Group brands.',
+    locale,
+    slug: 'franchising',
+    type: 'article',
+    imagePath: '/markalar/baydoner_foto.jpg',
+  });
 }
 
 export default function FranchisingPage({ params }: PageProps) {
   const { locale } = params;
+  const loc = (isLocale(locale) ? locale : 'tr') as Locale;
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const pageUrl = `${base}/${loc}/franchising`;
+
   return (
-    <main className="mx-auto max-w-5xl py-10">
-      <section className="not-prose">
-        <div className="relative w-full h-40 sm:h-56 md:h-64 lg:h-72 rounded overflow-hidden ring-1 ring-slate-200 bg-slate-100">
-          <Image
-            src="/brands/baydoner-banner--about.png"
-            alt={t(locale as unknown as Locale,'alt.franchisingBanner','Franchising banner')}
-            fill
-            priority={false}
-            sizes="(min-width: 1024px) 1024px, 100vw"
-            className="object-cover"
-            placeholder={BM['/brands/baydoner-banner--about.png'] ? 'blur' : undefined}
-            blurDataURL={BM['/brands/baydoner-banner--about.png']}
-          />
+    <main className="pt-8 md:pt-12">
+      {/* Intro */}
+      <section className="pb-14 pt-6 bg-gradient-to-b from-slate-50 via-white to-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <header className="text-center mb-10 md:mb-14">
+            <h1 className="relative inline-block text-3xl md:text-[2.75rem] font-extrabold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-accent to-brand-yellow drop-shadow-sm">
+              {loc === 'tr' ? 'Franchising' : 'Franchising'}
+              <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-[3px] w-40 md:w-52 bg-gradient-to-r from-brand-primary/80 via-brand-accent to-brand-yellow rounded-full" aria-hidden="true" />
+            </h1>
+            <p className="mt-8 max-w-3xl mx-auto text-[15px] md:text-[17px] leading-relaxed text-slate-600 font-medium">
+              {loc === 'tr'
+                ? 'Apaz Group markalarıyla sürdürülebilir büyüme, operasyonel destek ve güçlü marka değeri sunan esnek yatırım modelleri.'
+                : 'Flexible franchise investment models backed by strong brand equity and operational excellence.'}
+            </p>
+          </header>
+          {loc === 'tr' ? (
+            <div className="relative">
+              <div className="absolute -inset-x-4 -inset-y-4 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-md" aria-hidden="true" />
+              <div className="relative rounded-2xl bg-white/70 backdrop-blur-xl px-7 md:px-10 py-10 ring-1 ring-slate-200/70 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] space-y-6 text-slate-700 text-[15px] leading-[1.75]">
+                <p>
+                  Apaz Group olarak, Türk mutfağına hak ettiği değeri verme vizyonuyla çalışmalarımızı sürdürüyoruz. İstikrarlı bir şekilde büyümeye devam ediyoruz. Bundan sonra yapacağımız yeni yatırımlarla, büyüme trendimizi sürdüreceğiz.
+                </p>
+                <p>
+                  Franchise şubelerimize restoranın açılış hazırlıkları süresince ve açılışın ilk gününden itibaren kapsamlı destek sağlıyoruz. Yeni ürün inovasyonu, pazarlama, satın alma, lojistik, eğitim, insan kaynakları, operasyon ve kalite kontrol kritik destek alanlarımızdır.
+                </p>
+                <p>
+                  Yıllardır süregelen uzmanlığı ile Türkiye’de İskender severlerin öncelikli tercihlerinden olan Baydöner; standart hizmet kalitesi, uygun fiyatı, şık restoran deneyimi ve fark yaratan uygulamalarıyla il ve şube ağını büyütmeyi hedefliyor.
+                </p>
+                <p>
+                  Döneri en doyurucu haliyle ve erişilebilir fiyatlarla sunan Bursa İshakbey markamızla perakende ağımızı genişletmek üzere yatırımlarımız devam ediyor.
+                </p>
+                <p>
+                  PidebyPide ise yöresel lezzet pideyi hızlı ve doyurucu bir formatta konumlandırarak franchise modeliyle girişimcilere cazip fırsatlar sunuyor.
+                </p>
+                <p className="font-medium text-slate-800">
+                  Cazip yatırım modelleri hakkında bilgi almak için aşağıdaki markalar üzerinden ilgili bağlantılara ulaşabilirsiniz.
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className="relative">
+              <div className="absolute -inset-x-4 -inset-y-4 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-md" aria-hidden="true" />
+              <div className="relative rounded-2xl bg-white/70 backdrop-blur-xl px-7 md:px-10 py-10 ring-1 ring-slate-200/70 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] text-slate-700 text-[15px] leading-[1.75]">
+                <p>
+                  Franchising opportunities across Apaz Group brands: scalable formats, operational support and strong consumer resonance. (EN placeholder)
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
-      <div className="mt-8">
-        <ContentArticle locale={locale} slug="franchising" />
-      </div>
+
+      {/* Brand cards */}
+      <section className="py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(circle_at_center,white,transparent)] bg-[radial-gradient(circle_at_30%_20%,rgba(255,215,0,0.12),transparent_60%),radial-gradient(circle_at_70%_60%,rgba(0,82,255,0.12),transparent_55%)]" aria-hidden="true" />
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-center mb-14 text-slate-900">
+            {loc === 'tr' ? 'Markalarımızla Franchise Fırsatları' : 'Franchise Opportunities'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            <FranchiseCard
+              logo="/markalar/baydoner_logo.jpg"
+              image="/markalar/baydoner_foto.jpg"
+              title="Baydöner"
+              description={
+                loc === 'tr'
+                  ? 'Türk mutfağının en çok tercih edilen ve vazgeçilmezi iskenderin en lezzetli halini sunan Baydöner, fast casual restoran konseptiyle eksiksiz hizmet veriyor.'
+                  : 'Turkey’s leading Iskender experience in a fast casual format.'
+              }
+              link="https://www.baydoner.com/hakkimizda/franchising"
+            />
+            <FranchiseCard
+              logo="/markalar/bursaishakbey_logo.png"
+              image="/markalar/bursaishakbey_foto.jpg"
+              title="Bursa İshakbey"
+              description={
+                loc === 'tr'
+                  ? 'İskender ve döner üzerine kurgulanan seçkin konseptiyle yeme-içme sektöründe fark yaratan Bursa İshakbey, uygun fiyatlı, doyurucu içerikleri ile self servis hizmeti ile ön plana çıkıyor.'
+                  : 'Value-focused self-service Iskender & döner concept.'
+              }
+              link="https://www.bursaishakbey.com/franchise"
+            />
+            <FranchiseCard
+              logo="/markalar/pidebypide_logo.png"
+              image="/markalar/pide_foto.jpg"
+              title="Pide by Pide"
+              description={
+                loc === 'tr'
+                  ? 'Pide by Pide, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu versiyonunu enfes bir lezzet ve self servis konseptiyle sunuyor.'
+                  : 'Fast, satisfying pide in a streamlined self-service model.'
+              }
+              link="https://www.pidebypide.com/franchise"
+            />
+          </div>
+        </div>
+      </section>
+
+
+      {/* LocalBusiness JSON-LD */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            name: 'Apaz Group Franchising',
+            url: pageUrl,
+            image: `${base}/brand/logo--global.png`,
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Çınarlı Mah. Ankara Asfaltı Cad. No: 17/402 Konak',
+              addressLocality: 'İzmir',
+              postalCode: '35110',
+              addressCountry: 'TR',
+            },
+            telephone: '+90-232-441-8080',
+            areaServed: 'TR',
+          }),
+        }}
+      />
     </main>
   );
 }

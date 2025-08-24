@@ -13,7 +13,7 @@ export default function sitemap() {
   // Exclude placeholder pages from the sitemap (they are set to robots: noindex)
   const EXCLUDED_SLUGS = new Set(['cerez-politikasi', 'kisisel-verilerin-korunmasi']);
   
-  // Define priorities for specific pages
+  // Define priorities for specific pages (canonical slugs)
   const PAGE_PRIORITIES: Record<string, PagePriority> = {
     'index': { slug: 'index', priority: 1.0, changefreq: 'weekly' },
     'franchising': { slug: 'franchising', priority: 0.9, changefreq: 'monthly' },
@@ -21,10 +21,19 @@ export default function sitemap() {
     'bize-katilin': { slug: 'bize-katilin', priority: 0.9, changefreq: 'monthly' },
     'iletisim': { slug: 'iletisim', priority: 0.9, changefreq: 'monthly' },
     'haberler': { slug: 'haberler', priority: 0.8, changefreq: 'weekly' },
-    'baydoner': { slug: 'baydoner', priority: 0.8, changefreq: 'monthly' },
-    'pide-by-pide': { slug: 'pide-by-pide', priority: 0.8, changefreq: 'monthly' },
-    'bursa-ishakbey': { slug: 'bursa-ishakbey', priority: 0.8, changefreq: 'monthly' },
-    'apaz-group-hakkinda': { slug: 'apaz-group-hakkinda', priority: 0.8, changefreq: 'monthly' },
+    'baydoner': { slug: 'markalarimiz/baydoner', priority: 0.8, changefreq: 'monthly' },
+    'pide-by-pide': { slug: 'markalarimiz/pide-by-pide', priority: 0.8, changefreq: 'monthly' },
+    'bursa-ishakbey': { slug: 'markalarimiz/bursa-ishakbey', priority: 0.8, changefreq: 'monthly' },
+  // About
+  'hakkimizda': { slug: 'hakkimizda', priority: 0.8, changefreq: 'monthly' },
+  'kalite': { slug: 'hakkimizda/kalite', priority: 0.7, changefreq: 'monthly' },
+  'yonetim': { slug: 'hakkimizda/yonetim', priority: 0.7, changefreq: 'monthly' },
+  // Career
+  'insan-kaynaklari-politikamiz': { slug: 'kariyer/insan-kaynaklari-politikamiz', priority: 0.7, changefreq: 'monthly' },
+  'ucret-politikamiz': { slug: 'kariyer/ucret-politikamiz', priority: 0.7, changefreq: 'monthly' },
+  'performans': { slug: 'kariyer/performans', priority: 0.7, changefreq: 'monthly' },
+  'olanaklar': { slug: 'kariyer/olanaklar', priority: 0.7, changefreq: 'monthly' },
+  'kariyer-ve-egitim-olanaklarimiz': { slug: 'kariyer/kariyer-egitim', priority: 0.7, changefreq: 'monthly' },
   };
   
   // Default values for pages not explicitly listed
@@ -46,17 +55,37 @@ export default function sitemap() {
 
   // Add locale-specific pages
   for (const locale of locales) {
-    const pages = getAllPages(locale).filter((p) => !EXCLUDED_SLUGS.has(p.slug));
-    
-    for (const page of pages) {
-      const priority = PAGE_PRIORITIES[page.slug] || { priority: DEFAULT_PRIORITY, changefreq: DEFAULT_CHANGEFREQ };
-      
+    const seen = new Set<string>();
+
+    // 1) Always include canonical entries defined in PAGE_PRIORITIES
+    for (const key of Object.keys(PAGE_PRIORITIES)) {
+      const prio = PAGE_PRIORITIES[key] as PagePriority | undefined;
+      if (!prio) continue;
+      const routeSlug = prio.slug; // already canonicalized (may be nested)
+      if (EXCLUDED_SLUGS.has(routeSlug)) continue;
+      const url = `${base}/${locale}/${routeSlug}`;
       entries.push({
-        url: `${base}/${locale}/${page.slug}`,
+        url,
         lastModified,
-        changeFrequency: priority.changefreq,
-        priority: priority.priority
+        changeFrequency: prio.changefreq,
+        priority: prio.priority
       });
+      seen.add(routeSlug);
+    }
+
+    // 2) Include remaining content pages not explicitly prioritized
+    const pages = getAllPages(locale).filter((p) => !EXCLUDED_SLUGS.has(p.slug));
+    for (const page of pages) {
+      const routeSlug = PAGE_PRIORITIES[page.slug]?.slug || page.slug;
+      if (seen.has(routeSlug)) continue; // avoid duplicates
+      const prio = PAGE_PRIORITIES[page.slug] || { priority: DEFAULT_PRIORITY, changefreq: DEFAULT_CHANGEFREQ };
+      entries.push({
+        url: `${base}/${locale}/${routeSlug}`,
+        lastModified,
+        changeFrequency: prio.changefreq,
+        priority: prio.priority
+      });
+      seen.add(routeSlug);
     }
   }
   

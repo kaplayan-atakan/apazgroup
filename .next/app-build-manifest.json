@@ -1,3 +1,90 @@
 {
-  "pages": {}
+  "pages": {
+    "/[locale]/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/[slug]/page.js"
+    ],
+    "/[locale]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/layout.js"
+    ],
+    "/[locale]/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/loading.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/[locale]/(placeholders)/kisisel-verilerin-korunmasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/(placeholders)/kisisel-verilerin-korunmasi/page.js"
+    ],
+    "/[locale]/iletisim/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/iletisim/page.js"
+    ],
+    "/[locale]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/page.js"
+    ],
+    "/[locale]/(placeholders)/cerez-politikasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/(placeholders)/cerez-politikasi/page.js"
+    ],
+    "/[locale]/hakkimizda/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/hakkimizda/page.js"
+    ],
+    "/[locale]/hakkimizda/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/hakkimizda/loading.js"
+    ],
+    "/[locale]/franchising/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/franchising/page.js"
+    ],
+    "/[locale]/hakkimizda/yonetim/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/hakkimizda/yonetim/page.js"
+    ],
+    "/[locale]/hakkimizda/yonetim/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/hakkimizda/yonetim/loading.js"
+    ],
+    "/[locale]/(main)/markalarimiz/baydoner/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/(main)/markalarimiz/baydoner/page.js"
+    ],
+    "/[locale]/(main)/markalarimiz/bursa-ishakbey/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/(main)/markalarimiz/bursa-ishakbey/page.js"
+    ],
+    "/[locale]/(main)/markalarimiz/pide-by-pide/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/(main)/markalarimiz/pide-by-pide/page.js"
+    ],
+    "/[locale]/kariyer/insan-kaynaklari-politikamiz/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/kariyer/insan-kaynaklari-politikamiz/page.js"
+    ]
+  }
 }

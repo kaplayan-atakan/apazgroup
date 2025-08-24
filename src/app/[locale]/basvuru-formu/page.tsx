@@ -1,59 +1,35 @@
 import type { Metadata } from 'next';
 
-import { isLocale, defaultLocale, type Locale } from '../../../lib/i18n';
-import { getPageBySlug } from '../../../lib/content';
-import { ContentArticle } from '../../../components/content/ContentArticle';
-import { BasvuruForm } from '../../../components/forms/BasvuruForm';
+import { isLocale } from '../../../lib/i18n';
+import { generateSeoMetadata } from '../../../lib/seo';
 
-interface PageProps {
-  params: { locale: string };
-}
+import BasvuruFormClient from './BasvuruFormClient';
+
+interface PageProps { params: { locale: string } }
 
 export function generateMetadata({ params }: PageProps): Metadata {
-  const slug = 'basvuru-formu';
   const { locale } = params;
   if (!isLocale(locale)) return {};
-  const page = getPageBySlug(locale, slug);
-  if (!page) return {};
-  const title = page.frontmatter.seo?.title || page.frontmatter.title;
-  const description = page.frontmatter.seo?.description;
-  const isFallback = locale !== defaultLocale && page.locale === defaultLocale;
-  const urlPath = `/${locale}/${slug}`;
-  const altLangs: Record<string, string> = {
-    'tr-TR': `/tr/${slug}`
-  };
-  if (locale === 'tr') {
-    altLangs['en-US'] = `/en/${slug}`;
-  } else {
-    altLangs['en-US'] = `/en/${slug}`;
-    altLangs['tr-TR'] = `/tr/${slug}`;
-  }
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: urlPath,
-      languages: altLangs
-    },
-    openGraph: {
-      title,
-      description,
-      url: urlPath,
-      type: 'article'
-    },
-    robots: isFallback ? { index: false, follow: true } : undefined
-  };
+  return generateSeoMetadata({
+    title: 'Başvuru Formu | Apaz Group',
+    description: 'Apaz Group iş başvuru formu',
+    locale,
+    slug: 'basvuru-formu',
+    type: 'article',
+    imagePath: '/markalar/baydoner_foto.jpg'
+  });
 }
 
-export default function BasvuruFormuPage({ params }: PageProps) {
-  const { locale } = params;
+export default function BasvuruFormuPage() {
   return (
-    <div>
-      <ContentArticle locale={locale} slug="basvuru-formu" />
-      <section className="max-w-3xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-semibold tracking-tight mb-4">{locale === 'tr' ? 'Başvuru Formu' : 'Application Form'}</h2>
-  <BasvuruForm locale={locale as Locale} />
-      </section>
-    </div>
+    <main className="pt-12 pb-24">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Başvuru Formu</h1>
+        <p className="text-slate-700 mb-10 leading-relaxed text-base md:text-lg">Aşağıdaki formu doldurarak Apaz Group bünyesindeki açık pozisyonlara başvuruda bulunabilirsiniz. Zorunlu alanları eksiksiz doldurduğunuzdan emin olun.</p>
+        <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6 md:p-8">
+          <BasvuruFormClient />
+        </div>
+      </div>
+    </main>
   );
 }

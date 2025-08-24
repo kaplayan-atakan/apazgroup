@@ -37,7 +37,12 @@ export function getPageBySlug(locale: string, slug: string): PageDocument | null
   }
   // Try direct locale first
   const fileName = `${slug}.md`;
-  const candidates = [fileName, path.join('pages', fileName)];
+  const candidates = [
+    fileName,
+    path.join('pages', fileName),
+    path.join('management', fileName),
+    path.join('news', fileName)
+  ];
   let raw: string | null = null;
   for (const rel of candidates) {
     raw = readMarkdownFile(locale, rel);
@@ -58,4 +63,39 @@ export function getPageBySlug(locale: string, slug: string): PageDocument | null
   const page = parseMarkdown(raw, slug, locale);
   if (process.env.NODE_ENV !== 'production') cache.set(key, page);
   return page;
+}
+
+export function getManagementPeople(locale: string): PageDocument[] {
+  // List all markdown files and filter those under management/
+  const files = listMarkdownFiles(locale).filter((rel: string) => rel.startsWith('management/'));
+  const docs: PageDocument[] = files
+    .map((rel: string) => {
+      const raw = readMarkdownFile(locale, rel);
+      if (!raw) return null;
+      const rawSlug = path.basename(rel, '.md');
+      const slug = normalizeSlug(rawSlug);
+      return parseMarkdown(raw, slug, locale);
+    })
+    .filter((d): d is PageDocument => d !== null);
+  return docs;
+}
+
+export function getAllNews(locale: string): PageDocument[] {
+  const files = listMarkdownFiles(locale).filter((rel: string) => rel.startsWith('news/'));
+  const docs: PageDocument[] = files
+    .map((rel: string) => {
+      const raw = readMarkdownFile(locale, rel);
+      if (!raw) return null;
+      const rawSlug = path.basename(rel, '.md');
+      const slug = normalizeSlug(rawSlug);
+      return parseMarkdown(raw, slug, locale);
+    })
+    .filter((d): d is PageDocument => d !== null)
+    // sort by date descending if available in frontmatter.date
+    .sort((a, b) => {
+      const da = a.frontmatter.date ? new Date(a.frontmatter.date).getTime() : 0;
+      const db = b.frontmatter.date ? new Date(b.frontmatter.date).getTime() : 0;
+      return db - da;
+    });
+  return docs;
 }

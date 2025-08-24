@@ -1,0 +1,61 @@
+<!-- 
+Başvuru formu sayfası
+- Form bileşeni
+- Form validasyonu
+- Dosya yükleme
+-->
+<Layout>
+  <HeroSimple
+    title="Başvuru Formu"
+    bgImage="/img/career-bg.jpg"
+  />
+  
+  <section className="py-16">
+    <div className="container mx-auto px-4">
+      <div className="max-w-3xl mx-auto">
+        <div className="prose prose-lg mb-12">
+          <h2 className="text-3xl font-bold text-center">Kariyer Başvuru Formu</h2>
+          <p className="text-center">
+            Apaz Group bünyesinde yer alan markalarımızda çalışmak için aşağıdaki formu 
+            doldurarak başvuruda bulunabilirsiniz.
+          </p>
+        </div>
+        
+        <div className="bg-white p-8 rounded-lg shadow-lg">
+          <ApplicationForm />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section className="py-16 bg-gray-50">
+    <div className="container mx-auto px-4">
+      <div className="max-w-3xl mx-auto">
+        <h3 className="text-2xl font-bold mb-6 text-center">Markalarımızda Kariyer</h3>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <BrandCareerCard
+            logo="/img/baydoner_logo.png"
+            image="/img/ik_baydoner.jpg"
+            title="Baydöner'de Kariyer"
+            link="https://www.baydoner.com/kariyer/basvuru-formu"
+          />
+          
+          <BrandCareerCard
+            logo="/img/pidebypide_logo.png"
+            image="/img/ik_pidebypide.jpg"
+            title="Pide by Pide'de Kariyer"
+            link="#"
+          />
+          
+          <BrandCareerCard
+            logo="/img/bursaishakbey_logo.png"
+            image="/img/ik_bursaishakbey.jpg"
+            title="Bursa İshakbey'de Kariyer"
+            link="#"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

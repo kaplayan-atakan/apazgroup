@@ -16,9 +16,47 @@ export async function ContentArticle({ locale, slug }: { locale: string; slug: s
     return notFound();
   }
   const mappedAssets = getPageAssetsForSlug(slug);
+  const hasHero = page.sections.some(s => s.type === 'heroSimple');
+  const heroSections = page.sections.filter(s => s.type === 'heroSimple');
+  const contentSections = page.sections.filter(s => s.type !== 'heroSimple');
+
   return (
-    <article className="prose max-w-3xl mx-auto py-10">
-      <h1>{page.frontmatter.title}</h1>
+    <>
+      {/* Full-bleed hero(s) rendered outside article for better visual design */}
+      {heroSections.map((s, i) => (
+        <section key={`hero-${i}`} className="relative w-full h-[40vh] min-h-[320px] md:h-[50vh]">
+          {s.type === 'heroSimple' && (
+            <>
+              {s.image && (
+                <>
+                  <Image
+                    src={s.image}
+                    alt={s.heading}
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                    placeholder={blurMap[s.image as keyof typeof blurMap] ? 'blur' : undefined}
+                    blurDataURL={(blurMap as Record<string, string>)[s.image]}
+                  />
+                  <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+                </>
+              )}
+              <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
+                {/* Use h1 here for primary heading if hero exists */}
+                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white drop-shadow-sm">
+                  {s.heading}
+                </h1>
+                {s.intro && (
+                  <p className="mt-4 text-white/90 max-w-2xl mx-auto text-base md:text-lg">{s.intro}</p>
+                )}
+              </div>
+            </>
+          )}
+        </section>
+      ))}
+
+      <article className="prose prose-slate mx-auto max-w-4xl py-10">
+        {!hasHero && <h1>{page.frontmatter.title}</h1>}
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
@@ -32,11 +70,30 @@ export async function ContentArticle({ locale, slug }: { locale: string; slug: s
           })
         }}
       />
-      {await Promise.all(page.sections.map(async (s, i) => {
+  {await Promise.all(contentSections.map(async (s, i) => {
         switch (s.type) {
           case 'prose': {
             const html = await markdownToHtml(s.body);
             return <div key={i} dangerouslySetInnerHTML={{ __html: html }} />;
+          }
+          case 'imageProse': {
+            const rightHtml = await markdownToHtml(s.body);
+            return (
+              <div key={i} className="not-prose grid md:grid-cols-2 gap-8 items-start">
+                <div className="relative w-full aspect-[5/6] rounded-lg overflow-hidden ring-1 ring-slate-200 bg-slate-100">
+                  <Image
+                    src={s.image}
+                    alt={s.alt || ''}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                    placeholder={blurMap[s.image as keyof typeof blurMap] ? 'blur' : undefined}
+                    blurDataURL={(blurMap as Record<string, string>)[s.image]}
+                  />
+                </div>
+                <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: rightHtml }} />
+              </div>
+            );
           }
           case 'list':
             return (
@@ -44,20 +101,16 @@ export async function ContentArticle({ locale, slug }: { locale: string; slug: s
                 {s.items.map(item => <li key={item}>{item}</li>)}
               </ul>
             );
-          case 'split':
+          case 'split': {
+            const leftHtml = await markdownToHtml(s.left);
+            const rightHtml = s.right ? await markdownToHtml(s.right) : '';
             return (
-              <div key={i} className="grid md:grid-cols-2 gap-6 border rounded p-4 bg-slate-50">
-                <div>{s.left}</div>
-                {s.right && <div>{s.right}</div>}
+              <div key={i} className="not-prose grid md:grid-cols-2 gap-6 border rounded p-4 bg-slate-50">
+                <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: leftHtml }} />
+                {s.right && <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: rightHtml }} />}
               </div>
             );
-          case 'heroSimple':
-            return (
-              <section key={i} className="mb-10 text-center not-prose">
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900">{s.heading}</h2>
-                {s.intro && <p className="mt-3 text-slate-600 max-w-2xl mx-auto">{s.intro}</p>}
-              </section>
-            );
+          }
           case 'brandTeaser':
             return (
               <div key={i} className="border rounded p-6 bg-white shadow-sm not-prose">
@@ -91,27 +144,56 @@ export async function ContentArticle({ locale, slug }: { locale: string; slug: s
             );
           case 'brandDetail':
             return (
-              <div key={i} className="not-prose flex flex-col sm:flex-row gap-6 my-10 border rounded p-6 bg-white shadow-sm">
-        {s.image ? (
-                  <div className="relative w-40 h-40 bg-slate-100 rounded shrink-0 overflow-hidden">
-          <Image 
-            src={s.image} 
-            alt={s.name} 
-            fill 
-            sizes="160px" 
-            loading="lazy"
-            className="object-contain" 
-            placeholder={blurMap[s.image as keyof typeof blurMap] ? 'blur' : undefined} 
-            blurDataURL={(blurMap as Record<string,string>)[s.image]}
-          />
+              <section key={i} className="not-prose my-10 overflow-hidden rounded-lg border bg-white shadow-sm">
+                {s.image && (
+                  <div className="relative w-full aspect-[16/9] bg-slate-100">
+                    <Image
+                      src={s.image}
+                      alt={s.name}
+                      fill
+                      sizes="(min-width: 1024px) 960px, 100vw"
+                      loading="lazy"
+                      className="object-cover"
+                      placeholder={blurMap[s.image as keyof typeof blurMap] ? 'blur' : undefined}
+                      blurDataURL={(blurMap as Record<string, string>)[s.image]}
+                    />
                   </div>
-                ) : null}
-                <div>
+                )}
+                <div className="p-6">
                   <h3 className="text-2xl font-semibold tracking-tight">{s.name}</h3>
-                  {s.description && <p className="mt-3 text-slate-600 leading-relaxed text-sm">{s.description}</p>}
+                  {s.description && (
+                    <p className="mt-3 text-slate-600 leading-relaxed text-base">{s.description}</p>
+                  )}
                 </div>
-              </div>
+              </section>
             );
+          case 'aboutBrands': {
+            const bodyHtml = await markdownToHtml(s.body);
+            return (
+              <section key={i} className="not-prose my-12">
+                <div className="grid lg:grid-cols-2 gap-12 items-start">
+                  <div className="grid grid-cols-2 gap-6 sm:gap-8 content-start">
+                    {s.logos.map(l => (
+                      <div key={l.src} className="relative aspect-[4/2] rounded-xl ring-1 ring-slate-200 bg-white p-4 flex items-center justify-center shadow-sm hover:shadow transition-shadow">
+                        <Image
+                          src={l.src}
+                          alt={l.alt || ''}
+                          fill
+                          sizes="(min-width: 1024px) 400px, 50vw"
+                          className="object-contain p-2"
+                          placeholder={blurMap[l.src as keyof typeof blurMap] ? 'blur' : undefined}
+                          blurDataURL={(blurMap as Record<string,string>)[l.src]}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <article className="prose max-w-none leading-relaxed text-slate-700 [&_strong]:text-slate-900 [&_br]:leading-8">
+                    <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+                  </article>
+                </div>
+              </section>
+            );
+          }
           default:
             return null;
         }
@@ -180,6 +262,7 @@ export async function ContentArticle({ locale, slug }: { locale: string; slug: s
           )}
         </section>
       )}
-    </article>
+      </article>
+    </>
   );
 }

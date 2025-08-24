@@ -1,0 +1,64 @@
+<!-- 
+Yönetim sayfası
+- Yönetim ekibi tanıtımı
+- Kişi profilleri
+-->
+<Layout>
+  <HeroSimple
+    title="Yönetim"
+    bgImage="/img/yonetim-hero.webp"
+  />
+  
+  <section className="py-16">
+    <div className="container mx-auto px-4">
+      <div className="max-w-3xl mx-auto prose prose-lg">
+        <h2 className="text-3xl font-bold mb-8 text-center">Yönetim Ekibimiz</h2>
+        <p className="text-center mb-16">
+          Apaz Group'un deneyimli yönetim kadrosu, sektördeki engin tecrübe ve bilgi birikimiyle 
+          markalarımızı başarıya taşıyor.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-12">
+        <PersonCard
+          image="/img/levent_yilmaz.jpg"
+          name="Levent Yılmaz"
+          title="Yönetim Kurulu Başkanı"
+          description="Levent Yılmaz, 2007 yılında Apaz Group'u kurmuş ve Türkiye'nin en büyük restoran zincirlerinden birini oluşturmuştur."
+          link="/hakkimizda/yonetim/levent-yilmaz"
+        />
+        
+        <PersonCard
+          image="/img/bulent_polat.jpg"
+          name="Bülent Polat"
+          title="Genel Müdür"
+          description="Bülent Polat, yeme-içme sektöründeki deneyimiyle Apaz Group'un tüm operasyonlarını yönetmektedir."
+          link="/hakkimizda/yonetim/bulent-polat"
+        />
+        
+        <PersonCard
+          image="/img/feridun_tuncer.jpg"
+          name="Feridun Tuncer"
+          title="Operasyon Direktörü"
+          description="Feridun Tuncer, tüm markalarımızın operasyonel süreçlerini yönetmekte ve kalite standartlarını gözetmektedir."
+          link="/hakkimizda/yonetim/feridun-tuncer"
+        />
+      </div>
+    </div>
+  </section>
+  
+  <section className="py-16 bg-gray-50">
+    <div className="container mx-auto px-4">
+      <div className="max-w-3xl mx-auto text-center">
+        <h3 className="text-2xl font-bold mb-6">Apaz Group Hakkında Daha Fazla Bilgi</h3>
+        <p className="mb-8">
+          Şirketimiz, değerlerimiz ve vizyonumuz hakkında daha fazla bilgi edinmek için
+          hakkımızda sayfamızı ziyaret edebilirsiniz.
+        </p>
+        <Button href="/hakkimizda/apaz-group-hakkinda">
+          Apaz Group Hakkında
+        </Button>
+      </div>
+    </div>
+  </section>
+</Layout>

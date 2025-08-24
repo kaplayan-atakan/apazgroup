@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { isLocale } from '../../../../lib/i18n';
 import { getPageBySlug } from '../../../../lib/content';
 import { ContentArticle } from '../../../../components/content/ContentArticle';
-import { PlaceholderNotice } from '../../../../components/ui/PlaceholderNotice';
 
 interface PageProps {
   params: { locale: string };
@@ -46,10 +45,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
 export default function CerezPage({ params }: PageProps) {
   const { locale } = params;
-  const uiLocale = locale === 'en' ? 'en' : 'tr';
   return (
     <>
-      <PlaceholderNotice locale={uiLocale} />
       <ContentArticle locale={locale} slug="cerez-politikasi" />
     </>
   );

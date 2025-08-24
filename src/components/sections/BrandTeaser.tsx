@@ -8,9 +8,9 @@ interface BrandTeaserProps {
 }
 
 const BRAND_LOGOS: Array<{ key: string; src: string; alt: string; name: string }> = [
-  { key: 'pidebypide', src: '/brands/pidebypide-logo--franchising.png', alt: 'Pide By Pide Logo', name: 'Pide By Pide' },
+  { key: 'pidebypide', src: '/markalar/pidebypide_logo.png', alt: 'Pide By Pide Logo', name: 'Pide By Pide' },
   { key: 'baydoner', src: '/brands/baydoner-logo--franchising.png', alt: 'Baydöner Logo', name: 'Baydöner' },
-  { key: 'bursaishakbey', src: '/brands/bursaishakbey-logo--franchising.png', alt: 'Bursa İshakbey Logo', name: 'Bursa İshakbey' }
+  { key: 'bursaishakbey', src: '/markalar/bursaishakbey_logo.png', alt: 'Bursa İshakbey Logo', name: 'Bursa İshakbey' }
 ];
 
 export function BrandTeaser({ title, body, showTitles = false, id }: BrandTeaserProps) {

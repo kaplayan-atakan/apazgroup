@@ -13,6 +13,7 @@ function expectEqual(a: any, b: any, message: string) {
 {
   const input = {
     name: 'Ada Lovelace',
+  surname: 'Lovelace',
     email: 'ada@example.com',
     phone: '+90 532 000 00 00',
     position: 'Engineer',
@@ -40,6 +41,7 @@ function expectEqual(a: any, b: any, message: string) {
 {
   const input = {
     name: 'AB',
+  surname: 'CD',
     email: 'a@b.co',
     phone: '1234567',
     message: 'x'.repeat(2000),

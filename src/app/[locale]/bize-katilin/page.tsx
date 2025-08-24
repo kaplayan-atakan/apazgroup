@@ -1,50 +1,79 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import { isLocale, defaultLocale } from '../../../lib/i18n';
-import { getPageBySlug } from '../../../lib/content';
-import { ContentArticle } from '../../../components/content/ContentArticle';
+import { generateSeoMetadata } from '../../../lib/seo';
 
 interface PageProps {
   params: { locale: string };
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const slug = 'bize-katilin';
-  const { locale } = params;
-  if (!isLocale(locale)) return {};
-  const page = getPageBySlug(locale, slug);
-  if (!page) return {};
-  const title = page.frontmatter.seo?.title || page.frontmatter.title;
-  const description = page.frontmatter.seo?.description;
-  const isFallback = locale !== defaultLocale && page.locale === defaultLocale;
-  const urlPath = `/${locale}/${slug}`;
-  const altLangs: Record<string, string> = {
-    'tr-TR': `/tr/${slug}`
-  };
-  if (locale === 'tr') {
-    altLangs['en-US'] = `/en/${slug}`;
-  } else {
-    altLangs['en-US'] = `/en/${slug}`;
-    altLangs['tr-TR'] = `/tr/${slug}`;
-  }
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: urlPath,
-      languages: altLangs
-    },
-    openGraph: {
-      title,
-      description,
-      url: urlPath,
-      type: 'article'
-    },
-    robots: isFallback ? { index: false, follow: true } : undefined
-  };
+export function generateStaticParams() {
+  return [{ locale: 'tr' }, { locale: 'en' }];
 }
 
-export default async function BizeKatilinPage({ params }: PageProps) {
+export function generateMetadata({ params }: PageProps): Metadata {
   const { locale } = params;
-  return <ContentArticle locale={locale} slug="bize-katilin" />;
+  if (!isLocale(locale)) return {};
+  return generateSeoMetadata({
+    title: 'Bize Katılın | Apaz Group',
+    description: 'Apaz Group ailesine katılın, güçlü ekip ruhu ve kariyer gelişimi fırsatları.',
+    locale,
+    slug: 'bize-katilin',
+    type: 'article',
+    imagePath: '/markalar/baydoner_foto.jpg'
+  });
+}
+
+export default function BizeKatilinPage({ params }: PageProps) {
+  const { locale } = params;
+  const loc = isLocale(locale) ? locale : defaultLocale;
+  return (
+    <main className="pt-12 pb-20">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Apaz Group Ailesine Katılın!</h1>
+        <div className="space-y-5 md:space-y-6 text-slate-700 text-base md:text-lg leading-relaxed">
+          <p>Baydöner, Bursa İshakbey ve Pide by Pide markalarımızla, Türkiye’nin en seçkin lezzet duraklarında çalışmanın ayrıcalığını yaşamak istemez misiniz? Misafirlerimize unutulmaz deneyimler sunan büyük ve sıcak ailemizde siz de yerinizi alın!</p>
+          <p>Siz de Apaz Group’un bir parçası olarak; güler yüzlü hizmet, yüksek kalite standartları ve samimiyetle dolu çalışma ortamımızda kariyerinizi bir üst seviyeye taşıyın. İşine tutkuyla bağlı, dinamik ve yaratıcı bir ekiple birlikte çalışmak, kariyer yolculuğunuzda önemli bir adım atmak istiyorsanız, sizi aramızda görmekten mutluluk duyarız!</p>
+          <h2 className="text-2xl font-semibold tracking-tight pt-4">Neden Apaz Group?</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Kariyer Gelişimi:</strong> Sürekli eğitim ve gelişim fırsatları ile kariyerinizi ilerletin.</li>
+            <li><strong>Güçlü Ekip Ruhu:</strong> Dayanışma ve işbirliğiyle başarıyı birlikte yakalayın.</li>
+            <li><strong>Öncü Markalar:</strong> Sektörde fark yaratan markalarımızın bir parçası olun.</li>
+            <li><strong>Çeşitli Pozisyonlar:</strong> Yeteneğinize ve ilginize uygun pozisyonlarda çalışma fırsatı yakalayın.</li>
+          </ul>
+          <p>Apaz Group olarak, sizinle birlikte daha güçlü, daha başarılı ve daha mutlu bir geleceğe adım atmaktan büyük heyecan duyuyoruz!</p>
+          <p className="font-medium">Başvuru İçin: Aşağıda yer alan Marka Logolarına Tıklayabilirsiniz.</p>
+        </div>
+      </div>
+      <section className="mt-14">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { title: 'Apaz Group', logo: '/brand/group-apaz--about.avif', href: `/${loc}/basvuru_formu` },
+              { title: 'Baydöner', logo: '/markalar/baydoner_logo.jpg', href: 'https://www.baydoner.com/' },
+              { title: 'Bursa İshakbey', logo: '/markalar/bursaishakbey_logo.png', href: 'https://www.bursaishakbey.com/basvuru-formu' },
+              { title: 'Pide by Pide', logo: '/markalar/pidebypide_logo.png', href: 'https://www.pidebypide.com/kariyer' }
+      ].map(item => (
+              <Link
+                key={item.title}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        href={item.href as any}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="group flex flex-col items-center justify-center rounded-lg border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                aria-label={`${item.title} başvuru / bilgi`}
+              >
+                <span className="relative w-24 h-24 mb-3">
+                  <Image src={item.logo} alt={`${item.title} logo`} fill sizes="96px" className="object-contain" />
+                </span>
+                <span className="text-sm font-semibold tracking-tight text-slate-800 group-hover:text-black">{item.title}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }

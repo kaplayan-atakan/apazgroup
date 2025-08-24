@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import type { PropsWithChildren } from 'react';
 import { notFound } from 'next/navigation';
 
 import { isLocale } from '../../../lib/i18n';
@@ -13,6 +14,11 @@ import { LoadingSpinner, LoadingOverlay } from '../../../components/ui/LoadingSp
 import { AccessibleCheckbox, AccessibleRadioGroup, NativeSelect } from '../../../components/accessibility';
 
 export default function UIPlayground({ params }: { params: { locale: string } }) {
+  // Defer AnimatePresence to client to avoid any SSR vendor-chunk lookup in dev
+  const AnimatePresence = dynamic(
+    () => import('framer-motion').then(m => m.AnimatePresence),
+    { ssr: false }
+  ) as React.ComponentType<PropsWithChildren<{ initial?: boolean; mode?: 'sync' | 'popLayout' | 'wait' }>>;
   const [showLoadingOverlay, setShowLoadingOverlay] = useState(false);
   const [radioValue, setRadioValue] = useState('option1');
   const [isChecked, setIsChecked] = useState(false);
@@ -64,6 +70,10 @@ export default function UIPlayground({ params }: { params: { locale: string } })
           <Button variant="secondary">Secondary</Button>
           <Button variant="accent">Accent</Button>
           <Button variant="ghost">Ghost</Button>
+          <Button variant="outline">Outline</Button>
+          <Button variant="soft">Soft</Button>
+          <Button variant="danger">Danger</Button>
+          <Button variant="success">Success</Button>
         </div>
       </div>
       
@@ -81,6 +91,14 @@ export default function UIPlayground({ params }: { params: { locale: string } })
         <div className="space-y-4">
           <Button fullWidth>Full Width Button</Button>
           <Button disabled>Disabled Button</Button>
+          <div className="flex flex-wrap gap-4">
+            <Button pill>Primary Pill</Button>
+            <Button pill variant="outline">Outline Pill</Button>
+            <Button loading>Loading...</Button>
+            <Button variant="accent" loading pill>Accent Loading</Button>
+            <Button variant="danger" elevation={2}>High Elevation</Button>
+            <Button variant="success" elevation={0}>Flat Success</Button>
+          </div>
         </div>
       </div>
       
