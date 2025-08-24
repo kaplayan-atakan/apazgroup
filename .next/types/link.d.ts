@@ -29,12 +29,63 @@ declare namespace __next_route_internal_types__ {
     S extends `${string}${SearchOrHash}` ? never : S
 
   type StaticRoutes = 
+    | `/api/og`
     | `/`
-    | `/api/forms/basvuru-extended`
     | `/api/forms/basvuru`
     | `/api/forms/franchising`
     | `/api/forms/iletisim`
-    | `/api/og`
+    | `/api/forms/basvuru-extended`
+    | `/`
+    | `/insan_kaynaklari_politikamiz`
+    | `/bize_katilin`
+    | `/basvuru_formu`
+    | `/tr/basvuru_formu`
+    | `/apaz_group_hakkinda`
+    | `/tr/hakkimizda/apaz-group-hakkinda`
+    | `/en/hakkimizda/apaz-group-hakkinda`
+    | `/tr/apaz-group-hakkinda`
+    | `/en/apaz-group-hakkinda`
+    | `/franchising`
+    | `/haberler`
+    | `/iletisim`
+    | `/en/basvuru-formu`
+    | `/kalite`
+    | `/tr/kalite`
+    | `/en/kalite`
+    | `/kariyer_egitim`
+    | `/kariyer-ve-egitim-olanaklarimiz`
+    | `/tr/kariyer-ve-egitim-olanaklarimiz`
+    | `/en/kariyer-ve-egitim-olanaklarimiz`
+    | `/kurum_kulturumuz_ve_etik_politikamiz`
+    | `/kurumsal_sosyal_sorumluluk_politikasi`
+    | `/olanaklar`
+    | `/tr/olanaklar`
+    | `/en/olanaklar`
+    | `/performans`
+    | `/tr/performans`
+    | `/en/performans`
+    | `/pide_by_pide`
+    | `/tr/pide-by-pide`
+    | `/en/pide-by-pide`
+    | `/seffaflik_ve_hesap_verebilirlik`
+    | `/ucret_politikamiz`
+    | `/tr/ucret-politikamiz`
+    | `/en/ucret-politikamiz`
+    | `/yonetim`
+    | `/tr/yonetim`
+    | `/en/yonetim`
+    | `/baydoner`
+    | `/tr/baydoner`
+    | `/en/baydoner`
+    | `/bursaishakbey`
+    | `/tr/bursa-ishakbey`
+    | `/en/bursa-ishakbey`
+    | `/tr/insan-kaynaklari-politikamiz`
+    | `/en/insan-kaynaklari-politikamiz`
+    | `/tr/kurum-kulturumuz-ve-etik-degerlerimiz`
+    | `/en/kurum-kulturumuz-ve-etik-degerlerimiz`
+    | `/kisisel-verilerin-korunmasi`
+    | `/cerez-politikasi`
     | `/`
     | `/insan_kaynaklari_politikamiz`
     | `/bize_katilin`
@@ -87,40 +138,40 @@ declare namespace __next_route_internal_types__ {
     | `/kisisel-verilerin-korunmasi`
     | `/cerez-politikasi`
   type DynamicRoutes<T extends string = string> = 
-    | `/${SafeSlug<T>}`
-    | `/${SafeSlug<T>}/kariyer/kariyer-egitim`
-    | `/${SafeSlug<T>}/kariyer/kurum-kulturumuz-ve-etik-degerlerimiz`
-    | `/${SafeSlug<T>}/kariyer/olanaklar`
-    | `/${SafeSlug<T>}/kariyer/performans`
-    | `/${SafeSlug<T>}/kariyer/ucret-politikamiz`
-    | `/${SafeSlug<T>}/haberler/haber1`
-    | `/${SafeSlug<T>}/haberler/haber2`
-    | `/${SafeSlug<T>}/haberler/haber4`
-    | `/${SafeSlug<T>}/haberler/haber3`
-    | `/${SafeSlug<T>}/hakkimizda/kalite`
-    | `/${SafeSlug<T>}/kurumsal-sosyal-sorumluluk-politikasi`
-    | `/${SafeSlug<T>}/markalarimiz/baydoner`
-    | `/${SafeSlug<T>}/markalarimiz/bursa-ishakbey`
-    | `/${SafeSlug<T>}/markalarimiz/pide-by-pide`
-    | `/${SafeSlug<T>}/seffaflik-ve-hesap-verebilirlik`
-    | `/${SafeSlug<T>}/cerez-politikasi`
     | `/${SafeSlug<T>}/kisisel-verilerin-korunmasi`
-    | `/${SafeSlug<T>}/${SafeSlug<T>}`
     | `/${SafeSlug<T>}/basvuru-formu`
-    | `/${SafeSlug<T>}/franchising`
-    | `/${SafeSlug<T>}/haberler`
-    | `/${SafeSlug<T>}/haberler/${SafeSlug<T>}`
+    | `/${SafeSlug<T>}/cerez-politikasi`
     | `/${SafeSlug<T>}/baydoner`
     | `/${SafeSlug<T>}/hakkimizda`
-    | `/${SafeSlug<T>}/hakkimizda/apaz-group-hakkinda`
-    | `/${SafeSlug<T>}/hakkimizda/yonetim`
-    | `/${SafeSlug<T>}/hakkimizda/yonetim/${SafeSlug<T>}`
-    | `/${SafeSlug<T>}/bize-katilin`
-    | `/${SafeSlug<T>}/iletisim`
-    | `/${SafeSlug<T>}/kariyer/basvuru-formu`
-    | `/${SafeSlug<T>}/kariyer/insan-kaynaklari-politikamiz`
     | `/${SafeSlug<T>}/insan-kaynaklari-politikamiz`
+    | `/${SafeSlug<T>}`
+    | `/${SafeSlug<T>}/hakkimizda/apaz-group-hakkinda`
     | `/${SafeSlug<T>}/ui-playground`
+    | `/${SafeSlug<T>}/haberler/haber2`
+    | `/${SafeSlug<T>}/haberler/haber4`
+    | `/${SafeSlug<T>}/kariyer/kariyer-egitim`
+    | `/${SafeSlug<T>}/haberler/haber3`
+    | `/${SafeSlug<T>}/haberler/haber1`
+    | `/${SafeSlug<T>}/hakkimizda/kalite`
+    | `/${SafeSlug<T>}/kariyer/kurum-kulturumuz-ve-etik-degerlerimiz`
+    | `/${SafeSlug<T>}/kariyer/olanaklar`
+    | `/${SafeSlug<T>}/kariyer/ucret-politikamiz`
+    | `/${SafeSlug<T>}/markalarimiz/baydoner`
+    | `/${SafeSlug<T>}/markalarimiz/bursa-ishakbey`
+    | `/${SafeSlug<T>}/kariyer/performans`
+    | `/${SafeSlug<T>}/kurumsal-sosyal-sorumluluk-politikasi`
+    | `/${SafeSlug<T>}/seffaflik-ve-hesap-verebilirlik`
+    | `/${SafeSlug<T>}/bize-katilin`
+    | `/${SafeSlug<T>}/haberler/${SafeSlug<T>}`
+    | `/${SafeSlug<T>}/franchising`
+    | `/${SafeSlug<T>}/hakkimizda/yonetim/${SafeSlug<T>}`
+    | `/${SafeSlug<T>}/haberler`
+    | `/${SafeSlug<T>}/markalarimiz/pide-by-pide`
+    | `/${SafeSlug<T>}/iletisim`
+    | `/${SafeSlug<T>}/hakkimizda/yonetim`
+    | `/${SafeSlug<T>}/kariyer/basvuru-formu`
+    | `/${SafeSlug<T>}/${SafeSlug<T>}`
+    | `/${SafeSlug<T>}/kariyer/insan-kaynaklari-politikamiz`
 
   type RouteImpl<T> = 
     | StaticRoutes

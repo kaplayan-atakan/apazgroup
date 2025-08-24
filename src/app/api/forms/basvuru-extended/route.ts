@@ -12,7 +12,8 @@ function coerceBoolean(o: Record<string, unknown>, key: string) {
   }
 }
 
-export const runtime = 'node';
+// Use supported Next.js runtime identifier
+export const runtime = 'nodejs';
 // Must be dynamic because we send emails & process uploads per request
 export const dynamic = 'force-dynamic';
 
