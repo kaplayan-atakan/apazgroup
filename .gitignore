@@ -1,61 +1,23 @@
-### Node / Package Managers
+# Node
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+npm-debug.log
+yarn-error.log
 
-### Next.js / Build Artifacts
-.next/
-out/
+# Build
 dist/
-.vercel/
 
-### TypeScript
-*.tsbuildinfo
-
-### Tool / Cache directories
-.turbo/
-turbo/
-.cache/
-.eslintcache
-
-### Coverage / Reports
-coverage/
-*.lcov
-
-### Environment & Secrets
+# Environment
 .env
-.env.*.local
 .env.local
 
-### Logs
-logs/
-*.log
-*.log.*
-
-### OS Files
-.DS_Store
-Thumbs.db
-
-### Editor / IDE
-.vscode/
-.idea/
-*.swp
-
-### Python
+# Python
 __pycache__/
 *.py[cod]
 *.pyo
 venv/
-.venv/
 
-### Misc / Generated
-*.bak
-*.orig
-*.rej
+# VS Code
+.vscode/
 
-# Lock optional ignore examples (uncomment only if you intentionally do not want to commit a specific lockfile)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+# Logs
+*.log
