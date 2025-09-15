@@ -26,7 +26,8 @@ export function PersonCard({ image, name, role, description, href }: PersonCardP
 
   return (
     <article className={`group rounded-lg overflow-hidden bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md transition ${isLoading ? 'opacity-70' : ''}`}>
-      <div className="relative w-full aspect-[4/3]">
+  {/* Increased height (4/3 -> 16/15) to reveal ~25% more of portrait without changing width */}
+  <div className="relative w-full aspect-[16/15]">
         <Image
           src={image}
           alt={name}
@@ -38,8 +39,12 @@ export function PersonCard({ image, name, role, description, href }: PersonCardP
         />
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-semibold tracking-tight">{name}</h3>
-        {role && <div className="text-sm text-slate-600 mt-0.5">{role}</div>}
+        <h3 className="text-lg font-semibold tracking-tight leading-tight">{name}</h3>
+        {role && (
+          <div className="mt-1 text-sm font-medium text-brand-primary/90 tracking-tight">
+            {role}
+          </div>
+        )}
         {description && <p className="mt-2 text-sm text-slate-600">{description}</p>}
         <Link
           href={href as Route}

@@ -5,12 +5,12 @@ import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { SocialIcon } from 'react-social-icons';
 
 import type { Locale } from '../../lib/i18n';
 import { t } from '../../lib/i18n-dict';
-import { LangSwitcher } from '../navigation/LangSwitcher';
+// import { LangSwitcher } from '../navigation/LangSwitcher'; // temporarily disabled
 import { Icon } from '../ui/Icon';
+import { SocialIcon } from 'react-social-icons';
 import { Button } from '../ui/Button';
 
 type MobileSection = 'about' | 'brands' | 'career' | null;
@@ -53,7 +53,7 @@ export function Header({ locale }: { locale: Locale }) {
   ] as const;
   const brandItems = [
     ['/markalarimiz/baydoner', 'Baydöner'],
-    ['/markalarimiz/pide-by-pide', 'Pide by Pide'],
+    ['/markalarimiz/pide-by-pide', 'PidebyPide'],
     ['/markalarimiz/bursa-ishakbey', 'Bursa İshakbey'],
   ] as const;
   const careerItems = [
@@ -61,7 +61,7 @@ export function Header({ locale }: { locale: Locale }) {
     ['/kariyer/kurum-kulturumuz-ve-etik-degerlerimiz', 'Kurum Kültürümüz / Etik Değerlerimiz'],
     ['/kariyer/ucret-politikamiz', 'Ücret Politikamız'],
     ['/kariyer/performans', 'Hedeflerle Yönetim ve Performans'],
-    ['/kariyer/olanaklar', 'Çalışan Sosyal Olanaklar'],
+    ['/kariyer/olanaklar', 'Sosyal Olanaklar'],
     ['/kariyer/kariyer-egitim', 'Kariyer ve Eğitim Olanaklarımız'],
     ['/bize-katilin', 'Bize Katılın'],
   ] as const;
@@ -114,17 +114,21 @@ export function Header({ locale }: { locale: Locale }) {
   }, [mobileOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-200" role="banner">
-      <nav className="container mx-auto px-4 h-16 flex items-center justify-between" aria-label={t(locale, 'nav.mainNavigation', 'Ana Navigasyon')}>
+  <header
+    id="site-header"
+  className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 bg-gradient-to-b from-white to-slate-50"
+    role="banner"
+  >
+  <nav className="container mx-auto px-4 h-16 lg:h-24 flex items-center justify-between" aria-label={t(locale, 'nav.mainNavigation', 'Ana Navigasyon')}>
         {/* Logo */}
         {(() => {
           const href = withLocale('/');
           return (
             // @ts-expect-error typedRoutes experimental: dynamic string
             <Link href={href} aria-label={t(locale, 'nav.home', 'Anasayfaya git')} className="flex-shrink-0">
-              <span className="relative block h-8 w-36">
+              <span className="relative block h-14 lg:h-20 w-[180px] lg:w-[260px] transition-all duration-200">
                 {/* Dark/Light variants - can be adjusted to separate assets if provided */}
-                <Image src="/brand/logo--global.png" alt="Apaz Group" fill sizes="144px" className="object-contain block" priority />
+                <Image src="/brand/logo--global.png" alt="Apaz Group" fill sizes="(max-width:1024px) 180px, 260px" className="object-contain block" priority />
               </span>
             </Link>
           );
@@ -252,10 +256,9 @@ export function Header({ locale }: { locale: Locale }) {
         {/* Right side: socials + lang switcher + mobile toggle */}
         <div className="flex items-center gap-3">
           <div className="hidden lg:flex items-center gap-3">
-            {/* <SocialIcon url="https://x.com/ApazGroup" aria-label="X (Twitter)" bgColor="#0f172a" fgColor="#ffffff" style={{ height: 28, width: 28 }} /> */}
-            <SocialIcon url="https://www.linkedin.com/company/apazgroup" aria-label="LinkedIn" bgColor="#0f172a" fgColor="#ffffff" style={{ height: 28, width: 28 }} />
+            <SocialIcon url="https://www.linkedin.com/company/apaz-group" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 36, width: 36 }} className="hover:opacity-80 transition-opacity" />
           </div>
-          <LangSwitcher current={locale} />
+          {/* LangSwitcher temporarily hidden */}
           <Button
             type="button"
             variant="ghost"
@@ -281,8 +284,8 @@ export function Header({ locale }: { locale: Locale }) {
             <div className="flex items-center justify-between px-5 h-16 border-b border-slate-200" role="none">
               {(() => { const href = withLocale('/'); return (// @ts-expect-error typedRoutes dynamic string
                 <Link href={href} aria-label={t(locale, 'nav.home', 'Anasayfa')} onClick={() => setMobileOpen(false)} className="flex-shrink-0">
-                  <span className="relative block h-8 w-36">
-                    <Image src="/brand/logo--global.png" alt="Apaz Group" fill sizes="144px" className="object-contain" />
+                  <span className="relative block h-14 lg:h-20 w-[180px] lg:w-[260px] transition-all duration-200">
+                    <Image src="/brand/logo--global.png" alt="Apaz Group" fill sizes="(max-width:1024px) 180px, 260px" className="object-contain" />
                   </span>
                 </Link>
               ); })()}
@@ -422,7 +425,7 @@ export function Header({ locale }: { locale: Locale }) {
                 >İletişim</Button>
               ); })()}
               <div className="pt-6 border-t border-slate-200 flex items-center gap-4">
-                <SocialIcon url="https://www.linkedin.com/company/apazgroup" aria-label="LinkedIn" bgColor="#0f172a" fgColor="#ffffff" style={{ height: 32, width: 32 }} />
+                <SocialIcon url="https://www.linkedin.com/company/apaz-group" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 36, width: 36 }} className="hover:opacity-80 transition-opacity" />
               </div>
               <div className="text-xs text-slate-500">© 2025 Apaz Group</div>
             </div>

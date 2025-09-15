@@ -35,7 +35,7 @@ export default function UcretPolitikamizPage({ params }: PageProps) {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
         <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_35%_30%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 md:py-24 text-center">
+        <div className="relative mx-auto max-w-4xl px-4 py-24 md:py-32 text-center">
           <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Ücret Politikamız</h1>
           <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Apaz Group olarak, çalışanlarımıza adil, eşitlikçi ve şeffaf bir ücret politikası sunmayı taahhüt ediyoruz. Ücretlendirme sistemimiz, iş değeri, performans ve rekabetçi pazar dinamiklerine dayanmaktadır.</p>
         </div>
@@ -58,7 +58,6 @@ export default function UcretPolitikamizPage({ params }: PageProps) {
                     />
                   </figure>
                   <div className="prose prose-slate max-w-none flex-1">
-                  <h2>Ücret Politikamız</h2>
                   <p>Ücret politikamız, nitelikli çalışanları kurumumuza çekme, mevcut çalışanlarımızı elde tutma, performansı yüksek ve nitelikli çalışanlarımızı ödüllendirme ve yasal yükümlülüklerimizi tam ve eksiksiz yerine getirme prensiplerine dayanmaktadır.</p>
                   <p>Bu politikadan hareketle ücret işgücü piyasalarındaki dengelere, işin içeriğine ve işi yapan bireyin yetkinliği ve performansına dayalı olarak kurgulanmıştır.</p>
                   </div>
@@ -87,7 +86,7 @@ export default function UcretPolitikamizPage({ params }: PageProps) {
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}
-                    <Link href={withLocale('/kariyer/olanaklar')} className="hover:text-slate-900 text-slate-600 transition-colors">Çalışan Sosyal Olanaklar</Link>
+                    <Link href={withLocale('/kariyer/olanaklar')} className="hover:text-slate-900 text-slate-600 transition-colors">Sosyal Olanaklar</Link>
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}

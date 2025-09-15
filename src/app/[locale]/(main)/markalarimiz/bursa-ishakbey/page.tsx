@@ -59,21 +59,27 @@ export default function BursaIshakbeyPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Other brands */}
+        {/* Other brands (styled like Baydöner page) */}
         <section className="mt-14 pb-4">
           <h2 className="text-xl font-semibold tracking-tight">Diğer Markalarımız</h2>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <BrandCard
-              image="/markalar/baydoner_logo.jpg"
+              logo="/markalar/baydoner_logo.svg"
+              image="/markalar/baydoner_foto.jpg"
               title="Baydöner"
               description="Türkiye'nin iskender deneyimini standart kalite ve müşteri memnuniyetiyle sunan lider zincir."
               link={`/${locale}/markalarimiz/baydoner`}
+              hideTitle
+              emphasizeLogo
             />
             <BrandCard
-              image="/markalar/pidebypide_logo.png"
-              title="Pide by Pide"
+              logo="/markalar/pidebypide_logo.png"
+              image="/markalar/pide_foto.jpg"
+              title="PidebyPide"
               description="Yöresel pide lezzetlerini modern sunum ve konseptle buluşturan markamız."
               link={`/${locale}/markalarimiz/pide-by-pide`}
+              hideTitle
+              emphasizeLogo
             />
           </div>
         </section>

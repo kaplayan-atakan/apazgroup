@@ -30,12 +30,17 @@ export default function Page({ params }: Props) {
   if (!isLocale(locale)) return null;
 
   let people = getManagementPeople(locale);
-  // Çelik Başdemir'i (slug veya title eşleşmesi) en sona al
+  // Özel sıralama: Levent Yılmaz, Feridun Tuncer, Bülent Polat, Çelik Başdemir
+  const customOrder = ['levent-yilmaz', 'feridun-tuncer', 'bulent-polat', 'celik-basdemir'];
   people = people.sort((a, b) => {
-    const aIsCelik = /celik-basdemir/i.test(a.slug) || /çelik başdemir/i.test(a.frontmatter.title.toLowerCase());
-    const bIsCelik = /celik-basdemir/i.test(b.slug) || /çelik başdemir/i.test(b.frontmatter.title.toLowerCase());
-    if (aIsCelik && !bIsCelik) return 1;
-    if (!aIsCelik && bIsCelik) return -1;
+    const ai = customOrder.indexOf(a.slug);
+    const bi = customOrder.indexOf(b.slug);
+    const aDefined = ai !== -1;
+    const bDefined = bi !== -1;
+    if (aDefined && bDefined) return ai - bi; // both explicitly ordered
+    if (aDefined && !bDefined) return -1;     // defined comes first
+    if (!aDefined && bDefined) return 1;      // defined comes first
+    // fallback: alphabetical for any extra entries
     return a.frontmatter.title.localeCompare(b.frontmatter.title, 'tr');
   });
 
@@ -43,9 +48,11 @@ export default function Page({ params }: Props) {
     <>
       {/* Başlık ve Açıklama (Hero kaldırıldı) */}
       <section className="py-10">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Yönetim</h1>
-          <p className="text-slate-700">
+        <div className="max-w-3xl mx-auto px-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-6 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-2/3 after:bg-gradient-to-r after:from-brand-accent after:to-brand-yellow/70">
+            Yönetim
+          </h1>
+          <p className="text-slate-700 mt-2 max-w-2xl">
             Apaz Group&apos;un deneyimli yönetim kadrosu, sektördeki engin tecrübe ve bilgi birikimiyle markalarımızı başarıya taşıyor.
           </p>
         </div>
@@ -75,7 +82,7 @@ export default function Page({ params }: Props) {
                   key={p.slug}
                   image={heroImage || '/team/levent-yilmaz--yonetim.jpg'}
                   name={p.frontmatter.title}
-                  role={p.frontmatter.role}
+                  role={p.frontmatter.role || ''}
                   description={p.frontmatter.description}
                   href={href}
                 />

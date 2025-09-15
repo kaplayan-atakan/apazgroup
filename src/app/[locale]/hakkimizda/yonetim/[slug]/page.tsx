@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { ContentArticle } from '../../../../../components/content/ContentArticle';
 import { generateSeoMetadata } from '../../../../../lib/seo';
 import { isLocale, defaultLocale } from '../../../../../lib/i18n';
 import { getManagementPeople, getPageBySlug } from '../../../../../lib/content';
 import { normalizeSlug } from '../../../../../lib/slug';
+import { markdownToHtml } from '../../../../../lib/content/markdown';
+import { ManagementProfileClient } from '../../../../../components/profiles/ManagementProfileClient';
 
 export const dynamic = 'force-static';
 
@@ -38,11 +39,54 @@ export function generateMetadata({ params }: Props): Metadata {
   });
 }
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
   const { locale } = params;
   const slug = normalizeSlug(params.slug);
   if (!isLocale(locale)) return notFound();
   const doc = getPageBySlug(locale, slug);
   if (!doc) return notFound();
-  return <ContentArticle locale={locale} slug={slug} />;
+
+  // Expect first section to be imageProse for management profiles; fall back gracefully
+  type ImageProseSection = { type: 'imageProse'; image: string; alt?: string; body: string };
+  const firstImageProse = doc.sections.find(
+    (s): s is ImageProseSection => s.type === 'imageProse' && 'image' in s && 'body' in s
+  );
+  const portraitImage = firstImageProse?.image;
+  const portraitAlt = firstImageProse?.alt || doc.frontmatter.title;
+  const bodyMarkdown = firstImageProse?.body || '';
+
+  const remainingSections = doc.sections.filter(s => s !== firstImageProse);
+  const bodyHtml = await markdownToHtml(bodyMarkdown);
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const canonical = `${siteUrl}/${locale}/hakkimizda/yonetim/${slug}`;
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: doc.frontmatter.title,
+            jobTitle: doc.frontmatter.role,
+            image: portraitImage ? `${siteUrl}${portraitImage}` : undefined,
+            url: canonical
+          })
+        }}
+      />
+      <ManagementProfileClient
+        locale={locale}
+        title={doc.frontmatter.title}
+        role={doc.frontmatter.role}
+        description={doc.frontmatter.description}
+        portraitImage={portraitImage}
+        portraitAlt={portraitAlt}
+        bodyHtml={bodyHtml}
+        remaining={remainingSections as Array<{ type: 'prose'; body: string } | { type: 'list'; items: string[] } | { type: 'quote'; text: string; cite?: string }>}
+      />
+    </>
+  );
 }

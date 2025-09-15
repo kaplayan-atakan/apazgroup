@@ -45,7 +45,8 @@ export function ClientShell({ locale, children }: { locale: Locale; children: Re
         <SkipLink href={`#${mainContentId}`} text={locale === 'tr' ? 'İçeriğe geç' : 'Skip to content'} />
         <LiveRegion message="" ariaLive="polite" role="status" />
   <Header locale={locale} />
-        <div className="flex-1 pt-16" id={mainContentId} role="main" tabIndex={-1}>
+  {/* Header fixed: h-16 mobile, h-24 (6rem) on lg. Ensure matching top padding so content isn't hidden under header. */}
+  <div className="flex-1 pt-16 lg:pt-24" id={mainContentId} role="main" tabIndex={-1}>
           {children}
         </div>
   <Footer locale={locale} />

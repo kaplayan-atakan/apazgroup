@@ -13,6 +13,13 @@ export function BasvuruExtendedForm() {
     resolver: zodResolver(BasvuruExtendedFormSchema)
   });
   const fileName = watch('userfileName');
+  const nameValue = watch('common_name_surname') || '';
+
+  function counterClass(current: number, max: number) {
+    if (current > max) return 'text-red-600';
+    if (current >= max - Math.ceil(max * 0.1)) return 'text-amber-600';
+    return 'text-slate-500';
+  }
 
   const onSubmit = async (values: BasvuruExtendedFormInput) => {
     setErr(null); setOk(false);
@@ -37,8 +44,11 @@ export function BasvuruExtendedForm() {
       <div className="grid md:grid-cols-2 gap-5">
         <div>
           <label htmlFor="common_name_surname" className="block text-sm font-medium">Ad Soyad *</label>
-          <input id="common_name_surname" className="mt-1 w-full border rounded px-3 py-2" {...register('common_name_surname')} />
-          {errors.common_name_surname && <p className="text-xs text-red-600 mt-1">Zorunlu alan</p>}
+          <input id="common_name_surname" className="mt-1 w-full border rounded px-3 py-2" maxLength={160} aria-describedby="name-count" {...register('common_name_surname')} />
+          <div className="mt-1 flex items-center justify-between">
+            <p id="name-count" className={`text-xs ${counterClass(nameValue.length, 160)}`}>{nameValue.length} / 160</p>
+            {errors.common_name_surname && <p className="text-xs text-red-600">Zorunlu alan</p>}
+          </div>
         </div>
         <div>
           <label htmlFor="common_email" className="block text-sm font-medium">E-Posta *</label>

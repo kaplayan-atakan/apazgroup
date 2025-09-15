@@ -109,12 +109,12 @@ export const IletisimFormSchema = z.object({
     .string({ required_error: 'required' })
     .trim()
     .min(2, 'min_2')
-    .max(160, 'max_160'),
+    .max(50, 'max_50'),
   message: z
     .string({ required_error: 'required' })
     .trim()
     .min(10, 'min_10')
-    .max(2000, 'max_2000'),
+    .max(500, 'max_500'),
   kisiselVerilerinKorunmasi: z
     .boolean({ required_error: 'consent_required' })
     .refine(v => v === true, 'consent_required'),

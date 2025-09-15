@@ -45,7 +45,7 @@ const BRAND_SECTIONS = [
       <>
         {/* pidebypide start */}
         <p>
-          PidebyPide, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu halini sunuyor. İlk günden bu yana kalitesinden ödün vermeyen PidebyPide, taze taze hazırlanan bol malzemeli ürünleriyle misafirlerini ağırlıyor. Türkiye genelinde 25&apos;in üzerinde şube ile hizmet veren PidebyPide, ilerleyen yıllarda özellikle de Franchise ile büyümeye devam edecektir.
+          PidebyPide olarak, konuklarımıza, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu halini, enfes bir lezzetle sunuyoruz. Deneyimli ustalarımız tarafından hazırlanan günlük taze hamurdan özel olarak üretilen bol malzemeli ürünlerimizi, çıtır çıtır, lezzetine lezzet katarak servis ediyor, kalitemizden ödün vermeden çalışmalarımıza devam ediyoruz.
         </p>
       </>
     )
@@ -57,7 +57,7 @@ const BRAND_SECTIONS = [
       <>
         {/* bursaishakbey start */}
         <p>
-          Hızlı servisi ve doyurucu porsiyonlarıyla self servis hizmet veren Bursa İshakbey, İskender&apos;de uzmandır ve güvenilirdir. Bursa İshakbey&apos;in döneri ve İskenderi tazedir, müşterilerinin gözü önünde hazırlanır ve taze taze beğenilerine sunulur. Bursa İshakbey, Türkiye genelinde 20&apos;nin üzerinde şube ile hizmet verirken, ilerleyen yıllarda şube sayısını ikiye katlamayı hedeflemektedir.
+          Türk mutfağının klasikleşmiş tadı döneri en lezzetli ve en doyurucu haliyle sunmayı ilke edinen Bursa İshakbey, döner lezzetini taçlandıran ürün çeşitliliği, İskender ve ekmek arası ürün sunumları ile konuklarını ağırlıyor. Ayrıcalıklı konseptiyle yeme-içme sektöründe fark yaratan Bursa İshakbey, self servis konsepti ve uygun fiyatlı doyurucu menü anlayışıyla öne çıkıyor.
         </p>
       </>
     )
@@ -96,24 +96,43 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
               key={section.key}
               role="region"
               aria-labelledby={`brand-${section.key}`}
-              className={`relative group p-6 md:p-8 rounded-xl border shadow-sm md:grid md:grid-cols-2 md:items-center gap-10 overflow-hidden bg-gradient-to-br from-white ${a.to} ${a.border}`}
+              className={`relative group p-4 md:p-5 rounded-xl border shadow-sm md:grid md:grid-cols-[190px_1fr] md:items-center gap-6 overflow-hidden bg-gradient-to-br from-white ${a.to} ${a.border} transition-all duration-500 ease-out hover:shadow-md hover:border-slate-300`}
             >
               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.6),transparent_60%)]" />
               {/* Logo left (takes half width on desktop, full width on mobile) */}
-              <div className="relative w-full aspect-[16/10] flex items-center justify-center bg-white/70 backdrop-blur-sm border border-slate-200 rounded-lg p-6 md:p-10 min-h-[180px] md:min-h-[280px] overflow-hidden">
-                <div className={section.key === 'pidebypide' ? 'w-full h-full flex items-center justify-center scale-90 transition-transform' : 'w-full h-full flex items-center justify-center transition-transform'}>
-                  <Image
-                    src={section.logo.src}
-                    alt={section.logo.alt}
-                    fill
-                    sizes="(max-width:768px) 90vw, 50vw"
-                    className="object-contain drop-shadow-sm"
-                    priority={section.key === 'apaz-group'}
-                  />
+              <div
+                className={(() => {
+                  // Base container sizing per brand (taller on mobile where needed)
+                  const base = 'relative flex items-center justify-center bg-white/70 backdrop-blur-sm border border-slate-200 rounded-lg overflow-hidden transition-all duration-500 ease-out group-hover:border-slate-300';
+                  if (section.key === 'pidebypide' || section.key === 'bursaishakbey') return base + ' h-28 md:h-24 w-full md:w-[190px] p-4 md:p-4';
+                  if (section.key === 'apaz-group') return base + ' h-32 md:h-28 w-full md:w-[200px] p-4 md:p-5';
+                  if (section.key === 'baydoner') return base + ' h-28 md:h-28 w-full md:w-[190px] p-4 md:p-5';
+                  return base + ' h-28 md:h-28 w-full md:w-[180px] p-4';
+                })()}
+              >
+                {/* Wrapper scale for visual emphasis (keeps container size stable) */}
+                <div
+                  className={(() => {
+                    const common = 'w-full h-full flex items-center justify-center';
+                    if (section.key === 'apaz-group' || section.key === 'baydoner') return common + ' scale-150 sm:scale-125';
+                    if (section.key === 'pidebypide') return common + ' scale-95 sm:scale-90';
+                    return common;
+                  })()}
+                >
+                  <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.03]">
+                    <Image
+                      src={section.logo.src}
+                      alt={section.logo.alt}
+                      fill
+                      sizes="(max-width:640px) 80vw, (max-width:768px) 60vw, 40vw"
+                      className="object-contain drop-shadow-sm"
+                      priority={section.key === 'apaz-group'}
+                    />
+                  </div>
                 </div>
               </div>
               {/* Text right (below on mobile) */}
-              <div className="mt-6 md:mt-0 space-y-4 leading-relaxed text-slate-700">
+              <div className="mt-4 md:mt-0 space-y-4 leading-relaxed text-slate-700 transition-colors duration-500">
                 <h2 id={`brand-${section.key}`} className="sr-only">{section.logo.alt}</h2>
                 {section.content}
               </div>

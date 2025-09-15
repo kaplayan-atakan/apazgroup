@@ -1,5 +1,5 @@
 ---
-title: "Çalışanlara Sunulan Olanaklar"
+title: "Sosyal Olanaklar"
 route: "/olanaklar"
 originalUrl: "https://www.apazgroup.com/olanaklar"
 seo:
@@ -7,7 +7,7 @@ seo:
   description: "Sosyal etkinlikler, kutlamalar ve destek paketleri."
 layout: "content"
 hero:
-  heading: "Çalışanlara Sunulan Olanaklar"
+  heading: "Sosyal Olanaklar"
 sections:
   - type: "split"
     media:

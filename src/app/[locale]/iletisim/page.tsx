@@ -53,7 +53,7 @@ export default function Page({ params }: Props) {
                 <Link href="tel:+902324644235" className="text-slate-800 hover:text-brand-yellow">+90 232 464 42 35</Link>
               </div>
 
-              <div className="flex items-center gap-4 pt-2">
+              {/* <div className="flex items-center gap-4 pt-2">
                 <Link
                   href="https://twitter.com/ApazGroup"
                   target="_blank"
@@ -72,7 +72,7 @@ export default function Page({ params }: Props) {
                 >
                   LinkedIn
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
 

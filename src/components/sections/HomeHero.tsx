@@ -9,7 +9,7 @@ interface HomeHeroProps {
   email?: string;
 }
 
-export function HomeHero({ videoSrc, poster, heading, subheading, email }: HomeHeroProps) {
+export function HomeHero({ videoSrc, poster, heading, subheading }: HomeHeroProps) {
   return (
     <section className="relative h-[100svh]" aria-label="Hero">
       <div className="absolute inset-0">
@@ -37,13 +37,13 @@ export function HomeHero({ videoSrc, poster, heading, subheading, email }: HomeH
       </div>
 
       {/* Email bottom-left */}
-      {email && (
+      {/* {email && (
         <div className="absolute bottom-6 left-6">
           <a href={`mailto:${email}`} className="text-white hover:text-brand-yellow transition-colors underline-offset-4 hover:underline">
             {email}
           </a>
         </div>
-      )}
+      )} */}
 
       {/* Scroll hint bottom-center */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">

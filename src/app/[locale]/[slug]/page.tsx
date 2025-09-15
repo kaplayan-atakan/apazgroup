@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
 import { getAllPages, getPageBySlug } from '../../../lib/content';
 import { isLocale, defaultLocale } from '../../../lib/i18n';
@@ -12,8 +13,19 @@ interface PageProps {
 
 export function generateStaticParams() {
   const locales = ['tr','en'];
+  const excluded = new Set([
+    'haberler',
+    'kurumsal-sosyal-sorumluluk-politikasi',
+    'franchising',
+    'bize-katilin',
+    'basvuru-formu',
+    'iletisim',
+    'seffaflik-ve-hesap-verebilirlik'
+  ]);
   return locales.flatMap(locale =>
-    getAllPages(locale).map(p => ({ locale, slug: p.slug }))
+    getAllPages(locale)
+      .filter(p => !excluded.has(p.slug))
+      .map(p => ({ locale, slug: p.slug }))
   );
 }
 
@@ -23,6 +35,10 @@ export function generateMetadata({ params }: PageProps): Metadata {
   
   if (!isLocale(locale)) return {};
   
+  if (slug === 'haberler' || slug === 'kurumsal-sosyal-sorumluluk-politikasi' || slug === 'franchising' || slug === 'bize-katilin' || slug === 'basvuru-formu' || slug === 'iletisim' || slug === 'seffaflik-ve-hesap-verebilirlik') {
+    // Dedicated static page handles /haberler; dynamic route should not override.
+    return {};
+  }
   const page = getPageBySlug(locale, slug);
   if (!page) return {};
   
@@ -80,5 +96,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
 export default function ContentPage({ params }: PageProps) {
   const { locale } = params;
   const slug = normalizeSlug(params.slug);
+  if (slug === 'haberler' || slug === 'kurumsal-sosyal-sorumluluk-politikasi' || slug === 'franchising' || slug === 'bize-katilin' || slug === 'basvuru-formu' || slug === 'iletisim' || slug === 'seffaflik-ve-hesap-verebilirlik') {
+    redirect(`/${locale}/${slug}`);
+  }
   return <ContentArticle locale={locale} slug={slug} />;
 }

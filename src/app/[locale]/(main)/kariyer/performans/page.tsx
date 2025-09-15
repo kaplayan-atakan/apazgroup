@@ -35,7 +35,7 @@ export default function PerformansPage({ params }: PageProps) {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
         <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_70%_30%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-5xl px-4 py-16 md:py-24 text-center">
+        <div className="relative mx-auto max-w-5xl px-4 py-24 md:py-32 text-center">
           <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Çalışanlarımızın Performanslarının Geliştirilmesi</h1>
           <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Çok yönlü ölçüm ve gelişim planlarıyla sürdürülebilir başarı.</p>
         </div>
@@ -58,14 +58,16 @@ export default function PerformansPage({ params }: PageProps) {
                     />
                   </figure>
                   <div className="prose prose-slate max-w-none flex-1">
-                  <h2>Çalışanlarımızın Performanslarının Geliştirilmesi</h2>
-                  <p>Çalışanlarımızın performansları çok yönlü parametreler ile ölçümlenmekte ve geliştirilmektedir;</p>
-                  <ol className="list-[lower-alpha] pl-6 mt-4 space-y-2 text-sm">
-                    <li>Kurumumuzun sürdürülebilirliğini sağlayacak olan kurumsal temel yetkinliklerin ölçülmesi</li>
-                    <li>Departmanların işlerinin gerektirdiği fonksiyonel yetkinliklerin ölçülmesi</li>
-                    <li>Yönetim kadrolarında kurumsal yönetim politikalarımızın doğru işlediğini izleyebilmek için belirlenen yönetsel yetkinliklerin değerlendirilmesi. Yetkinliklerimiz bu üç seviyede izlenmekte ve ölçüm sonuçlarına göre bireysel gelişim planları oluşturulmaktadır.</li>
-                    <li>Belirlenen kurumsal hedeflerin departmanlara ve bireylere indirilmesi suretiyle de kurumun finansal hedeflerine ulaşması izlenmekte, dönem boyunca verilen geri bildirimlerle performans eğrisinin yükselmesi sağlanmaktadır.</li>
-                  </ol>
+                    <p>Çalışanlarımızın performansları hedefleme parametreleri ve yetkinlik kriterleri ile ölçümlenmekte ve geliştirilmektedir;</p>
+                    <ol className="list-[lower-alpha] pl-6 mt-4 space-y-2 text-sm">
+                      <li>Kurumumuzun sürdürülebilirliğini sağlayacak olan kurumsal temel yetkinliklerin ölçülmesi</li>
+                      <li>Departmanların işlerinin gerektirdiği fonksiyonel yetkinliklerin ölçülmesi</li>
+                      <li>Yönetim kadrolarında kurumsal yönetim politikalarımızın doğru işlediğini izleyebilmek için belirlenen yönetsel yetkinliklerin değerlendirilmesi. Yetkinliklerimiz bu üç seviyede izlenmekte ve ölçüm sonuçlarına göre bireysel gelişim planları oluşturulmaktadır.</li>
+                    </ol>
+                    <p>Hedeflerin izlenmesi ve geliştirilmesi;</p>
+                    <ol className="list-[lower-alpha] pl-6 mt-4 space-y-2 text-sm">
+                      <li>Belirlenen kurumsal hedeflerin departmanlara ve bireylere indirilmesi suretiyle de kurumun finansal hedeflerine ulaşması izlenmekte, dönem boyunca verilen geri bildirimlerle performans eğrisinin yükselmesi ve bireylerin gelişimi sağlanmaktadır.</li>
+                    </ol>
                   </div>
                 </div>
               </div>
@@ -92,7 +94,7 @@ export default function PerformansPage({ params }: PageProps) {
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}
-                    <Link href={withLocale('/kariyer/olanaklar')} className="hover:text-slate-900 text-slate-600 transition-colors">Çalışan Sosyal Olanaklar</Link>
+                    <Link href={withLocale('/kariyer/olanaklar')} className="hover:text-slate-900 text-slate-600 transition-colors">Sosyal Olanaklar</Link>
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}
@@ -103,7 +105,7 @@ export default function PerformansPage({ params }: PageProps) {
                     <Link href={withLocale('/bize-katilin')} className="hover:text-slate-900 text-slate-600 transition-colors">Bize Katılın</Link>
                   </li>
                 </ul>
-                
+
               </nav>
             </aside>
           </div>

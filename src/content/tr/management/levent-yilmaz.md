@@ -1,7 +1,7 @@
 ---
 title: "Levent Yılmaz"
 role: "Kurucu Ortak"
-description: "Apaz Group Kurucu Ortağı; 1990 Ege Üniversitesi Eczacılık, 1995 DEÜ İşletme Yüksek Lisans mezunu."
+description: "Apaz Group Kurucu Ortağı; enerji, uluslararası ticaret, gıda perakendesi ve hızlı servis restoran işletmeciliği alanlarında girişimci."
 seo:
   title: "Levent Yılmaz | Yönetim"
   description: "Apaz Group Kurucu Ortağı. Gıda perakendesi ve uluslararası ticarette deneyim."

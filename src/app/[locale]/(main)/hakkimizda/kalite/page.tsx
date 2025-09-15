@@ -60,18 +60,18 @@ export default function KalitePage({ params }: PageProps) {
             <p><strong>3- Sipariş ettiğiniz ürünlerin kontrolleri</strong><br />Gıda güvenliğinin 7/24 sağlanması için tüm süreçlerimizi izliyoruz. Doğru sıcaklıklarda bekletme, doğru tekniklerde pişirme, taze olması için sipariş kadar hazırlama, hijyen prosedürlerine uyum gibi kriterler belirlenmiştir. Bu kriterlere uyum dijital ortamda sürekli kontrol edilmektedir. Temiz ve sağlıklı menülerimizi hijyenik ortamlarda tüketilmesini sağlıyoruz.</p>
             <p><strong>4- Sadece uzmanlar değil siz de kontrol edebilirsiniz</strong><br />Mutfağımızı; cam bölmeden, banko gerisinden veya mutfak giriş kapısından isteğiniz an kaliteyi, temizliği ve ürün hazırlığını yerinde görebilirsiniz.</p>
           </div>
-          <h2 className="mt-12 mb-4 text-2xl font-semibold text-brand-accent">Her zaman önemsediğimiz temizlik süreçlerimiz;</h2>
-          <div className="space-y-4">
-            <p><strong>1-</strong> Çalışanlarımız, her türlü hijyen eğitimini alarak iş başı yapar.</p>
-            <p><strong>2-</strong> Çalışanlarımız, her vardiyada temiz ve ütülenmiş iş elbisesi giyer.</p>
-            <p><strong>4-</strong> Çalışanlarımız üretim ve servis alanlarına ayakkabı/terliklerini dezenfekte ederek girer.</p>
-            <p><strong>5-</strong> Üretim alanındaki çalışanlarımız; iş elbisesine ek olarak eldiven, kolluk takar.</p>
-            <p><strong>6-</strong> Çalışanlarımız, 30 dakikada bir ve gerektikçe ellerini yıkanıp dezenfekte eder.</p>
-            <p><strong>7-</strong> Müşterilerimizin kullandığı alanlar; her kullanım öncesi ve sonrası temizlenip dezenfekte edilir.</p>
-            <p><strong>8-</strong> Restoranlarımız; iş başlangıcında, gün içinde ve mesai bitiminde detaylı temizlik-dezenfeksiyon işlemleri yapılır.</p>
-            <p><strong>9-</strong> Ürün sevk ve pişirme sıcaklıkları kontrol edilerek bakteri/virüs gelişimi engellenir.</p>
-            <p><strong>10-</strong> Restoranlar sürekli bağımsız dış firmalar tarafından denetlenir.</p>
-          </div>
+          <h2 className="mt-12 mb-4 text-2xl font-semibold text-brand-accent">Vazgeçmediğimiz İlkelerimiz;</h2>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>Çalışanlara işe başlamadan önce tüm hijyen eğitimleri verilir.</li>
+            <li>Her vardiyada temiz ve ütülenmiş iş elbisesi temin edilir.</li>
+            <li>Üretim ve servis alanlarına ayakkabı veya terliklerin dezenfekte edilmesi sağlanır.</li>
+            <li>Üretim alanındaki çalışanlara iş elbisesine ek olarak eldiven ve kolluk kullanımı sağlanır.</li>
+            <li>Çalışanların elleri 30 dakikada bir yıkanır ve dezenfekte edilir.</li>
+            <li>Müşterilerin kullandığı alanlar, her kullanım öncesi ve sonrası temizlenir ve dezenfekte edilir.</li>
+            <li>Restoranlarda iş başlangıcında, gün içinde ve mesai bitiminde detaylı temizlik ve dezenfeksiyon yapılır.</li>
+            <li>Ürün sevk ve pişirme sıcaklıkları kontrol edilerek bakteri ve virüs oluşumu önlenir.</li>
+            <li>Restoranlar bağımsız dış firmalar tarafından düzenli olarak denetlenir.</li>
+          </ul>
         </div>
         {/* Right images */}
         <div className="space-y-6 md:sticky md:top-24">

@@ -1,5 +1,5 @@
 ---
-title: "Pide by Pide"
+title: "PidebyPide"
 seo:
   title: "PidebyPide | Apaz Group"
   description: "PidebyPide markası hakkında özet bilgi."

@@ -74,7 +74,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Markalarımız</a>
                             <ul class="dropdown-menu">
                                 <li><a href="http://www.apazgroup.com/baydoner">Baydöner</a></li>
-                                <li><a href="http://www.apazgroup.com/pide_by_pide">Pide by Pide</a></li>
+                                <li><a href="http://www.apazgroup.com/pide_by_pide">PidebyPide</a></li>
                                 <li><a href="http://www.apazgroup.com/bursaishakbey">Bursa İshakbey</a></li>
                             </ul>
                         </li>
@@ -150,7 +150,7 @@
                     <a href="#" class="dropdown-toggle">Markalarımız</a>
                     <ul class="list">
                         <li><a href="http://www.apazgroup.com/baydoner">Baydöner</a></li>
-                        <li><a href="http://www.apazgroup.com/pide_by_pide">Pide by Pide</a></li>
+                        <li><a href="http://www.apazgroup.com/pide_by_pide">PidebyPide</a></li>
                         <li><a href="http://www.apazgroup.com/bursaishakbey">Bursa İshakbey</a></li>
                     </ul>
                 </li>
@@ -1074,7 +1074,7 @@
                 </div>
                 <ul class="list">
                     <li><a href="http://www.apazgroup.com/baydoner">Baydöner</a></li>
-                    <li><a href="http://www.apazgroup.com/pide_by_pide">Pide by Pide</a></li>
+                    <li><a href="http://www.apazgroup.com/pide_by_pide">PidebyPide</a></li>
                     <li><a href="http://www.apazgroup.com/bursaishakbey">Bursa İshakbey</a></li>
                 </ul>
             </div>

@@ -12,9 +12,17 @@ import type { Locale } from '../../lib/i18n';
 export function FranchiseForm({ locale = 'tr' as Locale }) {
   const [serverError, setServerError] = useState<string | null>(null);
   const [ok, setOk] = useState<boolean>(false);
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FranchisingFormInput>({
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset, watch } = useForm<FranchisingFormInput>({
     resolver: zodResolver(FranchisingFormSchema)
   });
+  const budgetValue = watch('budget') || '';
+  const locationValue = watch('location') || '';
+
+  function counterClass(current: number, max: number) {
+    if (current > max) return 'text-red-600';
+    if (current >= max - Math.ceil(max * 0.1)) return 'text-amber-600';
+    return 'text-slate-500';
+  }
 
   async function onSubmit(values: FranchisingFormInput) {
     setServerError(null);
@@ -69,7 +77,7 @@ export function FranchiseForm({ locale = 'tr' as Locale }) {
           <label htmlFor="brand" className="block text-sm font-medium">{locale === 'tr' ? 'İlgilenilen Marka' : 'Interested Brand'}</label>
           <select id="brand" className="mt-1 w-full border rounded px-3 py-2" {...register('brand')}>
             <option value="">{locale === 'tr' ? 'Seçiniz' : 'Select'}</option>
-            <option value="pidebypide">Pide by Pide</option>
+            <option value="pidebypide">PidebyPide</option>
             <option value="baydoner">Baydöner</option>
             <option value="bursaishakbey">Bursa İshakbey</option>
           </select>
@@ -79,11 +87,19 @@ export function FranchiseForm({ locale = 'tr' as Locale }) {
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="budget" className="block text-sm font-medium">{locale === 'tr' ? 'Yatırım Bütçesi' : 'Investment Budget'}</label>
-          <input id="budget" className="mt-1 w-full border rounded px-3 py-2" {...register('budget')} />
+          <input id="budget" className="mt-1 w-full border rounded px-3 py-2" maxLength={120} aria-describedby="budget-count" {...register('budget')} />
+          <div className="mt-1 flex items-center justify-between">
+            <p id="budget-count" className={`text-xs ${counterClass(budgetValue.length, 120)}`}>{budgetValue.length} / 120</p>
+            {errors.budget && <p role="alert" className="text-xs text-red-600">{t(locale, `form.errors.${errors.budget.message}`, String(errors.budget.message))}</p>}
+          </div>
         </div>
         <div>
           <label htmlFor="location" className="block text-sm font-medium">{locale === 'tr' ? 'Konum' : 'Location'}</label>
-          <input id="location" className="mt-1 w-full border rounded px-3 py-2" {...register('location')} />
+          <input id="location" className="mt-1 w-full border rounded px-3 py-2" maxLength={160} aria-describedby="location-count" {...register('location')} />
+          <div className="mt-1 flex items-center justify-between">
+            <p id="location-count" className={`text-xs ${counterClass(locationValue.length, 160)}`}>{locationValue.length} / 160</p>
+            {errors.location && <p role="alert" className="text-xs text-red-600">{t(locale, `form.errors.${errors.location.message}`, String(errors.location.message))}</p>}
+          </div>
         </div>
       </div>
       {/* Honeypot */}

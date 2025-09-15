@@ -4,11 +4,16 @@ import { z } from 'zod';
 import { PageDocumentSchema } from './schemas';
 import type { Section } from './schemas';
 
+// Accept a broader set of optional fields present in PageFrontmatterSchema (to avoid silently dropping them)
 const frontmatterShape = z.object({
   title: z.string(),
   description: z.string().optional(),
+  role: z.string().optional(),
+  date: z.string().optional(),
+  image: z.string().optional(),
+  excerpt: z.string().optional(),
   seo: z
-    .object({ title: z.string().optional(), description: z.string().optional() })
+    .object({ title: z.string().optional(), description: z.string().optional(), keywords: z.array(z.string()).optional(), image: z.string().optional() })
     .optional(),
   componentMapping: z.record(z.any()).optional(),
   sections: z.array(z.any()).optional()
@@ -25,6 +30,10 @@ export function parseMarkdown(raw: string, slug: string, locale: string) {
     frontmatter: {
       title: fm.title,
       description: fm.description,
+      role: fm.role,
+      date: fm.date,
+      image: fm.image,
+      excerpt: fm.excerpt,
       seo: fm.seo,
       componentMapping: fm.componentMapping
     },

@@ -35,7 +35,7 @@ export default function KurumKulturEtikPage({ params }: PageProps) {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
         <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_30%_35%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 md:py-24 text-center">
+        <div className="relative mx-auto max-w-4xl px-4 py-24 md:py-32 text-center">
           <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Kurum Kültürümüz ve Etik Değerlerimiz</h1>
           <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Apaz Group&apos;ta kurum kültürümüz ve etik değerlerimiz, başarımızın temel taşlarıdır. Her çalışanımız ve paydaşımız bu değerleri benimseyerek ortak hedeflerimize ulaşmak için çalışır.</p>
         </div>
@@ -58,7 +58,6 @@ export default function KurumKulturEtikPage({ params }: PageProps) {
                     />
                   </figure>
                   <div className="prose prose-slate max-w-none flex-1">
-                  <h2>Kurum Kültürümüz ve Etik Değerlerimiz</h2>
                   <p>Apaz Group olarak benimsediğimiz kurum kültürümüz, sahip olduğumuz temel ve yönetsel değerlerimizin iş süreçleri ve sistemler ile desteklenerek, çalışanlarımıza ekip çalışmasına dayanan, güvenli, huzurlu, samimi ve başarı odaklı bir çalışma ortamı sunar.</p>
                   <p>Şirketimizin sürdürülebilir başarısının altında yatan etik değerlerimiz ise,</p>
                   <ul className="list-disc pl-6 mt-2 space-y-1 text-sm">
@@ -95,7 +94,7 @@ export default function KurumKulturEtikPage({ params }: PageProps) {
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}
-                    <Link href={withLocale('/kariyer/olanaklar')} className="hover:text-slate-900 text-slate-600 transition-colors">Çalışan Sosyal Olanaklar</Link>
+                    <Link href={withLocale('/kariyer/olanaklar')} className="hover:text-slate-900 text-slate-600 transition-colors">Sosyal Olanaklar</Link>
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}

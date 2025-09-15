@@ -12,17 +12,35 @@ interface FranchiseCardProps {
 
 export function FranchiseCard({ logo, title, description, link, image }: FranchiseCardProps) {
   return (
-  <article className="group rounded-lg overflow-hidden bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md transition flex flex-col pb-5">
-      <div className="flex items-center gap-3 p-5 pb-3">
-        <div className="relative w-12 h-12">
-          <Image src={logo} alt={`${title} logo`} fill sizes="48px" className="object-contain" />
+  <article className="group h-full rounded-lg overflow-hidden bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md transition flex flex-col pb-5">
+      {/* Centered logo; title hidden visually */}
+      <div className="p-5 pb-3">
+        <div
+          className={`mx-auto relative w-28 h-28 md:w-32 md:h-32 ${
+            title.toLowerCase().includes('bursa') || title.toLowerCase().includes('ishakbey')
+              ? 'scale-[1.2]' // 1/5 (20%) enlargement
+              : ''
+          }`}
+        >
+          <Image
+            src={logo}
+            alt={`${title} logo`}
+            fill
+            sizes="(max-width:768px) 80px, 96px"
+            className="object-contain"
+            priority={false}
+          />
         </div>
-        <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
+        {/* Keep title for accessibility if needed, but hide visually */}
+        <h3 className="sr-only">{title}</h3>
       </div>
+      {/* Content column: description grows; image is anchored near bottom for alignment across cards */}
       <div className="px-5 flex-1 flex flex-col">
-        <p className="text-sm text-slate-700 mb-4 leading-relaxed">{description}</p>
+        <p className="text-sm text-slate-700 leading-relaxed">{description}</p>
+        {/* spacer pushes media+cta to bottom so images align across uneven text lengths */}
+        <div className="mt-auto" />
         {image && (
-          <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden ring-1 ring-slate-200 bg-slate-50 mb-4">
+          <div className="relative w-full aspect-[4/3] rounded-md overflow-hidden ring-1 ring-slate-200 bg-slate-50 mt-4">
             <Image
               src={image}
               alt={`${title} görseli`}
@@ -33,7 +51,7 @@ export function FranchiseCard({ logo, title, description, link, image }: Franchi
             />
           </div>
         )}
-        <div className="mt-auto pt-2">
+        <div className="pt-3">
           <Link
             href={link as Route}
             target={link.startsWith('http') ? '_blank' : undefined}

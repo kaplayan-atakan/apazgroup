@@ -15,9 +15,12 @@ __pycache__/
 *.py[cod]
 *.pyo
 venv/
+yarn-error.log
+.next/
 
 # VS Code
 .vscode/
 
 # Logs
 *.log
+.env.example

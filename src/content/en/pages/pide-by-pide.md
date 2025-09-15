@@ -1,5 +1,5 @@
 ---
-title: Pide by Pide
+title: PidebyPide
 seo:
   title: PidebyPide | Apaz Group
   description: Summary information about the PidebyPide brand.

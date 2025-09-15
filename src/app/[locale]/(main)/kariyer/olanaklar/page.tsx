@@ -14,7 +14,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   if (!isLocale(locale)) return {};
   const description = "Apaz Group'ta çalışanlara sunulan olanaklar: sosyal etkinlikler, yılbaşı kutlamaları, Tema Vakfı ağaç kartları ve bebek paketi uygulaması.";
   return generateSeoMetadata({
-    title: 'Çalışanlara Sunulan Olanaklar | Apaz Group',
+    title: 'Sosyal Olanaklar | Apaz Group',
     description,
     locale,
     slug: 'kariyer/olanaklar',
@@ -32,13 +32,13 @@ export default function OlanaklarPage({ params }: PageProps) {
 
   return (
     <main className="relative">
-    {/* Gradient Hero */}
+      {/* Gradient Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
         <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_30%_20%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 md:py-24 text-center">
-      <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Çalışanlara Sunulan Olanaklar</h1>
-      <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Apaz Group&apos;ta çalışanlarımıza sunduğumuz olanaklar; ekip birlikteliğini, paylaşma kültürünü ve aidiyet duygusunu güçlendirmeyi hedefler.</p>
+        <div className="relative mx-auto max-w-4xl px-4 py-24 md:py-32 text-center">
+          <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Sosyal Olanaklar</h1>
+          <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Apaz Group&apos;ta çalışanlarımıza sunduğumuz olanaklar; ekip birlikteliğini, paylaşma kültürünü ve aidiyet duygusunu güçlendirmeyi hedefler.</p>
         </div>
       </section>
 
@@ -60,10 +60,9 @@ export default function OlanaklarPage({ params }: PageProps) {
                   />
                 </figure>
                 <div className="prose prose-slate max-w-none flex-1">
-                  <h2>Çalışanlara Sunulan Olanaklar</h2>
                   <p>Çalışanlarımızın iş dışında da birlikte vakit geçirmesi, ortak faaliyetlerde bulunmasını ve ortak başarıyı kutlamalarını sağlamak için futbol ve basketbol sporlarına yönelik turnuvalar ile eğlence amaçlı bowling turnuvası organizasyonları düzenlenmektedir.</p>
                   <p>Her yılın son haftasında yilbasi kutlamalari kapsamında tüm çalışanlarımızın katıldığı yemek organizasyonları yapılmaktadır.</p>
-                  <p>Çalışanlarımıza doğum günlerinde bu mutlu günlerini paylaşabilmek amacıyla “Tema Vakfı Ağaç Hediye Kartları” gönderilmekte bu vesile ile doğaya ve çevreye duyarlı bir şirket olduğumuzu da çalışanlarımızla paylaşmaktayız.</p>
+                  <p>Çalışanlarımıza doğum günlerinde bu mutlu günlerini paylaşabilmek amacıyla “Tema Vakfı Ağaç Hediye Kartları” gönderilmekte bu vesile ile doğaya ve çevreye duyarlı bir şirket olduğumuzu da çalışanlarımızla paylaşmaktayız. Ayrıca her çalışana doğum gününde 1 gün ücretli doğum günü izni tanınmaktadır.</p>
                   <p>Çalışanlarımızın aidiyet duygusunu güçlendirmek için çocuğu olan çalışma arkadaşlarımıza, ailemize yeni katılan bebeğimiz için “bebek paketi” göndermekteyiz.</p>
                 </div>
               </div>
@@ -92,7 +91,7 @@ export default function OlanaklarPage({ params }: PageProps) {
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}
-                    <Link href={withLocale('/kariyer/olanaklar')} className="font-semibold text-slate-900 border-l-4 border-brand-yellow pl-2 block">Çalışan Sosyal Olanaklar</Link>
+                    <Link href={withLocale('/kariyer/olanaklar')} className="font-semibold text-slate-900 border-l-4 border-brand-yellow pl-2 block">Sosyal Olanaklar</Link>
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}
@@ -103,7 +102,7 @@ export default function OlanaklarPage({ params }: PageProps) {
                     <Link href={withLocale('/bize-katilin')} className="hover:text-slate-900 text-slate-600 transition-colors">Bize Katılın</Link>
                   </li>
                 </ul>
-                
+
               </nav>
             </aside>
           </div>

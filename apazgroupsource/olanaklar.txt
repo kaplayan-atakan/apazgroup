@@ -190,7 +190,7 @@ view-source:https://www.apazgroup.com/olanaklar
         <div class="container">
             <div class="s_blog_text_inner video_s_blog pb-0">
                 <div class="blog_main_text">
-                    <h5>Çalışanlara Sunulan Olanaklar</h5>
+                    <h5>Sosyal Olanaklar</h5>
                     <div class="row">
 
                         <div class="col-md-6 py-2">

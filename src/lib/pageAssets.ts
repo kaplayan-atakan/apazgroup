@@ -11,7 +11,7 @@ const map: Record<string, PageAssetItem[]> = {
   'bize-katilin': [
     { src: '/hr/ik-apaz--bize-katilin.jpg', alt: 'Apaz Group - Bize Katılın' },
     { src: '/hr/ik-baydoner--bize-katilin.jpg', alt: 'Baydöner - Bize Katılın' },
-    { src: '/hr/ik-pidebypide--bize-katilin.jpg', alt: 'Pide By Pide - Bize Katılın' },
+    { src: '/hr/ik-pidebypide--bize-katilin.jpg', alt: 'PidebyPide - Bize Katılın' },
     { src: '/hr/ik-bursaishakbey--bize-katilin.jpg', alt: 'Bursa İshakbey - Bize Katılın' }
   ],
   // İK Politikamız (temsil görsel)

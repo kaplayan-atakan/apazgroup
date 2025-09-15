@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-// @ts-expect-error nodemailer types not installed in project
-import nodemailer from 'nodemailer';
+import { getTransporter, resolveSmtpUser } from '../../../../lib/mail';
 
 import { BasvuruExtendedFormSchema, zodErrorToFieldErrors } from '../../../../lib/formSchemas';
 
@@ -67,28 +66,20 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true });
     }
 
-    // Create transporter (Office365 SMTP STARTTLS on 587)
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER || 'admin@apazgroup.com',
-        pass: process.env.SMTP_PASS || 'i+7P9vUkgJPB'
-      },
-      tls: { ciphers: 'TLSv1.2' }
-    });
+  // Central transporter (throws if SMTP_PASS missing)
+  const transporter = getTransporter();
 
-    const applicantEmail = values.common_email;
-    const recipients = ['insankaynaklari@apazgroup.com', 'admin@apazgroup.com'];
+  const applicantEmail = values.common_email;
+    // const recipients = ['insankaynaklari@apazgroup.com', 'admin@apazgroup.com'];
+    const recipients = ['atakan.kaplayan@apazgroup.com', 'zulal.demirci@apazgroup.com'];
     const bcc = 'atakan.kaplayan@apazgroup.com';
 
     // Brand palette reference
   const primary = '#1F3A52';
     const neutralBg = '#f5f5f5';
 
-    const now = new Date();
-    const timestamp = now.toLocaleString('tr-TR');
+  const now = new Date();
+  const timestamp = now.toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' });
 
     // Applicant confirmation mail
     const applicantHtml = `<!DOCTYPE html><html lang="tr"><head><meta charSet="utf-8"/><title>Başvurunuz Alındı</title></head>
@@ -128,7 +119,6 @@ export async function POST(req: Request) {
                 ['KVK Onayı', values.kisiselVerilerinKorunmasi ? 'Evet' : 'Hayır'],
                 ['Çerez Onayı', values.cerezPolitikasi ? 'Evet' : 'Hayır'],
                 ['CV Dosyası', values.userfileName ? `${values.userfileName} (${values.userfileSize || ''} bytes)` : '-'],
-                ['IP / Token', values.iletisim_token || '-'],
                 ['Gönderim Zamanı', timestamp]
               ].map(r=>`<tr><td style="padding:6px 8px;border:1px solid #e5e7eb;background:#f9fafb;font-weight:600;width:170px;">${r[0]}</td><td style="padding:6px 10px;border:1px solid #e5e7eb;">${r[1] ?? ''}</td></tr>`).join('')}
             </tbody>
@@ -143,14 +133,14 @@ export async function POST(req: Request) {
     // Send emails sequentially (could be Promise.all)
     try {
       await transporter.sendMail({
-        from: 'admin@apazgroup.com',
+        from: `Apaz Group Kurumsal <${resolveSmtpUser()}>`,
         to: applicantEmail,
         bcc,
         subject: 'Başvurunuz Alındı – Apaz Group',
         html: applicantHtml
       });
       await transporter.sendMail({
-        from: 'admin@apazgroup.com',
+        from: `Apaz Group Kurumsal <${resolveSmtpUser()}>`,
         to: recipients.join(','),
         bcc,
         subject: 'Yeni İş Başvurusu – Apaz Group',

@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-type IconName = 'menu' | 'close' | 'arrow-up' | 'play' | 'mouse' | 'linkedin' | 'x' | 'instagram' | 'chevron-up' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'users' | 'academic-cap' | 'chart-bar' | 'briefcase' | 'document-text';
+type IconName = 'menu' | 'close' | 'arrow-up' | 'play' | 'mouse' | 'linkedin' | 'x' | 'instagram' | 'facebook' | 'phone' | 'map-pin' | 'mail' | 'chevron-up' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'users' | 'academic-cap' | 'chart-bar' | 'briefcase' | 'document-text';
 
 interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name'> {
   name: IconName;
@@ -72,6 +72,33 @@ export function Icon({ name, size = 20, className = '', ...props }: IconProps) {
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <circle cx="12" cy="12" r="4" />
           <circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case 'facebook':
+      return (
+        <svg {...common} {...props} viewBox="0 0 24 24">
+          <path d="M9 8H11V6.5C11 5.12 12.12 4 13.5 4H15V6H13.5C13.22 6 13 6.22 13 6.5V8H15L14.5 10H13V20H11V10H9V8Z" fill="currentColor" stroke="none" />
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+        </svg>
+      );
+    case 'phone':
+      return (
+        <svg {...common} {...props} viewBox="0 0 24 24">
+          <path d="M5 4h4l2 6-3 1c1 3 3 5 6 6l1-3 6 2v4c0 1-1 2-2 2C11 22 2 13 2 6c0-1 1-2 2-2Z" />
+        </svg>
+      );
+    case 'map-pin':
+      return (
+        <svg {...common} {...props} viewBox="0 0 24 24">
+          <path d="M12 22s7-6.24 7-12A7 7 0 0 0 5 10c0 5.76 7 12 7 12Z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+      );
+    case 'mail':
+      return (
+        <svg {...common} {...props} viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="M3 7l9 6 9-6" />
         </svg>
       );
     case 'chevron-up':

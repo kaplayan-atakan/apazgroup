@@ -31,10 +31,10 @@ export default function BasvuruFormuPage({ params }: PageProps) {
   return (
     <div>
       {/* Hero */}
-      <section className="relative w-full h-[40vh] min-h-[320px] md:h-[50vh]">
+      <section className="relative w-full h-[50vh] min-h-[360px] md:h-[60vh]">
         <Image src="/hr/ik-apaz--bize-katilin.jpg" alt="Başvuru Formu" fill sizes="100vw" className="object-cover" priority />
         <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-28 text-center">
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white drop-shadow-sm">
             {loc === 'tr' ? 'Başvuru Formu' : 'Application Form'}
           </h1>
@@ -45,7 +45,6 @@ export default function BasvuruFormuPage({ params }: PageProps) {
       <section className="py-12">
         <div className="max-w-3xl mx-auto px-4">
           <div className="prose prose-slate text-center max-w-2xl mx-auto mb-8">
-            <h2 className="!mt-0">{loc === 'tr' ? 'Kariyer Başvuru Formu' : 'Career Application Form'}</h2>
             <p>
               {loc === 'tr'
                 ? 'Apaz Group bünyesinde yer alan markalarımızda çalışmak için aşağıdaki formu doldurarak başvuruda bulunabilirsiniz.'
@@ -72,7 +71,7 @@ export default function BasvuruFormuPage({ params }: PageProps) {
             <BrandCareerCard
               logo="/markalar/pidebypide_logo.png"
               image="/hr/ik-pidebypide--bize-katilin.jpg"
-              title={loc === 'tr' ? "Pide by Pide'de Kariyer" : 'Career at Pide by Pide'}
+              title={loc === 'tr' ? "PidebyPide'de Kariyer" : 'Career at PidebyPide'}
               link="#"
             />
             <BrandCareerCard

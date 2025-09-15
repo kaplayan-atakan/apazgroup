@@ -39,12 +39,11 @@ export default function FranchisingPage({ params }: PageProps) {
       {/* Intro */}
       <section className="pb-14 pt-6 bg-gradient-to-b from-slate-50 via-white to-white">
         <div className="max-w-5xl mx-auto px-6">
-          <header className="text-center mb-10 md:mb-14">
-            <h1 className="relative inline-block text-3xl md:text-[2.75rem] font-extrabold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-accent to-brand-yellow drop-shadow-sm">
+          <header className="mb-10 md:mb-14">
+            <h1 className="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-6 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-2/3 after:bg-gradient-to-r after:from-brand-accent after:to-brand-yellow/70">
               {loc === 'tr' ? 'Franchising' : 'Franchising'}
-              <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-[3px] w-40 md:w-52 bg-gradient-to-r from-brand-primary/80 via-brand-accent to-brand-yellow rounded-full" aria-hidden="true" />
             </h1>
-            <p className="mt-8 max-w-3xl mx-auto text-[15px] md:text-[17px] leading-relaxed text-slate-600 font-medium">
+            <p className="mt-2 max-w-3xl text-[15px] md:text-[17px] leading-relaxed text-slate-600 font-medium">
               {loc === 'tr'
                 ? 'Apaz Group markalarıyla sürdürülebilir büyüme, operasyonel destek ve güçlü marka değeri sunan esnek yatırım modelleri.'
                 : 'Flexible franchise investment models backed by strong brand equity and operational excellence.'}
@@ -96,7 +95,7 @@ export default function FranchisingPage({ params }: PageProps) {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             <FranchiseCard
-              logo="/markalar/baydoner_logo.jpg"
+              logo="/markalar/baydoner_logo.svg"
               image="/markalar/baydoner_foto.jpg"
               title="Baydöner"
               description={
@@ -120,10 +119,10 @@ export default function FranchisingPage({ params }: PageProps) {
             <FranchiseCard
               logo="/markalar/pidebypide_logo.png"
               image="/markalar/pide_foto.jpg"
-              title="Pide by Pide"
+              title="PidebyPide"
               description={
                 loc === 'tr'
-                  ? 'Pide by Pide, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu versiyonunu enfes bir lezzet ve self servis konseptiyle sunuyor.'
+                  ? 'PidebyPide, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu versiyonunu enfes bir lezzet ve self servis konseptiyle sunuyor.'
                   : 'Fast, satisfying pide in a streamlined self-service model.'
               }
               link="https://www.pidebypide.com/franchise"

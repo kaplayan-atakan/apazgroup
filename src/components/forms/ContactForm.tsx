@@ -14,8 +14,34 @@ export function ContactForm() {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors }
   } = useForm<IletisimFormInput>({ resolver: zodResolver(IletisimFormSchema) });
+
+  const subjectValue = watch('subject') || '';
+  const messageValue = watch('message') || '';
+
+  function fieldError(key: keyof IletisimFormInput): string | null {
+    const err = errors[key];
+    if (!err) return null;
+    switch (err.message) {
+      case 'required': return 'Bu alan zorunludur.';
+      case 'min_2': return 'En az 2 karakter girin.';
+      case 'min_10': return 'En az 10 karakter girin.';
+      case 'max_50': return 'En fazla 50 karakter girilebilir.';
+      case 'max_500': return 'En fazla 500 karakter girilebilir.';
+      case 'email_invalid': return 'Geçerli bir e-posta girin.';
+      case 'phone_invalid': return 'Geçerli bir telefon girin.';
+      case 'consent_required': return 'Bu onay gerekli.';
+      default: return 'Geçersiz değer.';
+    }
+  }
+
+  function counterClass(current: number, max: number) {
+    if (current > max) return 'text-red-600';
+    if (current >= max - Math.ceil(max * 0.1)) return 'text-amber-600';
+    return 'text-gray-500';
+  }
 
   const onSubmit = async (data: IletisimFormInput) => {
     setStatus('submitting');
@@ -78,10 +104,19 @@ export function ContactForm() {
         <input
           {...register('subject')}
           type="text"
-          className="mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+          maxLength={50}
+          aria-invalid={!!errors.subject || subjectValue.length > 50}
+          aria-describedby={`subject-count${errors.subject ? ' subject-error' : ''}`}
+          className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-yellow ${subjectValue.length > 50 ? 'border-red-500' : ''}`}
           placeholder="Konu"
         />
-        {errors.subject && <p className="text-sm text-red-600 mt-1">Konu gereklidir.</p>}
+        <div className="mt-1 flex items-center justify-between">
+          <p id="subject-count" className={`text-xs ${counterClass(subjectValue.length, 50)}`}>{subjectValue.length} / 50</p>
+          {errors.subject && <p id="subject-error" className="text-xs text-red-600">{fieldError('subject')}</p>}
+          {!errors.subject && subjectValue.length > 50 && (
+            <p className="text-xs text-red-600">En fazla 50 karakter.</p>
+          )}
+        </div>
       </div>
 
       <div>
@@ -89,10 +124,19 @@ export function ContactForm() {
         <textarea
           {...register('message')}
           rows={6}
-          className="mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+          maxLength={500}
+          aria-invalid={!!errors.message || messageValue.length > 500 || messageValue.length < 10 && messageValue.length>0}
+          aria-describedby={`message-count${errors.message ? ' message-error' : ''}`}
+          className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-yellow ${messageValue.length > 500 ? 'border-red-500' : ''}`}
           placeholder="Mesajınız"
         />
-        {errors.message && <p className="text-sm text-red-600 mt-1">Lütfen mesajınızı yazın.</p>}
+        <div className="mt-1 flex items-start justify-between gap-4">
+          <p id="message-count" className={`text-xs ${counterClass(messageValue.length, 500)}`}>{messageValue.length} / 500</p>
+          {errors.message && <p id="message-error" className="text-xs text-red-600">{fieldError('message')}</p>}
+          {!errors.message && messageValue.length > 500 && (
+            <p className="text-xs text-red-600">En fazla 500 karakter.</p>
+          )}
+        </div>
       </div>
 
       <fieldset className="space-y-3">

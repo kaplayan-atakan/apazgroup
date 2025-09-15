@@ -1,167 +1,122 @@
 "use client";
 
 import Image from 'next/image';
-import { useState, useEffect, useCallback, useRef } from 'react';
-
+import { useState, useEffect, useCallback } from 'react';
 import { Icon } from '../../ui/Icon';
 
-interface Slide {
-  src: string;        // default (desktop) image
-  mobileSrc?: string; // optional mobile-optimized image
+// New minimal API
+export interface HomeHeroSlide {
+  src: string;
   alt: string;
+  href?: string;
+  openInNewTab?: boolean;
 }
 interface HomeHeroSliderProps {
-  slides: Slide[];
-  email?: string;
+  slides: HomeHeroSlide[];
   intervalMs?: number;
+  /**
+   * Eski davranış: tam genişlik ve cover kırpma.
+   * Bu düzeltmede görsellerin doğal boyutu korunacak (1110x400) ve slider bu orana göre konumlanacak.
+   * İleride ihtiyaç olursa tekrar fullBleed varyantı eklenebilir.
+   */
+  constrainToIntrinsic?: boolean; // default true
 }
 
-export function HomeHeroSlider({ slides, email, intervalMs = 6000 }: HomeHeroSliderProps) {
+export function HomeHeroSlider({ slides, intervalMs = 6000, constrainToIntrinsic = true }: HomeHeroSliderProps) {
   const [index, setIndex] = useState(0);
-  const [mobileHeight, setMobileHeight] = useState<number | null>(null);
-  const [desktopHeight, setDesktopHeight] = useState<number | null>(null);
-  const ratiosRef = useRef<number[]>([]); // collected natural H/W ratios
-  const next = useCallback(() => setIndex(i => (i + 1) % slides.length), [slides.length]);
-  const prev = useCallback(() => setIndex(i => (i - 1 + slides.length) % slides.length), [slides.length]);
+  const go = useCallback((n: number) => setIndex(() => (n + slides.length) % slides.length), [slides.length]);
+  const next = useCallback(() => go(index + 1), [go, index]);
+  const prev = useCallback(() => go(index - 1), [go, index]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    const id = setInterval(next, intervalMs);
+    const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), intervalMs);
     return () => clearInterval(id);
-  }, [next, intervalMs]);
+  }, [slides.length, intervalMs]);
 
-  // Fallback base ratio for desktop unified calc
-  const fallbackRatio = 9/16; // stable primitive constant
+  if (!slides.length) return null;
 
-  // Compute mobile height ONCE (first slide aspect ratio) & on resize; ignore further slide changes
-  useEffect(() => {
-    function compute() {
-      if (typeof window === 'undefined') return;
-      if (window.innerWidth >= 640) { setMobileHeight(null); return; }
-      const imgEl = document.querySelector<HTMLImageElement>('[data-hero-slide] img');
-      const ratio = (imgEl?.naturalHeight && imgEl?.naturalWidth) ? (imgEl.naturalHeight / imgEl.naturalWidth) : (536/800);
-      const h = Math.round(window.innerWidth * ratio);
-      setMobileHeight(Math.max(260, h));
-    }
-    compute();
-    window.addEventListener('resize', compute);
-    return () => window.removeEventListener('resize', compute);
-  }, []);
-
-  // Recompute desktop height once ratios known
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (!ratiosRef.current.length) return;
-    // Compute unified ratio using AVERAGE (daha dengeli görünüm için)
-    const avgRatio = ratiosRef.current.reduce((a,b)=>a+b,0) / ratiosRef.current.length;
-    const vw = window.innerWidth;
-    const target = Math.min(Math.round(vw * (avgRatio || fallbackRatio)), Math.round(window.innerHeight * 0.85));
-    setDesktopHeight(target);
-    function handleResize(){
-      const vw2 = window.innerWidth;
-      const ratio = ratiosRef.current.length ? avgRatio : fallbackRatio;
-      const t = Math.min(Math.round(vw2 * (ratio || fallbackRatio)), Math.round(window.innerHeight * 0.85));
-      setDesktopHeight(t);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [fallbackRatio]);
-
-  const handleImageNatural = useCallback((el: HTMLImageElement | null) => {
-    if (!el) return;
-    const r = el.naturalHeight && el.naturalWidth ? el.naturalHeight / el.naturalWidth : null;
-    if (r && !ratiosRef.current.includes(r)) {
-      ratiosRef.current.push(r);
-    }
-  }, []);
+  // Intrinsic slider ölçüleri: 1110 x 400 (aspect ~ 2.775)
+  // constrainToIntrinsic true ise: max genişlik 1110px, aspect ratio korunur, image object-contain ile KIRPMA olmaz.
+  // false ise eski tam genişlik cover davranışına (geçici olarak) geri döner.
+  const intrinsicWrapper = 'relative w-full max-w-[1110px] mx-auto aspect-[1110/400] px-2 sm:px-0';
+  // Full-width but maintain intrinsic aspect ratio and contain the image (no cropping)
+  const fullBleedWrapper = 'relative w-full aspect-[1110/400]';
+  const wrapperClass = constrainToIntrinsic ? intrinsicWrapper : fullBleedWrapper;
 
   return (
-    <section
-      className="relative overflow-hidden"
-      aria-label="Hero"
-      style={mobileHeight ? { height: mobileHeight } : (desktopHeight ? { height: desktopHeight } : { height: '70vh' })}
-    >
-      <div className="absolute inset-0 overflow-hidden">
-  {slides.map((s, i) => (
-          <div
-            key={s.src}
-            data-hero-slide
-            data-active={i === index || undefined}
-            className={`absolute inset-0 transition-opacity duration-700 ease-out flex items-center justify-center px-0 ${i === index ? 'opacity-100' : 'opacity-0'}`}
-            aria-hidden={i !== index}
-          >
-            {/* Art direction: serve mobileSrc if provided for small screens */}
-            {s.mobileSrc ? (
-              <picture>
-                <source media="(max-width:640px)" srcSet={s.mobileSrc} />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={s.src}
-                  alt={s.alt}
-                  className={`block w-full max-w-[1600px] h-auto object-cover object-center sm:w-full ${i === 1 ? 'lg:-translate-y-[10%]' : ''}`}
-                  loading={i === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                  ref={handleImageNatural}
-                />
-              </picture>
-            ) : (
-              <div className="w-full flex items-center justify-center">
-                <Image
-                  src={s.src}
-                  alt={s.alt}
-                  priority={i === 0}
-                  width={1600}
-                  height={900}
-                  sizes="100vw"
-                  className={`w-full h-auto object-cover object-center max-w-[1600px] ${i === 1 ? 'lg:-translate-y-[10%]' : ''}`}
-                  onLoadingComplete={(el) => handleImageNatural(el as unknown as HTMLImageElement)}
-                />
-              </div>
-            )}
-            {/* Overlay removed per request */}
-          </div>
-        ))}
-      </div>
+  <section className={`group/slider ${wrapperClass} overflow-hidden`} aria-roledescription="carousel" aria-label="Hero slider">
+      {/* Slides */}
+      <ul className="absolute inset-0 h-full list-none m-0 p-0" aria-live="off">
+        {slides.map((s, i) => {
+          const active = i === index;
+          const imageEl = (
+            <Image
+              src={s.src}
+              alt={s.alt}
+              fill
+              quality={90}
+              priority={i === 0}
+              sizes={constrainToIntrinsic ? '(max-width: 1110px) 100vw, 1110px' : '100vw'}
+              className={constrainToIntrinsic ? 'object-contain object-center select-none' : 'object-contain object-center select-none'}
+            />
+          );
+          return (
+            <li
+              key={s.src}
+              className={`absolute inset-0 transition-opacity duration-700 ease-out will-change-opacity ${active ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} bg-black/5`}
+              aria-hidden={!active}
+            >
+              {s.href ? (
+                <a
+                  href={s.href}
+                  target={s.openInNewTab === false ? undefined : '_blank'}
+                  rel={s.openInNewTab === false ? undefined : 'noopener noreferrer'}
+                  className="block focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-yellow/70 w-full h-full relative"
+                  aria-label={s.alt}
+                >
+                  {imageEl}
+                </a>
+              ) : (
+                <div className="w-full h-full relative">{imageEl}</div>
+              )}
+              {/* No gradient overlay in full-width contain mode to avoid darkening letterbox areas */}
+            </li>
+          );
+        })}
+      </ul>
 
-  {/* Center text & accent bar removed per request */}
-
-      {email && (
-        <div className="absolute bottom-6 left-6">
-          <a href={`mailto:${email}`} className="text-brand-secondary hover:text-brand-secondary-hover transition-colors underline-offset-4 hover:underline">
-            {email}
-          </a>
-        </div>
-      )}
-
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3">
+      {/* Visible controls */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-2 md:px-4">
         <button
           type="button"
-          onClick={prev}
-          className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 text-white backdrop-blur focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow"
-          aria-label="Önceki slide"
+            onClick={prev}
+            aria-label="Önceki"
+            className="pointer-events-auto h-11 w-11 md:h-12 md:w-12 rounded-full bg-white/70 hover:bg-white text-slate-800 shadow-md flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-yellow/60"
         >
           <Icon name="chevron-left" />
         </button>
-        <div className="flex items-center gap-2">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setIndex(i)}
-              aria-label={`Slide ${i + 1}`}
-              aria-current={i === index}
-              className={`h-2 w-2 rounded-full border transition-colors ${i === index ? 'bg-brand-yellow border-brand-yellow' : 'border-white/60 bg-white/40 hover:bg-white/70'}`}
-            />
-          ))}
-        </div>
         <button
           type="button"
           onClick={next}
-          className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 text-white backdrop-blur focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow"
-          aria-label="Sonraki slide"
+          aria-label="Sonraki"
+          className="pointer-events-auto h-11 w-11 md:h-12 md:w-12 rounded-full bg-white/70 hover:bg-white text-slate-800 shadow-md flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-yellow/60"
         >
           <Icon name="chevron-right" />
         </button>
+      </div>
+
+      {/* Indicators */}
+  <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            aria-label={`Slide ${i + 1}`}
+            aria-current={i === index}
+            onClick={() => go(i)}
+            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-yellow ${i === index ? 'bg-brand-yellow scale-110' : 'bg-white/60 hover:bg-white/90'} shadow`}
+          />
+        ))}
       </div>
     </section>
   );

@@ -34,7 +34,7 @@ export default function IKPolitikamizPage({ params }: PageProps) {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
         <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_30%_30%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 md:py-24 text-center">
+        <div className="relative mx-auto max-w-4xl px-4 py-24 md:py-32 text-center">
           <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">İnsan Kaynakları Politikamız</h1>
           <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">İnsan odaklı, şeffaf, gelişimi destekleyen ve kurumsal değerlerimizle uyumlu İK yaklaşımımız.</p>
         </div>
@@ -56,7 +56,6 @@ export default function IKPolitikamizPage({ params }: PageProps) {
                   />
                 </figure>
                 <div className="prose prose-slate max-w-none flex-1">
-                  <h2>İnsan Kaynakları Politikamız</h2>
                   <p>İnsan Kaynakları politikamız; çalışan memnuniyetini, sürdürülebilir kurumsal başarıyı ve etik değerleri temel alır. Şeffaf iletişim, adil uygulamalar ve gelişim odaklı süreçlerle desteklenen bu politika, doğru yeteneği kuruma kazandırmayı ve yeteneklerin uzun vadeli bağlılığını güçlendirmeyi hedefler.</p>
                   <p>Bu kapsamda işe alım, oryantasyon, performans değerlendirme, gelişim planlama ve ödüllendirme süreçlerimizin tamamı kurumsal değerlerimiz ve stratejik hedeflerimizle uyumlu biçimde tasarlanır.</p>
                   <p>Çalışanlarımızın potansiyellerini en üst seviyeye çıkarmak için yetkinlik bazlı değerlendirme, düzenli geri bildirim, eşit fırsat ilkesi ve sürekli öğrenme kültürünü destekleyen uygulamaları benimser; açık kapı politikası ve kapsayıcı yaklaşım ile güven ortamını koruruz.</p>
@@ -85,7 +84,7 @@ export default function IKPolitikamizPage({ params }: PageProps) {
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}
-                    <Link href={withLocale('/kariyer/olanaklar')} className="hover:text-slate-900 text-slate-600 transition-colors">Çalışan Sosyal Olanaklar</Link>
+                    <Link href={withLocale('/kariyer/olanaklar')} className="hover:text-slate-900 text-slate-600 transition-colors">Sosyal Olanaklar</Link>
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}

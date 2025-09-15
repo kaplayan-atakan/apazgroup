@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useId } from 'react';
+import { ReactNode, useId, useState, useEffect } from 'react';
 import Script from 'next/script';
 
 import { Header } from '../../components/layout/Header';
@@ -13,6 +13,32 @@ import type { Locale } from '../../lib/i18n';
 
 export function ClientShell({ locale, children }: { locale: Locale; children: ReactNode }) {
   const mainContentId = useId();
+  const [headerHeight, setHeaderHeight] = useState<number | null>(null);
+
+  // Dynamically measure header height (handles responsive & future adjustments)
+  useEffect(() => {
+    function measure() {
+      const el = document.getElementById('site-header');
+      if (el) {
+        const h = el.getBoundingClientRect().height;
+        if (h && h !== headerHeight) setHeaderHeight(h);
+      }
+    }
+    measure();
+    window.addEventListener('resize', measure);
+    // Re-measure after fonts/images load which might shift layout
+    window.addEventListener('load', measure);
+    const ro = 'ResizeObserver' in window ? new ResizeObserver(measure) : null;
+    if (ro) {
+      const el = document.getElementById('site-header');
+      if (el) ro.observe(el);
+    }
+    return () => {
+      window.removeEventListener('resize', measure);
+      window.removeEventListener('load', measure);
+      ro?.disconnect();
+    };
+  }, [headerHeight]);
   return (
     <NavigationProvider>
       <div data-locale={locale} className="flex flex-col min-h-dvh" lang={locale} dir="ltr">
@@ -45,7 +71,13 @@ export function ClientShell({ locale, children }: { locale: Locale; children: Re
         <SkipLink href={`#${mainContentId}`} text={locale === 'tr' ? 'İçeriğe geç' : 'Skip to content'} />
         <LiveRegion message="" ariaLive="polite" role="status" />
   <Header locale={locale} />
-        <div className="flex-1 pt-16" id={mainContentId} role="main" tabIndex={-1}>
+  <div
+          className="flex-1 pt-16 lg:pt-24"
+          id={mainContentId}
+          role="main"
+          tabIndex={-1}
+          style={headerHeight ? { paddingTop: headerHeight } : undefined}
+        >
           {children}
         </div>
   <Footer locale={locale} />

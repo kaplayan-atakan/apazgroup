@@ -16,6 +16,15 @@ export function BasvuruForm({ locale = 'tr' }: { locale?: 'tr' | 'en' }) {
     resolver: zodResolver(BasvuruFormSchema)
   });
   const cvFile = watch('cvName');
+  const positionValue = watch('position') || '';
+  const experienceValue = watch('experience') || '';
+  const messageValue = watch('message') || '';
+
+  function counterClass(current: number, max: number) {
+    if (current > max) return 'text-red-600';
+    if (current >= max - Math.ceil(max * 0.1)) return 'text-amber-600';
+    return 'text-slate-500';
+  }
 
   async function onSubmit(values: BasvuruFormInput) {
     setServerError(null);
@@ -82,17 +91,46 @@ export function BasvuruForm({ locale = 'tr' }: { locale?: 'tr' | 'en' }) {
       </div>
       <div>
         <label className="block text-sm font-medium" htmlFor="position">{t(locale, 'form.position')}</label>
-        <input id="position" className="mt-1 w-full border rounded px-3 py-2" {...register('position')} />
-        {errors.position && <p role="alert" className="mt-1 text-xs text-red-600">{t(locale, `form.errors.${errors.position.message}`, String(errors.position.message))}</p>}
+        <input
+          id="position"
+          className="mt-1 w-full border rounded px-3 py-2"
+          maxLength={120}
+          aria-describedby="position-count"
+          {...register('position')}
+        />
+        <div className="mt-1 flex items-center justify-between">
+          <p id="position-count" className={`text-xs ${counterClass(positionValue.length, 120)}`}>{positionValue.length} / 120</p>
+          {errors.position && <p role="alert" className="text-xs text-red-600">{t(locale, `form.errors.${errors.position.message}`, String(errors.position.message))}</p>}
+        </div>
       </div>
       <div>
         <label className="block text-sm font-medium" htmlFor="experience">{locale === 'tr' ? 'Deneyim' : 'Experience'}</label>
-        <textarea id="experience" rows={3} className="mt-1 w-full border rounded px-3 py-2" {...register('experience')} />
+        <textarea
+          id="experience"
+          rows={3}
+          className="mt-1 w-full border rounded px-3 py-2"
+          maxLength={400}
+          aria-describedby="experience-count"
+          {...register('experience')}
+        />
+        <div className="mt-1 flex items-center justify-between">
+          <p id="experience-count" className={`text-xs ${counterClass(experienceValue.length, 400)}`}>{experienceValue.length} / 400</p>
+        </div>
       </div>
       <div>
         <label className="block text-sm font-medium" htmlFor="message">{t(locale, 'form.message')}</label>
-        <textarea id="message" rows={5} className="mt-1 w-full border rounded px-3 py-2" {...register('message')} />
-        {errors.message && <p role="alert" className="mt-1 text-xs text-red-600">{t(locale, `form.errors.${errors.message.message}`, String(errors.message.message))}</p>}
+        <textarea
+          id="message"
+          rows={5}
+          className="mt-1 w-full border rounded px-3 py-2"
+          maxLength={2000}
+          aria-describedby="message-count"
+          {...register('message')}
+        />
+        <div className="mt-1 flex items-start justify-between gap-4">
+          <p id="message-count" className={`text-xs ${counterClass(messageValue.length, 2000)}`}>{messageValue.length} / 2000</p>
+          {errors.message && <p role="alert" className="text-xs text-red-600">{t(locale, `form.errors.${errors.message.message}`, String(errors.message.message))}</p>}
+        </div>
       </div>
 
       {/* Honeypot field (hidden from users) */}

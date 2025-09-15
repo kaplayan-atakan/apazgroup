@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: siteName,
     template: '%s | Apaz Group'
   },
-  description: 'Apaz Group kurumsal web sitesi (yeniden inşa)',
+  description: 'Apaz Group kurumsal web sitesi',
   applicationName: siteName,
   icons: {
     icon: [

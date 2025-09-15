@@ -20,12 +20,13 @@
     "audit:motion": "node scripts/motion-preference-test.mjs",
     "audit:motion:verbose": "node scripts/motion-preference-test.mjs --verbose",
     "audit:ci": "node scripts/ci-a11y-tests.mjs",
-  "smtp:test": "node scripts/test-smtp.mjs",
+    "smtp:test": "node scripts/test-smtp.mjs",
     "test": "tsx tests/formSchema.test.ts",
     "test:a11y": "node scripts/ci-a11y-tests.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "3.3.4",
+    "date-fns": "^4.1.0",
     "framer-motion": "11.0.8",
     "gray-matter": "4.0.3",
     "next": "14.2.5",
@@ -48,15 +49,15 @@
     "@types/react-dom": "18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
-    "autoprefixer": "10.4.18",
+    "autoprefixer": "^10.4.18",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.5",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-tailwindcss": "3.13.0",
-    "postcss": "8.4.35",
+    "postcss": "^8.4.35",
     "prettier": "3.2.5",
     "sharp": "0.33.4",
-    "tailwindcss": "3.4.3",
+    "tailwindcss": "^3.4.3",
     "tsx": "4.7.1",
     "typescript": "5.4.5"
   }
