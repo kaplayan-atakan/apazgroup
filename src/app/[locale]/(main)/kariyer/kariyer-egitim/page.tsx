@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { HeroGradient } from '../../../../../components/hero/HeroGradient';
+import { CareerContent, CareerParagraph } from '../../../../../components/career/CareerContent';
 
 import { isLocale, type Locale } from '../../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../../lib/seo';
@@ -33,16 +35,11 @@ export default function KariyerEgitimPage({ params }: PageProps) {
   return (
     <main className="relative">
       {/* Gradient Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
-        <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_75%_35%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-24 md:py-32 text-center">
-          <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Kariyer ve Eğitim Olanaklarımız</h1>
-          <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-            Apaz Group&apos;ta çalışanlarımızın sürekli gelişimini destekliyor, kariyer yolculuklarında yanlarında oluyoruz. Sürekli öğrenme kültürü ile her çalışanımızın potansiyelini en üst düzeye çıkarmasına olanak tanıyoruz.
-          </p>
-        </div>
-      </section>
+      <HeroGradient
+        heading="Kariyer ve Eğitim Olanaklarımız"
+        intro="Apaz Group'ta çalışanlarımızın sürekli gelişimini destekliyor, kariyer yolculuklarında yanlarında oluyoruz. Sürekli öğrenme kültürü ile her çalışanımızın potansiyelini en üst düzeye çıkarmasına olanak tanıyoruz."
+        radialPosition="circle_at_75%_35%"
+      />
 
       <section className="py-12 md:py-20">
         <div className="container mx-auto max-w-7xl px-4">
@@ -59,11 +56,11 @@ export default function KariyerEgitimPage({ params }: PageProps) {
                     className="object-cover"
                   />
                 </figure>
-                <div className="prose prose-slate prose-lg max-w-none flex-1">
-                  <p>Şirketimizde her sene sonunda bir sonraki yılın hedefleri ve mevcut senenin performans kriterlerinin sonuçları ve müşteri geri bildirimlerinin analizleri sonucunda eğitim ihtiyacı tespiti yapılmakta ve bu tespitleri doğrultusunda gelişim planları oluşturulmaktadır.</p>
-                  <p>Saha çalışanlarımız uzmanlık eğitim programlarının yan ısıra kurum kültürünü geliştirici kişisel gelişim eğitimlerinin yanı sıra yasal zorunluluğumuz olan gıda ve hijyen eğitimlerine katılarak kendilerini geliştirmektedirler. Ayrıca bir üst göreve getirilirken de o görevin gerektirdiği teknik konularda eğitimlerini tamamlayarak ilgili pozisyona terfi etmektedirler.</p>
-                  <p>Genel Müdürlük çalışanlarımız ise yine kendi konularında teknik eğitimlere ve kurum kültürünü geliştirici kişisel gelişim eğitimlerine katılmaktadırlar. Ayrıca teknolojiyi ve iş kollarındaki gelişmeleri takip edecek kongre ve konferanslara da gitmektedirler.</p>
-                </div>
+                <CareerContent>
+                  <CareerParagraph>Şirketimizde her sene sonunda bir sonraki yılın hedefleri ve mevcut senenin performans kriterlerinin sonuçları ve müşteri geri bildirimlerinin analizleri sonucunda eğitim ihtiyacı tespiti yapılmakta ve bu tespitleri doğrultusunda gelişim planları oluşturulmaktadır.</CareerParagraph>
+                  <CareerParagraph>Saha çalışanlarımız uzmanlık eğitim programlarının yan ısıra kurum kültürünü geliştirici kişisel gelişim eğitimlerinin yanı sıra yasal zorunluluğumuz olan gıda ve hijyen eğitimlerine katılarak kendilerini geliştirmektedirler. Ayrıca bir üst göreve getirilirken de o görevin gerektirdiği teknik konularda eğitimlerini tamamlayarak ilgili pozisyona terfi etmektedirler.</CareerParagraph>
+                  <CareerParagraph>Genel Müdürlük çalışanlarımız ise yine kendi konularında teknik eğitimlere ve kurum kültürünü geliştirici kişisel gelişim eğitimlerine katılmaktadırlar. Ayrıca teknolojiyi ve iş kollarındaki gelişmeleri takip edecek kongre ve konferanslara da gitmektedirler.</CareerParagraph>
+                </CareerContent>
               </div>
             </article>
             <aside className="space-y-6">

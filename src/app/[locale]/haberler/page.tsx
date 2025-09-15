@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { HeroGradient } from '../../../components/hero/HeroGradient';
 import { isLocale } from '../../../lib/i18n';
 import { generateSeoMetadata } from '../../../lib/seo';
 import { getAllNews } from '../../../lib/content';
@@ -28,15 +30,13 @@ export default function HaberlerPage({ params }: PageProps) {
   const news = getAllNews(locale).slice(0, 8); // only latest 8
 
   return (
-    <>
-      <section className="py-10">
-        <div className="max-w-3xl mx-auto px-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-6 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-2/3 after:bg-gradient-to-r after:from-brand-accent after:to-brand-yellow/70">
-            Haberler
-          </h1>
-          <p className="text-slate-700 mt-2 max-w-2xl">Şirketimiz ve markalarımız ile ilgili güncel gelişmeler.</p>
-        </div>
-      </section>
+    <main>
+      <HeroGradient
+        heading="Haberler"
+        intro="Şirketimiz ve markalarımız ile ilgili güncel gelişmeler."
+        minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[230px]', lg: 'lg:min-h-[250px]' }}
+        contentClassName="max-w-4xl"
+      />
       <section className="py-6">
         <div className="max-w-6xl mx-auto px-6 grid gap-10 md:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {news.map(item => {
@@ -77,6 +77,6 @@ export default function HaberlerPage({ params }: PageProps) {
           )}
         </div>
       </section>
-    </>
+  </main>
   );
 }

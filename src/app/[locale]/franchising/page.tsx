@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { HeroGradient } from '../../../components/hero/HeroGradient';
 import { isLocale, type Locale } from '../../../lib/i18n';
 import { generateSeoMetadata } from '../../../lib/seo';
 import { FranchiseCard } from '../../../components/cards/FranchiseCard';
@@ -35,20 +36,15 @@ export default function FranchisingPage({ params }: PageProps) {
   const pageUrl = `${base}/${loc}/franchising`;
 
   return (
-    <main className="pt-8 md:pt-12">
-      {/* Intro */}
+    <main>
+      <HeroGradient
+        heading="Franchising"
+        intro={loc === 'tr' ? 'Apaz Group markalarıyla sürdürülebilir büyüme, operasyonel destek ve güçlü marka değeri sunan esnek yatırım modelleri.' : 'Flexible franchise investment models backed by strong brand equity and operational excellence.'}
+        minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[230px]', lg: 'lg:min-h-[250px]' }}
+        contentClassName="max-w-5xl"
+      />
       <section className="pb-14 pt-6 bg-gradient-to-b from-slate-50 via-white to-white">
         <div className="max-w-5xl mx-auto px-6">
-          <header className="mb-10 md:mb-14">
-            <h1 className="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-6 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-2/3 after:bg-gradient-to-r after:from-brand-accent after:to-brand-yellow/70">
-              {loc === 'tr' ? 'Franchising' : 'Franchising'}
-            </h1>
-            <p className="mt-2 max-w-3xl text-[15px] md:text-[17px] leading-relaxed text-slate-600 font-medium">
-              {loc === 'tr'
-                ? 'Apaz Group markalarıyla sürdürülebilir büyüme, operasyonel destek ve güçlü marka değeri sunan esnek yatırım modelleri.'
-                : 'Flexible franchise investment models backed by strong brand equity and operational excellence.'}
-            </p>
-          </header>
           {loc === 'tr' ? (
             <div className="relative">
               <div className="absolute -inset-x-4 -inset-y-4 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-md" aria-hidden="true" />

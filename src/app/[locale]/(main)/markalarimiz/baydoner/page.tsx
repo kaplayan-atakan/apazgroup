@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
-import { generateSeoMetadata } from '../../../../../lib/seo';
-import { isLocale } from '../../../../../lib/i18n';
 import { BrandCard } from '../../../../../components/cards/BrandCard';
-import baydonerPhoto from '../../../../../../public/markalar/baydoner_foto.jpg';
+import { HeroGradient } from '../../../../../components/hero/HeroGradient';
+import { isLocale } from '../../../../../lib/i18n';
+import { generateSeoMetadata } from '../../../../../lib/seo';
 
 type Props = { params: { locale: string } };
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Baydöner: ISO 22000 belgeli üreticilerle çalışan, ödüllü ve 100+ şubeli iskender lider markası.",
     locale,
     slug: 'markalarimiz/baydoner',
-    imagePath: '/brands/baydoner-banner--about.webp',
+  imagePath: '/markalar/baydoner_foto.jpg',
     type: 'article'
   });
 }
@@ -32,26 +32,36 @@ export default async function Page({ params }: Props) {
   const mission = 'Misafirlerimize, çalışanlarımıza ve topluma duyarlı bir marka olarak iskenderi herkese ulaşılabilir kılmak.';
 
   return (
-    <>
-      {/* Top image */}
-      <section className="not-prose">
+    <main className="relative">
+      <HeroGradient
+        heading="Baydöner"
+        intro="ISO 22000 belgeli üreticilerle çalışan, ödüllü ve 100+ şubeli iskender lider markası."
+        radialPosition="circle_at_20%_50%"
+        contentClassName="max-w-4xl"
+        minHeights={{ base: 'min-h-[220px]', md: 'md:min-h-[260px]', lg: 'lg:min-h-[300px]' }}
+      />
+
+      {/* Standalone banner image (elevated card overlapping hero) */}
+      <section className="not-prose -mt-4 md:-mt-8">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="rounded-lg overflow-hidden ring-1 ring-slate-200 bg-black/5">
+          <figure className="relative aspect-[16/9] rounded-2xl overflow-hidden ring-1 ring-slate-200 bg-slate-100 shadow-sm md:shadow-lg">
             <Image
-              src={baydonerPhoto}
-              alt="Baydöner restoran fotoğrafı"
+              src="/markalar/baydoner_foto.jpg"
+              alt="Baydöner marka görseli"
+              fill
+              sizes="(min-width: 1280px) 1200px, (min-width: 768px) 90vw, 100vw"
+              className="object-cover"
               priority
-              sizes="(min-width:1280px) 1200px, (min-width:1024px) 1000px, 100vw"
-              className="w-full h-auto object-contain"
             />
-          </div>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/15 via-black/5 to-transparent" aria-hidden="true" />
+          </figure>
         </div>
       </section>
-
-      {/* Intro text */}
-      <section className="not-prose py-10">
-        <div className="max-w-3xl mx-auto px-6">
-          <p className="text-sm md:text-base leading-relaxed text-slate-700 whitespace-pre-line">{intro}</p>
+      <section className="not-prose py-12">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="relative rounded-xl overflow-hidden ring-1 ring-slate-200 bg-white/70 backdrop-blur-sm p-6 md:p-8">
+            <p className="text-sm md:text-base leading-relaxed text-slate-700 whitespace-pre-line">{intro}</p>
+          </div>
         </div>
       </section>
 
@@ -97,6 +107,6 @@ export default async function Page({ params }: Props) {
           </div>
         </div>
       </section>
-    </>
+  </main>
   );
 }

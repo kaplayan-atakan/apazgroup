@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import { HeroGradient } from '../../../../../components/hero/HeroGradient';
 import { isLocale } from '../../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../../lib/seo';
 import blurMap from '../../../../../lib/asset-blur-map.json';
@@ -34,13 +35,17 @@ export default function KalitePage({ params }: PageProps) {
   ];
 
   return (
-    <main className="px-6 py-10 md:py-14 max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
+    <main>
+      <HeroGradient
+        heading="Kalite"
+        intro="Kalite politikamız, süreçlerimiz ve hijyen uygulamalarımız."
+        minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[240px]', lg: 'lg:min-h-[260px]' }}
+        contentClassName="max-w-4xl"
+      />
+      <div className="px-6 py-10 md:py-14 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
         {/* Left textual content */}
         <div className="prose prose-slate max-w-none">
-          <h1 className="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-6 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-2/3 after:bg-gradient-to-r after:from-brand-accent after:to-brand-yellow/70">
-            Kalite
-          </h1>
+          {/* h1 moved into HeroGradient */}
           <p>
             Ürünün ilk kaynağından misafirimize ulaşıncaya kadar ki tüm aşamaları kontrol ediyor, gereken önlemleri alıyor, denetliyor ve sürekli iyileştiriyoruz.
           </p>

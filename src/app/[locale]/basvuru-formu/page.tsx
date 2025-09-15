@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-
 import { isLocale } from '../../../lib/i18n';
 import { generateSeoMetadata } from '../../../lib/seo';
 
@@ -21,12 +20,13 @@ export function generateMetadata({ params }: PageProps): Metadata {
   });
 }
 
-export default function BasvuruFormuPage() {
+export default function BasvuruFormuPage({ params }: PageProps) {
+  const { locale } = params;
+  const loc = isLocale(locale) ? locale : 'tr';
   return (
-    <main className="pt-12 pb-24">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Başvuru Formu</h1>
-        <p className="text-slate-700 mb-10 leading-relaxed text-base md:text-lg">Aşağıdaki formu doldurarak Apaz Group bünyesindeki açık pozisyonlara başvuruda bulunabilirsiniz. Zorunlu alanları eksiksiz doldurduğunuzdan emin olun.</p>
+    <main className="relative">
+      <div className="container mx-auto px-4 max-w-4xl pt-12 pb-24">
+        <p className="text-slate-700 mb-10 leading-relaxed text-base md:text-lg">{loc === 'tr' ? 'Aşağıdaki formu doldurarak Apaz Group bünyesindeki açık pozisyonlara başvuruda bulunabilirsiniz. Zorunlu alanları eksiksiz doldurduğunuzdan emin olun.' : 'Fill out the form below to apply for open positions within Apaz Group. Please ensure all required fields are completed.'}</p>
         {/* LinkedIn Jobs Card */}
         <div className="mb-12">
           <a
@@ -49,13 +49,13 @@ export default function BasvuruFormuPage() {
               </div>
               <div className="text-center sm:text-left">
                 <h2 className="text-xl font-semibold tracking-tight text-brand-primary mb-2">
-                  LinkedIn Üzerinden Açık Pozisyonlar
+                  {loc === 'tr' ? 'LinkedIn Üzerinden Açık Pozisyonlar' : 'Open Roles on LinkedIn'}
                 </h2>
                 <p className="text-sm text-slate-600 max-w-md">
-                  Güncel ilanlarımızı LinkedIn sayfamızdan inceleyebilir ve doğrudan başvurabilirsiniz.
+                  {loc === 'tr' ? 'Güncel ilanlarımızı LinkedIn sayfamızdan inceleyebilir ve doğrudan başvurabilirsiniz.' : 'View our current openings on LinkedIn and apply directly.'}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-accent group-hover:underline">
-                  LinkedIn&apos;de görüntüle
+                  {loc === 'tr' ? 'LinkedIn\'de görüntüle' : 'View on LinkedIn'}
                   <svg
                     className="w-4 h-4 text-brand-accent transition-transform duration-300 group-hover:translate-x-0.5"
                     fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true"

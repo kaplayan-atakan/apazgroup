@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import { HeroGradient } from '../../../../components/hero/HeroGradient';
 import { isLocale } from '../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../lib/seo';
 import { DelayedYoutubeShort } from '../../../../components/embeds/DelayedYoutubeShort';
@@ -41,11 +42,14 @@ export default function KSSPage({ params }: PageProps) {
   ];
 
   return (
-    <main className="py-10 md:py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-6 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-2/3 after:bg-gradient-to-r after:from-brand-accent after:to-brand-yellow/70">
-          Kurumsal Sosyal Sorumluluk
-        </h1>
+    <main>
+      <HeroGradient
+        heading="Kurumsal Sosyal Sorumluluk"
+        intro="Kapsayıcılık, sürdürülebilirlik ve sosyal farkındalık odaklı yaklaşımımız."
+        minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[230px]', lg: 'lg:min-h-[250px]' }}
+        contentClassName="max-w-4xl"
+      />
+      <div className="py-10 md:py-16 container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left: Vertical YouTube Shorts video */}
           <div>
@@ -72,13 +76,7 @@ export default function KSSPage({ params }: PageProps) {
                     {paragraphs.map((p, i) => (
                       <p
                         key={i}
-                        className={
-                          i === 0
-                            ? 'first-letter:text-brand-primary first-letter:font-semibold first-letter:text-l first-letter:leading-[0.9] first-letter:mr-1 first-letter:float-left'
-                            : i === 2
-                            ? 'font-medium'
-                            : undefined
-                        }
+                        className={i === 2 ? 'font-medium' : undefined}
                       >
                         {p}
                       </p>

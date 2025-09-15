@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import { HeroGradient } from '../../../../components/hero/HeroGradient';
 import { isLocale } from '../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../lib/seo';
 
@@ -29,20 +30,15 @@ export default function SeffaflikPage({ params }: PageProps) {
 
   return (
     <main>
-      {/* Hero */}
-      <section className="py-12 md:py-16">
-        <div className="max-w-5xl mx-auto px-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-6 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-2/3 after:bg-gradient-to-r after:from-brand-accent after:to-brand-yellow/70">
-            Şeffaflık ve Hesap Verebilirlik Politikası
-          </h1>
-          <p className="mt-4 max-w-3xl text-[15px] md:text-[16px] leading-relaxed text-slate-600">
-            Kurumsal yönetim anlayışımız; doğruluk, izlenebilirlik ve hesap verebilirlik ilkeleri üzerine inşa edilmiştir. Tüm paydaşlarımızla şeffaf bir bilgi akışı kurarak sürdürülebilir güven yaratmayı hedefleriz.
-          </p>
-        </div>
-      </section>
+      <HeroGradient
+        heading="Şeffaflık ve Hesap Verebilirlik Politikası"
+        intro="Şeffaflık, izlenebilirlik ve hesap verebilirlik ilkelerimiz."
+        minHeights={{ base: 'min-h-[210px]', md: 'md:min-h-[240px]', lg: 'lg:min-h-[260px]' }}
+        contentClassName="max-w-4xl"
+      />
 
       {/* Content */}
-      <section className="py-10 md:py-16">
+  <section className="py-10 md:py-16">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
           {/* Left: text */}
           <div className="relative">

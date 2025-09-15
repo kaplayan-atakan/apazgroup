@@ -1,13 +1,14 @@
 import type { Metadata, Route } from 'next';
 import Link from 'next/link';
-
 import { Suspense } from 'react';
-import { generateSeoMetadata } from '../../../../lib/seo';
-import { isLocale } from '../../../../lib/i18n';
+
+import { PersonCard } from '../../../../components/cards/PersonCard';
+import { HeroGradient } from '../../../../components/hero/HeroGradient';
 import { getManagementPeople } from '../../../../lib/content';
 import type { Section } from '../../../../lib/content/schemas';
-import { PersonCard } from '../../../../components/cards/PersonCard';
+import { isLocale } from '../../../../lib/i18n';
 import { normalizeSlug } from '../../../../lib/slug';
+import { generateSeoMetadata } from '../../../../lib/seo';
 
 export const dynamic = 'force-static';
 
@@ -45,18 +46,14 @@ export default function Page({ params }: Props) {
   });
 
   return (
-    <>
-      {/* Başlık ve Açıklama (Hero kaldırıldı) */}
-      <section className="py-10">
-        <div className="max-w-3xl mx-auto px-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-brand-primary tracking-tight mb-6 relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-2/3 after:bg-gradient-to-r after:from-brand-accent after:to-brand-yellow/70">
-            Yönetim
-          </h1>
-          <p className="text-slate-700 mt-2 max-w-2xl">
-            Apaz Group&apos;un deneyimli yönetim kadrosu, sektördeki engin tecrübe ve bilgi birikimiyle markalarımızı başarıya taşıyor.
-          </p>
-        </div>
-      </section>
+    <main className="relative">
+      <HeroGradient
+        heading="Yönetim"
+        intro="Deneyimli yönetim kadromuz; stratejik vizyon, operasyonel yetkinlik ve sürdürülebilir büyüme odağıyla markalarımızı geleceğe taşıyor."
+        radialPosition="circle_at_25%_40%"
+        minHeights={{ base: 'min-h-[220px]', md: 'md:min-h-[280px]', lg: 'lg:min-h-[340px]' }}
+        contentClassName="max-w-4xl"
+      />
 
       {/* Grid */}
       <Suspense
@@ -107,6 +104,6 @@ export default function Page({ params }: Props) {
           </Link>
         </div>
       </section>
-    </>
+  </main>
   );
 }

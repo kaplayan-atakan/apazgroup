@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { HeroGradient } from '../../../../../components/hero/HeroGradient';
+import { CareerContent, CareerParagraph } from '../../../../../components/career/CareerContent';
 
 import { isLocale, type Locale } from '../../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../../lib/seo';
@@ -33,14 +35,12 @@ export default function OlanaklarPage({ params }: PageProps) {
   return (
     <main className="relative">
       {/* Gradient Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
-        <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_30%_20%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-24 md:py-32 text-center">
-          <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Sosyal Olanaklar</h1>
-          <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Apaz Group&apos;ta çalışanlarımıza sunduğumuz olanaklar; ekip birlikteliğini, paylaşma kültürünü ve aidiyet duygusunu güçlendirmeyi hedefler.</p>
-        </div>
-      </section>
+      <HeroGradient
+        heading="Sosyal Olanaklar"
+        intro="Apaz Group'ta çalışanlarımıza sunduğumuz olanaklar; ekip birlikteliğini, paylaşma kültürünü ve aidiyet duygusunu güçlendirmeyi hedefler."
+        radialPosition="circle_at_30%_20%"
+  minHeights={{ base: 'min-h-[180px]', md: 'md:min-h-[215px]', lg: 'lg:min-h-[260px]' }}
+      />
 
       {/* Content & Sidebar */}
       <section className="py-12 md:py-20">
@@ -59,12 +59,12 @@ export default function OlanaklarPage({ params }: PageProps) {
                     className="object-cover"
                   />
                 </figure>
-                <div className="prose prose-slate max-w-none flex-1">
-                  <p>Çalışanlarımızın iş dışında da birlikte vakit geçirmesi, ortak faaliyetlerde bulunmasını ve ortak başarıyı kutlamalarını sağlamak için futbol ve basketbol sporlarına yönelik turnuvalar ile eğlence amaçlı bowling turnuvası organizasyonları düzenlenmektedir.</p>
-                  <p>Her yılın son haftasında yilbasi kutlamalari kapsamında tüm çalışanlarımızın katıldığı yemek organizasyonları yapılmaktadır.</p>
-                  <p>Çalışanlarımıza doğum günlerinde bu mutlu günlerini paylaşabilmek amacıyla “Tema Vakfı Ağaç Hediye Kartları” gönderilmekte bu vesile ile doğaya ve çevreye duyarlı bir şirket olduğumuzu da çalışanlarımızla paylaşmaktayız. Ayrıca her çalışana doğum gününde 1 gün ücretli doğum günü izni tanınmaktadır.</p>
-                  <p>Çalışanlarımızın aidiyet duygusunu güçlendirmek için çocuğu olan çalışma arkadaşlarımıza, ailemize yeni katılan bebeğimiz için “bebek paketi” göndermekteyiz.</p>
-                </div>
+                <CareerContent>
+                  <CareerParagraph>Çalışanlarımızın iş dışında da birlikte vakit geçirmesi, ortak faaliyetlerde bulunmasını ve ortak başarıyı kutlamalarını sağlamak için futbol ve basketbol sporlarına yönelik turnuvalar ile eğlence amaçlı bowling turnuvası organizasyonları düzenlenmektedir.</CareerParagraph>
+                  <CareerParagraph>Her yılın son haftasında yılbaşı kutlamaları kapsamında tüm çalışanlarımızın katıldığı yemek organizasyonları yapılmaktadır.</CareerParagraph>
+                  <CareerParagraph>Çalışanlarımıza doğum günlerinde bu mutlu günlerini paylaşabilmek amacıyla “Tema Vakfı Ağaç Hediye Kartları” gönderilmekte bu vesile ile doğaya ve çevreye duyarlı bir şirket olduğumuzu da çalışanlarımızla paylaşmaktayız. Ayrıca her çalışana doğum gününde 1 gün ücretli doğum günü izni tanınmaktadır.</CareerParagraph>
+                  <CareerParagraph>Çalışanlarımızın aidiyet duygusunu güçlendirmek için çocuğu olan çalışma arkadaşlarımıza, ailemize yeni katılan bebeğimiz için “bebek paketi” göndermekteyiz.</CareerParagraph>
+                </CareerContent>
               </div>
             </article>
 

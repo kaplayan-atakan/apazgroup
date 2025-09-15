@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-
+import { HeroGradient } from '../../../../components/hero/HeroGradient';
 import { isLocale, type Locale } from '../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../lib/seo';
 import { BasvuruForm } from '../../../../components/forms/BasvuruForm';
@@ -30,16 +29,17 @@ export default function BasvuruFormuPage({ params }: PageProps) {
   const loc = (isLocale(locale) ? locale : 'tr') as Locale;
   return (
     <div>
-      {/* Hero */}
-      <section className="relative w-full h-[50vh] min-h-[360px] md:h-[60vh]">
-        <Image src="/hr/ik-apaz--bize-katilin.jpg" alt="Başvuru Formu" fill sizes="100vw" className="object-cover" priority />
-        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-28 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white drop-shadow-sm">
-            {loc === 'tr' ? 'Başvuru Formu' : 'Application Form'}
-          </h1>
-        </div>
-      </section>
+      {/* Unified Hero using HeroGradient */}
+      <HeroGradient
+        heading={loc === 'tr' ? 'Başvuru Formu' : 'Application Form'}
+        imageSrc="/hr/ik-apaz--bize-katilin.jpg"
+        imageAlt={loc === 'tr' ? 'Başvuru Formu Görseli' : 'Application Form Hero Image'}
+        overlayColor="black/40"
+        variant="brand"
+        radialPosition="circle_at_30%_20%"
+        contentClassName="text-center"
+        priorityImage
+      />
 
       {/* Intro + Form */}
       <section className="py-12">

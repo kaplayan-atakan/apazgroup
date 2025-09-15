@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import { HeroGradient } from '../../../components/hero/HeroGradient';
 import { generateSeoMetadata } from '../../../lib/seo';
 import { isLocale } from '../../../lib/i18n';
 
@@ -28,7 +29,7 @@ const BRAND_SECTIONS = [
   },
   {
     key: 'baydoner',
-    logo: { src: '/brands/baydoner-banner--about.webp', alt: 'Baydöner' },
+  logo: { src: '/markalar/baydoner_logo.jpg', alt: 'Baydöner' },
     content: (
       <>
         {/* baydoner start */}
@@ -69,13 +70,14 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
   if (!isLocale(locale)) return null;
   const accentCycle = ['brand-primary', 'brand-secondary', 'brand-accent', 'brand-yellow'] as const;
   return (
-    <article className="prose prose-slate max-w-none px-6 py-8 md:py-12 mx-auto">
-      <header className="mb-10 relative">
-        <h1 className="relative inline-block text-3xl md:text-4xl font-bold tracking-tight mb-4 text-brand-primary after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-3/4 after:bg-gradient-to-r after:from-brand-accent after:to-brand-yellow/70">
-          Apaz Group Hakkında
-        </h1>
-      </header>
-
+    <main>
+      <HeroGradient
+        heading="Apaz Group Hakkında"
+        intro="Apaz Group'un kuruluşu, vizyonu, misyonu ve değerleri."
+        minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[240px]', lg: 'lg:min-h-[260px]' }}
+        contentClassName="max-w-4xl"
+      />
+      <article className="prose prose-slate max-w-none px-6 py-10 md:py-12 mx-auto">
       <section className="mb-12 space-y-10">
         {BRAND_SECTIONS.map((section, idx) => {
           const accent = accentCycle[idx % accentCycle.length]!; // safe
@@ -171,7 +173,8 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
           </section>
         </div>
       </section>
-    </article>
+      </article>
+    </main>
   );
 }
 

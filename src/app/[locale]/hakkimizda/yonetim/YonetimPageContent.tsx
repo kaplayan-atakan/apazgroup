@@ -23,7 +23,7 @@ export function YonetimPageContent({ people, locale }: YonetimPageContentProps) 
   return (
     <>
       {/* Hero */}
-      <section className="relative w-full min-h-[360px] md:min-h-[440px] lg:min-h-[520px] flex items-center">
+  <section className="relative w-full min-h-[200px] md:min-h-[240px] lg:min-h-[280px] flex items-center">
         <Image
           src="/team/levent-yilmaz--yonetim.jpg"
           alt="Yönetim"
@@ -35,7 +35,7 @@ export function YonetimPageContent({ people, locale }: YonetimPageContentProps) 
           blurDataURL={(blurMap as Record<string, string>)['/team/levent-yilmaz--yonetim.jpg']}
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-24 text-center">
+  <div className="relative z-10 max-w-6xl mx-auto px-6 py-12 md:py-16 text-center">
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">Yönetim</h1>
         </div>
       </section>

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { HeroGradient } from '../../../../../components/hero/HeroGradient';
+import { CareerContent, CareerParagraph } from '../../../../../components/career/CareerContent';
 
 import { isLocale, type Locale } from '../../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../../lib/seo';
@@ -32,14 +34,11 @@ export default function UcretPolitikamizPage({ params }: PageProps) {
 
   return (
     <main className="relative">
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
-        <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_35%_30%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-24 md:py-32 text-center">
-          <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Ücret Politikamız</h1>
-          <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Apaz Group olarak, çalışanlarımıza adil, eşitlikçi ve şeffaf bir ücret politikası sunmayı taahhüt ediyoruz. Ücretlendirme sistemimiz, iş değeri, performans ve rekabetçi pazar dinamiklerine dayanmaktadır.</p>
-        </div>
-      </section>
+      <HeroGradient
+        heading="Ücret Politikamız"
+        intro="Apaz Group olarak, çalışanlarımıza adil, eşitlikçi ve şeffaf bir ücret politikası sunmayı taahhüt ediyoruz. Ücretlendirme sistemimiz, iş değeri, performans ve rekabetçi pazar dinamiklerine dayanmaktadır."
+        radialPosition="circle_at_35%_30%"
+      />
       <section className="py-12 md:py-20">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-[1fr_320px] items-start">
@@ -57,10 +56,10 @@ export default function UcretPolitikamizPage({ params }: PageProps) {
                       priority={false}
                     />
                   </figure>
-                  <div className="prose prose-slate max-w-none flex-1">
-                  <p>Ücret politikamız, nitelikli çalışanları kurumumuza çekme, mevcut çalışanlarımızı elde tutma, performansı yüksek ve nitelikli çalışanlarımızı ödüllendirme ve yasal yükümlülüklerimizi tam ve eksiksiz yerine getirme prensiplerine dayanmaktadır.</p>
-                  <p>Bu politikadan hareketle ücret işgücü piyasalarındaki dengelere, işin içeriğine ve işi yapan bireyin yetkinliği ve performansına dayalı olarak kurgulanmıştır.</p>
-                  </div>
+                  <CareerContent>
+                    <CareerParagraph>Ücret politikamız, nitelikli çalışanları kurumumuza çekme, mevcut çalışanlarımızı elde tutma, performansı yüksek ve nitelikli çalışanlarımızı ödüllendirme ve yasal yükümlülüklerimizi tam ve eksiksiz yerine getirme prensiplerine dayanmaktadır.</CareerParagraph>
+                    <CareerParagraph>Bu politikadan hareketle ücret işgücü piyasalarındaki dengelere, işin içeriğine ve işi yapan bireyin yetkinliği ve performansına dayalı olarak kurgulanmıştır.</CareerParagraph>
+                  </CareerContent>
                 </div>
               </div>
             </article>

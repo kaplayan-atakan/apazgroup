@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { HeroGradient } from '../../../../components/hero/HeroGradient';
+import { CareerContent, CareerParagraph } from '../../../../components/career/CareerContent';
 
 import { isLocale, type Locale } from '../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../lib/seo';
@@ -31,14 +33,11 @@ export default function IKPolitikamizPage({ params }: PageProps) {
 
   return (
     <main className="relative">
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
-        <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_30%_30%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-24 md:py-32 text-center">
-          <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">İnsan Kaynakları Politikamız</h1>
-          <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">İnsan odaklı, şeffaf, gelişimi destekleyen ve kurumsal değerlerimizle uyumlu İK yaklaşımımız.</p>
-        </div>
-      </section>
+      <HeroGradient
+        heading="İnsan Kaynakları Politikamız"
+        intro="İnsan odaklı, şeffaf, gelişimi destekleyen ve kurumsal değerlerimizle uyumlu İK yaklaşımımız."
+        radialPosition="circle_at_30%_30%"
+      />
       <section className="py-12 md:py-20">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-[1fr_320px] items-start">
@@ -55,11 +54,11 @@ export default function IKPolitikamizPage({ params }: PageProps) {
                     priority={false}
                   />
                 </figure>
-                <div className="prose prose-slate max-w-none flex-1">
-                  <p>İnsan Kaynakları politikamız; çalışan memnuniyetini, sürdürülebilir kurumsal başarıyı ve etik değerleri temel alır. Şeffaf iletişim, adil uygulamalar ve gelişim odaklı süreçlerle desteklenen bu politika, doğru yeteneği kuruma kazandırmayı ve yeteneklerin uzun vadeli bağlılığını güçlendirmeyi hedefler.</p>
-                  <p>Bu kapsamda işe alım, oryantasyon, performans değerlendirme, gelişim planlama ve ödüllendirme süreçlerimizin tamamı kurumsal değerlerimiz ve stratejik hedeflerimizle uyumlu biçimde tasarlanır.</p>
-                  <p>Çalışanlarımızın potansiyellerini en üst seviyeye çıkarmak için yetkinlik bazlı değerlendirme, düzenli geri bildirim, eşit fırsat ilkesi ve sürekli öğrenme kültürünü destekleyen uygulamaları benimser; açık kapı politikası ve kapsayıcı yaklaşım ile güven ortamını koruruz.</p>
-                </div>
+                <CareerContent>
+                  <CareerParagraph>İnsan Kaynakları politikamız; çalışan memnuniyetini, sürdürülebilir kurumsal başarıyı ve etik değerleri temel alır. Şeffaf iletişim, adil uygulamalar ve gelişim odaklı süreçlerle desteklenen bu politika, doğru yeteneği kuruma kazandırmayı ve yeteneklerin uzun vadeli bağlılığını güçlendirmeyi hedefler.</CareerParagraph>
+                  <CareerParagraph>Bu kapsamda işe alım, oryantasyon, performans değerlendirme, gelişim planlama ve ödüllendirme süreçlerimizin tamamı kurumsal değerlerimiz ve stratejik hedeflerimizle uyumlu biçimde tasarlanır.</CareerParagraph>
+                  <CareerParagraph>Çalışanlarımızın potansiyellerini en üst seviyeye çıkarmak için yetkinlik bazlı değerlendirme, düzenli geri bildirim, eşit fırsat ilkesi ve sürekli öğrenme kültürünü destekleyen uygulamaları benimser; açık kapı politikası ve kapsayıcı yaklaşım ile güven ortamını koruruz.</CareerParagraph>
+                </CareerContent>
               </div>
             </article>
             <aside className="space-y-6">

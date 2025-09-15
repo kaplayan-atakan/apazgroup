@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { HeroGradient } from '../../../../../components/hero/HeroGradient';
+import { CareerContent, CareerParagraph, CareerList, CareerListItem } from '../../../../../components/career/CareerContent';
 
 import { isLocale, type Locale } from '../../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../../lib/seo';
@@ -32,14 +34,13 @@ export default function PerformansPage({ params }: PageProps) {
 
   return (
     <main className="relative">
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
-        <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_70%_30%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-5xl px-4 py-24 md:py-32 text-center">
-          <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Çalışanlarımızın Performanslarının Geliştirilmesi</h1>
-          <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Çok yönlü ölçüm ve gelişim planlarıyla sürdürülebilir başarı.</p>
-        </div>
-      </section>
+      <HeroGradient
+        heading="Çalışanlarımızın Performanslarının Geliştirilmesi"
+        intro="Çok yönlü ölçüm ve gelişim planlarıyla sürdürülebilir başarı."
+        radialPosition="circle_at_70%_30%"
+        minHeights={{ base: 'min-h-[240px]', md: 'md:min-h-[300px]', lg: 'lg:min-h-[360px]' }}
+        contentClassName="max-w-5xl"
+      />
       <section className="py-12 md:py-20">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-[1fr_320px] items-start">
@@ -57,18 +58,18 @@ export default function PerformansPage({ params }: PageProps) {
                       priority={false}
                     />
                   </figure>
-                  <div className="prose prose-slate max-w-none flex-1">
-                    <p>Çalışanlarımızın performansları hedefleme parametreleri ve yetkinlik kriterleri ile ölçümlenmekte ve geliştirilmektedir;</p>
-                    <ol className="list-[lower-alpha] pl-6 mt-4 space-y-2 text-sm">
-                      <li>Kurumumuzun sürdürülebilirliğini sağlayacak olan kurumsal temel yetkinliklerin ölçülmesi</li>
-                      <li>Departmanların işlerinin gerektirdiği fonksiyonel yetkinliklerin ölçülmesi</li>
-                      <li>Yönetim kadrolarında kurumsal yönetim politikalarımızın doğru işlediğini izleyebilmek için belirlenen yönetsel yetkinliklerin değerlendirilmesi. Yetkinliklerimiz bu üç seviyede izlenmekte ve ölçüm sonuçlarına göre bireysel gelişim planları oluşturulmaktadır.</li>
-                    </ol>
-                    <p>Hedeflerin izlenmesi ve geliştirilmesi;</p>
-                    <ol className="list-[lower-alpha] pl-6 mt-4 space-y-2 text-sm">
-                      <li>Belirlenen kurumsal hedeflerin departmanlara ve bireylere indirilmesi suretiyle de kurumun finansal hedeflerine ulaşması izlenmekte, dönem boyunca verilen geri bildirimlerle performans eğrisinin yükselmesi ve bireylerin gelişimi sağlanmaktadır.</li>
-                    </ol>
-                  </div>
+                  <CareerContent>
+                    <CareerParagraph>Çalışanlarımızın performansları hedefleme parametreleri ve yetkinlik kriterleri ile ölçümlenmekte ve geliştirilmektedir;</CareerParagraph>
+                    <CareerList>
+                      <CareerListItem>Kurumumuzun sürdürülebilirliğini sağlayacak olan kurumsal temel yetkinliklerin ölçülmesi</CareerListItem>
+                      <CareerListItem>Departmanların işlerinin gerektirdiği fonksiyonel yetkinliklerin ölçülmesi</CareerListItem>
+                      <CareerListItem>Yönetim kadrolarında kurumsal yönetim politikalarımızın doğru işlediğini izleyebilmek için belirlenen yönetsel yetkinliklerin değerlendirilmesi. Yetkinliklerimiz bu üç seviyede izlenmekte ve ölçüm sonuçlarına göre bireysel gelişim planları oluşturulmaktadır.</CareerListItem>
+                    </CareerList>
+                    <CareerParagraph>Hedeflerin izlenmesi ve geliştirilmesi;</CareerParagraph>
+                    <CareerList>
+                      <CareerListItem>Belirlenen kurumsal hedeflerin departmanlara ve bireylere indirilmesi suretiyle de kurumun finansal hedeflerine ulaşması izlenmekte, dönem boyunca verilen geri bildirimlerle performans eğrisinin yükselmesi ve bireylerin gelişimi sağlanmaktadır.</CareerListItem>
+                    </CareerList>
+                  </CareerContent>
                 </div>
               </div>
             </article>

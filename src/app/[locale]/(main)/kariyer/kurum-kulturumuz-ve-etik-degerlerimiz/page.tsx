@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { HeroGradient } from '../../../../../components/hero/HeroGradient';
+import { CareerContent, CareerParagraph, CareerList, CareerListItem } from '../../../../../components/career/CareerContent';
 
 import { isLocale, type Locale } from '../../../../../lib/i18n';
 import { generateSeoMetadata } from '../../../../../lib/seo';
@@ -32,14 +34,11 @@ export default function KurumKulturEtikPage({ params }: PageProps) {
 
   return (
     <main className="relative">
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
-        <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_30%_35%,#0f172a,transparent_60%)]" />
-        <div className="relative mx-auto max-w-4xl px-4 py-24 md:py-32 text-center">
-          <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">Kurum Kültürümüz ve Etik Değerlerimiz</h1>
-          <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">Apaz Group&apos;ta kurum kültürümüz ve etik değerlerimiz, başarımızın temel taşlarıdır. Her çalışanımız ve paydaşımız bu değerleri benimseyerek ortak hedeflerimize ulaşmak için çalışır.</p>
-        </div>
-      </section>
+      <HeroGradient
+        heading="Kurum Kültürümüz ve Etik Değerlerimiz"
+        intro="Apaz Group'ta kurum kültürümüz ve etik değerlerimiz, başarımızın temel taşlarıdır. Her çalışanımız ve paydaşımız bu değerleri benimseyerek ortak hedeflerimize ulaşmak için çalışır."
+        radialPosition="circle_at_30%_35%"
+      />
       <section className="py-12 md:py-20">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-[1fr_320px] items-start">
@@ -57,18 +56,18 @@ export default function KurumKulturEtikPage({ params }: PageProps) {
                       priority={false}
                     />
                   </figure>
-                  <div className="prose prose-slate max-w-none flex-1">
-                  <p>Apaz Group olarak benimsediğimiz kurum kültürümüz, sahip olduğumuz temel ve yönetsel değerlerimizin iş süreçleri ve sistemler ile desteklenerek, çalışanlarımıza ekip çalışmasına dayanan, güvenli, huzurlu, samimi ve başarı odaklı bir çalışma ortamı sunar.</p>
-                  <p>Şirketimizin sürdürülebilir başarısının altında yatan etik değerlerimiz ise,</p>
-                  <ul className="list-disc pl-6 mt-2 space-y-1 text-sm">
-                    <li>Açık, şeffaf ve hiyerarşiden uzak iletişim kurmak,</li>
-                    <li>Kalite standartlarımıza uygun ürün ve hizmet sunmak,</li>
-                    <li>Tüm paydaşlarımıza karşı (çalışan, müşteri, tedarikçi) saygılı olmak,</li>
-                    <li>Güvenilir ve adaletli olmak,</li>
-                    <li>Yenilikçi uygulamaları benimsemek,</li>
-                    <li>Çalışanlarımızın gelişimlerine odaklanmaktır.</li>
-                  </ul>
-                  </div>
+                  <CareerContent>
+                    <CareerParagraph>Apaz Group olarak benimsediğimiz kurum kültürümüz, sahip olduğumuz temel ve yönetsel değerlerimizin iş süreçleri ve sistemler ile desteklenerek, çalışanlarımıza ekip çalışmasına dayanan, güvenli, huzurlu, samimi ve başarı odaklı bir çalışma ortamı sunar.</CareerParagraph>
+                    <CareerParagraph>Şirketimizin sürdürülebilir başarısının altında yatan etik değerlerimiz ise,</CareerParagraph>
+                    <CareerList>
+                      <CareerListItem>Açık, şeffaf ve hiyerarşiden uzak iletişim kurmak,</CareerListItem>
+                      <CareerListItem>Kalite standartlarımıza uygun ürün ve hizmet sunmak,</CareerListItem>
+                      <CareerListItem>Tüm paydaşlarımıza karşı (çalışan, müşteri, tedarikçi) saygılı olmak,</CareerListItem>
+                      <CareerListItem>Güvenilir ve adaletli olmak,</CareerListItem>
+                      <CareerListItem>Yenilikçi uygulamaları benimsemek,</CareerListItem>
+                      <CareerListItem>Çalışanlarımızın gelişimlerine odaklanmaktır.</CareerListItem>
+                    </CareerList>
+                  </CareerContent>
                 </div>
               </div>
             </article>

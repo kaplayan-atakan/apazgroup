@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
+import { HeroGradient } from '../hero/HeroGradient';
 import { getPageBySlug } from '../../lib/content';
 import { markdownToHtml } from '../../lib/content/markdown';
 import { isLocale } from '../../lib/i18n';
@@ -22,38 +23,24 @@ export async function ContentArticle({ locale, slug }: { locale: string; slug: s
 
   return (
     <>
-      {/* Full-bleed hero(s) rendered outside article for better visual design */}
-      {heroSections.map((s, i) => (
-        <section key={`hero-${i}`} className="relative w-full min-h-[360px] md:min-h-[440px] lg:min-h-[520px] flex items-center">
-          {s.type === 'heroSimple' && (
-            <>
-              {s.image && (
-                <>
-                  <Image
-                    src={s.image}
-                    alt={s.heading}
-                    fill
-                    sizes="100vw"
-                    className="object-cover"
-                    placeholder={blurMap[s.image as keyof typeof blurMap] ? 'blur' : undefined}
-                    blurDataURL={(blurMap as Record<string, string>)[s.image]}
-                  />
-                  <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
-                </>
-              )}
-              <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-24 text-center">
-                {/* Use h1 here for primary heading if hero exists */}
-                <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white drop-shadow-sm">
-                  {s.heading}
-                </h1>
-                {s.intro && (
-                  <p className="mt-4 text-white/90 max-w-2xl mx-auto text-base md:text-lg">{s.intro}</p>
-                )}
-              </div>
-            </>
-          )}
-        </section>
-      ))}
+      {/* Hero(s) via reusable HeroGradient */}
+      {heroSections.map((s, i) => {
+        const hero = s as Extract<typeof s, { type: 'heroSimple' } & { heading: string; intro?: string; image?: string }>;
+        return (
+        <HeroGradient
+          key={`hero-${i}`}
+          heading={hero.heading}
+          intro={hero.intro}
+          imageSrc={hero.image}
+          imageAlt={hero.heading}
+          // Slightly larger minHeights for article hero to differentiate from small internal heroes
+          minHeights={{ base: 'min-h-[220px]', md: 'md:min-h-[280px]', lg: 'lg:min-h-[340px]' }}
+          radialPosition="circle_at_30%_30%"
+          contentClassName="text-center"
+          priorityImage={i === 0}
+        />
+        );
+      })}
 
       <article className="prose prose-slate mx-auto max-w-4xl py-10">
         {!hasHero && <h1>{page.frontmatter.title}</h1>}
