@@ -95,8 +95,8 @@ export default function KalitePage({ params }: PageProps) {
         </div>
       </div>
       {/* Re-added legacy bottom section */}
-      <section className="mt-20">
-        <div className="prose prose-slate max-w-none">
+  <section className="mt-20 px-6 md:px-10 pb-12 md:pb-16">
+        <div className="prose prose-slate max-w-7xl mx-auto">
           {/* Kalite İlkeleri - 4 kart */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-16">
             {[

@@ -57,9 +57,12 @@ export default function KariyerEgitimPage({ params }: PageProps) {
                   />
                 </figure>
                 <CareerContent>
-                  <CareerParagraph>Şirketimizde her sene sonunda bir sonraki yılın hedefleri ve mevcut senenin performans kriterlerinin sonuçları ve müşteri geri bildirimlerinin analizleri sonucunda eğitim ihtiyacı tespiti yapılmakta ve bu tespitleri doğrultusunda gelişim planları oluşturulmaktadır.</CareerParagraph>
-                  <CareerParagraph>Saha çalışanlarımız uzmanlık eğitim programlarının yan ısıra kurum kültürünü geliştirici kişisel gelişim eğitimlerinin yanı sıra yasal zorunluluğumuz olan gıda ve hijyen eğitimlerine katılarak kendilerini geliştirmektedirler. Ayrıca bir üst göreve getirilirken de o görevin gerektirdiği teknik konularda eğitimlerini tamamlayarak ilgili pozisyona terfi etmektedirler.</CareerParagraph>
-                  <CareerParagraph>Genel Müdürlük çalışanlarımız ise yine kendi konularında teknik eğitimlere ve kurum kültürünü geliştirici kişisel gelişim eğitimlerine katılmaktadırlar. Ayrıca teknolojiyi ve iş kollarındaki gelişmeleri takip edecek kongre ve konferanslara da gitmektedirler.</CareerParagraph>
+                  <CareerParagraph>Şirketimizde her sene sonunda bir sonraki yılın hedefleri ve mevcut senenin performans kriterlerinin sonuçları ve müşteri geri bildirimlerinin analizleri sonucunda eğitim ihtiyacı tespiti yapılmakta ve bu tespitler doğrultusunda gelişim planları oluşturulmaktadır.</CareerParagraph>
+                  <CareerParagraph>Apaz Gelişim Atölyesi ismini verdiğimiz online Eğitim Okulumuz’da çalışanlarımızın mesleki gelişimlerini sağlayan uygulamalı, interaktif eğitimlerimizin yanı sıra Eğitim Şubeleri’mizde yöneticilik pozisyonlarına aday olan çalışanlarımıza uzun süreli teorik ve pratik eğitimlerden oluşan geliştirme programları sunulmaktadır.</CareerParagraph>
+                  <CareerParagraph>Ayrıca Operasyon Yöneticilerimiz ve Saha Eğitim Müdürü’müz tarafından yapılan saha ziyaretlerinde yerinde uygulamalı eğitimler ile de çalışanlarımızın gelişimleri sağlanmaktadır.</CareerParagraph>
+                  <CareerParagraph>Yasal zorunluluk gereği alınması gerekli eğitimlerimiz de yine Apaz Gelişim Atölyesi üzerinden tüm çalışanlarımızın erişimine sunulmakta olup çalışanlarımız, zaman ve mekan kısıtlaması olmaksızın eğitimlerini tamamlayarak sertifikalarını alabilmektedirler.</CareerParagraph>
+                  <CareerParagraph>Genel Müdürlük çalışanlarımız ise, yıllık eğitim planları doğrultusunda şirket içi ve şirket dışı kaynaklardan mesleki gelişim konularında eğitim alırken teknolojiyi ve iş kollarındaki gelişmeleri takip edecek kongre ve konferanslara da katılmaktadırlar. </CareerParagraph>
+                  <CareerParagraph>Ayrıca, tüm çalışanlarımız Apaz Gelişim Atöleyemiz üzerinden kişisel gelişim ve misafir memnuniyeti konularında eğitim alabilmektedir.</CareerParagraph>
                 </CareerContent>
               </div>
             </article>
