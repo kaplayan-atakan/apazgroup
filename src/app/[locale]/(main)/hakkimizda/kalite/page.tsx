@@ -32,7 +32,11 @@ export default function KalitePage({ params }: PageProps) {
     { src: '/kalite/kalite-2.jpg', alt: 'Kalite görsel 2' },
     { src: '/kalite/kalite-3.jpg', alt: 'Kalite görsel 3' },
     { src: '/kalite/kalite-4.jpg', alt: 'Kalite görsel 4' }
-  ];
+  ] as const;
+  const imgPolicy = images[0]!;
+  const imgClean = images[1]!;
+  const imgSupply = images[2]!;
+  const imgPrinciples = images[3]!;
 
   return (
     <main>
@@ -42,57 +46,102 @@ export default function KalitePage({ params }: PageProps) {
         minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[240px]', lg: 'lg:min-h-[260px]' }}
         contentClassName="max-w-4xl"
       />
-      <div className="px-6 py-10 md:py-14 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
-        {/* Left textual content */}
-        <div className="prose prose-slate max-w-none">
-          {/* h1 moved into HeroGradient */}
-          <p>
-            Ürünün ilk kaynağından misafirimize ulaşıncaya kadar ki tüm aşamaları kontrol ediyor, gereken önlemleri alıyor, denetliyor ve sürekli iyileştiriyoruz.
-          </p>
-          <h2 className="mt-10 mb-4 text-2xl font-semibold text-brand-secondary">Kalite politikamız</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Hijyenik ortamlarda, kaliteli ve güvenli gıda üretilmesi bilincinin tüm çalışanlarda oluşturulması için her türlü teknik donanım ve desteği sağlamak,</li>
-            <li>Müşterilerimizin her ziyaretinde memnuniyetlerini arttırmak için çalışmak,</li>
-            <li>Müşteri ve çalışanlarımıza karşı yasal ve düzenleyici tüm şartlara uymak,</li>
-            <li>Planlanmış eğitim programları ile çalışanlarımızla beraber, sürekli daha iyiyi hedefleyerek gelişmek,</li>
-            <li>Topluma ve çevreye olan yükümlülüklerimizi yerine getirmek,</li>
-            <li>Üretimimiz ve çalışmalarımız sırasında, sevgi ve saygı kuralları çerçevesinde bir takım olmak,</li>
-          </ul>
-          <h2 className="mt-12 mb-4 text-2xl font-semibold text-brand-primary">Kaliteli ve güvenli gıda tüketmeniz için;</h2>
-          <div className="space-y-6">
-            <p><strong>1- Tedarikçi seçimimiz</strong><br />Sadece gıda üreticilerimizi değil aynı zamanda gıda hazırlama ve servisinde kullandığımız malzemeleri aldığımız tedarikçilerimizi de denetliyoruz. Üretici ve tedarikçilerimizle çalışmaya başlamadan önce denetliyoruz, denetim puanı uluslararası kabul görmüş standartları karşılıyorsa çalışıyoruz. Denetimler baş denetçi olan gıda mühendisi ve veteriner hekimler tarafından yapılmaktadır. Bu puanlı denetimi her yıl tekrarlıyoruz. Helal sertifikalı yerli üreticileri tercih ediyoruz.</p>
-            <p><strong>2- Ürün kontrollerimiz</strong><br />Üreticilerimizden gelen ürünlerin daha depolarımıza ve mutfaklarımıza girmeden gerekli kontrol ve analizlerini yaparak misafirlerimize sunulan ürünlerin güvenli ve taze olması garanti altına alıyoruz.</p>
-            <p><strong>3- Sipariş ettiğiniz ürünlerin kontrolleri</strong><br />Gıda güvenliğinin 7/24 sağlanması için tüm süreçlerimizi izliyoruz. Doğru sıcaklıklarda bekletme, doğru tekniklerde pişirme, taze olması için sipariş kadar hazırlama, hijyen prosedürlerine uyum gibi kriterler belirlenmiştir. Bu kriterlere uyum dijital ortamda sürekli kontrol edilmektedir. Temiz ve sağlıklı menülerimizi hijyenik ortamlarda tüketilmesini sağlıyoruz.</p>
-            <p><strong>4- Sadece uzmanlar değil siz de kontrol edebilirsiniz</strong><br />Mutfağımızı; cam bölmeden, banko gerisinden veya mutfak giriş kapısından isteğiniz an kaliteyi, temizliği ve ürün hazırlığını yerinde görebilirsiniz.</p>
+      {/* Aligned sectioned layout */}
+      <div className="px-6 py-10 md:py-14 max-w-7xl mx-auto space-y-16">
+        {/* Section 1: Kalite politikamız */}
+        <section className="grid md:grid-cols-[3fr_2fr] gap-10 lg:gap-12 items-start">
+          <div className="prose prose-slate max-w-none">
+            <p>
+              Ürünün ilk kaynağından misafirimize ulaşıncaya kadar ki tüm aşamaları kontrol ediyor, gereken önlemleri alıyor, denetliyor ve sürekli iyileştiriyoruz.
+            </p>
+            <h2 className="mt-8 mb-4 text-2xl font-semibold text-brand-secondary">Kalite politikamız</h2>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Hijyenik ortamlarda, kaliteli ve güvenli gıda üretilmesi bilincinin tüm çalışanlarda oluşturulması için her türlü teknik donanım ve desteği sağlamak,</li>
+              <li>Müşterilerimizin her ziyaretinde memnuniyetlerini arttırmak için çalışmak,</li>
+              <li>Müşteri ve çalışanlarımıza karşı yasal ve düzenleyici tüm şartlara uymak,</li>
+              <li>Planlanmış eğitim programları ile çalışanlarımızla beraber, sürekli daha iyiyi hedefleyerek gelişmek,</li>
+              <li>Topluma ve çevreye olan yükümlülüklerimizi yerine getirmek,</li>
+              <li>Üretimimiz ve çalışmalarımız sırasında, sevgi ve saygı kuralları çerçevesinde bir takım olmak,</li>
+            </ul>
           </div>
-          <h2 className="mt-12 mb-4 text-2xl font-semibold text-brand-accent">Vazgeçmediğimiz İlkelerimiz;</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Çalışanlara işe başlamadan önce tüm hijyen eğitimleri verilir.</li>
-            <li>Her vardiyada temiz ve ütülenmiş iş elbisesi temin edilir.</li>
-            <li>Üretim ve servis alanlarına ayakkabı veya terliklerin dezenfekte edilmesi sağlanır.</li>
-            <li>Üretim alanındaki çalışanlara iş elbisesine ek olarak eldiven ve kolluk kullanımı sağlanır.</li>
-            <li>Çalışanların elleri 30 dakikada bir yıkanır ve dezenfekte edilir.</li>
-            <li>Müşterilerin kullandığı alanlar, her kullanım öncesi ve sonrası temizlenir ve dezenfekte edilir.</li>
-            <li>Restoranlarda iş başlangıcında, gün içinde ve mesai bitiminde detaylı temizlik ve dezenfeksiyon yapılır.</li>
-            <li>Ürün sevk ve pişirme sıcaklıkları kontrol edilerek bakteri ve virüs oluşumu önlenir.</li>
-            <li>Restoranlar bağımsız dış firmalar tarafından düzenli olarak denetlenir.</li>
-          </ul>
-        </div>
-        {/* Right images */}
-        <div className="space-y-6 md:sticky md:top-24">
-          {images.map(img => (
-            <div key={img.src} className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-sm ring-1 ring-slate-200 bg-white">
+          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-sm ring-1 ring-slate-200 bg-white">
+            <Image
+              src={imgPolicy.src}
+              alt={imgPolicy.alt}
+              fill
+              sizes="(max-width:768px) 100vw, 40vw"
+              className="object-cover"
+              loading="lazy"
+            />
+          </div>
+        </section>
+        {/* Section 2: Kaliteli ve güvenli gıda tüketmeniz için */}
+        <section className="grid md:grid-cols-[3fr_2fr] gap-10 lg:gap-12 items-start">
+            <div className="prose prose-slate max-w-none">
+              <h2 className="mb-4 text-2xl font-semibold text-brand-primary">Kaliteli ve güvenli gıda tüketmeniz için;</h2>
+              <div className="space-y-6">
+                <p><strong>1- Tedarikçi seçimimiz</strong><br />Sadece gıda üreticilerimizi değil aynı zamanda gıda hazırlama ve servisinde kullandığımız malzemeleri aldığımız tedarikçilerimizi de denetliyoruz. Üretici ve tedarikçilerimizle çalışmaya başlamadan önce denetliyoruz, denetim puanı uluslararası kabul görmüş standartları karşılıyorsa çalışıyoruz. Denetimler baş denetçi olan gıda mühendisi ve veteriner hekimler tarafından yapılmaktadır. Bu puanlı denetimi her yıl tekrarlıyoruz. Helal sertifikalı yerli üreticileri tercih ediyoruz.</p>
+                <p><strong>2- Ürün kontrollerimiz</strong><br />Üreticilerimizden gelen ürünlerin daha depolarımıza ve mutfaklarımıza girmeden gerekli kontrol ve analizlerini yaparak misafirlerimize sunulan ürünlerin güvenli ve taze olması garanti altına alıyoruz.</p>
+              </div>
+            </div>
+            <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-sm ring-1 ring-slate-200 bg-white">
               <Image
-                src={img.src}
-                alt={img.alt}
+                src={imgClean.src}
+                alt={imgClean.alt}
                 fill
                 sizes="(max-width:768px) 100vw, 40vw"
                 className="object-cover"
                 loading="lazy"
               />
             </div>
-          ))}
-        </div>
+        </section>
+        {/* Section 3: Güvenli gıda tedarikimiz */}
+        <section className="grid md:grid-cols-[3fr_2fr] gap-10 lg:gap-12 items-start">
+          <div className="prose prose-slate max-w-none">
+            <h2 className="mb-4 text-2xl font-semibold text-brand-secondary">Güvenli gıda tedarikimiz</h2>
+            <div className="space-y-6">
+              <p><strong>3- Sipariş ettiğiniz ürünlerin kontrolleri</strong><br />Gıda güvenliğinin 7/24 sağlanması için tüm süreçlerimizi izliyoruz. Doğru sıcaklıklarda bekletme, doğru tekniklerde pişirme, taze olması için sipariş kadar hazırlama, hijyen prosedürlerine uyum gibi kriterler belirlenmiştir. Bu kriterlere uyum dijital ortamda sürekli kontrol edilmektedir. Temiz ve sağlıklı menülerimizi hijyenik ortamlarda tüketilmesini sağlıyoruz.</p>
+              <p><strong>4- Sadece uzmanlar değil siz de kontrol edebilirsiniz</strong><br />Mutfağımızı; cam bölmeden, banko gerisinden veya mutfak giriş kapısından isteğiniz an kaliteyi, temizliği ve ürün hazırlığını yerinde görebilirsiniz.</p>
+            </div>
+          </div>
+          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-sm ring-1 ring-slate-200 bg-white">
+            <Image
+              src={imgSupply.src}
+              alt={imgSupply.alt}
+              fill
+              sizes="(max-width:768px) 100vw, 40vw"
+              className="object-cover"
+              loading="lazy"
+            />
+          </div>
+        </section>
+        {/* Section 4: Vazgeçmediğimiz İlkelerimiz */}
+        <section className="grid md:grid-cols-[3fr_2fr] gap-10 lg:gap-12 items-start">
+          <div className="prose prose-slate max-w-none">
+            <h2 className="mb-4 text-2xl font-semibold text-brand-accent">Vazgeçmediğimiz İlkelerimiz;</h2>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Çalışanlara işe başlamadan önce tüm hijyen eğitimleri verilir.</li>
+              <li>Her vardiyada temiz ve ütülenmiş iş elbisesi temin edilir.</li>
+              <li>Üretim ve servis alanlarına ayakkabı veya terliklerin dezenfekte edilmesi sağlanır.</li>
+              <li>Üretim alanındaki çalışanlara iş elbisesine ek olarak eldiven ve kolluk kullanımı sağlanır.</li>
+              <li>Çalışanların elleri 30 dakikada bir yıkanır ve dezenfekte edilir.</li>
+              <li>Müşterilerin kullandığı alanlar, her kullanım öncesi ve sonrası temizlenir ve dezenfekte edilir.</li>
+              <li>Restoranlarda iş başlangıcında, gün içinde ve mesai bitiminde detaylı temizlik ve dezenfeksiyon yapılır.</li>
+              <li>Ürün sevk ve pişirme sıcaklıkları kontrol edilerek bakteri ve virüs oluşumu önlenir.</li>
+              <li>Restoranlar bağımsız dış firmalar tarafından düzenli olarak denetlenir.</li>
+            </ul>
+          </div>
+          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-sm ring-1 ring-slate-200 bg-white">
+            <Image
+              src={imgPrinciples.src}
+              alt={imgPrinciples.alt}
+              fill
+              sizes="(max-width:768px) 100vw, 40vw"
+              className="object-cover"
+              loading="lazy"
+            />
+          </div>
+        </section>
       </div>
       {/* Re-added legacy bottom section */}
   <section className="mt-20 px-6 md:px-10 pb-12 md:pb-16">
