@@ -33,7 +33,7 @@ export function HomeAboutNews({ locale }: Props) {
             </div>
             <div className="space-y-4 text-slate-700">
               <p>
-                2007 yılında İzmir’de kurulan Apaz Group, faaliyetlerine ilk olarak <b>Baydöner</b> markası ile başladı. Geçtiğimiz 12 yılda çalışmalarına ara vermeden devam eden Apaz Group, Baydöner ile Türkiye’nin dört bir yanında büyürken, yeme içme sektörüne 2 yeni marka kazandırdı
+                2007 yılında İzmir’de kurulan Apaz Group, faaliyetlerine ilk olarak <b>Baydöner</b> markası ile başladı. O günden bugüne çalışmalarına ara vermeden devam eden Apaz Group, Baydöner ile Türkiye’nin dört bir yanında büyürken, yeme içme sektörüne 2 yeni marka kazandırdı
                 <ul className="list-disc pl-5">
                   <li>2018 yılında PidebyPide,</li>
                   <li>2019 yılında ise Bursa İshakbey markaları Apaz Group çatısı altında misafirlerini ağırlamaya başladı.</li>
