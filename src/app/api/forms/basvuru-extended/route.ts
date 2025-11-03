@@ -3,6 +3,24 @@ import { getTransporter, resolveSmtpUser } from '../../../../lib/mail';
 
 import { BasvuruExtendedFormSchema, zodErrorToFieldErrors } from '../../../../lib/formSchemas';
 
+// In-memory rate limiter (align with iletisim form style)
+// Window: 10 minutes; Limit: 5 submissions per IP
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_HITS = 5;
+const hits = new Map<string, { count: number; resetAt: number }>();
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const rec = hits.get(ip);
+  if (!rec || now > rec.resetAt) {
+    hits.set(ip, { count: 1, resetAt: now + WINDOW_MS });
+    return true;
+  }
+  if (rec.count >= MAX_HITS) return false;
+  rec.count += 1;
+  return true;
+}
+
 const truthySet = new Set(['on','true','1','yes','evet']);
 function coerceBoolean(o: Record<string, unknown>, key: string) {
   const v = o[key];
@@ -16,8 +34,23 @@ export const runtime = 'nodejs';
 // Must be dynamic because we send emails & process uploads per request
 export const dynamic = 'force-dynamic';
 
+function extractIp(req: Request): string {
+  const xf = req.headers.get('x-forwarded-for');
+  if (typeof xf === 'string' && xf.length > 0) {
+    const first = xf.split(',')[0];
+    if (first) return first.trim();
+  }
+  return 'unknown';
+}
+
 export async function POST(req: Request) {
   try {
+    // Basic per-IP rate limiting to mitigate abuse
+    const ip = extractIp(req);
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json({ ok: false, errors: { _global: 'rate_limited' } }, { status: 429 });
+    }
+
     const contentType = req.headers.get('content-type') || '';
   const data: Record<string, unknown> = {};
     let userfileBuffer: Buffer | undefined;
@@ -70,9 +103,15 @@ export async function POST(req: Request) {
   const transporter = getTransporter();
 
   const applicantEmail = values.common_email;
-    // const recipients = ['insankaynaklari@apazgroup.com', 'admin@apazgroup.com'];
-    const recipients = ['atakan.kaplayan@apazgroup.com', 'zulal.demirci@apazgroup.com'];
-    const bcc = 'atakan.kaplayan@apazgroup.com';
+
+    // Internal recipient configuration (ENV override with fallback)
+    // APP_FORM_INTERNAL_TO=mail1@example.com,mail2@example.com
+    const internalList = (process.env.APP_FORM_INTERNAL_TO || 'atakan.kaplayan@apazgroup.com,ik@apazgroup.com')
+      .split(',')
+      .map(s => s.trim())
+      .filter(Boolean);
+    const recipients = internalList;
+    const bcc = process.env.APP_FORM_BCC || internalList[0] || resolveSmtpUser();
 
     // Brand palette reference
   const primary = '#1F3A52';

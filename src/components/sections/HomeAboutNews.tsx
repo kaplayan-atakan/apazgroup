@@ -10,7 +10,7 @@ type Props = { locale: string };
 export function HomeAboutNews({ locale }: Props) {
   const withLocale = (path: string) => (path === '/' ? `/${locale}` : `/${locale}${path}`);
   // Get latest 8 internal news items (already sorted desc by date)
-  const news = getAllNews(locale).slice(0, 8);
+  const news = getAllNews(locale).slice(0, 7);
   const aboutHref = withLocale('/hakkimizda') as Route;
 
   return (
@@ -27,7 +27,7 @@ export function HomeAboutNews({ locale }: Props) {
           <div className="lg:col-span-4">
             <div className="mb-4">
               <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
-                Apaz <span className="text-brand-yellow">Hakkında</span>
+                Apaz Group <span className="text-brand-yellow">Hakkında</span>
               </h3>
               <span aria-hidden className="mt-2 inline-block h-1 w-16 bg-brand-yellow" />
             </div>

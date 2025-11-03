@@ -27,7 +27,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
 export default function HaberlerPage({ params }: PageProps) {
   const { locale } = params;
   if (!isLocale(locale)) return null;
-  const news = getAllNews(locale).slice(0, 8); // only latest 8
+  const news = getAllNews(locale);
 
   return (
     <main>

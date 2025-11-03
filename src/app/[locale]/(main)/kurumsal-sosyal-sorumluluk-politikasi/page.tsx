@@ -31,14 +31,17 @@ export default function KSSPage({ params }: PageProps) {
   const { locale } = params;
   if (!isLocale(locale)) return null;
 
-  // Orijinal metni yapılandırılmış çoklu paragrafa böldük (içerik metni değiştirilmedi / cümleler aynen korundu)
-  const paragraphs: string[] = [
-    'Kusursuz misafir deneyiminin yanı sıra kapsayıcılık, sürdürülebilirlik ve sosyal farkındalık da Baydöner’in değişmeyen öncelikleri arasında yer alıyor.',
-    'Herkes için erişilebilir olma yolunda nitelikli adımlar atan Baydöner, bu doğrultuda ürün ve hizmetlerine erişimi kolaylaştıracak projelere sektörde öncülük ediyor.',
-    'BlindLook’un görme engelli bireylerin ürün ve hizmetlere erişimini kolaylaştırmak için tasarladığı sesli betimleme altyapısını kullanan Baydöner, “Türkiye’nin ilk EyeBrand sertifikasına sahip ulusal restoran zinciri” unvanını da aldı.',
-    'Baydöner; restoranlarını ve dijital kanallarını görme engelli bireyler için erişilebilir hale getirdi. Baydöner ve BlindLook iş birliği, görme engelli tüketicilerin Baydöner restoranlarında kimsenin desteğine ihtiyaç olmaksızın restoran deneyimini yaşamasının yolunu açıyor.',
-    'Görme engelli bireyler, Baydöner Cossla uygulamasının sesli simülasyonuna Blindlook uygulaması üzerinden erişebiliyor. Proje, markanın Türkiye\'deki 1 milyon görme engellinin hak ettiği hizmeti, lezzeti ve en önemlisi fırsat eşitliğini sağlama konusundaki kararlılığını yansıtıyor.',
-    'BlindLook’un yenilikçi ve yaratıcı teknolojilerini kullanarak her gün görme engellilere bu deneyimi sunan Baydöner, topluma karşı sorumluluklarını yerine getirmek ve herkes için daha erişilebilir bir dünya yaratmak adına çalışmaya devam ediyor.'
+  // Yeni metin (kullanıcı tarafından sağlanan) – yapılandırılmış içerik
+  const intro: string[] = [
+    'Kusursuz misafir deneyiminin yanı sıra kapsayıcılık, sürdürülebilirlik ve sosyal farkındalık, Apaz Group markalarının değişmeyen öncelikleri arasında yer alıyor.',
+    'Herkes için erişilebilir olma yolunda nitelikli adımlar atan Apaz Group, markalarının ürün ve hizmetlerine erişimi kolaylaştıracak projelere imza atıyor.'
+  ];
+  const blindLookHeading = 'Baydöner X BlindLook İş Birliği';
+  const blindLookParagraphs: string[] = [
+    'BlindLook’un, görme engelli bireylerin ürün ve hizmetlere erişimini kolaylaştırmak için tasarladığı sesli betimleme altyapısını kullanan Baydöner, “Türkiye’nin ilk EyeBrand sertifikasına sahip ulusal restoran zinciri” unvanını aldı.',
+    'Baydöner, restoranlarını ve dijital kanallarını görme engelli bireyler için erişilebilir hâle getirdi. Bu iş birliği sayesinde görme engelli tüketiciler, Baydöner restoranlarında kimsenin desteğine ihtiyaç duymadan deneyim yaşayabiliyor.',
+    'Görme engelli bireyler, Baydöner Cossla uygulamasının sesli simülasyonuna BlindLook uygulaması üzerinden erişebiliyor. Bu proje, markanın Türkiye’deki 1 milyon görme engellinin hak ettiği hizmeti, lezzeti ve fırsat eşitliğini sağlama konusundaki kararlılığını gösteriyor.',
+    'BlindLook’un yenilikçi ve yaratıcı teknolojilerini kullanarak her gün görme engellilere bu deneyimi sunan Baydöner, topluma karşı sorumluluklarını yerine getirmeye ve herkes için daha erişilebilir bir dünya yaratmaya devam ediyor.'
   ];
 
   return (
@@ -71,16 +74,26 @@ export default function KSSPage({ params }: PageProps) {
               </div>
               <div className="mt-8 w-full max-w-prose relative">
                 <div className="absolute -inset-x-3 -inset-y-3 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-sm" aria-hidden="true" />
-                <div className="relative rounded-2xl bg-white/70 backdrop-blur-xl ring-1 ring-slate-200/70 px-6 md:px-7 py-7 shadow-[0_4px_18px_-4px_rgba(0,0,0,0.06)]">
-                  <div className="space-y-5 text-[14.5px] md:text-[15px] leading-relaxed text-slate-700 tracking-[0.15px]">
-                    {paragraphs.map((p, i) => (
-                      <p
-                        key={i}
-                        className={i === 2 ? 'font-medium' : undefined}
-                      >
-                        {p}
-                      </p>
+                <div className="relative rounded-2xl bg-white/75 backdrop-blur-xl ring-1 ring-slate-200/70 px-6 md:px-8 py-8 shadow-[0_4px_18px_-4px_rgba(0,0,0,0.06)]">
+                  {/* Intro */}
+                  <div className="space-y-4 text-[14.5px] md:text-[15px] leading-relaxed text-slate-700 tracking-[0.2px]">
+                    {intro.map((p, i) => (
+                      <p key={i}>{p}</p>
                     ))}
+                  </div>
+                  {/* Divider */}
+                  <div className="my-7 h-px bg-gradient-to-r from-transparent via-slate-300/70 to-transparent" aria-hidden="true" />
+                  {/* BlindLook Section */}
+                  <div className="space-y-5">
+                    <div className="flex items-center gap-3">
+                      <span className="inline-block h-6 w-1.5 rounded-full bg-brand-accent" aria-hidden="true" />
+                      <h2 className="text-lg md:text-xl font-semibold tracking-tight text-slate-900 m-0">{blindLookHeading}</h2>
+                    </div>
+                    <div className="space-y-4 text-[14.5px] md:text-[15px] leading-relaxed text-slate-700">
+                      {blindLookParagraphs.map((p, i) => (
+                        <p key={i} className={i === 0 ? 'font-medium' : undefined}>{p}</p>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -143,7 +143,7 @@ export function BasvuruForm({ locale = 'tr' }: { locale?: 'tr' | 'en' }) {
         <input id="consent" type="checkbox" className="mt-1" aria-required="true" {...register('consent', { required: true })} />
         <label htmlFor="consent" className="text-sm">
           {t(locale, 'form.consent')} (
-          <Link href={`/${locale}/kisisel-verilerin-korunmasi`} className="underline">
+          <Link href={{ pathname: '/pdf', query: { src: '/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf' } }} target="_blank" rel="noopener noreferrer" className="underline">
             {locale === 'tr' ? 'KVKK' : 'KVKK'}
           </Link>
           )

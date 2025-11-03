@@ -28,7 +28,7 @@ export default function PideByPidePage({ params }: PageProps) {
 
   const intro = `PidebyPide olarak, konuklarımıza, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu halini, enfes bir lezzetle sunuyoruz. Deneyimli ustalarımız tarafından hazırlanan günlük taze hamurdan özel olarak üretilen bol malzemeli ürünlerimizi, çıtır çıtır, lezzetine lezzet katarak servis ediyor, kalitemizden ödün vermeden çalışmalarımıza devam ediyoruz. Lezzet yolculuğumuzun önümüzdeki döneminde Türkiye’deki diğer illeri de kapsayarak hızla büyümeyi hedefliyoruz.`;
   const vision = 'Geniş kitlelerin tercih ettiği pide restoran zinciri olmak';
-  const mission = 'Lezzetli, doyurucu ve uygun fiyatlı pideyi en en kolay ve hızlı şekilde herkese, her yerde ulaştırmak.';
+  const mission = 'Lezzetli, doyurucu ve uygun fiyatlı pideyi en kolay ve hızlı şekilde herkese, her yerde ulaştırmak.';
 
   return (
     <main className="relative">

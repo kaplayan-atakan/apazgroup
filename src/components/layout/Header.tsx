@@ -44,7 +44,6 @@ export function Header({ locale }: { locale: Locale }) {
 
   // Data sources for dropdowns (single source of truth for desktop & mobile)
   const aboutItems = [
-    ['/hakkimizda/yonetim', 'Yönetim'],
     ['/hakkimizda', 'Apaz Group Hakkında'],
     ['/hakkimizda/kalite', 'Kalite'],
     ['/haberler', 'Haberler'],
@@ -62,7 +61,7 @@ export function Header({ locale }: { locale: Locale }) {
     ['/kariyer/ucret-politikamiz', 'Ücret Politikamız'],
     ['/kariyer/performans', 'Hedeflerle Yönetim ve Performans'],
     ['/kariyer/olanaklar', 'Sosyal Olanaklar'],
-    ['/kariyer/kariyer-egitim', 'Kariyer ve Eğitim Olanaklarımız'],
+  ['/kariyer/kariyer-egitim', 'Eğitim ve Kariyer Olanaklarımız'],
     ['/bize-katilin', 'Bize Katılın'],
   ] as const;
 

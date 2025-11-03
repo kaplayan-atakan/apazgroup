@@ -22,7 +22,6 @@ export function ClientShell({ locale, children }: { locale: Locale; children: Re
               const prefetchLinks = [
                 '/${locale}/hakkimizda',
                 '/${locale}/franchising',
-                '/${locale}/hakkimizda/yonetim',
                 '/${locale}/iletisim'
               ];
               prefetchLinks.forEach(href => {

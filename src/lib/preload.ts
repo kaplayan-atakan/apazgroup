@@ -21,7 +21,6 @@ function getRelatedRoutes(locale: string, currentPath: string): string[] {
   // Related routes based on current path
   const relatedMap: Record<string, string[]> = {
     'hakkimizda': [
-      `/${locale}/hakkimizda/yonetim`, 
       `/${locale}/insan-kaynaklari-politikamiz`
     ],
     'franchising': [
@@ -32,10 +31,7 @@ function getRelatedRoutes(locale: string, currentPath: string): string[] {
     'iletisim': [
       `/${locale}/basvuru-formu`
     ],
-    'hakkimizda/yonetim': [
-      `/${locale}/hakkimizda/yonetim/celik-basdemir`,
-      `/${locale}/hakkimizda/yonetim/levent-yilmaz`
-    ],
+  'hakkimizda/yonetim': [],
   };
   
   // Find the matching pattern

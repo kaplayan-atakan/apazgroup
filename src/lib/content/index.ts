@@ -90,7 +90,9 @@ export function getAllNews(locale: string): PageDocument[] {
       const slug = normalizeSlug(rawSlug);
       return parseMarkdown(raw, slug, locale);
     })
-    .filter((d): d is PageDocument => d !== null)
+  .filter((d): d is PageDocument => d !== null)
+  // Exclude archived or draft news (optional flags default false)
+  .filter((d: PageDocument) => !d.frontmatter.archived && !d.frontmatter.draft)
     // sort by date descending if available in frontmatter.date
     .sort((a, b) => {
       const da = a.frontmatter.date ? new Date(a.frontmatter.date).getTime() : 0;

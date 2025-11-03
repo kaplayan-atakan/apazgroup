@@ -13,6 +13,7 @@ export default function Home({ params }: { params: { locale: string } }) {
     <main className="min-h-dvh bg-white">
   <HomeHeroSlider
         slides={[
+          { src: '/sliders/kariyernet_slider.png', alt: 'İnsan Kaynakları Ekibimiz İnsana Saygı Ödülü', href: `/${locale}/haberler/2025-10-15-insan-kaynaklari-ekibimiz-insana-saygi-odulu`, openInNewTab: false },
           { src: '/sliders/20250220113059184_ACE.jpg', alt: 'ACE ödül duyurusu', href: 'https://www.baydoner.com/cmsfiles/pressrooms/9-a-c-e-achievement-in-customer-excellence-awards-da-gold-odule-layik-gorulduk-1.pdf' },
           { src: '/sliders/20241219120714929_AYD.png', alt: 'AYD perakende araştırması sonucu', href: 'https://www.baydoner.com/cmsfiles/pressrooms/baydoner-en-begenilen-ve-tercih-edilen-perakende-markalari-arastirmasinda-zirvede.pdf?v=36' },
           { src: '/sliders/20250103113820636_STEIVIE.png', alt: 'Steivie yönetim kurulu sahada haber görseli', href: 'https://www.baydoner.com/cmsfiles/pressrooms/apaz-group-un-kalbinde-misafir-var-apaz-group-yonetim-kurulu-sahada.pdf' },

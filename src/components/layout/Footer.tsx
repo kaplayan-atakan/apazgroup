@@ -129,21 +129,56 @@ export function Footer({ locale }: FooterProps) {
                 </div>
               </div>
 
-              {/* Other Links */}
+              {/* Policies (KVKK & Çerez) */}
               <div className="f_widgets_item">
                 <div className="f_link">
                   <div className="f_title mb-6">
                     <h3 className="text-xl font-semibold text-slate-50">Diğer</h3>
                   </div>
                   <ul className="list space-y-2 text-sm">
+                    {/* KVKK main + sublinks */}
                     <li>
-                      {(() => { const href = withLocale('/kisisel-verilerin-korunmasi'); return (
-                        // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-slate-300 hover:text-brand-primary transition-colors">Kişisel Verilerin Korunması</Link>
-                      ); })()}
+                      <a
+                        href={`/pdf?src=${encodeURI('/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-300 hover:text-brand-primary transition-colors"
+                      >
+                        KVKK
+                      </a>
+                      <ul className="mt-2 ml-4 space-y-1 text-[13px] text-slate-300/90">
+                        <li>
+                          <a
+                            href={`/pdf?src=${encodeURI('/hr/İnternet Sitesi Aydınlatma Metini.pdf')}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-brand-primary transition-colors"
+                          >
+                            İnternet Sitesi Aydınlatma Metni
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href={`/pdf?src=${encodeURI('/hr/Müşteriler, Tedarikçi Yetkilisi ve Tedarikçi Çalışanlarına Yönelik Aydınlatma Metni.pdf')}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-brand-primary transition-colors"
+                          >
+                            Müşteri/Tedarikçi Aydınlatma Metni
+                          </a>
+                        </li>
+                      </ul>
                     </li>
+                    {/* Çerez Politikası */}
                     <li>
-                      {/* Bilgi Toplumu Hizmetleri linki kaldırıldı */}
+                      <a
+                        href={`/pdf?src=${encodeURI('/hr/Çerez Politikası.pdf')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-300 hover:text-brand-primary transition-colors"
+                      >
+                        Çerez Politikası
+                      </a>
                     </li>
                   </ul>
                 </div>

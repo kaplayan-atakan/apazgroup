@@ -1,4 +1,4 @@
-import { getAllPages } from '../lib/content';
+import { getAllPages, getAllNews } from '../lib/content';
 import { locales } from '../lib/i18n';
 
 // Define priority levels for different types of pages
@@ -11,7 +11,7 @@ type PagePriority = {
 export default function sitemap() {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   // Exclude placeholder pages from the sitemap (they are set to robots: noindex)
-  const EXCLUDED_SLUGS = new Set(['cerez-politikasi', 'kisisel-verilerin-korunmasi']);
+  const EXCLUDED_SLUGS = new Set(['cerez-politikasi', 'kisisel-verilerin-korunmasi', 'hakkimizda/yonetim']);
   
   // Define priorities for specific pages (canonical slugs)
   const PAGE_PRIORITIES: Record<string, PagePriority> = {
@@ -27,7 +27,6 @@ export default function sitemap() {
   // About
   'hakkimizda': { slug: 'hakkimizda', priority: 0.8, changefreq: 'monthly' },
   'kalite': { slug: 'hakkimizda/kalite', priority: 0.7, changefreq: 'monthly' },
-  'yonetim': { slug: 'hakkimizda/yonetim', priority: 0.7, changefreq: 'monthly' },
   // Career
   'insan-kaynaklari-politikamiz': { slug: 'kariyer/insan-kaynaklari-politikamiz', priority: 0.7, changefreq: 'monthly' },
   'ucret-politikamiz': { slug: 'kariyer/ucret-politikamiz', priority: 0.7, changefreq: 'monthly' },
@@ -52,6 +51,12 @@ export default function sitemap() {
   };
   
   const entries: SitemapEntry[] = [];
+  // Removed / archived news slugs to exclude explicitly
+  const EXCLUDED_NEWS = new Set<string>([
+    '2024-08-19-paylasmak-bizde-gelenektir',
+    '2020-08-10-calisan-memnuniyeti',
+    '2020-07-01-koronavirus-hamleleri'
+  ]);
 
   // Add locale-specific pages
   for (const locale of locales) {
@@ -73,8 +78,10 @@ export default function sitemap() {
       seen.add(routeSlug);
     }
 
-    // 2) Include remaining content pages not explicitly prioritized
-    const pages = getAllPages(locale).filter((p) => !EXCLUDED_SLUGS.has(p.slug));
+  // 2) Include remaining content pages not explicitly prioritized
+    const pages = getAllPages(locale)
+      .filter((p) => !EXCLUDED_SLUGS.has(p.slug))
+      .filter((p) => !p.slug.startsWith('hakkimizda/yonetim'));
     for (const page of pages) {
       const routeSlug = PAGE_PRIORITIES[page.slug]?.slug || page.slug;
       if (seen.has(routeSlug)) continue; // avoid duplicates
@@ -86,6 +93,17 @@ export default function sitemap() {
         priority: prio.priority
       });
       seen.add(routeSlug);
+    }
+    // 3) Include news items (under /haberler/{slug}) except excluded
+    const newsDocs = getAllNews(locale).filter(n => !EXCLUDED_NEWS.has(n.slug));
+    for (const n of newsDocs) {
+      const url = `${base}/${locale}/haberler/${n.slug}`;
+      entries.push({
+        url,
+        lastModified,
+        changeFrequency: 'weekly',
+        priority: 0.6
+      });
     }
   }
   

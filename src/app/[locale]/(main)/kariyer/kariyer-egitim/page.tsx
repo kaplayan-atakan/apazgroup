@@ -16,7 +16,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   if (!isLocale(locale)) return {};
   const description = "Eğitim ihtiyaç analizi, saha ve genel müdürlük çalışanlarının gelişim programları ile kongre ve konferans katılımlarına dair özet.";
   return generateSeoMetadata({
-    title: 'Kariyer ve Eğitim Olanaklarımız | Apaz Group',
+    title: 'Eğitim ve Kariyer Olanaklarımız | Apaz Group',
     description,
     locale,
     slug: 'kariyer/kariyer-egitim',
@@ -36,7 +36,7 @@ export default function KariyerEgitimPage({ params }: PageProps) {
     <main className="relative">
       {/* Gradient Hero */}
       <HeroGradient
-        heading="Kariyer ve Eğitim Olanaklarımız"
+        heading="Eğitim ve Kariyer Olanaklarımız"
         intro="Apaz Group'ta çalışanlarımızın sürekli gelişimini destekliyor, kariyer yolculuklarında yanlarında oluyoruz. Sürekli öğrenme kültürü ile her çalışanımızın potansiyelini en üst düzeye çıkarmasına olanak tanıyoruz."
         radialPosition="circle_at_75%_35%"
       />
@@ -62,7 +62,7 @@ export default function KariyerEgitimPage({ params }: PageProps) {
                   <CareerParagraph>Ayrıca Operasyon Yöneticilerimiz ve Saha Eğitim Müdürü’müz tarafından yapılan saha ziyaretlerinde yerinde uygulamalı eğitimler ile de çalışanlarımızın gelişimleri sağlanmaktadır.</CareerParagraph>
                   <CareerParagraph>Yasal zorunluluk gereği alınması gerekli eğitimlerimiz de yine Apaz Gelişim Atölyesi üzerinden tüm çalışanlarımızın erişimine sunulmakta olup çalışanlarımız, zaman ve mekan kısıtlaması olmaksızın eğitimlerini tamamlayarak sertifikalarını alabilmektedirler.</CareerParagraph>
                   <CareerParagraph>Genel Müdürlük çalışanlarımız ise, yıllık eğitim planları doğrultusunda şirket içi ve şirket dışı kaynaklardan mesleki gelişim konularında eğitim alırken teknolojiyi ve iş kollarındaki gelişmeleri takip edecek kongre ve konferanslara da katılmaktadırlar. </CareerParagraph>
-                  <CareerParagraph>Ayrıca, tüm çalışanlarımız Apaz Gelişim Atöleyemiz üzerinden kişisel gelişim ve misafir memnuniyeti konularında eğitim alabilmektedir.</CareerParagraph>
+                  <CareerParagraph>Ayrıca, tüm çalışanlarımız Apaz Gelişim Atölyemiz üzerinden kişisel gelişim ve misafir memnuniyeti konularında eğitim alabilmektedir.</CareerParagraph>
                 </CareerContent>
               </div>
             </article>
@@ -92,7 +92,7 @@ export default function KariyerEgitimPage({ params }: PageProps) {
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}
-                    <Link href={withLocale('/kariyer/kariyer-egitim')} className="font-semibold text-slate-900 border-l-4 border-brand-yellow pl-2 block">Kariyer ve Eğitim Olanaklarımız</Link>
+                    <Link href={withLocale('/kariyer/kariyer-egitim')} className="font-semibold text-slate-900 border-l-4 border-brand-yellow pl-2 block">Eğitim ve Kariyer Olanaklarımız</Link>
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}

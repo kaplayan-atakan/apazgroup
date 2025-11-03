@@ -150,7 +150,7 @@ export function ContactForm() {
             aria-required="true"
           />
           <label htmlFor="kvkk" className="text-sm leading-snug">
-            Kişisel verilerimin <NextLink href="/tr/kisisel-verilerin-korunmasi" className="underline" target="_blank" rel="noopener noreferrer">KVKK Aydınlatma Metni</NextLink> kapsamında işlenmesini kabul ediyorum.
+            Kişisel verilerimin <NextLink href={{ pathname: '/pdf', query: { src: '/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf' } }} className="underline" target="_blank" rel="noopener noreferrer">KVKK Aydınlatma Metni</NextLink> kapsamında işlenmesini kabul ediyorum.
           </label>
         </div>
         {errors.kisiselVerilerinKorunmasi && (
@@ -165,7 +165,7 @@ export function ContactForm() {
             aria-required="true"
           />
           <label htmlFor="cerez" className="text-sm leading-snug">
-            Çerez politikasını <NextLink href="/tr/cerez-politikasi" className="underline" target="_blank" rel="noopener noreferrer">okudum ve kabul ediyorum.</NextLink>
+            Çerez politikasını <NextLink href={{ pathname: '/pdf', query: { src: '/hr/Çerez Politikası.pdf' } }} className="underline" target="_blank" rel="noopener noreferrer">okudum ve kabul ediyorum.</NextLink>
           </label>
         </div>
         {errors.cerezPolitikasi && (

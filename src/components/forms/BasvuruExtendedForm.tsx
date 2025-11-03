@@ -136,12 +136,12 @@ export function BasvuruExtendedForm() {
 
       <div className="flex items-start gap-2">
         <input id="kisiselVerilerinKorunmasi" type="checkbox" className="mt-1" {...register('kisiselVerilerinKorunmasi')} />
-        <label htmlFor="kisiselVerilerinKorunmasi" className="text-sm">Kişisel Verilerin Korunması (<Link href="/tr/kisisel-verilerin-korunmasi" className="underline" target="_blank">metin</Link>)</label>
+  <label htmlFor="kisiselVerilerinKorunmasi" className="text-sm">Kişisel Verilerin Korunması (<Link href={{ pathname: '/pdf', query: { src: '/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf' } }} className="underline" target="_blank" rel="noopener noreferrer">metin</Link>)</label>
       </div>
       {errors.kisiselVerilerinKorunmasi && <p className="text-xs text-red-600 -mt-2">Zorunlu</p>}
       <div className="flex items-start gap-2">
         <input id="cerezPolitikasi" type="checkbox" className="mt-1" {...register('cerezPolitikasi')} />
-        <label htmlFor="cerezPolitikasi" className="text-sm">Çerez Politikası (<Link href="/tr/cerez-politikasi" className="underline" target="_blank">metin</Link>)</label>
+  <label htmlFor="cerezPolitikasi" className="text-sm">Çerez Politikası (<Link href={{ pathname: '/pdf', query: { src: '/hr/Çerez Politikası.pdf' } }} className="underline" target="_blank" rel="noopener noreferrer">metin</Link>)</label>
       </div>
       {errors.cerezPolitikasi && <p className="text-xs text-red-600 -mt-2">Zorunlu</p>}
 

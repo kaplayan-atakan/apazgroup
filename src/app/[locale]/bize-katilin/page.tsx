@@ -41,7 +41,7 @@ export default function BizeKatilinPage({ params }: PageProps) {
             <li><strong>Kariyer Gelişimi:</strong> Sürekli eğitim ve gelişim fırsatları ile kariyerinizi ilerletin.</li>
             <li><strong>Güçlü Ekip Ruhu:</strong> Dayanışma ve işbirliğiyle başarıyı birlikte yakalayın.</li>
             <li><strong>Öncü Markalar:</strong> Sektörde fark yaratan markalarımızın bir parçası olun.</li>
-            <li><strong>Çeşitli Pozisyonlar:</strong> Yeteneğinize ve ilginize uygun pozisyonlarda çalışma fırsatı yakalayın.</li>
+            <li><strong>Farklılıklara Saygı:</strong> Yeteneğinize ve ilginize uygun pozisyonlarda çalışma fırsatı yakalayın.</li>
           </ul>
           <p>Apaz Group olarak, sizinle birlikte daha güçlü, daha başarılı ve daha mutlu bir geleceğe adım atmaktan büyük heyecan duyuyoruz!</p>
           <p className="font-medium">Başvuru İçin: Aşağıda yer alan Marka Logolarına Tıklayabilirsiniz.</p>
@@ -52,7 +52,7 @@ export default function BizeKatilinPage({ params }: PageProps) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {[
                 { title: 'Apaz Group', logo: '/brand/group-apaz--about.avif', href: `/${loc}/basvuru_formu` },
-                { title: 'Baydöner', logo: '/markalar/baydoner_logo.svg', href: 'https://www.baydoner.com/' },
+                { title: 'Baydöner', logo: '/markalar/baydoner_logo.svg', href: 'https://www.baydoner.com/hakkimizda/insan-kaynaklari ' },
                 { title: 'Bursa İshakbey', logo: '/markalar/bursaishakbey_logo.png', href: 'https://www.bursaishakbey.com/basvuru-formu' },
                 { title: 'PidebyPide', logo: '/markalar/pidebypide_logo.png', href: 'https://www.pidebypide.com/kariyer' }
               ].map(item => {

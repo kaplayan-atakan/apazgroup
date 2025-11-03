@@ -34,8 +34,6 @@ export function ManagementProfileClient({ locale, title, role, description, port
         <nav className="text-xs text-slate-300 mb-6 flex items-center gap-2" aria-label="Breadcrumb">
           <Link href={`/${locale}/hakkimizda`} className="hover:text-white transition-colors flex items-center gap-1"><Icon name="chevron-left" size={14} /> <span>Hakkımızda</span></Link>
           <span className="opacity-40" aria-hidden>/</span>
-          <Link href={`/${locale}/hakkimizda/yonetim`} className="hover:text-white transition-colors">Yönetim</Link>
-          <span className="opacity-40" aria-hidden>/</span>
           <span className="text-slate-100 font-medium">{title}</span>
         </nav>
         <div className="grid md:grid-cols-[340px_minmax(0,1fr)] gap-10 items-start">

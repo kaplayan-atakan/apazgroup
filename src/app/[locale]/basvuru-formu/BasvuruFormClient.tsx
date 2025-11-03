@@ -141,18 +141,18 @@ export default function BasvuruFormClient() {
       <div className="flex items-start gap-2">
         <input id="kisiselVerilerinKorunmasi" type="checkbox" className="mt-1" {...register('kisiselVerilerinKorunmasi')} />
         <label htmlFor="kisiselVerilerinKorunmasi" className="text-sm leading-snug">
-          <Link href="/tr/kisisel-verilerin-korunmasi" target="_blank" className="underline">
-            Kişisel Verilerin Korunması kanunu sözleşmesini okudum ve kabul ediyorum.
-          </Link>
+          Kişisel verilerimin <Link href={{ pathname: '/pdf', query: { src: '/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf' } }} target="_blank" rel="noopener noreferrer" className="underline">
+            KVKK Aydınlatma Metni
+          </Link> kapsamında işlenmesini kabul ediyorum.
         </label>
       </div>
       {errors.kisiselVerilerinKorunmasi && <p className="text-xs text-red-600 -mt-2">Zorunlu</p>}
       <div className="flex items-start gap-2">
         <input id="cerezPolitikasi" type="checkbox" className="mt-1" {...register('cerezPolitikasi')} />
         <label htmlFor="cerezPolitikasi" className="text-sm leading-snug">
-          <Link href="/tr/cerez-politikasi" target="_blank" className="underline">
-            Çerez Politikası sözleşmesini okudum ve kabul ediyorum.
-          </Link>
+          <Link href={{ pathname: '/pdf', query: { src: '/hr/Çerez Politikası.pdf' } }} target="_blank" rel="noopener noreferrer" className="underline">
+            Çerez Politikası sözleşmesini
+          </Link> okudum ve kabul ediyorum.
         </label>
       </div>
       {errors.cerezPolitikasi && <p className="text-xs text-red-600 -mt-2">Zorunlu</p>}

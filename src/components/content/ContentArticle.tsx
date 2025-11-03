@@ -187,32 +187,7 @@ export async function ContentArticle({ locale, slug }: { locale: string; slug: s
       }))}
       {mappedAssets && (
         <section className="not-prose mt-10">
-          {slug === 'yonetim' ? (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {mappedAssets.map(a => (
-                <figure key={a.src} className="rounded border bg-white shadow-sm overflow-hidden">
-                  <div className="relative w-full h-56">
-                    <Image 
-                      src={a.src} 
-                      alt={a.alt} 
-                      fill 
-                      sizes="(min-width: 768px) 33vw, 100vw" 
-                      loading="lazy"
-                      className="object-cover" 
-                      placeholder={blurMap[a.src as keyof typeof blurMap] ? 'blur' : undefined} 
-                      blurDataURL={(blurMap as Record<string,string>)[a.src]} 
-                    />
-                  </div>
-                  {(a.title || a.subtitle) && (
-                    <figcaption className="p-3 text-sm">
-                      <div className="font-medium">{a.title}</div>
-                      {a.subtitle && <div className="text-slate-500 text-xs mt-0.5">{a.subtitle}</div>}
-                    </figcaption>
-                  )}
-                </figure>
-              ))}
-            </div>
-          ) : slug === 'haberler' ? (
+          {slug === 'haberler' ? (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {mappedAssets.map(a => (
                 <div key={a.src} className="relative w-full aspect-square rounded overflow-hidden ring-1 ring-slate-200">

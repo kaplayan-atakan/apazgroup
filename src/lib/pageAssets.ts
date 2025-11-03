@@ -25,13 +25,7 @@ const map: Record<string, PageAssetItem[]> = {
     { src: '/news/haber-3-thumb-square--haberler.png', alt: 'Haber 3', kind: 'news' },
     { src: '/news/haber-4-thumb-square--haberler.png', alt: 'Haber 4', kind: 'news' }
   ],
-  // Yönetim (örnek ekip)
-  yonetim: [
-    { src: '/team/levent-yilmaz--yonetim.jpg', alt: 'Levent Yılmaz', kind: 'person', title: 'Levent Yılmaz', subtitle: 'Yönetim' },
-    { src: '/team/feridun-tuncer--yonetim.jpg', alt: 'Feridun Tuncer', kind: 'person', title: 'Feridun Tuncer', subtitle: 'Yönetim' },
-  { src: '/team/bulent-polat--yonetim.jpg', alt: 'Bülent Polat', kind: 'person', title: 'Bülent Polat', subtitle: 'Yönetim' },
-  { src: '/team/celik_basdemir.jpg', alt: 'Çelik Başdemir', kind: 'person', title: 'Çelik Başdemir', subtitle: 'Yönetim' }
-  ]
+  // yönetim sayfası kaldırıldı
 };
 
 export function getPageAssetsForSlug(slug: string): PageAssetItem[] | null {

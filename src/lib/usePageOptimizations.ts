@@ -24,12 +24,7 @@ export function usePageOptimizations(locale: string, currentPage: string) {
         `/${locale}/iletisim`
       ],
       'hakkimizda': [
-        `/${locale}/hakkimizda/yonetim`,
         `/${locale}/franchising`
-      ],
-      'yonetim': [
-        `/${locale}/hakkimizda/yonetim/celik-basdemir`, 
-        `/${locale}/hakkimizda/yonetim/levent-yilmaz`
       ],
       'franchising': [
         `/${locale}/baydoner`,

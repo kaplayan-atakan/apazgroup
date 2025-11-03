@@ -97,7 +97,7 @@ export default function KurumKulturEtikPage({ params }: PageProps) {
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}
-                    <Link href={withLocale('/kariyer/kariyer-egitim')} className="hover:text-slate-900 text-slate-600 transition-colors">Kariyer ve Eğitim Olanaklarımız</Link>
+                    <Link href={withLocale('/kariyer/kariyer-egitim')} className="hover:text-slate-900 text-slate-600 transition-colors">Eğitim ve Kariyer Olanaklarımız</Link>
                   </li>
                   <li>
                     {/* @ts-expect-error typedRoutes dynamic string */}

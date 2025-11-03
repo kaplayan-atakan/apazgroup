@@ -56,9 +56,13 @@ export async function POST(req: NextRequest) {
   const now = new Date();
   const timestamp = now.toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' });
 
-    // const internalRecipients = ['info@apazgroup.com','admin@apazgroup.com'];
-    const internalRecipients = ['atakan.kaplayan@apazgroup.com', 'zulal.demirci@apazgroup.com'];
-    const bcc = 'atakan.kaplayan@apazgroup.com';
+    // Internal recipient configuration via ENV
+    // CONTACT_FORM_INTERNAL_TO=mail1@example.com,mail2@example.com
+    const internalRecipients = (process.env.CONTACT_FORM_INTERNAL_TO || 'atakan.kaplayan@apazgroup.com,info@apazgroup.com')
+      .split(',')
+      .map(s=>s.trim())
+      .filter(Boolean);
+    const bcc = process.env.CONTACT_FORM_BCC || internalRecipients[0] || resolveSmtpUser();
     const subjectBase = 'İletişim Formu Mesajı';
 
   const internalHtml = `<!DOCTYPE html><html lang="tr"><head><meta charSet="utf-8"/><title>${subjectBase}</title></head>

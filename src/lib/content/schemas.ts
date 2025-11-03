@@ -7,6 +7,8 @@ export const PageFrontmatterSchema = z.object({
   date: z.string().optional(),
   image: z.string().optional(),
   excerpt: z.string().optional(),
+  archived: z.boolean().optional(),
+  draft: z.boolean().optional(),
   seo: z
     .object({
       title: z.string().optional(),

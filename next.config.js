@@ -7,8 +7,27 @@ const nextConfig = {
   images: {
     remotePatterns: []
   },
+  async headers() {
+    return [
+      {
+        source: '/package.json',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      },
+      {
+        source: '/:path(.*\\.json)',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      },
+    ];
+  },
   async redirects() {
     return [
+      // Security: Block access to sensitive files
+      { source: '/package.json', destination: '/404', permanent: false },
+      { source: '/package-lock.json', destination: '/404', permanent: false },
+      { source: '/tsconfig.json', destination: '/404', permanent: false },
+      { source: '/next.config.js', destination: '/404', permanent: false },
+      { source: '/.env:path*', destination: '/404', permanent: false },
+      
       // Root redirect (temporary)
       { source: '/', destination: '/tr', permanent: false },
       
@@ -56,9 +75,14 @@ const nextConfig = {
   { source: '/ucret_politikamiz', destination: '/tr/kariyer/ucret-politikamiz', permanent: true },
   { source: '/tr/ucret-politikamiz', destination: '/tr/kariyer/ucret-politikamiz', permanent: true },
   { source: '/en/ucret-politikamiz', destination: '/en/kariyer/ucret-politikamiz', permanent: true },
-  { source: '/yonetim', destination: '/tr/hakkimizda/yonetim', permanent: true },
-  { source: '/tr/yonetim', destination: '/tr/hakkimizda/yonetim', permanent: true },
-  { source: '/en/yonetim', destination: '/en/hakkimizda/yonetim', permanent: true },
+  // Yönetim bölümü kaldırıldı: tüm yönetim URL'lerini Hakkımızda'ya yönlendir
+  { source: '/yonetim', destination: '/tr/hakkimizda', permanent: true },
+  { source: '/tr/yonetim', destination: '/tr/hakkimizda', permanent: true },
+  { source: '/en/yonetim', destination: '/en/hakkimizda', permanent: true },
+  { source: '/tr/hakkimizda/yonetim', destination: '/tr/hakkimizda', permanent: true },
+  { source: '/en/hakkimizda/yonetim', destination: '/en/hakkimizda', permanent: true },
+  { source: '/tr/hakkimizda/yonetim/:slug*', destination: '/tr/hakkimizda', permanent: true },
+  { source: '/en/hakkimizda/yonetim/:slug*', destination: '/en/hakkimizda', permanent: true },
   // Baydöner moved under nested brand path
   { source: '/baydoner', destination: '/tr/markalarimiz/baydoner', permanent: true },
   { source: '/tr/baydoner', destination: '/tr/markalarimiz/baydoner', permanent: true },
@@ -66,6 +90,10 @@ const nextConfig = {
   { source: '/bursaishakbey', destination: '/tr/bursa-ishakbey', permanent: true },
   { source: '/tr/bursa-ishakbey', destination: '/tr/markalarimiz/bursa-ishakbey', permanent: true },
   { source: '/en/bursa-ishakbey', destination: '/en/markalarimiz/bursa-ishakbey', permanent: true },
+  // Archived news articles redirects
+  { source: '/tr/haberler/2020-07-01-koronavirus-hamleleri', destination: '/tr/haberler', permanent: true },
+  // Archived news article redirect
+  // { source: '/tr/haberler/2020-08-10-calisan-memnuniyeti', destination: '/tr/haberler', permanent: true },
   // Canonicalize career top-level to nested
   { source: '/tr/insan-kaynaklari-politikamiz', destination: '/tr/kariyer/insan-kaynaklari-politikamiz', permanent: true },
   { source: '/en/insan-kaynaklari-politikamiz', destination: '/en/kariyer/insan-kaynaklari-politikamiz', permanent: true },
