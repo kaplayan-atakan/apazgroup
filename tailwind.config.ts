@@ -15,21 +15,60 @@ const config: Config = {
       },
       colors: {
         brand: {
-          // Ana renkler
+          // Bronz/Altın odaklı ana renk paleti
+          bronze: {
+            50: '#faf8f5',
+            100: '#f0ebe3',
+            200: '#e3d7c5',
+            300: '#d1b89a',
+            400: '#b89b6f',  // Ana bronz
+            500: '#a58856',
+            600: '#8c7047',
+            700: '#73593a',
+            800: '#5d4830',
+            900: '#4a3926',
+          },
+          gold: {
+            50: '#fefbf5',
+            100: '#fdf5e6',
+            200: '#fae8c7',
+            300: '#f5d69d',
+            400: '#e8ba6f',
+            500: '#d4a255',
+            600: '#b8883f',
+            700: '#95694e',  // Ana altın
+            800: '#765335',
+            900: '#5d4228',
+          },
+          // Navy/koyu ton
           primary: '#1F3A52',
           'primary-hover': '#172D40',
-          // secondary: '#9B5A3C',
-          secondary: '#92827a',
-          'secondary-hover': '#7D4930',
-          accent: '#C48A65',
-          'accent-hover': '#A37152',
-          // İstenen sarı aksan rengi
-          yellow: '#95694e',
+          'primary-light': '#2d4f6b',
+          // Bronz ana ton
+          secondary: '#b89b6f',
+          'secondary-hover': '#a58856',
+          'secondary-light': '#d1b89a',
+          // Altın aksan
+          accent: '#95694e',
+          'accent-hover': '#765335',
+          'accent-light': '#b8883f',
+          // Uyumlu nötr tonlar
           neutral: {
+            50: '#fafaf9',
+            100: '#f5f5f4',
+            200: '#e7e5e4',
+            300: '#d6d3d1',
+            400: '#a8a29e',
+            500: '#78716c',
+            600: '#57534e',
+            700: '#44403c',
+            800: '#292524',
+            900: '#1c1917',
             dark: '#222222',
             light: '#FFFFFF'
           },
-          // Eski değerler geriye uyumluluk için korundu
+          // Legacy uyumluluk
+          yellow: '#95694e',
           danger: '#9d223c',
           success: '#00a65a',
           gray: {

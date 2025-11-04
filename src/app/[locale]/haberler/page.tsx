@@ -37,7 +37,7 @@ export default function HaberlerPage({ params }: PageProps) {
         minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[230px]', lg: 'lg:min-h-[250px]' }}
         contentClassName="max-w-4xl"
       />
-      <section className="py-6">
+      <section className="py-10 bg-gradient-to-b from-brand-bronze-50/30 to-white">
         <div className="max-w-6xl mx-auto px-6 grid gap-10 md:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {news.map(item => {
             const href = `/${locale}/haberler/${item.slug}`; // typedRoutes experimental: treat as dynamic string
@@ -47,7 +47,7 @@ export default function HaberlerPage({ params }: PageProps) {
                 key={item.slug}
                 // @ts-expect-error experimental typedRoutes dynamic
                 href={href}
-                className="group rounded-xl ring-1 ring-slate-200 bg-white shadow-sm hover:shadow-md transition focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-yellow/60 overflow-hidden flex flex-col"
+                className="group rounded-xl ring-1 ring-brand-bronze-200 bg-gradient-to-br from-white to-brand-bronze-50 shadow-md hover:shadow-xl hover:ring-brand-secondary transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/60 overflow-hidden flex flex-col transform hover:scale-[1.02]"
               >
                 {img && (
                   <div className="relative w-full aspect-[16/9] bg-slate-100">
@@ -60,14 +60,14 @@ export default function HaberlerPage({ params }: PageProps) {
                       placeholder={blurMap[img as keyof typeof blurMap] ? 'blur' : undefined}
                       blurDataURL={(blurMap as Record<string,string>)[img]}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/50 via-brand-bronze-900/20 to-transparent" />
                   </div>
                 )}
                 <div className="p-5 flex flex-col flex-1">
-                  <h2 className="text-lg font-semibold tracking-tight group-hover:text-brand-primary transition-colors">{item.frontmatter.title}</h2>
-                  {item.frontmatter.date && <time className="mt-1 text-xs text-slate-500" dateTime={item.frontmatter.date}>{item.frontmatter.date}</time>}
-                  {item.frontmatter.excerpt && <p className="mt-3 text-sm text-slate-600 line-clamp-4">{item.frontmatter.excerpt}</p>}
-                  <span className="mt-4 inline-flex items-center text-[11px] font-semibold uppercase tracking-wide text-brand-primary">Haberi Oku →</span>
+                  <h2 className="text-lg font-bold tracking-tight text-brand-primary group-hover:text-brand-secondary transition-colors">{item.frontmatter.title}</h2>
+                  {item.frontmatter.date && <time className="mt-1 text-xs text-brand-accent font-medium" dateTime={item.frontmatter.date}>{item.frontmatter.date}</time>}
+                  {item.frontmatter.excerpt && <p className="mt-3 text-sm text-slate-700 line-clamp-4">{item.frontmatter.excerpt}</p>}
+                  <span className="mt-4 inline-flex items-center text-[11px] font-bold uppercase tracking-wide text-brand-secondary group-hover:text-brand-accent">Haberi Oku →</span>
                 </div>
               </Link>
             );

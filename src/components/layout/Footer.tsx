@@ -14,14 +14,15 @@ export function Footer({ locale }: FooterProps) {
   return (
     <footer className="relative text-slate-200">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        {/* Inverted palette order: accent -> secondary -> primary (mirrored) */}
-        {/* Previously centered at 80% 80%; mirrored horizontally to 20% 80% to reverse visual flow */}
-        <div className="w-full h-full bg-[radial-gradient(circle_at_20%_80%,#C48A65_0%,#92827a_55%,#1F3A52_100%)] opacity-95" />
-        {/* Overlay gradient also mirrored (to-tl instead of to-tr) */}
-        <div className="absolute inset-0 bg-gradient-to-tl from-black/30 via-black/10 to-transparent mix-blend-multiply" />
+        {/* Bronz odaklı gradient: açık bronz -> altın -> koyu navy */}
+        <div className="w-full h-full bg-gradient-to-br from-brand-bronze-200 via-brand-gold-400 to-brand-primary opacity-95" />
+        {/* İkinci katman: merkez bronz vurgusu */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,#b89b6f_0%,transparent_70%)] opacity-30 mix-blend-overlay" />
+        {/* Üstten ince overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/20 via-transparent to-transparent" />
       </div>
       {/* 1) Footer widgets */}
-  <div className="bg-white/5 backdrop-blur-sm border-t border-white/10">
+  <div className="bg-brand-bronze-900/10 backdrop-blur-sm border-t border-brand-bronze-300/20">
         <div className="footer_widgets py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -40,25 +41,25 @@ export function Footer({ locale }: FooterProps) {
                   </div>
                 </div>
                 <div className="desc space-y-3 text-sm">
-                  <p className="text-slate-300 flex items-start gap-3 leading-relaxed">
-                    <Icon name="map-pin" size={32} aria-hidden className="text-brand-primary mt-0.5" />
+                  <p className="text-slate-100 flex items-start gap-3 leading-relaxed">
+                    <Icon name="map-pin" size={32} aria-hidden className="text-brand-secondary mt-0.5" />
                     <span>Adalet Mah. Anadolu Cad. No:41 Bağımsız Bölüm K:20 No:17 Megapol Tower Bayraklı - İZMİR</span>
                   </p>
                   <p>
                     <a
                       href="mailto:info@apazgroup.com"
-                      className="mail inline-flex items-center gap-2 text-slate-100 hover:text-brand-primary transition-colors"
+                      className="mail inline-flex items-center gap-2 text-slate-50 hover:text-brand-secondary transition-colors"
                     >
-                      <Icon name="mail" size={20} aria-hidden className="text-brand-primary" />
+                      <Icon name="mail" size={20} aria-hidden className="text-brand-secondary" />
                       <span>info@apazgroup.com</span>
                     </a>
                   </p>
                   <p>
                     <a
                       href="tel:+902324644235"
-                      className="phone inline-flex items-center gap-2 text-slate-100 hover:text-brand-primary transition-colors"
+                      className="phone inline-flex items-center gap-2 text-slate-50 hover:text-brand-secondary transition-colors"
                     >
-                      <Icon name="phone" size={20} aria-hidden className="text-brand-primary" />
+                      <Icon name="phone" size={20} aria-hidden className="text-brand-secondary" />
                       <span>+90 232 464 42 35</span>
                     </a>
                   </p>

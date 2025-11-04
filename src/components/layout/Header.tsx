@@ -115,19 +115,21 @@ export function Header({ locale }: { locale: Locale }) {
   return (
   <header
     id="site-header"
-  className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 bg-gradient-to-b from-white to-slate-50"
+  className="fixed top-0 left-0 right-0 z-50 border-b-2 border-brand-bronze-300/40 bg-gradient-to-br from-white via-brand-bronze-50/40 via-brand-gold-50/20 to-white backdrop-blur-md shadow-lg transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-brand-secondary/5 before:via-transparent before:to-brand-accent/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500 before:pointer-events-none"
     role="banner"
   >
-  <nav className="container mx-auto px-4 h-16 lg:h-24 flex items-center justify-between" aria-label={t(locale, 'nav.mainNavigation', 'Ana Navigasyon')}>
+  <nav className="container mx-auto px-4 h-16 lg:h-24 flex items-center justify-between relative z-10" aria-label={t(locale, 'nav.mainNavigation', 'Ana Navigasyon')}>
         {/* Logo */}
         {(() => {
           const href = withLocale('/');
           return (
             // @ts-expect-error typedRoutes experimental: dynamic string
-            <Link href={href} aria-label={t(locale, 'nav.home', 'Anasayfaya git')} className="flex-shrink-0">
-              <span className="relative block h-14 lg:h-20 w-[180px] lg:w-[260px] transition-all duration-200">
+            <Link href={href} aria-label={t(locale, 'nav.home', 'Anasayfaya git')} className="flex-shrink-0 group relative">
+              <span className="relative block h-14 lg:h-20 w-[180px] lg:w-[260px] transition-all duration-300 group-hover:scale-105">
+                {/* Decorative glow effect behind logo */}
+                <span className="absolute inset-0 bg-gradient-to-r from-brand-secondary/0 via-brand-accent/20 to-brand-secondary/0 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
                 {/* Dark/Light variants - can be adjusted to separate assets if provided */}
-                <Image src="/brand/logo--global.png" alt="Apaz Group" fill sizes="(max-width:1024px) 180px, 260px" className="object-contain block" priority />
+                <Image src="/brand/logo--global.png" alt="Apaz Group" fill sizes="(max-width:1024px) 180px, 260px" className="object-contain block relative z-10 drop-shadow-sm" priority />
               </span>
             </Link>
           );
@@ -148,7 +150,7 @@ export function Header({ locale }: { locale: Locale }) {
   >
           {/* About dropdown */}
           <li
-            className="relative group rounded-md bg-brand-primary/5 hover:bg-brand-primary/10 transition-colors"
+            className="relative group rounded-xl bg-gradient-to-br from-brand-bronze-50 to-brand-gold-50/50 hover:from-brand-bronze-100 hover:to-brand-gold-100/50 transition-all duration-300 shadow-md hover:shadow-lg ring-1 ring-brand-bronze-200/50 hover:ring-brand-secondary/30"
             onMouseEnter={() => openSection('about')}
             onMouseLeave={closeSection}
           >
@@ -156,31 +158,34 @@ export function Header({ locale }: { locale: Locale }) {
               type="button"
               variant="ghost"
               size="sm"
-              className="px-2 py-1 h-auto font-normal text-slate-700 hover:text-brand-primary focus-visible:ring-brand-primary/40 text-[13px]"
+              className="px-4 py-2.5 h-auto font-semibold text-brand-primary hover:text-brand-secondary focus-visible:ring-brand-secondary/40 text-sm transition-colors duration-300"
               aria-haspopup="true"
               aria-expanded="false"
               elevation={0}
             >
-              <span className="flex items-center gap-1">
-                {t(locale, 'nav.about', 'Hakkımızda')}
-                <Icon name="chevron-down" />
+              <span className="flex items-center gap-2">
+                <span className="relative">
+                  {t(locale, 'nav.about', 'Hakkımızda')}
+                  <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-secondary to-brand-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" aria-hidden="true" />
+                </span>
+                <Icon name="chevron-down" className="transition-transform duration-300 group-hover:translate-y-0.5" />
               </span>
             </Button>
             {/* hover bridge: prevents hover-out between trigger and submenu */}
             <span aria-hidden className="absolute left-0 right-0 top-full h-2" />
             <ul
               data-open={desktopOpen === 'about'}
-              className="absolute left-0 top-full z-50 w-64 bg-white shadow-lg rounded-md py-2 border border-slate-200 invisible opacity-0 translate-y-1 transition data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
+              className="absolute left-0 top-full z-50 w-72 bg-gradient-to-br from-white to-brand-bronze-50/40 shadow-2xl rounded-xl py-3 border-2 border-brand-bronze-200/50 invisible opacity-0 translate-y-2 transition-all duration-300 data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 backdrop-blur-sm"
             >
               {aboutItems.map(([p,label],i)=>{const href=withLocale(p);return patternedLi(i,(
                 // @ts-expect-error dynamic string
-                <Link href={href} onClick={closeSection} data-close="true" aria-current={isActive(p)?'page':undefined} className="block px-4 py-2 text-[13px]">{label}</Link>
+                <Link href={href} onClick={closeSection} data-close="true" aria-current={isActive(p)?'page':undefined} className="block px-4 py-3 text-sm font-semibold text-slate-700 hover:text-brand-secondary hover:bg-gradient-to-r hover:from-brand-bronze-50 hover:to-brand-gold-50/30 transition-all duration-200 rounded-lg mx-1.5 group/link"><span className="flex items-center justify-between">{label}<span className="opacity-0 group-hover/link:opacity-100 transition-opacity" aria-hidden="true">→</span></span></Link>
               ));})}
             </ul>
           </li>
           {/* Brands dropdown */}
           <li
-            className="relative group rounded-md bg-brand-accent/5 hover:bg-brand-accent/10 transition-colors"
+            className="relative group rounded-xl bg-gradient-to-br from-brand-gold-50 to-brand-accent/10 hover:from-brand-gold-100 hover:to-brand-accent/20 transition-all duration-300 shadow-md hover:shadow-lg ring-1 ring-brand-gold-200/50 hover:ring-brand-accent/40"
             onMouseEnter={() => openSection('brands')}
             onMouseLeave={closeSection}
           >
@@ -188,35 +193,41 @@ export function Header({ locale }: { locale: Locale }) {
               type="button"
               variant="ghost"
               size="sm"
-              className="px-2 py-1 h-auto font-normal text-slate-700 hover:text-brand-primary focus-visible:ring-brand-primary/40 text-[13px]"
+              className="px-4 py-2.5 h-auto font-semibold text-brand-primary hover:text-brand-accent focus-visible:ring-brand-accent/40 text-sm transition-colors duration-300"
               aria-haspopup="true"
               aria-expanded="false"
               elevation={0}
             >
-              <span className="flex items-center gap-1">
-                Markalarımız
-                <Icon name="chevron-down" />
+              <span className="flex items-center gap-2">
+                <span className="relative">
+                  Markalarımız
+                  <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-accent to-brand-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" aria-hidden="true" />
+                </span>
+                <Icon name="chevron-down" className="transition-transform duration-300 group-hover:translate-y-0.5" />
               </span>
             </Button>
             <span aria-hidden className="absolute left-0 right-0 top-full h-2" />
             <ul
               data-open={desktopOpen === 'brands'}
-              className="absolute left-0 top-full z-50 w-64 bg-white shadow-lg rounded-md py-2 border border-slate-200 invisible opacity-0 translate-y-1 transition data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
+              className="absolute left-0 top-full z-50 w-72 bg-gradient-to-br from-white to-brand-gold-50/40 shadow-2xl rounded-xl py-3 border-2 border-brand-gold-200/50 invisible opacity-0 translate-y-2 transition-all duration-300 data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 backdrop-blur-sm"
             >
               {brandItems.map(([p,label],i)=>{const href=withLocale(p);return patternedLi(i,(
                 // @ts-expect-error dynamic string
-                <Link href={href} onClick={closeSection} data-close="true" aria-current={isActive(p)?'page':undefined} className="block px-4 py-2 text-[13px]">{label}</Link>
+                <Link href={href} onClick={closeSection} data-close="true" aria-current={isActive(p)?'page':undefined} className="block px-4 py-3 text-sm font-semibold text-slate-700 hover:text-brand-accent hover:bg-gradient-to-r hover:from-brand-gold-50 hover:to-brand-accent/20 transition-all duration-200 rounded-lg mx-1.5 group/link"><span className="flex items-center justify-between">{label}<span className="opacity-0 group-hover/link:opacity-100 transition-opacity" aria-hidden="true">→</span></span></Link>
               ));})}
             </ul>
           </li>
           <li>
             {(() => { const href = withLocale('/franchising'); return (// @ts-expect-error typedRoutes dynamic string
-              <Link href={href} className={`inline-flex items-center h-8 px-2 py-1 rounded-md font-normal transition-colors text-[13px] ${isActive('/franchising') ? 'text-brand-primary font-semibold bg-brand-primary/20' : 'bg-brand-primary/5 hover:bg-brand-primary/10 text-slate-700 hover:text-brand-primary'}`}>Franchising</Link>
+              <Link href={href} className={`inline-flex items-center h-11 px-4 py-2.5 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg text-sm relative overflow-hidden group ${isActive('/franchising') ? 'text-white bg-gradient-to-r from-brand-secondary via-brand-accent to-brand-secondary ring-2 ring-brand-accent/50 shadow-brand-accent/25' : 'bg-gradient-to-br from-brand-bronze-50 to-brand-gold-50/50 hover:from-brand-bronze-100 hover:to-brand-gold-100/50 text-brand-primary hover:text-brand-secondary ring-1 ring-brand-bronze-200/50 hover:ring-brand-secondary/30'}`}>
+                <span className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ${isActive('/franchising') ? '' : 'opacity-0'}`} aria-hidden="true" />
+                <span className="relative">Franchising</span>
+              </Link>
             ); })()}
           </li>
           {/* Career dropdown */}
           <li
-            className="relative group rounded-md bg-brand-primary/5 hover:bg-brand-primary/10 transition-colors"
+            className="relative group rounded-xl bg-gradient-to-br from-brand-bronze-50 to-brand-gold-50/50 hover:from-brand-bronze-100 hover:to-brand-gold-100/50 transition-all duration-300 shadow-md hover:shadow-lg ring-1 ring-brand-bronze-200/50 hover:ring-brand-secondary/30"
             onMouseEnter={() => openSection('career')}
             onMouseLeave={closeSection}
           >
@@ -224,45 +235,54 @@ export function Header({ locale }: { locale: Locale }) {
               type="button"
               variant="ghost"
               size="sm"
-              className="px-2 py-1 h-auto font-normal text-slate-700 hover:text-brand-primary focus-visible:ring-brand-primary/40 text-[13px]"
+              className="px-4 py-2.5 h-auto font-semibold text-brand-primary hover:text-brand-secondary focus-visible:ring-brand-secondary/40 text-sm transition-colors duration-300"
               aria-haspopup="true"
               aria-expanded="false"
               elevation={0}
             >
-              <span className="flex items-center gap-1">
-                Kariyer
-                <Icon name="chevron-down" />
+              <span className="flex items-center gap-2">
+                <span className="relative">
+                  Kariyer
+                  <span className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-secondary to-brand-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" aria-hidden="true" />
+                </span>
+                <Icon name="chevron-down" className="transition-transform duration-300 group-hover:translate-y-0.5" />
               </span>
             </Button>
             <span aria-hidden className="absolute left-0 right-0 top-full h-2" />
             <ul
               data-open={desktopOpen === 'career'}
-              className="absolute left-0 top-full z-50 bg-white shadow-lg rounded-md py-2 border border-slate-200 invisible opacity-0 translate-y-1 transition data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 w-72 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0"
+              className="absolute left-0 top-full z-50 bg-gradient-to-br from-white to-brand-bronze-50/40 shadow-2xl rounded-xl py-3 border-2 border-brand-bronze-200/50 invisible opacity-0 translate-y-2 transition-all duration-300 data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 w-80 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 backdrop-blur-sm"
             >
               {careerItems.map(([p,label],i)=>{const href=withLocale(p);return patternedLi(i,(
                 // @ts-expect-error dynamic string
-                <Link href={href} onClick={closeSection} data-close="true" aria-current={isActive(p)?'page':undefined} className="block px-4 py-2 text-[13px]">{label}</Link>
+                <Link href={href} onClick={closeSection} data-close="true" aria-current={isActive(p)?'page':undefined} className="block px-4 py-3 text-sm font-semibold text-slate-700 hover:text-brand-secondary hover:bg-gradient-to-r hover:from-brand-bronze-50 hover:to-brand-gold-50/30 transition-all duration-200 rounded-lg mx-1.5 group/link"><span className="flex items-center justify-between">{label}<span className="opacity-0 group-hover/link:opacity-100 transition-opacity" aria-hidden="true">→</span></span></Link>
               ));})}
             </ul>
           </li>
           <li>
             {(() => { const href = withLocale('/iletisim'); return (// @ts-expect-error typedRoutes dynamic string
-              <Link href={href} className={`inline-flex items-center h-8 px-2 py-1 rounded-md font-normal transition-colors text-[13px] ${isActive('/iletisim') ? 'text-brand-primary font-semibold bg-brand-primary/20' : 'bg-brand-accent/5 hover:bg-brand-accent/10 text-slate-700 hover:text-brand-primary'}`}>İletişim</Link>
+              <Link href={href} className={`inline-flex items-center h-11 px-4 py-2.5 rounded-xl font-semibold transition-all duration-300 shadow-md hover:shadow-lg text-sm relative overflow-hidden group ${isActive('/iletisim') ? 'text-white bg-gradient-to-r from-brand-secondary via-brand-accent to-brand-secondary ring-2 ring-brand-accent/50 shadow-brand-accent/25' : 'bg-gradient-to-br from-brand-gold-50 to-brand-accent/10 hover:from-brand-gold-100 hover:to-brand-accent/20 text-brand-primary hover:text-brand-accent ring-1 ring-brand-gold-200/50 hover:ring-brand-accent/40'}`}>
+                <span className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ${isActive('/iletisim') ? '' : 'opacity-0'}`} aria-hidden="true" />
+                <span className="relative">İletişim</span>
+              </Link>
             ); })()}
           </li>
         </ul>
 
         {/* Right side: socials + lang switcher + mobile toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-3">
-            <SocialIcon url="https://www.linkedin.com/company/apaz-group" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 36, width: 36 }} className="hover:opacity-80 transition-opacity" />
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-secondary to-brand-accent rounded-full blur-md opacity-0 group-hover:opacity-75 transition-opacity duration-500" aria-hidden="true" />
+              <SocialIcon url="https://www.linkedin.com/company/apaz-group" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 44, width: 44 }} className="relative hover:opacity-70 transition-all duration-300 hover:scale-110 drop-shadow-md" />
+            </div>
           </div>
           {/* LangSwitcher temporarily hidden */}
           <Button
             type="button"
             variant="ghost"
             size="sm"
-            className="lg:hidden h-10 w-10 p-0 rounded-full hover:bg-brand-primary/5 focus-visible:ring-brand-primary/40"
+            className="lg:hidden h-12 w-12 p-0 rounded-xl bg-gradient-to-br from-brand-bronze-50 via-brand-gold-50 to-brand-bronze-50 hover:from-brand-bronze-100 hover:to-brand-gold-100 focus-visible:ring-brand-secondary/40 shadow-md hover:shadow-lg transition-all duration-300 ring-1 ring-brand-bronze-200/50 hover:ring-brand-secondary/30 group"
             onClick={() => setMobileOpen(true)}
             aria-label={t(locale, 'nav.openMenu', 'Menüyü Aç')}
             aria-controls="mobile-menu"
@@ -270,7 +290,7 @@ export function Header({ locale }: { locale: Locale }) {
             pill
             elevation={0}
           >
-            <Icon name="menu" />
+            <Icon name="menu" className="transition-transform duration-300 group-hover:scale-110" />
           </Button>
         </div>
       </nav>
@@ -278,9 +298,9 @@ export function Header({ locale }: { locale: Locale }) {
       {/* Mobile hamburger side-drawer (portal) */}
       {mobileOpen && typeof window !== 'undefined' && createPortal(
         <div id="mobile-menu" className="fixed inset-0 z-[60]" role="dialog" aria-modal="true" aria-label={t(locale,'nav.mobileMenu','Mobil menü')}>
-          <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[1px]" onClick={() => setMobileOpen(false)} aria-hidden="true" />
-          <div ref={drawerRef} className="absolute right-0 top-0 h-full w-80 max-w-[85%] bg-white shadow-xl flex flex-col overflow-y-auto animate-slide-in-x focus:outline-none" tabIndex={-1}>
-            <div className="flex items-center justify-between px-5 h-16 border-b border-slate-200" role="none">
+          <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={() => setMobileOpen(false)} aria-hidden="true" />
+          <div ref={drawerRef} className="absolute right-0 top-0 h-full w-80 max-w-[85%] bg-gradient-to-br from-white via-brand-bronze-50/20 to-white shadow-2xl flex flex-col overflow-y-auto animate-slide-in-x focus:outline-none border-l border-brand-bronze-200" tabIndex={-1}>
+            <div className="flex items-center justify-between px-5 h-16 border-b border-brand-bronze-200/50 bg-gradient-to-r from-white to-brand-bronze-50/30" role="none">
               {(() => { const href = withLocale('/'); return (// @ts-expect-error typedRoutes dynamic string
                 <Link href={href} aria-label={t(locale, 'nav.home', 'Anasayfa')} onClick={() => setMobileOpen(false)} className="flex-shrink-0">
                   <span className="relative block h-14 lg:h-20 w-[180px] lg:w-[260px] transition-all duration-200">
@@ -293,7 +313,7 @@ export function Header({ locale }: { locale: Locale }) {
                 type="button"
                 variant="ghost"
                 size="sm"
-                className="h-10 w-10 p-0 rounded-full hover:bg-brand-primary/5 focus-visible:ring-brand-primary/40"
+                className="h-11 w-11 p-0 rounded-full bg-gradient-to-br from-brand-bronze-50 to-brand-gold-50 hover:from-brand-bronze-100 hover:to-brand-gold-100 focus-visible:ring-brand-secondary/40 shadow-sm hover:shadow-md transition-all duration-300"
                 onClick={() => setMobileOpen(false)}
                 aria-label={t(locale, 'nav.closeMenu', 'Menüyü Kapat')}
                 pill
@@ -302,14 +322,14 @@ export function Header({ locale }: { locale: Locale }) {
                 <Icon name="close" />
               </Button>
             </div>
-            <div className="px-4 py-6 space-y-4" role="menu" aria-orientation="vertical">
+            <div className="px-4 py-6 space-y-3" role="menu" aria-orientation="vertical">
               <div role="none">
                 <Button
                   ref={firstFocusableRef}
                   type="button"
                   variant="ghost"
                   fullWidth
-                  className="relative flex items-center justify-center text-base font-medium text-slate-800 h-12 px-3 rounded-md bg-brand-primary/5 hover:bg-brand-primary/10 hover:text-brand-primary transition-colors"
+                  className="relative flex items-center justify-center text-base font-semibold text-brand-primary h-12 px-4 rounded-lg bg-gradient-to-r from-brand-bronze-50 to-brand-gold-50/50 hover:from-brand-bronze-100 hover:to-brand-gold-100/50 transition-all duration-300 shadow-sm hover:shadow-md"
                   onClick={() => setMobileSubmenu(mobileSubmenu === 'about' ? null : 'about')}
                   aria-expanded={mobileSubmenu === 'about'}
                   aria-controls="m-about"
@@ -317,11 +337,11 @@ export function Header({ locale }: { locale: Locale }) {
                   elevation={0}
                 >
                   <span className="pointer-events-none">Hakkımızda</span>
-                  <span className="absolute right-3 inline-flex" aria-hidden="true">
-                    <Icon name="chevron-down" className={`transition-transform duration-200 ${mobileSubmenu === 'about' ? 'rotate-180' : ''}`} />
+                  <span className="absolute right-4 inline-flex" aria-hidden="true">
+                    <Icon name="chevron-down" className={`transition-transform duration-300 ${mobileSubmenu === 'about' ? 'rotate-180' : ''}`} />
                   </span>
                 </Button>
-                <ul id="m-about" className={`mt-2 ml-3 border-l border-slate-200 pl-3 space-y-1 text-sm ${mobileSubmenu === 'about' ? 'block' : 'hidden'}`}>
+                <ul id="m-about" className={`mt-3 ml-4 border-l-2 border-brand-bronze-200 pl-4 space-y-2 text-sm ${mobileSubmenu === 'about' ? 'block' : 'hidden'}`}>
                   {aboutItems.map(([p,label],i)=>{ const href=withLocale(p); return (
                     <li key={p}>
                       <Button
@@ -341,7 +361,7 @@ export function Header({ locale }: { locale: Locale }) {
                   type="button"
                   variant="ghost"
                   fullWidth
-                  className="relative flex items-center justify-center text-base font-medium text-slate-800 h-12 px-3 rounded-md bg-brand-accent/5 hover:bg-brand-accent/10 hover:text-brand-primary transition-colors"
+                  className="relative flex items-center justify-center text-base font-semibold text-brand-primary h-12 px-4 rounded-lg bg-gradient-to-r from-brand-gold-50 to-brand-accent/10 hover:from-brand-gold-100 hover:to-brand-accent/20 transition-all duration-300 shadow-sm hover:shadow-md"
                   onClick={() => setMobileSubmenu(mobileSubmenu === 'brands' ? null : 'brands')}
                   aria-expanded={mobileSubmenu === 'brands'}
                   aria-controls="m-brands"
@@ -349,11 +369,11 @@ export function Header({ locale }: { locale: Locale }) {
                   elevation={0}
                 >
                   <span className="pointer-events-none">Markalarımız</span>
-                  <span className="absolute right-3 inline-flex" aria-hidden="true">
-                    <Icon name="chevron-down" className={`transition-transform duration-200 ${mobileSubmenu === 'brands' ? 'rotate-180' : ''}`} />
+                  <span className="absolute right-4 inline-flex" aria-hidden="true">
+                    <Icon name="chevron-down" className={`transition-transform duration-300 ${mobileSubmenu === 'brands' ? 'rotate-180' : ''}`} />
                   </span>
                 </Button>
-                <ul id="m-brands" className={`mt-2 ml-3 border-l border-slate-200 pl-3 space-y-1 text-sm ${mobileSubmenu === 'brands' ? 'block' : 'hidden'}`}>
+                <ul id="m-brands" className={`mt-3 ml-4 border-l-2 border-brand-gold-200 pl-4 space-y-2 text-sm ${mobileSubmenu === 'brands' ? 'block' : 'hidden'}`}>
                   {brandItems.map(([p,label],i)=>{ const href=withLocale(p); return (
                     <li key={p}>
                       <Button
@@ -375,7 +395,7 @@ export function Header({ locale }: { locale: Locale }) {
                   fullWidth
                   elevation={0}
           onClick={() => go(href)}
-                  className={`justify-start text-base font-medium h-12 px-3 rounded-md transition-colors ${isActive('/franchising') ? 'text-brand-primary font-semibold bg-brand-primary/20' : 'text-slate-800 bg-brand-primary/5 hover:text-brand-primary hover:bg-brand-primary/10'}`}
+                  className={`justify-center text-base font-semibold h-12 px-4 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md ${isActive('/franchising') ? 'text-white bg-gradient-to-r from-brand-secondary to-brand-accent' : 'text-brand-primary bg-gradient-to-r from-brand-bronze-50 to-brand-gold-50/50 hover:from-brand-bronze-100 hover:to-brand-gold-100/50'}`}
                   role="menuitem"
                 >Franchising</Button>
               ); })()}
@@ -385,7 +405,7 @@ export function Header({ locale }: { locale: Locale }) {
                   type="button"
                   variant="ghost"
                   fullWidth
-                  className="relative flex items-center justify-center text-base font-medium text-slate-800 h-12 px-3 rounded-md bg-brand-accent/5 hover:bg-brand-accent/10 hover:text-brand-primary transition-colors"
+                  className="relative flex items-center justify-center text-base font-semibold text-brand-primary h-12 px-4 rounded-lg bg-gradient-to-r from-brand-bronze-50 to-brand-gold-50/50 hover:from-brand-bronze-100 hover:to-brand-gold-100/50 transition-all duration-300 shadow-sm hover:shadow-md"
                   onClick={() => setMobileSubmenu(mobileSubmenu === 'career' ? null : 'career')}
                   aria-expanded={mobileSubmenu === 'career'}
                   aria-controls="m-career"
@@ -393,11 +413,11 @@ export function Header({ locale }: { locale: Locale }) {
                   elevation={0}
                 >
                   <span className="pointer-events-none">Kariyer</span>
-                  <span className="absolute right-3 inline-flex" aria-hidden="true">
-                    <Icon name="chevron-down" className={`transition-transform duration-200 ${mobileSubmenu === 'career' ? 'rotate-180' : ''}`} />
+                  <span className="absolute right-4 inline-flex" aria-hidden="true">
+                    <Icon name="chevron-down" className={`transition-transform duration-300 ${mobileSubmenu === 'career' ? 'rotate-180' : ''}`} />
                   </span>
                 </Button>
-                <ul id="m-career" className={`mt-2 ml-3 border-l border-slate-200 pl-3 space-y-1 text-sm ${mobileSubmenu === 'career' ? 'block' : 'hidden'}`}>
+                <ul id="m-career" className={`mt-3 ml-4 border-l-2 border-brand-bronze-200 pl-4 space-y-2 text-sm ${mobileSubmenu === 'career' ? 'block' : 'hidden'}`}>
                   {careerItems.map(([p,label],i)=>{ const href=withLocale(p); return (
                     <li key={p}>
                       <Button
@@ -419,14 +439,14 @@ export function Header({ locale }: { locale: Locale }) {
                   fullWidth
                   elevation={0}
           onClick={() => go(href)}
-                  className={`justify-start text-base font-medium h-12 px-3 rounded-md transition-colors ${isActive('/iletisim') ? 'text-brand-primary font-semibold bg-brand-primary/20' : 'text-slate-800 bg-brand-primary/5 hover:text-brand-primary hover:bg-brand-primary/10'}`}
+                  className={`justify-center text-base font-semibold h-12 px-4 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md ${isActive('/iletisim') ? 'text-white bg-gradient-to-r from-brand-secondary to-brand-accent' : 'text-brand-primary bg-gradient-to-r from-brand-gold-50 to-brand-accent/10 hover:from-brand-gold-100 hover:to-brand-accent/20'}`}
                   role="menuitem"
                 >İletişim</Button>
               ); })()}
-              <div className="pt-6 border-t border-slate-200 flex items-center gap-4">
-                <SocialIcon url="https://www.linkedin.com/company/apaz-group" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 36, width: 36 }} className="hover:opacity-80 transition-opacity" />
+              <div className="pt-6 border-t border-brand-bronze-200 flex items-center gap-4">
+                <SocialIcon url="https://www.linkedin.com/company/apaz-group" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 40, width: 40 }} className="hover:opacity-70 transition-all duration-300 hover:scale-110" />
               </div>
-              <div className="text-xs text-slate-500">© 2025 Apaz Group</div>
+              <div className="text-xs text-brand-primary/60 font-medium">© 2025 Apaz Group</div>
             </div>
           </div>
         </div>, document.body)

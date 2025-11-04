@@ -35,10 +35,10 @@ export function HomeHeroSlider({ slides, intervalMs = 6000, constrainToIntrinsic
 
   if (!slides.length) return null;
 
-  // Intrinsic slider ölçüleri: 1110 x 400 (aspect ~ 2.775)
-  // constrainToIntrinsic true ise: max genişlik 1110px, aspect ratio korunur, image object-contain ile KIRPMA olmaz.
+  // Intrinsic slider ölçüleri: Büyütülmüş 1400px genişlik, aspect ratio korunur
+  // constrainToIntrinsic true ise: max genişlik 1400px, aspect ratio korunur, image object-contain ile KIRPMA olmaz.
   // false ise eski tam genişlik cover davranışına (geçici olarak) geri döner.
-  const intrinsicWrapper = 'relative w-full max-w-[1110px] mx-auto aspect-[1110/400] px-2 sm:px-0';
+  const intrinsicWrapper = 'relative w-full max-w-[1400px] mx-auto aspect-[1110/400] px-2 sm:px-4';
   // Full-width but maintain intrinsic aspect ratio and contain the image (no cropping)
   const fullBleedWrapper = 'relative w-full aspect-[1110/400]';
   const wrapperClass = constrainToIntrinsic ? intrinsicWrapper : fullBleedWrapper;
@@ -54,9 +54,9 @@ export function HomeHeroSlider({ slides, intervalMs = 6000, constrainToIntrinsic
               src={s.src}
               alt={s.alt}
               fill
-              quality={90}
+              quality={95}
               priority={i === 0}
-              sizes={constrainToIntrinsic ? '(max-width: 1110px) 100vw, 1110px' : '100vw'}
+              sizes={constrainToIntrinsic ? '(max-width: 1400px) 100vw, 1400px' : '100vw'}
               className={constrainToIntrinsic ? 'object-contain object-center select-none' : 'object-contain object-center select-none'}
             />
           );

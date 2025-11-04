@@ -36,7 +36,7 @@ export function BrandCard({ logo, image, title, description, link, hideTitle, em
       // @ts-expect-error dynamic localized path
       href={link}
       aria-label={`${title} sayfasına git`}
-  className="group block rounded-lg overflow-hidden bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-yellow/40 transition-shadow duration-300 ease-out cursor-pointer transform-gpu will-change-transform hover:scale-[1.025] focus:scale-[1.02] p-2"
+  className="group block rounded-xl overflow-hidden bg-gradient-to-br from-white to-brand-bronze-50 shadow-md ring-1 ring-brand-bronze-200 hover:ring-brand-secondary hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40 transition-all duration-300 ease-out cursor-pointer transform-gpu will-change-transform hover:scale-[1.025] focus:scale-[1.02] p-2"
     >
       <article className="h-full flex flex-col">
         {/* Unified media aspect to ensure identical card heights; object-cover for full bleed */}
@@ -50,7 +50,7 @@ export function BrandCard({ logo, image, title, description, link, hideTitle, em
             loading="lazy"
             priority={false}
           />
-          <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/10 via-transparent to-transparent" aria-hidden="true" />
+          <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-brand-bronze-900/20 via-transparent to-transparent" aria-hidden="true" />
         </div>
         <div className="p-0 flex flex-col flex-1">
           <div className={logoContainerClass}>
@@ -83,8 +83,8 @@ export function BrandCard({ logo, image, title, description, link, hideTitle, em
           <span
             className={
               (emphasizeLogo
-                ? 'mx-auto block w-max underline underline-offset-4 text-sm font-medium text-slate-800 group-hover:text-brand-yellow'
-                : 'inline-flex items-center text-sm font-medium text-slate-800 group-hover:text-brand-yellow') + ' mt-auto pt-3'
+                ? 'mx-auto block w-max underline underline-offset-4 decoration-brand-secondary text-sm font-semibold text-brand-primary group-hover:text-brand-secondary'
+                : 'inline-flex items-center text-sm font-semibold text-brand-primary group-hover:text-brand-secondary') + ' mt-auto pt-3 transition-colors'
             }
           >
             İncele <span className="ml-1" aria-hidden>→</span>

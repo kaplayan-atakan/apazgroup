@@ -18,7 +18,7 @@ export function HomeLatestProject({ locale }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
           {/* Franchise panel redesigned (variant-a) */}
           <section
-            className="relative isolate w-full max-w-[320px] aspect-square rounded-xl overflow-hidden bg-white font-sans mx-auto franchise-card focus:outline-none focus:ring-4 focus:ring-[#b89b6f]/50 cursor-pointer"
+            className="relative isolate w-full max-w-[320px] aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-white to-brand-bronze-50 font-sans mx-auto franchise-card focus:outline-none focus:ring-4 focus:ring-brand-secondary/50 cursor-pointer shadow-lg hover:shadow-xl transition-shadow"
             role="region"
             aria-labelledby="franchise-heading"
             tabIndex={0}
@@ -32,7 +32,7 @@ export function HomeLatestProject({ locale }: Props) {
             }}
           >
             <div className="absolute top-4 left-4 z-[5]">
-              <h2 id="franchise-heading" className="m-0 font-sans font-extrabold tracking-[0.06em] text-[clamp(0.7rem,2.2vw,1.2rem)] leading-tight text-[#b89b6f] select-none">
+              <h2 id="franchise-heading" className="m-0 font-sans font-extrabold tracking-[0.06em] text-[clamp(0.7rem,2.2vw,1.2rem)] leading-tight text-brand-secondary select-none drop-shadow-sm">
                 FRANCHISE
               </h2>
             </div>
@@ -40,7 +40,7 @@ export function HomeLatestProject({ locale }: Props) {
               <div className="absolute z-[4] w-[80%] max-w-[320px] text-center text-white font-sans font-medium text-[0.75rem] leading-[1.55] tracking-tight top-[60%] left-[60%] -translate-y-1/2 -translate-x-1/2">
                 <p className="mb-[1.1em]">Apaz Group olarak,<br />Türk mutfağına hak ettiği<br />değeri verme vizyonuyla<br />çalışmalarımızı sürdürüyoruz.<br />İstikrarlı bir şekilde büyümeye<br />devam ediyoruz.<br />Siz de bu büyük ailenin bir<br />parçası olmak isterseniz;</p>
                 <span
-                  className="inline-flex items-center justify-center rounded-md bg-[#b89b6f] text-white font-sans font-semibold tracking-wide text-[0.5rem] px-4 py-2 shadow-[0_2px_6px_-2px_rgba(0,0,0,0.25)] hover:bg-[#a28756] transition-colors"
+                  className="inline-flex items-center justify-center rounded-md bg-brand-secondary text-white font-sans font-semibold tracking-wide text-[0.5rem] px-4 py-2 shadow-md hover:bg-brand-secondary-hover hover:shadow-lg transition-all"
                   aria-hidden="true"
                 >
                   FRANCHISE
@@ -54,16 +54,16 @@ export function HomeLatestProject({ locale }: Props) {
               .franchise-card { 
                 font-size:16px; 
                 line-height:1.4; 
-                /* Gradient border using layered backgrounds */
+                /* Bronz gradient border */
                 border: 2px solid transparent; 
-                border-radius: 0.75rem; /* matches rounded-xl */
+                border-radius: 0.75rem;
                 background: 
-                  linear-gradient(#ffffff, #ffffff) padding-box,
-                  linear-gradient(135deg, #1F3A52, #C48A65, #95694e) border-box;
+                  linear-gradient(to bottom right, #ffffff, #faf8f5) padding-box,
+                  linear-gradient(135deg, #b89b6f, #95694e, #1F3A52) border-box;
               }
-              /* Koyu (navy) çeyrek daire: sağ-alt merkezli, kart yüksekliğinin %90'ı */
+              /* Koyu (navy) çeyrek daire */
               .franchise-card .navy-layer::before { content:""; position:absolute; bottom:0; right:0; width:90%; height:90%; background:#1e3142; border-top-left-radius:100%; z-index:2; }
-              /* Altın çeyrek daire: sol-alt merkezli, kart yüksekliğinin %80'i */
+              /* Bronz çeyrek daire */
               .franchise-card .navy-layer::after { content:""; position:absolute; bottom:0; left:0; width:80%; height:70%; background:#b89b6f; border-top-right-radius:100%; z-index:1; }
               @media (max-width:520px) { .franchise-card { aspect-ratio:auto; min-height:320px; } }
             `}</style>
@@ -71,7 +71,7 @@ export function HomeLatestProject({ locale }: Props) {
 
           {/* Career panel mirrored design */}
           <section
-            className="relative isolate w-full max-w-[320px] aspect-square rounded-xl overflow-hidden bg-white font-sans mx-auto career-card"
+            className="relative isolate w-full max-w-[320px] aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-white to-brand-bronze-50 font-sans mx-auto career-card shadow-lg hover:shadow-xl transition-shadow"
             role="region"
             aria-labelledby="career-heading"
           >
@@ -90,7 +90,7 @@ export function HomeLatestProject({ locale }: Props) {
                 <div className="flex flex-col items-center gap-2">
                   <Link
                     href={careerFormHref}
-                    className="inline-flex items-center justify-center rounded-md bg-[#1F3A52] text-white font-sans font-semibold tracking-wide text-[0.5rem] px-4 py-2 shadow-[0_2px_6px_-2px_rgba(0,0,0,0.25)] hover:bg-[#a28756] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-slate-900 focus-visible:outline-offset-4"
+                    className="inline-flex items-center justify-center rounded-md bg-brand-primary text-white font-sans font-semibold tracking-wide text-[0.5rem] px-4 py-2 shadow-md hover:bg-brand-secondary hover:shadow-lg transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-secondary focus-visible:outline-offset-4"
                   >
                     BAŞVURU FORMU
                   </Link>
@@ -101,17 +101,17 @@ export function HomeLatestProject({ locale }: Props) {
               .career-card { 
                 font-size:16px; 
                 line-height:1.4; 
-                /* Gradient border using layered backgrounds */
+                /* Bronz gradient border */
                 border: 2px solid transparent; 
-                border-radius: 0.75rem; /* matches rounded-xl */
+                border-radius: 0.75rem;
                 background: 
-                  linear-gradient(#ffffff, #ffffff) padding-box,
-                  linear-gradient(135deg, #1F3A52, #C48A65, #95694e) border-box;
+                  linear-gradient(to bottom right, #ffffff, #faf8f5) padding-box,
+                  linear-gradient(135deg, #b89b6f, #95694e, #1F3A52) border-box;
               }
-              /* Large GOLD quarter circle left-bottom (mirror of franchise), 80% diameter, slight transparency */
-              .career-card .career-layer::before { content:""; position:absolute; bottom:0; left:0; width:90%; height:90%; background:rgba(184,155,111,0.85); border-top-right-radius:100%; z-index:2; }
-              /* Small GREY quarter circle right-bottom, 45% diameter (mirror of navy) */
-              .career-card .career-layer::after { content:""; position:absolute; bottom:0; right:0; width:55%; height:45%; background:#B2B2B2; border-top-left-radius:100%; z-index:1; }
+              /* Bronz çeyrek daire (ayna) */
+              .career-card .career-layer::before { content:""; position:absolute; bottom:0; left:0; width:90%; height:90%; background:rgba(184,155,111,0.90); border-top-right-radius:100%; z-index:2; }
+              /* Gri çeyrek daire */
+              .career-card .career-layer::after { content:""; position:absolute; bottom:0; right:0; width:55%; height:45%; background:#a8a29e; border-top-left-radius:100%; z-index:1; }
               @media (max-width:520px) { .career-card { aspect-ratio:auto; min-height:320px; } }
             `}</style>
           </section>
