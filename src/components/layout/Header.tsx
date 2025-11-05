@@ -115,7 +115,7 @@ export function Header({ locale }: { locale: Locale }) {
   return (
   <header
     id="site-header"
-  className="fixed top-0 left-0 right-0 z-50 border-b-2 border-brand-bronze-300/40 bg-gradient-to-br from-white via-brand-bronze-50/40 via-brand-gold-50/20 to-white backdrop-blur-md shadow-lg transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-brand-secondary/5 before:via-transparent before:to-brand-accent/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500 before:pointer-events-none"
+  className="fixed top-0 left-0 right-0 z-50 border-b-2 border-brand-bronze-300/40 bg-gradient-to-br from-brand-bronze-50/60 via-white/95 via-brand-gold-50/30 to-brand-bronze-50/60 backdrop-blur-md shadow-lg transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-brand-secondary/5 before:via-transparent before:to-brand-accent/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500 before:pointer-events-none after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_50%_0%,theme(colors.brand.bronze.100),transparent_60%)] after:opacity-30 after:pointer-events-none"
     role="banner"
   >
   <nav className="container mx-auto px-4 h-16 lg:h-24 flex items-center justify-between relative z-10" aria-label={t(locale, 'nav.mainNavigation', 'Ana Navigasyon')}>

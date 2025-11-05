@@ -18,7 +18,7 @@ export function FranchiseCard({ logo, title, description, link, image }: Franchi
       target={link.startsWith('http') ? '_blank' : undefined}
       rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
       aria-label={`${title} franchising sayfasına git`}
-      className="group block rounded-lg overflow-hidden bg-white shadow-sm ring-1 ring-slate-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-yellow/40 transition-shadow duration-300 ease-out transform-gpu will-change-transform hover:scale-[1.025] focus:scale-[1.02] p-2"
+      className="group block rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 hover:ring-brand-secondary/50 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40 transition-all duration-300 ease-out transform-gpu will-change-transform hover:scale-[1.025] focus:scale-[1.02] p-2"
     >
       <article className="h-full flex flex-col">
         {/* Top media (mirrors BrandCard) */}
@@ -33,7 +33,7 @@ export function FranchiseCard({ logo, title, description, link, image }: Franchi
               loading="lazy"
               priority={false}
             />
-            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/10 via-transparent to-transparent" aria-hidden="true" />
+            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-brand-bronze-900/20 via-transparent to-transparent" aria-hidden="true" />
           </div>
         )}
 
@@ -57,7 +57,7 @@ export function FranchiseCard({ logo, title, description, link, image }: Franchi
 
           {/* Centered visual button; whole card is clickable */}
           <div className="pt-3 mt-auto flex justify-center">
-            <span className="inline-flex items-center justify-center rounded bg-black text-white px-4 py-2 text-sm group-hover:bg-black/90">
+            <span className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-brand-secondary to-brand-accent text-white px-5 py-2.5 text-sm font-semibold shadow-md group-hover:shadow-lg transition-all duration-300">
               Başvur
             </span>
           </div>

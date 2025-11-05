@@ -36,7 +36,7 @@ export function BrandCard({ logo, image, title, description, link, hideTitle, em
       // @ts-expect-error dynamic localized path
       href={link}
       aria-label={`${title} sayfasına git`}
-  className="group block rounded-xl overflow-hidden bg-gradient-to-br from-white to-brand-bronze-50 shadow-md ring-1 ring-brand-bronze-200 hover:ring-brand-secondary hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40 transition-all duration-300 ease-out cursor-pointer transform-gpu will-change-transform hover:scale-[1.025] focus:scale-[1.02] p-2"
+  className="group block rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 hover:ring-brand-secondary/50 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40 transition-all duration-300 ease-out cursor-pointer transform-gpu will-change-transform hover:scale-[1.025] focus:scale-[1.02] p-2"
     >
       <article className="h-full flex flex-col">
         {/* Unified media aspect to ensure identical card heights; object-cover for full bleed */}
