@@ -10,12 +10,12 @@ export function HomeAboutNews({ locale }: Props) {
   const withLocale = (path: string) => (path === '/' ? `/${locale}` : `/${locale}${path}`);
   // Get all news items for horizontal scroll
   const allNews = getAllNews(locale);
-  const news = allNews.slice(0, 8); // Show more items since it's scrollable
+  const news = allNews; // Show more items since it's scrollable
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-br from-slate-50/30 via-white to-slate-50/20 transition-all duration-700">
+    <section className="py-0 transition-all duration-700">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent bg-clip-text text-transparent animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-brand-primary animate-in fade-in slide-in-from-bottom-4 duration-700">
           Haberler
         </h2>
         <div className="mx-auto mt-4 h-1 w-24 bg-gradient-to-r from-brand-secondary via-brand-accent to-brand-secondary rounded-full animate-in fade-in slide-in-from-bottom-2 duration-700 delay-150" aria-hidden="true" />

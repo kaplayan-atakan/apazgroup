@@ -12,7 +12,7 @@ export function Footer({ locale }: FooterProps) {
   const withLocale = (path: string) => (path === '/' ? `/${locale}` : `/${locale}${path}`);
 
   return (
-    <footer className="relative text-slate-200">
+    <footer className="relative text-brand-primary">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         {/* Bronz odaklı gradient: açık bronz -> altın -> koyu navy */}
         <div className="w-full h-full bg-gradient-to-br from-brand-bronze-200 via-brand-gold-400 to-brand-primary opacity-95" />
@@ -41,25 +41,25 @@ export function Footer({ locale }: FooterProps) {
                   </div>
                 </div>
                 <div className="desc space-y-3 text-sm">
-                  <p className="text-slate-100 flex items-start gap-3 leading-relaxed">
-                    <Icon name="map-pin" size={32} aria-hidden className="text-brand-secondary mt-0.5" />
+                  <p className="text-brand-primary flex items-start gap-3 leading-relaxed">
+                    <Icon name="map-pin" size={32} aria-hidden className="text-brand-primary mt-0.5" />
                     <span>Adalet Mah. Anadolu Cad. No:41 Bağımsız Bölüm K:20 No:17 Megapol Tower Bayraklı - İZMİR</span>
                   </p>
                   <p>
                     <a
                       href="mailto:info@apazgroup.com"
-                      className="mail inline-flex items-center gap-2 text-slate-50 hover:text-brand-secondary transition-colors"
+                      className="mail inline-flex items-center gap-2 text-brand-primary hover:text-brand-secondary transition-colors"
                     >
-                      <Icon name="mail" size={20} aria-hidden className="text-brand-secondary" />
+                      <Icon name="mail" size={20} aria-hidden className="text-brand-primary" />
                       <span>info@apazgroup.com</span>
                     </a>
                   </p>
                   <p>
                     <a
                       href="tel:+902324644235"
-                      className="phone inline-flex items-center gap-2 text-slate-50 hover:text-brand-secondary transition-colors"
+                      className="phone inline-flex items-center gap-2 text-brand-primary hover:text-brand-secondary transition-colors"
                     >
-                      <Icon name="phone" size={20} aria-hidden className="text-brand-secondary" />
+                      <Icon name="phone" size={20} aria-hidden className="text-brand-primary" />
                       <span>+90 232 464 42 35</span>
                     </a>
                   </p>
@@ -70,31 +70,31 @@ export function Footer({ locale }: FooterProps) {
               <div className="f_widgets_item">
                 <div className="f_link">
                   <div className="f_title mb-6">
-                    <h3 className="text-xl font-semibold text-slate-50">Site Haritası</h3>
+                    <h3 className="text-xl font-semibold text-brand-primary">Site Haritası</h3>
                   </div>
                   <ul className="list space-y-2 text-sm">
                     <li>
                       {(() => { const href = withLocale('/hakkimizda'); return (
                         // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-slate-300 hover:text-brand-primary transition-colors">Hakkımızda</Link>
+                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Hakkımızda</Link>
                       ); })()}
                     </li>
                     <li>
                       {(() => { const href = withLocale('/franchising'); return (
                         // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-slate-300 hover:text-brand-primary transition-colors">Franchising</Link>
+                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Franchising</Link>
                       ); })()}
                     </li>
                     <li>
                       {(() => { const href = withLocale('/kariyer/insan-kaynaklari-politikamiz'); return (
                         // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-slate-300 hover:text-brand-primary transition-colors">Kariyer</Link>
+                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Kariyer</Link>
                       ); })()}
                     </li>
                     <li>
                       {(() => { const href = withLocale('/iletisim'); return (
                         // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-slate-300 hover:text-brand-primary transition-colors">İletişim</Link>
+                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">İletişim</Link>
                       ); })()}
                     </li>
                   </ul>
@@ -105,25 +105,25 @@ export function Footer({ locale }: FooterProps) {
               <div className="f_widgets_item">
                 <div className="f_link">
                   <div className="f_title mb-6">
-                    <h3 className="text-xl font-semibold text-slate-50">Markalarımız</h3>
+                    <h3 className="text-xl font-semibold text-brand-primary">Markalarımız</h3>
                   </div>
                   <ul className="list space-y-2 text-sm">
                     <li>
                       {(() => { const href = withLocale('/markalarimiz/baydoner'); return (
                         // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-slate-300 hover:text-brand-primary transition-colors">Baydöner</Link>
+                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Baydöner</Link>
                       ); })()}
                     </li>
                     <li>
                       {(() => { const href = withLocale('/markalarimiz/pide-by-pide'); return (
                         // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-slate-300 hover:text-brand-primary transition-colors">PidebyPide</Link>
+                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">PidebyPide</Link>
                       ); })()}
                     </li>
                     <li>
                       {(() => { const href = withLocale('/markalarimiz/bursa-ishakbey'); return (
                         // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-slate-300 hover:text-brand-primary transition-colors">Bursa İshakbey</Link>
+                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Bursa İshakbey</Link>
                       ); })()}
                     </li>
                   </ul>
@@ -134,7 +134,7 @@ export function Footer({ locale }: FooterProps) {
               <div className="f_widgets_item">
                 <div className="f_link">
                   <div className="f_title mb-6">
-                    <h3 className="text-xl font-semibold text-slate-50">Diğer</h3>
+                    <h3 className="text-xl font-semibold text-brand-primary">Diğer</h3>
                   </div>
                   <ul className="list space-y-2 text-sm">
                     {/* KVKK main + sublinks */}
@@ -143,11 +143,11 @@ export function Footer({ locale }: FooterProps) {
                         href={`/pdf?src=${encodeURI('/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf')}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-slate-300 hover:text-brand-primary transition-colors"
+                        className="text-brand-primary hover:text-brand-primary transition-colors"
                       >
                         KVKK
                       </a>
-                      <ul className="mt-2 ml-4 space-y-1 text-[13px] text-slate-300/90">
+                      <ul className="mt-2 ml-4 space-y-1 text-[13px] text-brand-primary/90">
                         <li>
                           <a
                             href={`/pdf?src=${encodeURI('/hr/İnternet Sitesi Aydınlatma Metini.pdf')}`}
@@ -176,7 +176,7 @@ export function Footer({ locale }: FooterProps) {
                         href={`/pdf?src=${encodeURI('/hr/Çerez Politikası.pdf')}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-slate-300 hover:text-brand-primary transition-colors"
+                        className="text-brand-primary hover:text-brand-primary transition-colors"
                       >
                         Çerez Politikası
                       </a>
@@ -229,11 +229,11 @@ export function Footer({ locale }: FooterProps) {
                 <div className={`relative mb-4 ${brand.name === 'Bursa İshakbey' ? 'h-[4.5rem] w-[15rem]' : 'h-12 w-40'}`}>
                   <Image src={brand.logo} alt={brand.name} fill sizes={brand.name === 'Bursa İshakbey' ? '240px' : '160px'} className="object-contain" />
                 </div>
-                <div className="flex items-center gap-4 text-slate-200">
-                  <SocialIcon url={brand.links.instagram} aria-label={brand.name + ' Instagram'} target="_blank" rel="noopener noreferrer" fgColor="#ffffff" bgColor="transparent" style={{ height: 32, width: 32 }} className="hover:opacity-90 transition-opacity" />
-                  <SocialIcon url={brand.links.linkedin} aria-label={brand.name + ' LinkedIn'} target="_blank" rel="noopener noreferrer" fgColor="#ffffff" bgColor="transparent" style={{ height: 32, width: 32 }} className="hover:opacity-90 transition-opacity" />
-                  <SocialIcon url={brand.links.facebook} aria-label={brand.name + ' Facebook'} target="_blank" rel="noopener noreferrer" fgColor="#ffffff" bgColor="transparent" style={{ height: 32, width: 32 }} className="hover:opacity-90 transition-opacity" />
-                  <SocialIcon url={brand.links.x} aria-label={brand.name + ' X'} target="_blank" rel="noopener noreferrer" fgColor="#ffffff" bgColor="transparent" style={{ height: 32, width: 32 }} className="hover:opacity-90 transition-opacity" />
+                <div className="flex items-center gap-4 text-brand-primary">
+                  <SocialIcon url={brand.links.instagram} aria-label={brand.name + ' Instagram'} target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 32, width: 32 }} className="hover:opacity-90 transition-opacity" />
+                  <SocialIcon url={brand.links.linkedin} aria-label={brand.name + ' LinkedIn'} target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 32, width: 32 }} className="hover:opacity-90 transition-opacity" />
+                  <SocialIcon url={brand.links.facebook} aria-label={brand.name + ' Facebook'} target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 32, width: 32 }} className="hover:opacity-90 transition-opacity" />
+                  <SocialIcon url={brand.links.x} aria-label={brand.name + ' X'} target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 32, width: 32 }} className="hover:opacity-90 transition-opacity" />
                 </div>
               </div>
             ))}
@@ -281,11 +281,11 @@ export function Footer({ locale }: FooterProps) {
                 <div className={`relative mb-3 ${brand.name === 'Bursa İshakbey' ? 'h-[3.75rem] w-[13.5rem]' : 'h-10 w-36'}`}>
                   <Image src={brand.logo} alt={brand.name} fill sizes={brand.name === 'Bursa İshakbey' ? '216px' : '144px'} className="object-contain" />
                 </div>
-                <div className="flex items-center gap-3 text-slate-200">
-                  <SocialIcon url={brand.links.instagram} aria-label={brand.name + ' Instagram'} target="_blank" rel="noopener noreferrer" fgColor="#ffffff" bgColor="transparent" style={{ height: 24, width: 24 }} className="hover:opacity-90 transition-opacity" />
-                  <SocialIcon url={brand.links.linkedin} aria-label={brand.name + ' LinkedIn'} target="_blank" rel="noopener noreferrer" fgColor="#ffffff" bgColor="transparent" style={{ height: 24, width: 24 }} className="hover:opacity-90 transition-opacity" />
-                  <SocialIcon url={brand.links.facebook} aria-label={brand.name + ' Facebook'} target="_blank" rel="noopener noreferrer" fgColor="#ffffff" bgColor="transparent" style={{ height: 24, width: 24 }} className="hover:opacity-90 transition-opacity" />
-                  <SocialIcon url={brand.links.x} aria-label={brand.name + ' X'} target="_blank" rel="noopener noreferrer" fgColor="#ffffff" bgColor="transparent" style={{ height: 24, width: 24 }} className="hover:opacity-90 transition-opacity" />
+                <div className="flex items-center gap-3 text-brand-primary">
+                  <SocialIcon url={brand.links.instagram} aria-label={brand.name + ' Instagram'} target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 24, width: 24 }} className="hover:opacity-90 transition-opacity" />
+                  <SocialIcon url={brand.links.linkedin} aria-label={brand.name + ' LinkedIn'} target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 24, width: 24 }} className="hover:opacity-90 transition-opacity" />
+                  <SocialIcon url={brand.links.facebook} aria-label={brand.name + ' Facebook'} target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 24, width: 24 }} className="hover:opacity-90 transition-opacity" />
+                  <SocialIcon url={brand.links.x} aria-label={brand.name + ' X'} target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 24, width: 24 }} className="hover:opacity-90 transition-opacity" />
                 </div>
               </div>
             ))}
@@ -297,11 +297,11 @@ export function Footer({ locale }: FooterProps) {
   <div className="border-t border-white/10 bg-black/40/60 backdrop-blur-sm py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-    <span className="text-xs tracking-wide text-slate-300/80">Güven, lezzet ve sürdürülebilir büyüme.</span>
+    <span className="text-xs tracking-wide text-brand-primary/80">Güven, lezzet ve sürdürülebilir büyüme.</span>
             <div className="flex items-center gap-5">
-              <SocialIcon url="https://www.linkedin.com/company/apaz-group" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" fgColor="#ffffff" bgColor="transparent" style={{ height: 30, width: 30 }} className="hover:opacity-90 transition-opacity" />
+              <SocialIcon url="https://www.linkedin.com/company/apaz-group" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 30, width: 30 }} className="hover:opacity-90 transition-opacity" />
             </div>
-            <div className="text-center md:text-right text-[13px] text-slate-300/80">
+            <div className="text-center md:text-right text-[13px] text-brand-primary/80">
               © 2025 Apaz Group — Tüm Hakları Saklıdır.
             </div>
           </div>

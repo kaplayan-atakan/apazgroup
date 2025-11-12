@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise ve Kariyer Banner (Revize 3: Tam Kesişim)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Temel stiller (değişmedi) */
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: #f0f0f0;
+            padding-top: 50px;
+        }
+
+        .cta-banner {
+            position: relative;
+            background-color: #ffffff;
+            overflow: hidden; /* **Çok Önemli:** Çapraz bantların taşan kısımlarını gizler */
+            padding-top: 60px;
+            padding-bottom: 120px;
+        }
+
+        .cta-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Diğer içerik stilleri aynı kaldı... */
+        .cta-column { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
+        .cta-column.center-text { flex: 2; color: #3a4a63; font-size: 2.5rem; font-weight: 700; line-height: 1.2; padding: 0 20px; }
+        .cta-column h2 { font-size: 2.8rem; font-weight: 700; margin: 0 0 20px 0; letter-spacing: 1.5px; }
+        .cta-column.franchise h2 { color: #9b7754; }
+        .cta-column.kariyer h2 { color: #3a4a63; }
+        .cta-button { text-decoration: none; color: #ffffff; padding: 12px 28px; border-radius: 25px; font-weight: 500; font-size: 0.9rem; letter-spacing: 1px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        .cta-column.franchise .cta-button { background-color: #9b7754; }
+        .cta-column.kariyer .cta-button { background-color: #3a4a63; }
+
+
+        /* ----- REVİZE EDİLMİŞ AÇILI BANDLAR: KENARDAN KENARA ----- */
+        
+        /* Her iki bandın da width'ini %150 yaparak tam ekranı kaplamasını sağlıyoruz. 
+           (Skewed elemanlar %100'de taşma yapar, bu yüzden fazladan genişlik veririz.) */
+
+        /* Bronz Şekil (Sol Aşağıdan Sağ Yukarıya Doğru Çapraz) */
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -25%; /* Sol kenara tam oturması için kaydırma */
+            width: 150%; /* Tam ekranı kapsayacak şekilde çok geniş */
+            height: 100px;
+            background-color: #9b7754;
+            transform: skewY(3deg); /* Pozitif açı (sol aşağıdan sağ yukarıya) */
+            transform-origin: bottom left;
+            z-index: 1; /* Koyu navy'nin altında */
+        }
+
+        /* Koyu Navy Şekil (Sağ Aşağıdan Sol Yukarıya Doğru Çapraz) */
+        .cta-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: -25%; /* Sağ kenara tam oturması için kaydırma */
+            width: 150%; /* Tam ekranı kapsayacak şekilde çok geniş */
+            height: 80px;
+            background-color: #3a4a63;
+            transform: skewY(-3deg); /* Negatif açı (sağ aşağıdan sol yukarıya) */
+            transform-origin: bottom right;
+            z-index: 2; /* Bronzun üzerinde */
+        }
+        
+        /* ------------------------------------------------------------------- */
+
+
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 800px) {
+            .cta-content { flex-direction: column; gap: 40px; }
+            .cta-column.center-text { font-size: 1.8rem; order: 1; }
+            .cta-column.franchise { order: 2; }
+            .cta-column.kariyer { order: 3; }
+            .cta-banner { padding-bottom: 150px; }
+
+            /* Mobilde tam kenar davranışı için düzenleme */
+            .cta-banner::before,
+            .cta-banner::after {
+                width: 100%; /* Mobil cihazlarda taşma sorununu önlemek için %100'e geri al */
+                transform: skewY(0deg); 
+                height: 60px;
+                left: 0; /* Konumları sıfırla */
+                right: 0;
+            }
+            .cta-banner::before { z-index: 1; bottom: 0; }
+            .cta-banner::after { z-index: 2; bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="cta-banner">
+        
+        <div class="cta-content">
+            
+            <div class="cta-column franchise">
+                <h2>FRANCHISE</h2>
+                <a href="#" class="cta-button">BAŞVURU FORMU</a>
+            </div>
+            
+            <div class="cta-column center-text">
+                <p>Siz de bu büyük ailenin bir parçası olmak ister misiniz?</p>
+            </div>
+            
+            <div class="cta-column kariyer">
+                <h2>KARİYER</h2>
+                <a href="#" class="cta-button">BAŞVURU FORMU</a>
+            </div>
+
+        </div>
+        
+    </section>
+
+</body>
+</html>

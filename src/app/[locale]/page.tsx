@@ -5,14 +5,14 @@ import { generateSeoMetadata } from '../../lib/seo';
 import { HomeHeroSlider } from '../../components/sections/slider/HomeHeroSlider';
 import { BrandCard } from '../../components/cards/BrandCard';
 import { HomeAboutNews } from '../../components/sections/HomeAboutNews';
-import { HomeLatestProject } from '../../components/sections/HomeLatestProject';
+import { FranchiseCareerBanner } from '../../components/sections/FranchiseCareerBanner';
 
 export default function Home({ params }: { params: { locale: string } }) {
   const locale = params.locale;
   return (
-    <main className="min-h-dvh bg-gradient-to-b from-white via-slate-50/40 to-white">
-      {/* Hero Slider */}
-      <div className="py-4 md:py-6">
+    <main className="min-h-dvh">
+      {/* Hero Slider - Light bronze hint */}
+      <div className="py-3 md:py-4 bg-gradient-to-br from-brand-bronze-50/5 via-transparent to-transparent">
         <HomeHeroSlider
           slides={[
             { src: '/sliders/kariyernet_slider.png', alt: 'İnsan Kaynakları Ekibimiz İnsana Saygı Ödülü', href: `/${locale}/haberler/2025-10-15-insan-kaynaklari-ekibimiz-insana-saygi-odulu`, openInNewTab: false },
@@ -23,10 +23,10 @@ export default function Home({ params }: { params: { locale: string } }) {
         />
       </div>
 
-      {/* Markalarımız */}
-      <section id="brands" className="py-12 md:py-16 bg-gradient-to-br from-slate-50/30 via-white to-slate-50/20 transition-all duration-700">
+      {/* Markalarımız - Gold/Bronze accent */}
+      <section id="brands" className="py-8 md:py-12 bg-gradient-to-br from-brand-gold-50/12 via-transparent to-brand-bronze-50/8 transition-all duration-700">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent bg-clip-text text-transparent animate-in fade-in slide-in-from-bottom-4 duration-700">Markalarımız</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-brand-primary animate-in fade-in slide-in-from-bottom-4 duration-700">Markalarımız</h2>
           <div className="mx-auto mt-4 h-1 w-24 bg-gradient-to-r from-brand-secondary via-brand-accent to-brand-secondary rounded-full animate-in fade-in slide-in-from-bottom-2 duration-700 delay-150" aria-hidden="true" />
           <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             <BrandCard
@@ -62,14 +62,14 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
       </section>
 
-      {/* Haberler */}
-      <div className="py-12 md:py-16">
+      {/* Haberler - Bronze dominant */}
+      <div className="py-8 md:py-12 bg-gradient-to-br from-brand-bronze-50/10 via-transparent to-brand-gold-50/8">
         <HomeAboutNews locale={locale} />
       </div>
 
-      {/* Franchise / Kariyer panelleri */}
-      <div className="py-12 md:py-16">
-        <HomeLatestProject locale={locale} />
+      {/* Franchise / Kariyer birleşik banner */}
+      <div className="py-4 md:py-8">
+        <FranchiseCareerBanner locale={locale} />
       </div>
     </main>
   );

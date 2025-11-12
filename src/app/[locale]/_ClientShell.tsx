@@ -9,13 +9,15 @@ import { BackToTop } from '../../components/ui/BackToTop';
 import { SkipLink } from '../../components/accessibility/SkipLink';
 import { LiveRegion } from '../../components/accessibility/LiveRegion';
 import { NavigationProvider } from '../../components/context/NavigationContext';
+import { AnimatedBackground } from '../../components/layout/AnimatedBackground';
 import type { Locale } from '../../lib/i18n';
 
 export function ClientShell({ locale, children }: { locale: Locale; children: ReactNode }) {
   const mainContentId = useId();
   return (
     <NavigationProvider>
-      <div data-locale={locale} className="flex flex-col min-h-dvh" lang={locale} dir="ltr">
+      <div data-locale={locale} className="flex flex-col min-h-dvh relative" lang={locale} dir="ltr">
+        <AnimatedBackground />
         <Script id="route-prefetch" strategy="afterInteractive">
           {`
             function prefetchRoutes() {

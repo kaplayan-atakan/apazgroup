@@ -13,7 +13,7 @@ export function HomeLatestProject({ locale }: Props) {
   const careerFormHref = withLocale('/bize-katilin') as Route;
 
   return (
-  <section className="py-8">
+  <section className="py-0">
       <div className="container mx-auto px-4 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
           {/* Franchise panel redesigned (variant-a) */}
