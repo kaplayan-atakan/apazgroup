@@ -44,7 +44,11 @@ export function HomeHeroSlider({ slides, intervalMs = 6000, constrainToIntrinsic
   const wrapperClass = constrainToIntrinsic ? intrinsicWrapper : fullBleedWrapper;
 
   return (
-  <section className={`group/slider ${wrapperClass} overflow-hidden`} aria-roledescription="carousel" aria-label="Hero slider">
+  <section
+    className={`group/slider ${wrapperClass} overflow-hidden rounded-2xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50`}
+    aria-roledescription="carousel"
+    aria-label="Hero slider"
+  >
       {/* Slides */}
       <ul className="absolute inset-0 h-full list-none m-0 p-0" aria-live="off">
         {slides.map((s, i) => {

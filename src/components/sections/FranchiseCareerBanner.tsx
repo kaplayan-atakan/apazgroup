@@ -22,49 +22,50 @@ export function FranchiseCareerBanner({ locale }: Props) {
   };
 
   return (
-    <section 
+    <section
       className="franchise-career-banner"
       style={{
         background: 'linear-gradient(135deg, rgba(184, 155, 111, 0.12) 0%, rgba(255, 255, 255, 0.95) 25%, rgba(255, 255, 255, 0.95) 75%, rgba(149, 105, 78, 0.15) 100%)',
         border: '2px solid rgba(184, 155, 111, 0.3)',
+        maxWidth: '820px',
       }}
     >
       <div className="franchise-career-content">
-        
+
         <div className="franchise-career-column franchise-career-franchise">
           <h2>{t.franchise}</h2>
-          <Link 
-            href={franchiseHref} 
+          <Link
+            href={franchiseHref}
             className="franchise-career-button franchise-career-button-franchise"
-            style={{ 
+            style={{
               background: 'linear-gradient(135deg, #b89b6f 0%, #9b7754 100%)',
               border: '4px solid #8a6543',
               boxShadow: '0 6px 20px rgba(155, 119, 84, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
-              borderRadius: '60px',
+              borderRadius: '36px',
               color: '#ffffff',
-              padding: '18px 48px',
+              padding: '8px 28px',
             }}
           >
             {t.applyButton}
           </Link>
         </div>
-        
+
         <div className="franchise-career-column franchise-career-center-text">
           <p>{t.centerText}</p>
         </div>
-        
+
         <div className="franchise-career-column franchise-career-kariyer">
           <h2>{t.career}</h2>
-          <Link 
-            href={careerHref} 
+          <Link
+            href={careerHref}
             className="franchise-career-button franchise-career-button-kariyer"
-            style={{ 
+            style={{
               background: 'linear-gradient(135deg, #3a4a63 0%, #2a3a4d 100%)',
               border: '4px solid #1F3A52',
               boxShadow: '0 6px 20px rgba(31, 58, 82, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-              borderRadius: '60px',
+              borderRadius: '36px',
               color: '#ffffff',
-              padding: '18px 48px',
+              padding: '8px 28px',
             }}
           >
             {t.applyButton}
@@ -78,9 +79,9 @@ export function FranchiseCareerBanner({ locale }: Props) {
           position: relative;
           background: linear-gradient(135deg, #ffffff 0%, #fefdfb 50%, #faf8f5 100%);
           overflow: hidden;
-          padding: 60px 20px 120px;
-          max-width: 1200px;
-          margin: 40px auto;
+          padding: 28px 16px 72px;
+          max-width: 900px;
+          margin: 20px auto;
           border-radius: 24px;
           box-shadow: 0 8px 32px rgba(31, 58, 82, 0.12), 0 2px 8px rgba(31, 58, 82, 0.08);
           border: 1px solid rgba(184, 155, 111, 0.15);
@@ -108,16 +109,16 @@ export function FranchiseCareerBanner({ locale }: Props) {
         .franchise-career-center-text {
           flex: 2;
           color: #3a4a63;
-          font-size: 2.5rem;
+          font-size: 2.1rem;
           font-weight: 700;
-          line-height: 1.2;
-          padding: 0 20px;
+          line-height: 1.25;
+          padding: 0 16px;
         }
 
         .franchise-career-column h2 {
-          font-size: 2.8rem;
+          font-size: 2.3rem;
           font-weight: 700;
-          margin: 0 0 20px 0;
+          margin: 0 0 14px 0;
           letter-spacing: 1.5px;
         }
 
@@ -135,10 +136,10 @@ export function FranchiseCareerBanner({ locale }: Props) {
           justify-content: center;
           text-decoration: none;
           color: #ffffff;
-          padding: 18px 48px;
-          border-radius: 50px;
+          padding: 12px 36px;
+          border-radius: 36px;
           font-weight: 700;
-          font-size: 1rem;
+          font-size: 0.90rem;
           letter-spacing: 1.5px;
           text-transform: uppercase;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

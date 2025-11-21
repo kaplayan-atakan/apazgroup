@@ -47,7 +47,7 @@ export default function HaberlerPage({ params }: PageProps) {
                 key={item.slug}
                 // @ts-expect-error experimental typedRoutes dynamic
                 href={href}
-                className="group rounded-xl ring-1 ring-brand-bronze-200 bg-gradient-to-br from-white to-brand-bronze-50 shadow-md hover:shadow-xl hover:ring-brand-secondary transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/60 overflow-hidden flex flex-col transform hover:scale-[1.02]"
+                className="group rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 hover:ring-brand-secondary/50 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/60 flex flex-col"
               >
                 {img && (
                   <div className="relative w-full aspect-[16/9] bg-slate-100">

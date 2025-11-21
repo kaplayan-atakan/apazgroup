@@ -44,7 +44,7 @@ export default async function Page({ params }: Props) {
       {/* Standalone banner image (elevated card overlapping hero) */}
       <section className="not-prose -mt-4 md:-mt-8">
         <div className="max-w-6xl mx-auto px-6">
-          <figure className="relative aspect-[16/9] rounded-2xl overflow-hidden ring-1 ring-slate-200 bg-slate-100 shadow-sm md:shadow-lg">
+          <figure className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)]">
             <Image
               src="/markalar/baydoner_foto.jpg"
               alt="Baydöner marka görseli"
@@ -59,7 +59,7 @@ export default async function Page({ params }: Props) {
       </section>
       <section className="not-prose py-12">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="relative rounded-xl overflow-hidden ring-1 ring-slate-200 bg-white/70 backdrop-blur-sm p-6 md:p-8">
+          <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 p-6 md:p-8 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)]">
             <p className="text-sm md:text-base leading-relaxed text-slate-700 whitespace-pre-line">{intro}</p>
           </div>
         </div>
@@ -68,11 +68,11 @@ export default async function Page({ params }: Props) {
       {/* Vision & Mission cards */}
       <section className="not-prose pb-12">
         <div className="max-w-6xl mx-auto px-6 grid gap-6 md:grid-cols-2">
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 transition-shadow duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
             <h2 className="text-lg font-semibold tracking-tight mb-3">Vizyonumuz</h2>
             <p className="text-slate-700 text-sm md:text-base leading-relaxed">{vision}</p>
           </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 transition-shadow duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
             <h2 className="text-lg font-semibold tracking-tight mb-3">Misyonumuz</h2>
             <p className="text-slate-700 text-sm md:text-base leading-relaxed">{mission}</p>
           </div>

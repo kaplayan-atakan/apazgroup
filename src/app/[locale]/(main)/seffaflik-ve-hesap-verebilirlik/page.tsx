@@ -43,7 +43,7 @@ export default function SeffaflikPage({ params }: PageProps) {
           {/* Left: text */}
           <div className="relative">
             <div className="absolute -inset-x-4 -inset-y-4 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-md" aria-hidden="true" />
-            <div className="relative rounded-2xl bg-white/70 backdrop-blur-xl px-7 md:px-9 py-9 ring-1 ring-slate-200/70 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 px-7 md:px-9 py-9 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 transition-all duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
               <div className="space-y-6 text-[15px] md:text-[16px] leading-relaxed text-slate-700">
                 <p>
                   Kurum kültürümüzün en önemli unsurlarından biri; çalışanlarımıza, hissedarlarımıza ve tüm paydaşlarımıza karşı şeffaf ve hesap verebilir bir yönetim anlayışını benimsemektir.
@@ -83,7 +83,7 @@ export default function SeffaflikPage({ params }: PageProps) {
           {/* Right: image */}
           <div className="relative">
             <div className="absolute -inset-x-4 -inset-y-4 rounded-2xl bg-gradient-to-tr from-brand-accent/10 via-transparent to-brand-primary/10 blur" aria-hidden="true" />
-            <div className="relative group overflow-hidden rounded-xl ring-1 ring-slate-200/70 shadow-md bg-white">
+            <div className="relative group overflow-hidden rounded-xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] transition-all duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
               <div className="relative w-full aspect-[4/3]">
                 <Image
                   src="/kss/seffaflik.png"

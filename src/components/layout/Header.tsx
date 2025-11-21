@@ -175,7 +175,7 @@ export function Header({ locale }: { locale: Locale }) {
             <span aria-hidden className="absolute left-0 right-0 top-full h-2" />
             <ul
               data-open={desktopOpen === 'about'}
-              className="absolute left-0 top-full z-50 w-72 bg-gradient-to-br from-white to-brand-bronze-50/40 shadow-2xl rounded-xl py-3 border-2 border-brand-bronze-200/50 invisible opacity-0 translate-y-2 transition-all duration-300 data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 backdrop-blur-sm"
+              className="absolute left-0 top-full z-50 w-72 bg-gradient-to-br from-white/95 to-brand-bronze-50 shadow-2xl rounded-xl py-3 border-2 border-brand-bronze-200/70 invisible opacity-0 translate-y-2 transition-all duration-300 data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 backdrop-blur-md"
             >
               {aboutItems.map(([p,label],i)=>{const href=withLocale(p);return patternedLi(i,(
                 // @ts-expect-error dynamic string
@@ -209,7 +209,7 @@ export function Header({ locale }: { locale: Locale }) {
             <span aria-hidden className="absolute left-0 right-0 top-full h-2" />
             <ul
               data-open={desktopOpen === 'brands'}
-              className="absolute left-0 top-full z-50 w-72 bg-gradient-to-br from-white to-brand-gold-50/40 shadow-2xl rounded-xl py-3 border-2 border-brand-gold-200/50 invisible opacity-0 translate-y-2 transition-all duration-300 data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 backdrop-blur-sm"
+              className="absolute left-0 top-full z-50 w-72 bg-gradient-to-br from-white/95 to-brand-gold-50 shadow-2xl rounded-xl py-3 border-2 border-brand-gold-200/70 invisible opacity-0 translate-y-2 transition-all duration-300 data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 backdrop-blur-md"
             >
               {brandItems.map(([p,label],i)=>{const href=withLocale(p);return patternedLi(i,(
                 // @ts-expect-error dynamic string
@@ -251,7 +251,7 @@ export function Header({ locale }: { locale: Locale }) {
             <span aria-hidden className="absolute left-0 right-0 top-full h-2" />
             <ul
               data-open={desktopOpen === 'career'}
-              className="absolute left-0 top-full z-50 bg-gradient-to-br from-white to-brand-bronze-50/40 shadow-2xl rounded-xl py-3 border-2 border-brand-bronze-200/50 invisible opacity-0 translate-y-2 transition-all duration-300 data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 w-80 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 backdrop-blur-sm"
+              className="absolute left-0 top-full z-50 bg-gradient-to-br from-white/95 to-brand-bronze-50 shadow-2xl rounded-xl py-3 border-2 border-brand-bronze-200/70 invisible opacity-0 translate-y-2 transition-all duration-300 data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:translate-y-0 w-80 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 backdrop-blur-md"
             >
               {careerItems.map(([p,label],i)=>{const href=withLocale(p);return patternedLi(i,(
                 // @ts-expect-error dynamic string

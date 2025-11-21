@@ -74,7 +74,7 @@ export default function KSSPage({ params }: PageProps) {
               </div>
               <div className="mt-8 w-full max-w-prose relative">
                 <div className="absolute -inset-x-3 -inset-y-3 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-sm" aria-hidden="true" />
-                <div className="relative rounded-2xl bg-white/75 backdrop-blur-xl ring-1 ring-slate-200/70 px-6 md:px-8 py-8 shadow-[0_4px_18px_-4px_rgba(0,0,0,0.06)]">
+                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 px-6 md:px-8 py-8 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] transition-all duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
                   {/* Intro */}
                   <div className="space-y-4 text-[14.5px] md:text-[15px] leading-relaxed text-slate-700 tracking-[0.2px]">
                     {intro.map((p, i) => (

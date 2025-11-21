@@ -98,6 +98,7 @@ Modernizasyon Kararları:
 - Her sprint başlangıcında bu dosyada "Durum" bölümünü güncelle.
 - Kod üretiminde legacy jQuery / Bootstrap pattern'larından kaçın.
 - Form şeması değişikliğinde: şema + UI + test senaryosu aynı commit.
+ - Tekrarlayan / benzer işlerde ayrıntılı özet ve uzun açıklamalar yerine, işleri sırayla ve hassas bir şekilde tamamlamaya odaklan; sadece gerekli yerlerde kısa durum notu ver.
 
 ## 12. Kararlar (Onaylandı)
 - İçerik Yükleyici: İlk faz Custom Loader (gray-matter + zod). Contentlayer geçişi için ayrı issue açılacak ve 3 ay içinde ihtiyaç analiz edilecek.

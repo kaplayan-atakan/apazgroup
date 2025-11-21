@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#020617" />
       </head>
       <body className={`${fontVariables} font-sans antialiased`}>
         <MotionProvider>

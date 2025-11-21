@@ -27,13 +27,13 @@ export default function BasvuruFormuPage({ params }: PageProps) {
     <main className="relative">
       <div className="container mx-auto px-4 max-w-4xl pt-12 pb-24">
         <p className="text-slate-700 mb-10 leading-relaxed text-base md:text-lg">{loc === 'tr' ? 'Aşağıdaki linklerden Apaz Group bünyesindeki açık pozisyonlara başvuruda bulunabilirsiniz.' : 'Fill out the form below to apply for open positions within Apaz Group. Please ensure all required fields are completed.'}</p>
-        {/* LinkedIn Jobs Card */}
-        <div className="mb-12">
+  {/* LinkedIn Jobs Card */}
+  <div className="mb-12">
           <a
             href="https://www.linkedin.com/company/apaz-group/jobs/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 md:p-7 shadow-sm ring-1 ring-transparent hover:shadow-md hover:ring-brand-primary/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+            className="group block rounded-xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 md:p-7 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 hover:ring-brand-secondary/50 hover:shadow-xl transition focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40"
             aria-label="LinkedIn üzerinde Apaz Group açık pozisyonlarını görüntüle (yeni sekme)"
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
@@ -66,13 +66,13 @@ export default function BasvuruFormuPage({ params }: PageProps) {
             </div>
           </a>
         </div>
-        {/* Kariyer.net Jobs Card */}
-        <div className="mb-12">
+  {/* Kariyer.net Jobs Card */}
+  <div className="mb-12">
           <a
             href="https://www.kariyer.net/is-ilanlari?fpi=10543&hc=T"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 md:p-7 shadow-sm ring-1 ring-transparent hover:shadow-md hover:ring-brand-primary/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+            className="group block rounded-xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 md:p-7 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 hover:ring-brand-secondary/50 hover:shadow-xl transition focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40"
             aria-label={loc === 'tr' ? 'Kariyer.net üzerinde Apaz Group iş ilanlarını görüntüle (yeni sekme)' : 'View Apaz Group job listings on Kariyer.net (new tab)'}
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
@@ -105,7 +105,7 @@ export default function BasvuruFormuPage({ params }: PageProps) {
           </a>
         </div>
         <p className="text-slate-700 mb-10 leading-relaxed text-base md:text-lg">{loc === 'tr' ? 'Ayrıca, özgeçmiş bankamızda yer almak isterseniz aşağıdaki formu doldurarak başvurunuzu gerçekleştirebilirsiniz. Zorunlu alanları eksiksiz doldurduğunuzdan emin olun.' : 'Fill out the form below to apply for open positions within Apaz Group. Please ensure all required fields are completed.'}</p>
-        <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6 md:p-8">
+  <div className="rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 md:p-8 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
           <BasvuruFormClient />
         </div>
       </div>

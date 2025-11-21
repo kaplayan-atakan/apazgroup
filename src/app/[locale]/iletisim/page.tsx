@@ -32,26 +32,26 @@ export default function Page({ params }: Props) {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left: contact info */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Bize Ulaşın</h2>
-            <p className="text-slate-700 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-brand-primary">Bize Ulaşın</h2>
+            <p className="text-brand-neutral-200 mb-8">
               Sorularınız, önerileriniz veya iş birliği talepleriniz için bizimle iletişime geçebilirsiniz.
               Formu doldurarak veya aşağıdaki iletişim bilgilerimiz aracılığıyla bize ulaşabilirsiniz.
             </p>
 
             <div className="space-y-6">
               <div>
-                <div className="text-sm font-semibold text-slate-500">Adres</div>
-                <div className="text-slate-800">Adalet Mah. Anadolu Cad. No:41 Bağımsız Bölüm K:20 No:17 Megapol Tower Bayraklı - İZMİR</div>
+                <div className="text-sm font-semibold text-brand-secondary-light">Adres</div>
+                <div className="text-brand-neutral-100">Adalet Mah. Anadolu Cad. No:41 Bağımsız Bölüm K:20 No:17 Megapol Tower Bayraklı - İZMİR</div>
               </div>
 
               <div>
-                <div className="text-sm font-semibold text-slate-500">E-posta</div>
-                <Link href="mailto:info@apazgroup.com" className="text-slate-800 hover:text-brand-yellow">info@apazgroup.com</Link>
+                <div className="text-sm font-semibold text-brand-secondary-light">E-posta</div>
+                <Link href="mailto:info@apazgroup.com" className="text-brand-secondary-light hover:text-brand-accent">info@apazgroup.com</Link>
               </div>
 
               <div>
-                <div className="text-sm font-semibold text-slate-500">Telefon</div>
-                <Link href="tel:+902324644235" className="text-slate-800 hover:text-brand-yellow">+90 232 464 42 35</Link>
+                <div className="text-sm font-semibold text-brand-secondary-light">Telefon</div>
+                <Link href="tel:+902324644235" className="text-brand-secondary-light hover:text-brand-accent">+90 232 464 42 35</Link>
               </div>
 
               {/* <div className="flex items-center gap-4 pt-2">
@@ -80,12 +80,12 @@ export default function Page({ params }: Props) {
           {/* Right: Kariyer.net + LinkedIn cards, then form */}
           <div className="space-y-10">
             {/* Kariyer.net Card */}
-            <div>
+      <div>
               <a
                 href="https://www.kariyer.net/is-ilanlari?fpi=10543&hc=T"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 md:p-7 shadow-sm ring-1 ring-transparent hover:shadow-md hover:ring-brand-primary/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+        className="group block rounded-xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 md:p-7 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 hover:ring-brand-secondary/50 hover:shadow-xl transition focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40"
                 aria-label="Kariyer.net üzerinde Apaz Group iş ilanlarını görüntüle (yeni sekme)"
               >
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
@@ -99,8 +99,8 @@ export default function Page({ params }: Props) {
                   </div>
                   <div className="text-center sm:text-left">
                     <h2 className="text-xl font-semibold tracking-tight text-brand-primary mb-2">Kariyer.net İlanlarımız</h2>
-                    <p className="text-sm text-slate-600 max-w-md">Güncel ilanlarımızı Kariyer.net sayfamızdan inceleyebilir ve doğrudan başvurabilirsiniz.</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-accent group-hover:underline">
+                    <p className="text-sm text-brand-neutral-200 max-w-md">Güncel ilanlarımızı Kariyer.net sayfamızdan inceleyebilir ve doğrudan başvurabilirsiniz.</p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-secondary-light group-hover:text-brand-secondary">
                       Kariyer.net&apos;te görüntüle
                       <svg
                         className="w-4 h-4 text-brand-accent transition-transform duration-300 group-hover:translate-x-0.5"
@@ -114,12 +114,12 @@ export default function Page({ params }: Props) {
               </a>
             </div>
             {/* LinkedIn Jobs Card */}
-            <div>
+      <div>
               <a
                 href="https://www.linkedin.com/company/apaz-group/jobs/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 md:p-7 shadow-sm ring-1 ring-transparent hover:shadow-md hover:ring-brand-primary/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+        className="group block rounded-xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 md:p-7 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 hover:ring-brand-secondary/50 hover:shadow-xl transition focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40"
                 aria-label="LinkedIn üzerinde Apaz Group açık pozisyonlarını görüntüle (yeni sekme)"
               >
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
@@ -133,8 +133,8 @@ export default function Page({ params }: Props) {
                   </div>
                   <div className="text-center sm:text-left">
                     <h2 className="text-xl font-semibold tracking-tight text-brand-primary mb-2">LinkedIn Üzerinden Açık Pozisyonlar</h2>
-                    <p className="text-sm text-slate-600 max-w-md">Güncel ilanlarımızı LinkedIn sayfamızdan inceleyebilir ve doğrudan başvurabilirsiniz.</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-accent group-hover:underline">
+                    <p className="text-sm text-brand-neutral-200 max-w-md">Güncel ilanlarımızı LinkedIn sayfamızdan inceleyebilir ve doğrudan başvurabilirsiniz.</p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-secondary-light group-hover:text-brand-secondary">
                       LinkedIn&apos;de görüntüle
                       <svg
                         className="w-4 h-4 text-brand-accent transition-transform duration-300 group-hover:translate-x-0.5"
@@ -147,8 +147,8 @@ export default function Page({ params }: Props) {
                 </div>
               </a>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm ring-1 ring-slate-200">
-              <h3 className="text-xl font-bold mb-4">İletişim Formu</h3>
+            <div className="rounded-xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
+              <h3 className="text-xl font-bold mb-4 text-brand-primary">İletişim Formu</h3>
               <ContactForm />
             </div>
           </div>

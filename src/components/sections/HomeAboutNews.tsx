@@ -15,7 +15,7 @@ export function HomeAboutNews({ locale }: Props) {
   return (
     <section className="py-0 transition-all duration-700">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-brand-primary animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-brand-secondary-light animate-in fade-in slide-in-from-bottom-4 duration-700">
           Haberler
         </h2>
         <div className="mx-auto mt-4 h-1 w-24 bg-gradient-to-r from-brand-secondary via-brand-accent to-brand-secondary rounded-full animate-in fade-in slide-in-from-bottom-2 duration-700 delay-150" aria-hidden="true" />
@@ -58,13 +58,13 @@ export function HomeAboutNews({ locale }: Props) {
                           })}
                         </time>
                       )}
-                      <h3 className="mt-1 text-base font-bold leading-snug text-brand-primary line-clamp-2">
+                      <h3 className="mt-1 text-base font-bold leading-snug text-brand-secondary-light line-clamp-2">
                         {title}
                       </h3>
                       {excerpt && (
                         <p className="mt-2 text-sm text-slate-600 line-clamp-3">{excerpt}</p>
                       )}
-                      <span className="mt-3 inline-flex items-center text-sm font-semibold text-brand-primary group-hover:text-brand-secondary transition-colors">
+                      <span className="mt-3 inline-flex items-center text-sm font-semibold text-brand-secondary-light group-hover:text-brand-secondary transition-colors">
                         Habere git <span className="ml-1" aria-hidden>→</span>
                       </span>
                     </div>
@@ -79,7 +79,7 @@ export function HomeAboutNews({ locale }: Props) {
         <div className="mt-8 flex justify-center">
           <Link
             href={withLocale('/haberler') as Route}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary hover:text-brand-secondary transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-brand-secondary-light hover:text-brand-secondary transition-colors"
           >
             Tüm Haberler
             <span aria-hidden>→</span>

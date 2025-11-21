@@ -51,7 +51,7 @@ export default function BasvuruFormuPage({ params }: PageProps) {
                 : 'You can apply to our brands by filling the form below.'}
             </p>
           </div>
-          <div className="bg-white p-6 md:p-8 rounded-lg shadow-sm ring-1 ring-slate-200">
+          <div className="rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 md:p-8 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
             <BasvuruForm locale={loc} />
           </div>
         </div>

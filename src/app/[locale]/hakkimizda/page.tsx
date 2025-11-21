@@ -98,14 +98,13 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
               key={section.key}
               role="region"
               aria-labelledby={`brand-${section.key}`}
-              className={`relative group p-4 md:p-5 rounded-xl border shadow-sm md:grid md:grid-cols-[190px_1fr] md:items-center gap-6 overflow-hidden bg-gradient-to-br from-white ${a.to} ${a.border} transition-all duration-500 ease-out hover:shadow-md hover:border-slate-300`}
+              className={`relative group p-4 md:p-5 rounded-xl overflow-hidden md:grid md:grid-cols-[190px_1fr] md:items-center gap-6 bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50`}
             >
-              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.6),transparent_60%)]" />
               {/* Logo left (takes half width on desktop, full width on mobile) */}
               <div
                 className={(() => {
                   // Base container sizing per brand (taller on mobile where needed)
-                  const base = 'relative flex items-center justify-center bg-white/70 backdrop-blur-sm border border-slate-200 rounded-lg overflow-hidden transition-all duration-500 ease-out group-hover:border-slate-300';
+                  const base = 'relative flex items-center justify-center bg-white/70 backdrop-blur-sm border border-slate-200 rounded-lg overflow-hidden';
                   if (section.key === 'pidebypide' || section.key === 'bursaishakbey') return base + ' h-28 md:h-24 w-full md:w-[190px] p-4 md:p-4';
                   if (section.key === 'apaz-group') return base + ' h-32 md:h-28 w-full md:w-[200px] p-4 md:p-5';
                   if (section.key === 'baydoner') return base + ' h-28 md:h-28 w-full md:w-[190px] p-4 md:p-5';
@@ -121,7 +120,7 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
                     return common;
                   })()}
                 >
-                  <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.03]">
+                  <div className="w-full h-full flex items-center justify-center">
                     <Image
                       src={section.logo.src}
                       alt={section.logo.alt}
@@ -134,7 +133,7 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
                 </div>
               </div>
               {/* Text right (below on mobile) */}
-              <div className="mt-4 md:mt-0 space-y-4 leading-relaxed text-slate-700 transition-colors duration-500">
+              <div className="mt-4 md:mt-0 space-y-4 leading-relaxed text-slate-900">
                 <h2 id={`brand-${section.key}`} className="sr-only">{section.logo.alt}</h2>
                 {section.content}
               </div>
@@ -144,27 +143,26 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
           );
         })}
         {/* Summary growth card */}
-        <div className="relative p-6 md:p-10 rounded-xl shadow-sm border border-brand-accent bg-gradient-to-r from-brand-accent/10 via-white to-brand-yellow/10 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.6),transparent_55%)] mix-blend-overlay" />
-          <p className="text-base md:text-lg leading-relaxed text-slate-700">
+  <div className="relative p-6 md:p-10 rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
+          <p className="text-base md:text-lg leading-relaxed text-slate-900">
             Misafirlerine her ziyaretin, unutulmaz ve keyifli olmasını garanti ederek, her konuk için samimi ve kişiselleştirilmiş bir deneyim yaratmayı hedefleyerek, bugün Baydöner markasının yanı sıra self servis hizmet modelinde Bursa İshakbey ve PideByPide markaları ile ürün ve hizmet çeşitliliğini arttırarak büyümeye devam ediyoruz.
           </p>
         </div>
         {/* Vision / Mission / Values */}
         <div className="grid md:grid-cols-3 gap-6 pt-4">
-          <section className="relative p-6 md:p-7 rounded-xl border border-brand-primary/40 bg-gradient-to-br from-white to-brand-primary/5 shadow-sm">
+          <section className="relative p-6 md:p-7 rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
             <h2 className="text-xl font-semibold mb-3 text-brand-primary after:block after:mt-1 after:h-0.5 after:w-12 after:bg-brand-primary/60">Vizyonumuz</h2>
-            <p>İnovatif ve en iyilerin çalışmak istediği markalara sahip olmak.</p>
+            <p className="text-slate-900">İnovatif ve en iyilerin çalışmak istediği markalara sahip olmak.</p>
             <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-brand-primary/40 via-brand-accent/30 to-brand-yellow/40 rounded-b-xl" aria-hidden="true" />
           </section>
-          <section className="relative p-6 md:p-7 rounded-xl border border-brand-secondary/40 bg-gradient-to-br from-white to-brand-secondary/10 shadow-sm">
+          <section className="relative p-6 md:p-7 rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
             <h2 className="text-xl font-semibold mb-3 text-brand-secondary after:block after:mt-1 after:h-0.5 after:w-12 after:bg-brand-secondary/60">Misyonumuz</h2>
-            <p>Yenilikçi ve güçlü fikirlerle müşterilerimizin kendilerini özel hissetmelerini sağlar, iş arkadaşlarımızın emeğine değer veririz.</p>
+            <p className="text-slate-900">Yenilikçi ve güçlü fikirlerle müşterilerimizin kendilerini özel hissetmelerini sağlar, iş arkadaşlarımızın emeğine değer veririz.</p>
             <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-brand-secondary/40 via-brand-accent/30 to-brand-primary/40 rounded-b-xl" aria-hidden="true" />
           </section>
-          <section className="relative p-6 md:p-7 rounded-xl border border-brand-accent/40 bg-gradient-to-br from-white to-brand-accent/10 shadow-sm">
+          <section className="relative p-6 md:p-7 rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
             <h2 className="text-xl font-semibold mb-3 text-brand-accent after:block after:mt-1 after:h-0.5 after:w-12 after:bg-brand-accent/60">Değerlerimiz</h2>
-            <ul className="list-disc ml-6">
+            <ul className="list-disc ml-6 text-slate-900">
               <li>Fırsat eşitliği ve adalet</li>
               <li>Müşteri memnuniyeti ve kalite odaklılık</li>
               <li>Yenilikçilik, karşılıklı güven ve insana saygı</li>

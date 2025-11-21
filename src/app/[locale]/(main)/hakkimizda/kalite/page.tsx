@@ -44,10 +44,13 @@ export default function KalitePage({ params }: PageProps) {
       {/* Structured content */}
       <div className="px-6 py-10 md:py-14 max-w-7xl mx-auto space-y-20">
         {/* Kalite Taahhüdü (üste alındı) */}
-        <section aria-labelledby="kalite-taahhudu-heading" className="bg-gradient-to-br from-slate-50 via-white to-slate-50 rounded-xl ring-1 ring-slate-200 px-6 md:px-10 py-10 shadow-sm relative overflow-hidden">
+        <section
+          aria-labelledby="kalite-taahhudu-heading"
+          className="rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 px-6 md:px-10 py-10 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 relative transition-all duration-300 hover:ring-brand-secondary/50 hover:shadow-xl"
+        >
           <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(circle_at_center,white,transparent)] bg-[radial-gradient(circle_at_30%_25%,rgba(255,215,0,0.15),transparent_70%),radial-gradient(circle_at_75%_65%,rgba(0,82,255,0.15),transparent_65%)]" aria-hidden="true" />
           <div className="relative">
-            <h2 id="kalite-taahhudu-heading" className="mt-8 mb-6 text-2xl md:text-3xl font-semibold tracking-tight text-brand-secondary">Kalite Taahhüdümüz</h2>
+            <h2 id="kalite-taahhudu-heading" className="mt-8 mb-6 text-2xl md:text-3xl font-semibold tracking-tight text-brand-primary">Kalite Taahhüdümüz</h2>
             <p className="text-slate-700 leading-relaxed text-[15px] md:text-base max-w-4xl">
               Apaz Group olarak, tüm markalarımızda aynı yüksek kalite anlayışıyla hizmet vermeyi taahhüt ediyoruz. Kaliteyi bir hedef değil, sürekli geliştirilen bir süreç olarak görüyor ve her adımımızda bu anlayışı uyguluyoruz.
             </p>
@@ -58,10 +61,10 @@ export default function KalitePage({ params }: PageProps) {
         </section>
         <section className="relative" aria-labelledby="kalite-politikamiz-heading">
           <div className="absolute -inset-x-4 -inset-y-4 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-md" aria-hidden="true" />
-          <div className="relative rounded-2xl bg-white/80 backdrop-blur-xl px-7 md:px-10 py-10 ring-1 ring-slate-200/70 shadow-[0_4px_18px_-6px_rgba(0,0,0,0.08)] space-y-14">
+          <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 px-7 md:px-10 py-10 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 space-y-14 transition-all duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
             {/* Kalite Politikamız */}
             <div className="prose prose-slate max-w-none">
-              <h2 id="kalite-politikamiz-heading" className="mt-2 mb-5 text-2xl md:text-3xl font-semibold tracking-tight text-brand-secondary">Kalite Politikamız</h2>
+              <h2 id="kalite-politikamiz-heading" className="mt-2 mb-5 text-2xl md:text-3xl font-semibold tracking-tight text-brand-primary">Kalite Politikamız</h2>
               <p className="leading-relaxed text-slate-700 text-[15px] md:text-base">
                 Ürünlerimiz, ilk kaynağından misafirlerimize ulaşıncaya kadar geçen her aşamada titizlikle kontrol edilir. Sürekli denetim ve iyileştirme çalışmalarıyla güvenli, kaliteli ve hijyenik gıdayı sizlere sunmayı hedefliyoruz.
               </p>

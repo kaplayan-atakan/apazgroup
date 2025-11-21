@@ -127,7 +127,7 @@ export default async function HaberPage({ params }: PageProps) {
             {/* Right: Content */}
             <div className={doc.frontmatter.image ? 'md:col-span-7 lg:col-span-7' : 'md:col-span-12'}>
               <header>
-                <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight">{doc.frontmatter.title}</h1>
+                <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-brand-primary leading-tight">{doc.frontmatter.title}</h1>
                 <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-500">
                   {published && (
                     <time dateTime={doc.frontmatter.date} className="inline-flex items-center gap-1 text-slate-600">

@@ -42,7 +42,7 @@ export default function Haber2Page({ params }: PageProps) {
       {/* Hero */}
       <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold">ÇALIŞAN MEMNUNİYETİNE ÖNEM VERİYORUZ</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-brand-primary">ÇALIŞAN MEMNUNİYETİNE ÖNEM VERİYORUZ</h1>
           <div className="w-20 h-1 bg-brand-primary mx-auto mt-4" aria-hidden="true" />
         </div>
       </section>

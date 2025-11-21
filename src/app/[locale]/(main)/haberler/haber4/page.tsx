@@ -41,7 +41,7 @@ export default function Haber4Page({ params }: PageProps) {
       {/* Hero */}
       <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold">Baydöner’e iki kardeş geldi: Pidebypide ve Bursa İshakbek</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-brand-primary">Baydöner’e iki kardeş geldi: Pidebypide ve Bursa İshakbek</h1>
           <div className="w-20 h-1 bg-brand-primary mx-auto mt-4" aria-hidden="true" />
         </div>
       </section>

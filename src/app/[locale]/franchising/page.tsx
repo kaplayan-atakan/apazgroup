@@ -48,7 +48,7 @@ export default function FranchisingPage({ params }: PageProps) {
           {loc === 'tr' ? (
             <div className="relative">
               <div className="absolute -inset-x-4 -inset-y-4 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-md" aria-hidden="true" />
-              <div className="relative rounded-2xl bg-white/70 backdrop-blur-xl px-7 md:px-10 py-10 ring-1 ring-slate-200/70 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] space-y-6 text-slate-700 text-[15px] leading-[1.75]">
+              <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 px-7 md:px-10 py-10 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 space-y-6 text-slate-700 text-[15px] leading-[1.75] transition-all duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
                 <p>
                   Apaz Group olarak, Türk mutfağına hak ettiği değeri verme vizyonuyla çalışmalarımızı sürdürüyoruz. İstikrarlı bir şekilde büyümeye devam ediyoruz. Bundan sonra yapacağımız yeni yatırımlarla, büyüme trendimizi sürdüreceğiz.
                 </p>
@@ -72,7 +72,7 @@ export default function FranchisingPage({ params }: PageProps) {
           ) : (
             <div className="relative">
               <div className="absolute -inset-x-4 -inset-y-4 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-md" aria-hidden="true" />
-              <div className="relative rounded-2xl bg-white/70 backdrop-blur-xl px-7 md:px-10 py-10 ring-1 ring-slate-200/70 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] text-slate-700 text-[15px] leading-[1.75]">
+              <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 px-7 md:px-10 py-10 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 text-slate-700 text-[15px] leading-[1.75] transition-all duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
                 <p>
                   Franchising opportunities across Apaz Group brands: scalable formats, operational support and strong consumer resonance. (EN placeholder)
                 </p>

@@ -42,7 +42,7 @@ html {
 }
 
 body { 
-  @apply bg-transparent text-slate-900 antialiased;
+  @apply bg-brand-primary text-slate-100 antialiased;
 }
 
 /* Custom Scrollbar Styles - Brand Colors */

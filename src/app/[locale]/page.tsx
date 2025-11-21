@@ -11,8 +11,8 @@ export default function Home({ params }: { params: { locale: string } }) {
   const locale = params.locale;
   return (
     <main className="min-h-dvh">
-      {/* Hero Slider - Light bronze hint */}
-      <div className="py-3 md:py-4 bg-gradient-to-br from-brand-bronze-50/5 via-transparent to-transparent">
+  {/* Hero Slider */}
+  <div className="py-3 md:py-4">
         <HomeHeroSlider
           slides={[
             { src: '/sliders/kariyernet_slider.png', alt: 'İnsan Kaynakları Ekibimiz İnsana Saygı Ödülü', href: `/${locale}/haberler/2025-10-15-insan-kaynaklari-ekibimiz-insana-saygi-odulu`, openInNewTab: false },
@@ -23,11 +23,16 @@ export default function Home({ params }: { params: { locale: string } }) {
         />
       </div>
 
-      {/* Markalarımız - Gold/Bronze accent */}
-      <section id="brands" className="py-8 md:py-12 bg-gradient-to-br from-brand-gold-50/12 via-transparent to-brand-bronze-50/8 transition-all duration-700">
+      {/* Markalarımız - heading in bronze/gold over navy background */}
+      <section id="brands" className="py-8 md:py-12 transition-all duration-700">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-brand-primary animate-in fade-in slide-in-from-bottom-4 duration-700">Markalarımız</h2>
-          <div className="mx-auto mt-4 h-1 w-24 bg-gradient-to-r from-brand-secondary via-brand-accent to-brand-secondary rounded-full animate-in fade-in slide-in-from-bottom-2 duration-700 delay-150" aria-hidden="true" />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-brand-secondary-light animate-in fade-in-from-bottom-4 duration-700">
+              Markalarımız
+            </h2>
+          <div
+            className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-brand-bronze-300 via-brand-gold-400 to-brand-bronze-300 animate-in fade-in slide-in-from-bottom-2 duration-700 delay-150"
+            aria-hidden="true"
+          />
           <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             <BrandCard
               logo="/markalar/baydoner_logo.svg"
@@ -62,8 +67,8 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
       </section>
 
-      {/* Haberler - Bronze dominant */}
-      <div className="py-8 md:py-12 bg-gradient-to-br from-brand-bronze-50/10 via-transparent to-brand-gold-50/8">
+  {/* Haberler bloğu - dış wrapper sade, içerideki kartlar tasarımını koruyor */}
+  <div className="py-8 md:py-12">
         <HomeAboutNews locale={locale} />
       </div>
 
