@@ -56,34 +56,34 @@ export default function BasvuruFormClient() {
       )}
       <div className="grid md:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="common_name_surname" className="block text-sm font-medium">Ad Soyad *</label>
-          <input id="common_name_surname" className="mt-1 w-full border rounded px-3 py-2" {...register('common_name_surname')} />
+          <label htmlFor="common_name_surname" className="block text-sm font-medium text-brand-primary">Ad Soyad *</label>
+          <input id="common_name_surname" className="mt-1 w-full border-2 border-brand-accent rounded px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow" {...register('common_name_surname')} />
           {errors.common_name_surname && <p className="text-xs text-red-600 mt-1">Zorunlu alan</p>}
         </div>
         <div>
-          <label htmlFor="common_email" className="block text-sm font-medium">E-Posta *</label>
-          <input id="common_email" type="email" className="mt-1 w-full border rounded px-3 py-2" {...register('common_email')} />
+          <label htmlFor="common_email" className="block text-sm font-medium text-brand-primary">E-Posta *</label>
+          <input id="common_email" type="email" className="mt-1 w-full border-2 border-brand-accent rounded px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow" {...register('common_email')} />
           {errors.common_email && <p className="text-xs text-red-600 mt-1">Geçerli e-posta giriniz</p>}
         </div>
       </div>
       <fieldset className="grid grid-cols-3 gap-4">
         <div>
-          <label className="block text-xs font-medium" htmlFor="birth_day">Gün</label>
-          <select id="birth_day" className="mt-1 w-full border rounded px-2 py-2" {...register('birth_day')}>
+          <label className="block text-xs font-medium text-brand-primary" htmlFor="birth_day">Gün</label>
+          <select id="birth_day" className="mt-1 w-full border-2 border-brand-accent rounded px-2 py-2 text-brand-primary shadow-sm focus:shadow-md transition-shadow" {...register('birth_day')}>
             <option value="">--</option>
             {dayOptions.map(d=> <option key={d} value={d}>{d}</option>)}
           </select>
         </div>
         <div>
-          <label className="block text-xs font-medium" htmlFor="birth_month">Ay</label>
-          <select id="birth_month" className="mt-1 w-full border rounded px-2 py-2" {...register('birth_month')}>
+          <label className="block text-xs font-medium text-brand-primary" htmlFor="birth_month">Ay</label>
+          <select id="birth_month" className="mt-1 w-full border-2 border-brand-accent rounded px-2 py-2 text-brand-primary shadow-sm focus:shadow-md transition-shadow" {...register('birth_month')}>
             <option value="">--</option>
             {monthOptions.map(m=> <option key={m} value={m}>{m}</option>)}
           </select>
         </div>
         <div>
-          <label className="block text-xs font-medium" htmlFor="birth_year">Yıl</label>
-          <select id="birth_year" className="mt-1 w-full border rounded px-2 py-2" {...register('birth_year')}>
+          <label className="block text-xs font-medium text-brand-primary" htmlFor="birth_year">Yıl</label>
+          <select id="birth_year" className="mt-1 w-full border-2 border-brand-accent rounded px-2 py-2 text-brand-primary shadow-sm focus:shadow-md transition-shadow" {...register('birth_year')}>
             <option value="">--</option>
             {yearOptions.map(y=> <option key={y} value={y}>{y}</option>)}
           </select>
@@ -91,8 +91,8 @@ export default function BasvuruFormClient() {
       </fieldset>
       <div className="grid md:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="common_sex" className="block text-sm font-medium">Cinsiyet *</label>
-          <select id="common_sex" className="mt-1 w-full border rounded px-2 py-2" {...register('common_sex')}>
+          <label htmlFor="common_sex" className="block text-sm font-medium text-brand-primary">Cinsiyet *</label>
+          <select id="common_sex" className="mt-1 w-full border-2 border-brand-accent rounded px-2 py-2 text-brand-primary shadow-sm focus:shadow-md transition-shadow" {...register('common_sex')}>
             <option value="">Seçiniz</option>
             <option value="bay">Bay</option>
             <option value="bayan">Bayan</option>
@@ -100,8 +100,8 @@ export default function BasvuruFormClient() {
           {errors.common_sex && <p className="text-xs text-red-600 mt-1">Zorunlu</p>}
         </div>
         <div>
-          <label htmlFor="common_maritalStatus" className="block text-sm font-medium">Medeni Durum *</label>
-          <select id="common_maritalStatus" className="mt-1 w-full border rounded px-2 py-2" {...register('common_maritalStatus')}>
+          <label htmlFor="common_maritalStatus" className="block text-sm font-medium text-brand-primary">Medeni Durum *</label>
+          <select id="common_maritalStatus" className="mt-1 w-full border-2 border-brand-accent rounded px-2 py-2 text-brand-primary shadow-sm focus:shadow-md transition-shadow" {...register('common_maritalStatus')}>
             <option value="">Seçiniz</option>
             <option value="evli">Evli</option>
             <option value="bekar">Bekar</option>
@@ -111,8 +111,8 @@ export default function BasvuruFormClient() {
       </div>
       <div className="grid md:grid-cols-3 gap-5">
         <div>
-          <label htmlFor="common_military" className="block text-sm font-medium">Askerlik Durumu *</label>
-          <select id="common_military" className="mt-1 w-full border rounded px-2 py-2" {...register('common_military')}>
+          <label htmlFor="common_military" className="block text-sm font-medium text-brand-primary">Askerlik Durumu *</label>
+          <select id="common_military" className="mt-1 w-full border-2 border-brand-accent rounded px-2 py-2 text-brand-primary shadow-sm focus:shadow-md transition-shadow" {...register('common_military')}>
             <option value="">Seçiniz</option>
             <option value="yapildi">Yapıldı</option>
             <option value="tecilli">Tecilli</option>
@@ -121,16 +121,16 @@ export default function BasvuruFormClient() {
           {errors.common_military && <p className="text-xs text-red-600 mt-1">Zorunlu</p>}
         </div>
         <div>
-          <label htmlFor="common_licence" className="block text-sm font-medium">Ehliyet *</label>
-          <select id="common_licence" className="mt-1 w-full border rounded px-2 py-2" {...register('common_licence')}>
+          <label htmlFor="common_licence" className="block text-sm font-medium text-brand-primary">Ehliyet *</label>
+          <select id="common_licence" className="mt-1 w-full border-2 border-brand-accent rounded px-2 py-2 text-brand-primary shadow-sm focus:shadow-md transition-shadow" {...register('common_licence')}>
             <option value="">Seçiniz</option>
             {['yok','a1','a2','b','c','d','e','f','g','h'].map(l=> <option key={l} value={l}>{l.toUpperCase()}</option>)}
           </select>
           {errors.common_licence && <p className="text-xs text-red-600 mt-1">Zorunlu</p>}
         </div>
         <div>
-          <label htmlFor="userfile" className="block text-sm font-medium">CV Upload (PDF)</label>
-          <input id="userfile" type="file" accept="application/pdf" className="mt-1 w-full border rounded px-2 py-2" onChange={e=>{
+          <label htmlFor="userfile" className="block text-sm font-medium text-brand-primary">CV Upload (PDF)</label>
+          <input id="userfile" type="file" accept="application/pdf" className="mt-1 w-full border-2 border-brand-accent rounded px-2 py-2 text-brand-primary shadow-sm focus:shadow-md transition-shadow" onChange={e=>{
             const f=e.target.files?.[0];
             if(f){ setValue('userfileName', f.name); setValue('userfileType', f.type); setValue('userfileSize', f.size); }
             else { setValue('userfileName', undefined); setValue('userfileType', undefined); setValue('userfileSize', undefined); }
@@ -140,7 +140,7 @@ export default function BasvuruFormClient() {
       </div>
       <div className="flex items-start gap-2">
         <input id="kisiselVerilerinKorunmasi" type="checkbox" className="mt-1" {...register('kisiselVerilerinKorunmasi')} />
-        <label htmlFor="kisiselVerilerinKorunmasi" className="text-sm leading-snug">
+        <label htmlFor="kisiselVerilerinKorunmasi" className="text-sm leading-snug text-brand-primary">
           Kişisel verilerimin <Link href={{ pathname: '/pdf', query: { src: '/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf' } }} target="_blank" rel="noopener noreferrer" className="underline">
             KVKK Aydınlatma Metni
           </Link> kapsamında işlenmesini kabul ediyorum.
@@ -149,7 +149,7 @@ export default function BasvuruFormClient() {
       {errors.kisiselVerilerinKorunmasi && <p className="text-xs text-red-600 -mt-2">Zorunlu</p>}
       <div className="flex items-start gap-2">
         <input id="cerezPolitikasi" type="checkbox" className="mt-1" {...register('cerezPolitikasi')} />
-        <label htmlFor="cerezPolitikasi" className="text-sm leading-snug">
+        <label htmlFor="cerezPolitikasi" className="text-sm leading-snug text-brand-primary">
           <Link href={{ pathname: '/pdf', query: { src: '/hr/Çerez Politikası.pdf' } }} target="_blank" rel="noopener noreferrer" className="underline">
             Çerez Politikası sözleşmesini
           </Link> okudum ve kabul ediyorum.

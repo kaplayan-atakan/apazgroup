@@ -27,15 +27,15 @@ export default async function Page({ params }: Props) {
   const { locale } = params;
   if (!isLocale(locale)) return null;
 
-  const intro = `Her restoranın da aynı hizmet ve kalite standartların da sunan Baydöner, ISO 22000 belgesine sahip üreticiler ile çalışarak en taze malzemeleri, kalite yönetim ve hijyen sistemlerine uygun şekilde ve keyifli mekanlarda, uygun fiyat politikasıyla tüketicileri ile buluşturmayı ilke edindi. Bugüne kadar sayısız ödüller kazanan Baydöner; son olarak, 2015, 2016 ve 2024 yıllarında, AVM Yatırımcıları Derneği tarafından düzenlenen ve halk oylaması ile seçilen “AVM’lerde En Sevilen ve Tercih Edilen Restoran Zinciri” ödülüne layık görüldü.`;
-  const vision = 'Misafirlerimize en iyi müşteri deneyimini yaşatmak.';
-  const mission = 'Misafirlerimize, çalışanlarımıza ve topluma duyarlı bir marka olarak iskenderi herkese ulaşılabilir kılmak.';
+  const intro = `Her restoranında aynı hizmet ve kalite standartların sunan Baydöner, ISO 22000 belgesine sahip üreticiler ile çalışarak en taze malzemeleri, kalite yönetim ve hijyen sistemlerine uygun şekilde ve keyifli mekanlarda, uygun fiyat politikasıyla misafirleri ile buluşturmayı ilke edindi. Bugüne kadar sayısız ödüller kazanan Baydöner; son olarak, 2015, 2016 ve 2024 yıllarında, AVM Yatırımcıları Derneği tarafından düzenlenen ve halk oylaması ile seçilen “AVM’lerde En Sevilen ve Tercih Edilen Restoran Zinciri” ödülüne layık görüldü.`;
+  const vision = 'Geleneksel İskender ustalığını en iyi misafir deneyimiyle sunan, her restoranda aynı ustalığı ve özeni yaşatan marka olmak.';
+  const mission = 'Misafirlerimize, çalışanlarımıza ve topluma duyarlı bir marka olarak, iskenderi herkes için ulaşılabilir kılmak.';
 
   return (
-    <main className="relative">
+    <main className="min-h-dvh">
       <HeroGradient
-        heading="Baydöner"
-        intro="ISO 22000 belgeli üreticilerle çalışan, ödüllü ve 100+ şubeli iskender lider markası."
+  heading="Baydöner"
+  headingClassName="text-brand-primary"
         radialPosition="circle_at_20%_50%"
         contentClassName="max-w-4xl"
         minHeights={{ base: 'min-h-[220px]', md: 'md:min-h-[260px]', lg: 'lg:min-h-[300px]' }}
@@ -57,7 +57,7 @@ export default async function Page({ params }: Props) {
           </figure>
         </div>
       </section>
-      <section className="not-prose py-12">
+      <section className="py-8 md:py-12">
         <div className="max-w-4xl mx-auto px-6">
           <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 p-6 md:p-8 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)]">
             <p className="text-sm md:text-base leading-relaxed text-slate-700 whitespace-pre-line">{intro}</p>
@@ -66,21 +66,21 @@ export default async function Page({ params }: Props) {
       </section>
 
       {/* Vision & Mission cards */}
-      <section className="not-prose pb-12">
+      <section className="py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-6 grid gap-6 md:grid-cols-2">
           <div className="rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 transition-shadow duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
-            <h2 className="text-lg font-semibold tracking-tight mb-3">Vizyonumuz</h2>
-            <p className="text-slate-700 text-sm md:text-base leading-relaxed">{vision}</p>
+            <h2 className="text-lg font-semibold tracking-tight mb-3 text-brand-primary">Vizyonumuz</h2>
+            <p className="text-brand-primary text-sm md:text-base leading-relaxed">{vision}</p>
           </div>
           <div className="rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 transition-shadow duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
-            <h2 className="text-lg font-semibold tracking-tight mb-3">Misyonumuz</h2>
-            <p className="text-slate-700 text-sm md:text-base leading-relaxed">{mission}</p>
+            <h2 className="text-lg font-semibold tracking-tight mb-3 text-brand-primary">Misyonumuz</h2>
+            <p className="text-brand-primary text-sm md:text-base leading-relaxed">{mission}</p>
           </div>
         </div>
       </section>
 
       {/* Other brands (kept) */}
-      <section className="not-prose py-12 bg-slate-50">
+      <section className="py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-xl font-semibold tracking-tight">Diğer Markalarımız</h2>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">

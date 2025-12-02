@@ -33,18 +33,19 @@ export default function PerformansPage({ params }: PageProps) {
   const withLocale = (path: string) => (path === '/' ? `/${loc}` : `/${loc}${path}`);
 
   return (
-    <main className="relative">
+    <main className="min-h-dvh">
       <HeroGradient
-        heading="Hedeflerle Yönetim Ve Performans"
-        intro="Çalışanlarımızın performanslarının sürekli gelişimine odaklanan grubumuz çok yönlü ölçüm ve gelişim planlarıyla sürekli başarıyı hedeflemektedir."
+  heading="Hedeflerle Yönetim ve Performans"
+  headingClassName="text-brand-primary"
+        intro="Hedeflerimizi netleştirir, performansımızı ölçer ve sürekli geliştiririz."
         radialPosition="circle_at_70%_30%"
         minHeights={{ base: 'min-h-[240px]', md: 'md:min-h-[300px]', lg: 'lg:min-h-[360px]' }}
         contentClassName="max-w-5xl"
       />
-      <section className="py-12 md:py-20">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-[1fr_320px] items-start">
-            <article className="relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-slate-200 shadow-sm p-6 md:p-10">
+            <article className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 md:p-10">
               <div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(circle_at_60%_40%,black,transparent_75%)] bg-gradient-to-br from-white/70 via-white/40 to-white/10" />
               <div className="relative">
                 <div className="md:flex md:items-start md:gap-8">
@@ -63,7 +64,7 @@ export default function PerformansPage({ params }: PageProps) {
                       Çalışanlarının performanslarının sürekli gelişimine odaklanan grubumuz çok yönlü ölçüm ve gelişim planlarıyla sürekli başarıyı hedeflemektedir.
                     </CareerParagraph>
                     <CareerParagraph>
-                      Performans Gelişim Sistemimizin iki ana ölçüm alanı bulunmaktadır.
+                      Performans gelişim sistemimizin iki ana ölçüm alanı bulunmaktadır.
                     </CareerParagraph>
                     <h2 className="text-xl font-semibold tracking-tight mt-8 mb-4">Hedeflerle Yönetim</h2>
                     <CareerParagraph>
@@ -71,7 +72,7 @@ export default function PerformansPage({ params }: PageProps) {
                     </CareerParagraph>
                     <h2 className="text-xl font-semibold tracking-tight mt-8 mb-4">Yetkinliklerimizin Geliştirilmesi</h2>
                     <CareerParagraph>
-                      Çalışanlarımızın bireysel gelişimlerini ve kurumsal değerlerimizin sürdürülebilirliğini sağlamak için “yetkinliklerimiz”i aşağıdaki üç alanda ölçümlüyor ve gelişim planları ile sürekli zenginleştirilmesini hedefliyoruz. Bu kapsamda;
+                      Çalışanlarımızın bireysel gelişimlerini ve kurumsal değerlerimizin sürdürülebilirliğini sağlamak için yetkinliklerimizi aşağıdaki üç alanda ölçümlüyor ve gelişim planları ile sürekli zenginleştirilmesini hedefliyoruz. Bu kapsamda;
                     </CareerParagraph>
                     <CareerList>
                       <CareerListItem>Kurumumuzun sürdürülebilirliğini sağlayacak olan kurumsal temel yetkinliklerimiz,</CareerListItem>
@@ -86,7 +87,7 @@ export default function PerformansPage({ params }: PageProps) {
               </div>
             </article>
             <aside className="space-y-6">
-              <nav className="rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-slate-200 shadow-sm p-6 sticky top-8">
+              <nav className="rounded-2xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 sticky top-8">
                 <h3 className="text-base font-semibold tracking-tight text-slate-900 mb-4">Kariyer Bölümleri</h3>
                 <ul className="space-y-1 text-sm">
                   <li>

@@ -310,7 +310,168 @@ Kalite Kriterleri:
   - Renk sisteminin tutarlı kullanımı
   - Ek bileşenlerin erişilebilirlik iyileştirmeleri
 
-## 28. Ara Sprintler (Revizyon & İçerik Doldurma)
+## 27. Sprint 8 İlerleme Durumu
+- Yapılanlar:
+  - Motion Control: `usePrefersReducedMotion` hook ve yardımcı fonksiyonlar oluşturuldu.
+  - Animasyon Bileşenleri: `FadeInSection`, `StaggeredMotionGroup` gibi erişilebilir animasyon bileşenleri.
+  - Font Optimizasyonu: `next/font` ile fontların subset edilmesi ve önbelleğe alınması.
+  - MotionProvider: Framer Motion ile prefers-reduced-motion entegrasyonu.
+  - Lazy Loading: LCP olmayan görseller için lazy loading optimizasyonu.
+  - Performans Bileşenleri: `LazyLoad`, `OptimizedImage` bileşenleri ile dinamik yükleme kontrolü.
+  - Erişilebilirlik İyileştirmeleri:
+    - Navigasyon bileşenleri için ARIA attribute'ları ve semantic HTML yapısı
+    - Footer bileşeni için ARIA heading ve navigation yapıları
+    - BackToTop bileşeni için erişilebilirlik iyileştirmeleri
+    - Klavye navigasyonu ve odak yönetimi
+    - Root layout için HTML/body erişilebilirlik özellikleri
+  - Erişilebilirlik Bileşenleri ve Yardımcıları:
+    - `AccessibleImage` bileşeni (alt text, aria-describedby, figure/figcaption)
+    - `AccessibleFormLabel` bileşeni (required fields, help text, error messages)
+    - `SkipLink` ve odak yönetimi
+    - `LiveRegion` ve ekran okuyucu duyuruları için yardımcı hook
+    - WCAG renk kontrastı yardımcı fonksiyonları
+- Devam Eden:
+  - Renk sisteminin tutarlı kullanımı
+  - Ek bileşenlerin erişilebilirlik iyileştirmeleri
+
+## 28. Tasarım Pattern'leri ve Stil Kuralları
+
+### 28.1 Bronze/Gold Gradient Card Frame Pattern
+Tüm içerik kartları ve sidebar navigation'lar için standart çerçeve pattern'i:
+
+```tsx
+className="rounded-2xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 md:p-8"
+```
+
+**Temel Özellikler:**
+- `rounded-2xl` - Köşe yuvarlatma
+- `overflow-hidden` - İçeriğin taşmasını engelleme
+- `bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85` - Bronze/gold/white gradient arka plan
+- `ring-2 ring-brand-bronze-200/50` - Bronze yarı şeffaf ring çerçeve
+- `shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)]` - Dış ve iç gölge kombinasyonu
+- `p-6 md:p-8` - Responsive padding
+
+**Hover Efekti (Opsiyonel):**
+```tsx
+transition-shadow duration-300 hover:ring-brand-secondary/50 hover:shadow-xl
+```
+
+**Uygulama Alanları:**
+- Kariyer sayfaları main content article'ları
+- Kariyer sayfaları sidebar navigation
+- İletişim sayfası sol bilgi bloğu
+- Markalar sayfaları (Baydöner, PidebyPide, Bursa İshakbey) misyon/vizyon kartları
+- Franchising sayfası içerik kartı
+- Form container'ları (İletişim formu, Başvuru formu)
+
+### 28.2 Primary Color Text Pattern
+Tüm başlık ve önemli metin alanlarında primary color (`#1F3A52` - Navy blue) kullanımı:
+
+**Hero Başlıkları:**
+```tsx
+<HeroGradient
+  heading="Sayfa Başlığı"
+  headingClassName="text-brand-primary"  // Tek renk primary başlık
+  intro="Açıklama metni"
+/>
+```
+
+**Form Label'ları:**
+```tsx
+<label className="block text-sm font-medium text-brand-primary">
+  Alan Adı
+</label>
+```
+
+**Input ve Textarea Alanları:**
+```tsx
+className="... text-brand-primary placeholder:text-brand-primary/60"
+```
+
+**Kart İçi Başlık ve Metin:**
+```tsx
+<h2 className="text-xl font-semibold tracking-tight text-brand-primary">
+  Kart Başlığı
+</h2>
+<p className="text-brand-primary">İçerik metni</p>
+```
+
+**Checkbox/Radio Label'ları:**
+```tsx
+<label className="text-sm leading-snug text-brand-primary">
+  Onay metni
+</label>
+```
+
+**Uygulama Alanları:**
+- Tüm hero component başlıkları
+- Form input/textarea/label metinleri
+- Kariyer sayfaları içerik metinleri (article body hariç - orada `text-slate-700`)
+- Misyon/Vizyon kart içerikleri
+- İletişim sayfası bilgi kartları
+- Kariyer.net ve LinkedIn kart içerikleri
+
+### 28.3 Content Body Text Pattern
+İçerik makalelerinde ve uzun açıklama metinlerinde okunabilirlik için:
+
+```tsx
+<p className="text-slate-700 text-sm md:text-base leading-relaxed">
+  Uzun açıklama metni...
+</p>
+```
+
+**Kullanım Yerleri:**
+- Franchising sayfası açıklama paragrafı
+- Kariyer sayfaları article content (CareerContent bileşeni içinde)
+- Hakkımızda sayfası açıklama metinleri
+
+### 28.4 Sidebar Navigation Pattern
+Kariyer bölümü sidebar navigation'ları için standart yapı:
+
+```tsx
+<aside className="space-y-6">
+  <nav className="rounded-2xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 sticky top-8">
+    <h3 className="text-base font-semibold tracking-tight text-slate-900 mb-4">
+      Kariyer Bölümleri
+    </h3>
+    <ul className="space-y-1 text-sm">
+      {/* Aktif sayfa */}
+      <li>
+        <Link className="font-semibold text-slate-900 border-l-4 border-brand-yellow pl-2 block">
+          Aktif Sayfa
+        </Link>
+      </li>
+      {/* Diğer sayfalar */}
+      <li>
+        <Link className="hover:text-slate-900 text-slate-600 transition-colors">
+          Diğer Sayfa
+        </Link>
+      </li>
+    </ul>
+  </nav>
+</aside>
+```
+
+### 28.5 Renk Paleti Referansı
+**Brand Primary (Navy):** `#1F3A52` - Başlıklar, önemli metinler, CTA elementleri
+**Brand Bronze:** `#B89B6F` - Card frame ring, hover durumları
+**Brand Gold:** `#D4AF37` - Gradient accent, aktif durumlar
+**Brand Yellow:** `#FFC107` - Aktif link border, vurgu
+**Slate 700:** `#334155` - Body text (uzun içerikler)
+**Slate 600:** `#475569` - İkincil linkler
+**Slate 900:** `#0F172A` - Sidebar başlıklar, aktif linkler
+
+### 28.6 Pattern Uygulama Kontrol Listesi
+Yeni sayfa veya bileşen eklerken:
+- [ ] Hero başlığı `headingClassName="text-brand-primary"` kullanıyor mu?
+- [ ] İçerik kartları bronze/gold gradient frame pattern'ini kullanıyor mu?
+- [ ] Form alanları `text-brand-primary` ve `placeholder:text-brand-primary/60` kullanıyor mu?
+- [ ] Sidebar navigation bronze/gold frame ile sarmalanmış mı?
+- [ ] Uzun açıklama metinleri `text-slate-700` kullanıyor mu?
+- [ ] Misyon/Vizyon kartları primary color text kullanıyor mu?
+- [ ] Hover efektleri `transition-shadow` ve `hover:ring-brand-secondary/50` içeriyor mu?
+
+## 29. Ara Sprintler (Revizyon & İçerik Doldurma)
 
 Bu bölüm, legacy projeden (HTML) içerik ve tasarım referansı alınarak, mevcut Next.js mimarisini bozmadan sayfa revizyonları ve içerik doldurma sürecini tanımlar.
 
@@ -324,7 +485,28 @@ Bu bölüm, legacy projeden (HTML) içerik ve tasarım referansı alınarak, mev
 
 Durum Notu: Sprint 8 geçici olarak On Hold; R1 ve R2 tamamlandıktan sonra performans ve a11y iyileştirmelerine geri dönülecek.
 
-## 29. Legacy HTML'den İçerik ve Tasarım Aktarım Yöntemi
+## 29. Ara Sprintler (Revizyon & İçerik Doldurma)
+
+Bu bölüm, legacy projeden (HTML) içerik ve tasarım referansı alınarak, mevcut Next.js mimarisini bozmadan sayfa revizyonları ve içerik doldurma sürecini tanımlar.
+
+- Sprint R1 — İçerik Revizyonu ve Doldurma
+  - Kapsam: TR/EN markdown sayfalarının legacy HTML kaynaklarından birebir içerikle doldurulması; alt metinler, linkler, tablo/listeler; kırık linklerin düzeltilmesi (hedef URL aynıysa).
+  - Kabul Kriterleri: İçerik paritesi %100 (ekleme/çıkarma yok), kırık link=0, alt metin eksikliği=0, build/lint/test/a11y-ci PASS.
+
+- Sprint R2 — Tasarım İyileştirme
+  - Kapsam: Legacy sayfa düzenlerinin mevcut bileşen seti ve Tailwind ile yaklaştırılması; tipografi/spacing iyileştirmeleri; kontrast (WCAG AA) ve görsel hiyerarşi.
+  - Kabul Kriterleri: Lighthouse A11y ≥ 95, kontrast ihlali (kritik)=0, build/lint/test PASS.
+
+Durum Notu: Sprint 8 geçici olarak On Hold; R1 ve R2 tamamlandıktan sonra performans ve a11y iyileştirmelerine geri dönülecek.
+
+**Tasarım Pattern Uygulamaları (R2 Kapsamında):**
+- Tüm içerik sayfalarına bronze/gold gradient card frame uygulandı
+- Hero başlıkları single-color primary pattern'e çevrildi
+- Form elementleri primary color text kullanımına geçirildi
+- Kariyer sayfaları sidebar navigation'ları frame pattern'i ile güncellendi
+- Marka sayfaları (Baydöner, PidebyPide, Bursa İshakbey) misyon/vizyon kartları primary text kullanımına geçirildi
+
+## 30. Legacy HTML'den İçerik ve Tasarım Aktarım Yöntemi
 
 Amaç: Kullanıcı tarafından sırayla paylaşılacak legacy HTML dosyalarından içerik (metin/görsel) ve temel tasarım hiyerarşisini alıp, mevcut proje yapısını bozmadan sayfalara entegre etmek.
 

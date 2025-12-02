@@ -24,9 +24,10 @@ export default function BasvuruFormuPage({ params }: PageProps) {
   const { locale } = params;
   const loc = isLocale(locale) ? locale : 'tr';
   return (
-    <main className="relative">
-      <div className="container mx-auto px-4 max-w-4xl pt-12 pb-24">
-        <p className="text-slate-700 mb-10 leading-relaxed text-base md:text-lg">{loc === 'tr' ? 'Aşağıdaki linklerden Apaz Group bünyesindeki açık pozisyonlara başvuruda bulunabilirsiniz.' : 'Fill out the form below to apply for open positions within Apaz Group. Please ensure all required fields are completed.'}</p>
+    <main className="min-h-dvh">
+      <section className="py-8 md:py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+        <p className="text-brand-secondary-light mb-10 leading-relaxed text-base md:text-lg">{loc === 'tr' ? 'Aşağıdaki linklerden Apaz Group bünyesindeki açık pozisyonlara başvuruda bulunabilirsiniz.' : 'Fill out the form below to apply for open positions within Apaz Group. Please ensure all required fields are completed.'}</p>
   {/* LinkedIn Jobs Card */}
   <div className="mb-12">
           <a
@@ -39,7 +40,7 @@ export default function BasvuruFormuPage({ params }: PageProps) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
               <div className="w-48 flex justify-center">
                 <Image
-                  src="/hr/linkedin.svg"
+                  src="/hr/linkedin.png"
                   alt="Apaz Group LinkedIn İlanları"
                   width={360}
                   height={120}
@@ -104,11 +105,12 @@ export default function BasvuruFormuPage({ params }: PageProps) {
             </div>
           </a>
         </div>
-        <p className="text-slate-700 mb-10 leading-relaxed text-base md:text-lg">{loc === 'tr' ? 'Ayrıca, özgeçmiş bankamızda yer almak isterseniz aşağıdaki formu doldurarak başvurunuzu gerçekleştirebilirsiniz. Zorunlu alanları eksiksiz doldurduğunuzdan emin olun.' : 'Fill out the form below to apply for open positions within Apaz Group. Please ensure all required fields are completed.'}</p>
+        <p className="text-brand-secondary-light mb-10 leading-relaxed text-base md:text-lg">{loc === 'tr' ? 'Ayrıca, özgeçmiş bankamızda yer almak isterseniz aşağıdaki formu doldurarak başvurunuzu gerçekleştirebilirsiniz. Zorunlu alanları eksiksiz doldurduğunuzdan emin olun.' : 'Fill out the form below to apply for open positions within Apaz Group. Please ensure all required fields are completed.'}</p>
   <div className="rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 md:p-8 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
           <BasvuruFormClient />
         </div>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

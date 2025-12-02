@@ -34,7 +34,7 @@ export default function KSSPage({ params }: PageProps) {
   // Yeni metin (kullanıcı tarafından sağlanan) – yapılandırılmış içerik
   const intro: string[] = [
     'Kusursuz misafir deneyiminin yanı sıra kapsayıcılık, sürdürülebilirlik ve sosyal farkındalık, Apaz Group markalarının değişmeyen öncelikleri arasında yer alıyor.',
-    'Herkes için erişilebilir olma yolunda nitelikli adımlar atan Apaz Group, markalarının ürün ve hizmetlerine erişimi kolaylaştıracak projelere imza atıyor.'
+    'Herkes için erişilebilir olma yolunda nitelikli adımlar atan Apaz Group, markalarının ürün ve hizmetlerine erişimi kolaylaştıracak projelerini hayata geçirmeye devam ediyor.'
   ];
   const blindLookHeading = 'Baydöner X BlindLook İş Birliği';
   const blindLookParagraphs: string[] = [
@@ -45,14 +45,15 @@ export default function KSSPage({ params }: PageProps) {
   ];
 
   return (
-    <main>
+    <main className="min-h-dvh">
       <HeroGradient
         heading="Kurumsal Sosyal Sorumluluk"
+        headingClassName="text-brand-primary"
         intro="Kapsayıcılık, sürdürülebilirlik ve sosyal farkındalık odaklı yaklaşımımız."
         minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[230px]', lg: 'lg:min-h-[250px]' }}
         contentClassName="max-w-4xl"
       />
-      <div className="py-10 md:py-16 container mx-auto px-4">
+      <div className="py-8 md:py-12 container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left: Vertical YouTube Shorts video */}
           <div>

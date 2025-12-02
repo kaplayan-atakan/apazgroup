@@ -36,36 +36,37 @@ export default function FranchisingPage({ params }: PageProps) {
   const pageUrl = `${base}/${loc}/franchising`;
 
   return (
-    <main>
+    <main className="min-h-dvh">
       <HeroGradient
-        heading="Franchising"
+  heading="Franchising"
+  headingClassName="text-brand-primary"
         intro={loc === 'tr' ? 'Apaz Group markalarıyla sürdürülebilir büyüme, operasyonel destek ve güçlü marka değeri sunan esnek yatırım modelleri.' : 'Flexible franchise investment models backed by strong brand equity and operational excellence.'}
         minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[230px]', lg: 'lg:min-h-[250px]' }}
         contentClassName="max-w-5xl"
       />
-      <section className="pb-14 pt-6 bg-gradient-to-b from-slate-50 via-white to-white">
+      <section className="py-8 md:py-12">
         <div className="max-w-5xl mx-auto px-6">
           {loc === 'tr' ? (
             <div className="relative">
               <div className="absolute -inset-x-4 -inset-y-4 rounded-2xl bg-gradient-to-br from-brand-primary/5 via-transparent to-brand-accent/5 blur-md" aria-hidden="true" />
               <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 px-7 md:px-10 py-10 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 space-y-6 text-slate-700 text-[15px] leading-[1.75] transition-all duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
                 <p>
-                  Apaz Group olarak, Türk mutfağına hak ettiği değeri verme vizyonuyla çalışmalarımızı sürdürüyoruz. İstikrarlı bir şekilde büyümeye devam ediyoruz. Bundan sonra yapacağımız yeni yatırımlarla, büyüme trendimizi sürdüreceğiz.
+                  Apaz Group olarak, Türk mutfağına hak ettiği değeri verme vizyonuyla çalışmalarımızı sürdürüyoruz. İstikrarlı bir şekilde büyümeye devam ediyoruz. Önümüzde süreçte de yapacağımız yeni yatırımlarla büyüme trendimizi sürdürmeye devam edeceğiz.
                 </p>
                 <p>
-                  Franchise şubelerimize restoranın açılış hazırlıkları süresince ve açılışın ilk gününden itibaren kapsamlı destek sağlıyoruz. Yeni ürün inovasyonu, pazarlama, satın alma, lojistik, eğitim, insan kaynakları, operasyon ve kalite kontrol kritik destek alanlarımızdır.
+                  Franchise şubelerimize restoranın açılış hazırlıkları süresince ve açılışın ilk gününden itibaren kapsamlı bir destek sağlıyoruz. Yeni ürün inovasyonu, pazarlama, satın alma, lojistik, eğitim, insan kaynakları, operasyon ve kalite kontrol kritik destek alanlarımızdır.
                 </p>
                 <p>
-                  Yıllardır süregelen uzmanlığı ile Türkiye’de İskender severlerin öncelikli tercihlerinden olan Baydöner; standart hizmet kalitesi, uygun fiyatı, şık restoran deneyimi ve fark yaratan uygulamalarıyla il ve şube ağını büyütmeyi hedefliyor.
+                  Yıllardır süregelen uzmanlığı ile Türkiye’de İskender severlerin öncelikli tercihlerinden olan Baydöner markamızla; standart hizmet kalitesi, uygun fiyatı, şık restoran deneyimi ve fark yaratan uygulamalarıyla il ve şube ağını büyütmeyi hedefliyoruz.
                 </p>
                 <p>
-                  Döneri en doyurucu haliyle ve erişilebilir fiyatlarla sunan Bursa İshakbey markamızla perakende ağımızı genişletmek üzere yatırımlarımız devam ediyor.
+                  Döneri en doyurucu haliyle ve erişilebilir fiyatlarla sunan Bursa İshakbey markamızla, perakende ağımızı genişletmek üzere yatırımlarımıza devam ediyoruz.
                 </p>
                 <p>
-                  PidebyPide ise yöresel lezzet pideyi hızlı ve doyurucu bir formatta konumlandırarak franchise modeliyle girişimcilere cazip fırsatlar sunuyor.
+                  PidebyPide markamız ile yöresel lezzetimiz pideyi hızlı ve doyurucu bir formatta konumlandırarak franchise modeliyle girişimcilere cazip fırsatlar sunuyoruz.
                 </p>
                 <p className="font-medium text-slate-800">
-                  Cazip yatırım modelleri hakkında bilgi almak için aşağıdaki markalar üzerinden ilgili bağlantılara ulaşabilirsiniz.
+                  Cazip yatırım modelleri hakkında bilgi almak için aşağıdaki markalarımızın ilgili bağlantılarına ulaşabilirsiniz.
                 </p>
               </div>
             </div>
@@ -83,10 +84,10 @@ export default function FranchisingPage({ params }: PageProps) {
       </section>
 
       {/* Brand cards */}
-      <section className="py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+      <section className="py-12 md:py-16 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(circle_at_center,white,transparent)] bg-[radial-gradient(circle_at_30%_20%,rgba(255,215,0,0.12),transparent_60%),radial-gradient(circle_at_70%_60%,rgba(0,82,255,0.12),transparent_55%)]" aria-hidden="true" />
         <div className="max-w-6xl mx-auto px-6 relative">
-          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-center mb-14 text-slate-900">
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-center mb-14 text-brand-secondary-light">
             {loc === 'tr' ? 'Markalarımızla Franchise Fırsatları' : 'Franchise Opportunities'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">

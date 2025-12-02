@@ -27,14 +27,14 @@ export default function PideByPidePage({ params }: PageProps) {
   const { locale } = params;
 
   const intro = `PidebyPide olarak, konuklarımıza, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu halini, enfes bir lezzetle sunuyoruz. Deneyimli ustalarımız tarafından hazırlanan günlük taze hamurdan özel olarak üretilen bol malzemeli ürünlerimizi, çıtır çıtır, lezzetine lezzet katarak servis ediyor, kalitemizden ödün vermeden çalışmalarımıza devam ediyoruz. Lezzet yolculuğumuzun önümüzdeki döneminde Türkiye’deki diğer illeri de kapsayarak hızla büyümeyi hedefliyoruz.`;
-  const vision = 'Geniş kitlelerin tercih ettiği pide restoran zinciri olmak';
-  const mission = 'Lezzetli, doyurucu ve uygun fiyatlı pideyi en kolay ve hızlı şekilde herkese, her yerde ulaştırmak.';
+  const vision = 'Geniş kitlelerin tercih ettiği pide restoran zinciri olmak.';
+  const mission = 'Lezzetli, doyurucu ve uygun fiyatlı pideyi, herkesin en kolay ve en hızlı şekilde erişebileceği hale getirmek.';
 
   return (
-    <main className="relative">
+    <main className="min-h-dvh">
       <HeroGradient
-        heading="PidebyPide"
-        intro="Yöresel pideyi hızlı, doyurucu ve modern konseptte sunan marka."
+  heading="PidebyPide"
+  headingClassName="text-brand-primary"
         radialPosition="circle_at_20%_55%"
         contentClassName="max-w-4xl"
         minHeights={{ base: 'min-h-[220px]', md: 'md:min-h-[260px]', lg: 'lg:min-h-[300px]' }}
@@ -55,13 +55,15 @@ export default function PideByPidePage({ params }: PageProps) {
           </figure>
         </div>
       </section>
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <section className="mb-10">
+      <section className="py-8 md:py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-10">
           <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 p-6 md:p-8 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)]">
             <p className="text-sm md:text-base leading-relaxed text-slate-700 whitespace-pre-line">{intro}</p>
           </div>
-        </section>
-        <section className="grid gap-6 md:grid-cols-2">
+          </div>
+        </div>
+          <div className="grid gap-6 md:grid-cols-2 max-w-6xl mx-auto px-6">
           <div className="rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 transition-shadow duration-300 hover:ring-brand-secondary/50 hover:shadow-xl">
             <h2 className="text-lg font-semibold tracking-tight mb-3 text-brand-primary">Vizyon</h2>
             <p className="text-slate-700 text-sm md:text-base leading-relaxed">{vision}</p>
@@ -70,8 +72,11 @@ export default function PideByPidePage({ params }: PageProps) {
             <h2 className="text-lg font-semibold tracking-tight mb-3 text-brand-primary">Misyon</h2>
             <p className="text-slate-700 text-sm md:text-base leading-relaxed">{mission}</p>
           </div>
-        </section>
-  <section className="mt-14 pb-4">
+          </div>
+      </section>
+
+      <section className="py-8 md:py-12">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-xl font-semibold tracking-tight">Diğer Markalarımız</h2>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <BrandCard
@@ -95,8 +100,8 @@ export default function PideByPidePage({ params }: PageProps) {
               logoScale={1.5}
             />
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

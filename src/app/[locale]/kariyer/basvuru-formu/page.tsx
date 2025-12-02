@@ -31,7 +31,8 @@ export default function BasvuruFormuPage({ params }: PageProps) {
     <div>
       {/* Unified Hero using HeroGradient */}
       <HeroGradient
-        heading={loc === 'tr' ? 'Başvuru Formu' : 'Application Form'}
+  heading={loc === 'tr' ? 'Başvuru Formu' : 'Application Form'}
+  headingClassName="text-brand-primary"
         imageSrc="/hr/ik-apaz--bize-katilin.jpg"
         imageAlt={loc === 'tr' ? 'Başvuru Formu Görseli' : 'Application Form Hero Image'}
         overlayColor="black/40"
@@ -45,7 +46,7 @@ export default function BasvuruFormuPage({ params }: PageProps) {
       <section className="py-12">
         <div className="max-w-3xl mx-auto px-4">
           <div className="prose prose-slate text-center max-w-2xl mx-auto mb-8">
-            <p>
+            <p className="text-brand-secondary-light">
               {loc === 'tr'
                 ? 'Apaz Group bünyesinde yer alan markalarımızda çalışmak için aşağıdaki formu doldurarak başvuruda bulunabilirsiniz.'
                 : 'You can apply to our brands by filling the form below.'}
@@ -60,7 +61,7 @@ export default function BasvuruFormuPage({ params }: PageProps) {
       {/* Brand career links */}
       <section className="py-12 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4">
-          <h3 className="text-2xl font-bold text-center">{loc === 'tr' ? 'Markalarımızda Kariyer' : 'Careers at Our Brands'}</h3>
+          <h3 className="text-2xl font-bold text-center text-brand-secondary-light">{loc === 'tr' ? 'Markalarımızda Kariyer' : 'Careers at Our Brands'}</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <BrandCareerCard
               logo="/brands/baydoner-logo--franchising.png"

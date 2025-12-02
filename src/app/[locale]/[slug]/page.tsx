@@ -99,5 +99,9 @@ export default function ContentPage({ params }: PageProps) {
   if (slug === 'haberler' || slug === 'kurumsal-sosyal-sorumluluk-politikasi' || slug === 'franchising' || slug === 'bize-katilin' || slug === 'basvuru-formu' || slug === 'iletisim' || slug === 'seffaflik-ve-hesap-verebilirlik') {
     redirect(`/${locale}/${slug}`);
   }
-  return <ContentArticle locale={locale} slug={slug} />;
+  return (
+    <main className="min-h-dvh">
+      <ContentArticle locale={locale} slug={slug} />
+    </main>
+  );
 }

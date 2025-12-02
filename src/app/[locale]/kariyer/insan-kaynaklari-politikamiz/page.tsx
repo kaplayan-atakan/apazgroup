@@ -34,14 +34,15 @@ export default function IKPolitikamizPage({ params }: PageProps) {
   return (
     <main className="relative">
       <HeroGradient
-        heading="İnsan Kaynakları Politikamız"
+  heading="İnsan Kaynakları Politikamız"
+  headingClassName="text-brand-primary"
         intro="İnsan odaklı, şeffaf, gelişimi destekleyen ve kurumsal değerlerimizle uyumlu İK yaklaşımımız."
         radialPosition="circle_at_30%_30%"
       />
       <section className="py-12 md:py-20">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-[1fr_320px] items-start">
-            <article className="relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-slate-200 shadow-sm p-6 md:p-10">
+            <article className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 md:p-10">
               <div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(circle_at_60%_40%,black,transparent_75%)] bg-gradient-to-br from-white/70 via-white/40 to-white/10" />
               <div className="relative md:flex md:items-start md:gap-8">
                 <figure className="relative w-full md:w-56 lg:w-64 aspect-[4/5] rounded-lg overflow-hidden shadow ring-1 ring-slate-200 mb-6 md:mb-0 md:shrink-0">
@@ -62,7 +63,7 @@ export default function IKPolitikamizPage({ params }: PageProps) {
               </div>
             </article>
             <aside className="space-y-6">
-              <nav className="rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-slate-200 shadow-sm p-6 sticky top-8">
+              <nav className="rounded-2xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 sticky top-8">
                 <h3 className="text-base font-semibold tracking-tight text-slate-900 mb-4">Kariyer Bölümleri</h3>
                 <ul className="space-y-1 text-sm">
                   <li>

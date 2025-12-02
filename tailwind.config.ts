@@ -9,9 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-  sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-  // Temporarily map brand to Inter until local brand fonts are added
-  brand: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: [
+          'var(--font-carlito)',
+          'Calibri',
+          'Arial',
+          'Helvetica Neue',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
+        // Brand font uses same Carlito configuration
+        brand: [
+          'var(--font-carlito)',
+          'Calibri',
+          'Arial',
+          'system-ui',
+          'sans-serif',
+        ],
       },
       colors: {
         brand: {

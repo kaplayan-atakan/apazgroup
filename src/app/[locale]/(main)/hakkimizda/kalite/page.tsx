@@ -34,15 +34,16 @@ export default function KalitePage({ params }: PageProps) {
   // ] as const;
 
   return (
-    <main>
+    <main className="min-h-dvh">
       <HeroGradient
-        heading="Kalite"
+  heading="Kalite"
+  headingClassName="text-brand-primary"
         intro="Kalite politikamız, süreçlerimiz ve hijyen uygulamalarımız."
         minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[240px]', lg: 'lg:min-h-[260px]' }}
         contentClassName="max-w-4xl"
       />
       {/* Structured content */}
-      <div className="px-6 py-10 md:py-14 max-w-7xl mx-auto space-y-20">
+      <div className="px-6 py-8 md:py-12 max-w-7xl mx-auto space-y-20">
         {/* Kalite Taahhüdü (üste alındı) */}
         <section
           aria-labelledby="kalite-taahhudu-heading"
@@ -51,10 +52,10 @@ export default function KalitePage({ params }: PageProps) {
           <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(circle_at_center,white,transparent)] bg-[radial-gradient(circle_at_30%_25%,rgba(255,215,0,0.15),transparent_70%),radial-gradient(circle_at_75%_65%,rgba(0,82,255,0.15),transparent_65%)]" aria-hidden="true" />
           <div className="relative">
             <h2 id="kalite-taahhudu-heading" className="mt-8 mb-6 text-2xl md:text-3xl font-semibold tracking-tight text-brand-primary">Kalite Taahhüdümüz</h2>
-            <p className="text-slate-700 leading-relaxed text-[15px] md:text-base max-w-4xl">
+            <p className="text-slate-700 leading-relaxed text-[15px] md:text-base">
               Apaz Group olarak, tüm markalarımızda aynı yüksek kalite anlayışıyla hizmet vermeyi taahhüt ediyoruz. Kaliteyi bir hedef değil, sürekli geliştirilen bir süreç olarak görüyor ve her adımımızda bu anlayışı uyguluyoruz.
             </p>
-            <p className="text-slate-700 leading-relaxed text-[15px] md:text-base max-w-4xl mt-4">
+            <p className="text-slate-700 leading-relaxed text-[15px] md:text-base mt-4">
               Markalarımızda sunduğumuz her ürün ve hizmet, Apaz Group’un kalite anlayışını ve müşterilerine verdiği değeri yansıtmaktadır.
             </p>
           </div>
@@ -91,37 +92,37 @@ export default function KalitePage({ params }: PageProps) {
                 <li className="relative">
                   <div className="flex items-start gap-4">
                     <span className="shrink-0 w-8 h-8 rounded-full bg-brand-yellow/90 text-black font-bold flex items-center justify-center text-sm shadow ring-1 ring-black/5">1</span>
-                    <p className="leading-relaxed text-[15px] md:text-base"><strong>1. Tedarikçi Seçimi:</strong> Gıda üreticilerimizi ve tedarikçilerimizi işbirliği öncesinde uluslararası standartlara göre denetliyoruz. Denetimler gıda mühendisi ve veteriner hekimler tarafından her yıl tekrarlanıyor. Tercihimizi helal sertifikalı, yerli üreticilerden yana kullanıyoruz.</p>
+                    <p className="leading-relaxed text-[15px] md:text-base text-brand-primary"><strong>1. Tedarikçi Seçimi:</strong> Gıda üreticilerimizi ve tedarikçilerimizi işbirliği öncesinde uluslararası standartlara göre denetliyoruz. Denetimler gıda mühendisi ve veteriner hekimler tarafından her yıl tekrarlanıyor. Tercihimizi helal sertifikalı, yerli üreticilerden yana kullanıyoruz.</p>
                   </div>
                 </li>
                 <li className="relative">
                   <div className="flex items-start gap-4">
                     <span className="shrink-0 w-8 h-8 rounded-full bg-brand-yellow/90 text-black font-bold flex items-center justify-center text-sm shadow ring-1 ring-black/5">2</span>
-                    <p className="leading-relaxed text-[15px] md:text-base"><strong>2. Ürün Kontrolleri:</strong> Depolarımıza ve mutfaklarımıza giren her ürün, misafirlerimize ulaşmadan önce analiz ve kontrollerden geçiyor. Böylece ürünlerimizin taze ve güvenli olması garanti altına alınıyor.</p>
+                    <p className="leading-relaxed text-[15px] md:text-base text-brand-primary"><strong>2. Ürün Kontrolleri:</strong> Depolarımıza ve mutfaklarımıza giren her ürün, misafirlerimize ulaşmadan önce analiz ve kontrollerden geçiyor. Böylece ürünlerimizin taze ve güvenli olması garanti altına alınıyor.</p>
                   </div>
                 </li>
                 <li className="relative">
                   <div className="flex items-start gap-4">
                     <span className="shrink-0 w-8 h-8 rounded-full bg-brand-yellow/90 text-black font-bold flex items-center justify-center text-sm shadow ring-1 ring-black/5">3</span>
-                    <p className="leading-relaxed text-[15px] md:text-base"><strong>3. Üretim Süreçleri:</strong> Tüm üretimlerimiz, belirlenmiş standart reçete ve prosedürlere göre yapılır. Böylece her ürünün aynı kalite ve lezzette olması sağlanır.</p>
+                    <p className="leading-relaxed text-[15px] md:text-base text-brand-primary"><strong>3. Üretim Süreçleri:</strong> Tüm üretimlerimiz, belirlenmiş standart reçete ve prosedürlere göre yapılır. Böylece her ürünün aynı kalite ve lezzette olması sağlanır.</p>
                   </div>
                 </li>
                 <li className="relative">
                   <div className="flex items-start gap-4">
                     <span className="shrink-0 w-8 h-8 rounded-full bg-brand-yellow/90 text-black font-bold flex items-center justify-center text-sm shadow ring-1 ring-black/5">4</span>
-                    <p className="leading-relaxed text-[15px] md:text-base"><strong>4. Şube Denetimleri:</strong> Tüm şubelerimiz düzenli olarak denetlenir ve kalite standartlarımıza uygunluğu raporlanır. Böylece her noktada aynı kaliteyi sunarız.</p>
+                    <p className="leading-relaxed text-[15px] md:text-base text-brand-primary"><strong>4. Şube Denetimleri:</strong> Tüm şubelerimiz düzenli olarak denetlenir ve kalite standartlarımıza uygunluğu raporlanır. Böylece her noktada aynı kaliteyi sunarız.</p>
                   </div>
                 </li>
                 <li className="relative">
                   <div className="flex items-start gap-4">
                     <span className="shrink-0 w-8 h-8 rounded-full bg-brand-yellow/90 text-black font-bold flex items-center justify-center text-sm shadow ring-1 ring-black/5">5</span>
-                    <p className="leading-relaxed text-[15px] md:text-base"><strong>5. Hazırlık ve Pişirme Süreci:</strong> Gıda güvenliği, 7/24 dijital sistemlerle takip ediliyor. Doğru sıcaklıklarda muhafaza, uygun pişirme teknikleri, sipariş üzerine hazırlık ve hijyen standartlarına uyum sürekli denetleniyor.</p>
+                    <p className="leading-relaxed text-[15px] md:text-base text-brand-primary"><strong>5. Hazırlık ve Pişirme Süreci:</strong> Gıda güvenliği, 7/24 dijital sistemlerle takip ediliyor. Doğru sıcaklıklarda muhafaza, uygun pişirme teknikleri, sipariş üzerine hazırlık ve hijyen standartlarına uyum sürekli denetleniyor.</p>
                   </div>
                 </li>
                 <li className="relative">
                   <div className="flex items-start gap-4">
                     <span className="shrink-0 w-8 h-8 rounded-full bg-brand-yellow/90 text-black font-bold flex items-center justify-center text-sm shadow ring-1 ring-black/5">6</span>
-                    <p className="leading-relaxed text-[15px] md:text-base"><strong>6. Şeffaf Mutfak:</strong> Mutfaklarımızda kaliteyi sadece biz değil, siz de görebilirsiniz. Cam bölmeden, banko gerisinden veya giriş kapısından mutfağımızı dilediğiniz an izleyerek ürünlerin nasıl hazırlandığını yerinde inceleyebilirsiniz.</p>
+                    <p className="leading-relaxed text-[15px] md:text-base text-brand-primary"><strong>6. Şeffaf Mutfak:</strong> Mutfaklarımızda kaliteyi sadece biz değil, siz de görebilirsiniz. Cam bölmeden, banko gerisinden veya giriş kapısından mutfağımızı dilediğiniz an izleyerek ürünlerin nasıl hazırlandığını yerinde inceleyebilirsiniz.</p>
                   </div>
                 </li>
               </ol>

@@ -29,16 +29,17 @@ export default function SeffaflikPage({ params }: PageProps) {
   if (!isLocale(locale)) return null;
 
   return (
-    <main>
+    <main className="min-h-dvh">
       <HeroGradient
-        heading="Şeffaflık ve Hesap Verebilirlik Politikası"
+  heading="Şeffaflık ve Hesap Verebilirlik Politikası"
+  headingClassName="text-brand-primary"
         intro="Şeffaflık, izlenebilirlik ve hesap verebilirlik ilkelerimiz."
         minHeights={{ base: 'min-h-[210px]', md: 'md:min-h-[240px]', lg: 'lg:min-h-[260px]' }}
         contentClassName="max-w-4xl"
       />
 
       {/* Content */}
-  <section className="py-10 md:py-16">
+  <section className="py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
           {/* Left: text */}
           <div className="relative">

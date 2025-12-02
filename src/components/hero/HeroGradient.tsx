@@ -6,6 +6,7 @@ import { usePrefersReducedMotion, motionConfig } from '../../lib/motion';
 
 interface HeroGradientProps {
   heading: string;
+  headingClassName?: string;
   intro?: string;
   imageSrc?: string; // optional background image
   imageAlt?: string;
@@ -24,6 +25,7 @@ interface HeroGradientProps {
  */
 export const HeroGradient: React.FC<HeroGradientProps> = ({
   heading,
+  headingClassName,
   intro,
   imageSrc,
   imageAlt = heading,
@@ -87,11 +89,13 @@ export const HeroGradient: React.FC<HeroGradientProps> = ({
           animation: `heroFadeIn ${duration}ms ${easing} forwards`,
         }}
       >
-        <h1 className="text-balance text-3xl md:text-5xl font-bold tracking-tight leading-[1.15] bg-gradient-to-br from-brand-primary via-brand-accent to-brand-primary bg-clip-text text-transparent py-1 drop-shadow-sm">
-          {heading}
-        </h1>
+        {(() => {
+          const base = 'text-balance text-3xl md:text-5xl font-bold tracking-tight leading-[1.15] py-1 drop-shadow-sm';
+          const headingClasses = headingClassName ? `${base} ${headingClassName}` : `${base} bg-gradient-to-br from-brand-primary via-brand-accent to-brand-primary bg-clip-text text-transparent`;
+          return <h1 className={headingClasses}>{heading}</h1>;
+        })()}
         {intro && (
-          <p className="mt-6 text-lg md:text-xl text-brand-primary/80 leading-relaxed max-w-3xl mx-auto font-medium">{intro}</p>
+          <p className="mt-6 text-lg md:text-xl text-brand-primary/80 leading-relaxed max-w-5xl mx-auto font-medium">{intro}</p>
         )}
       </div>
       {/* Keyframes (scoped via global since Tailwind can't generate dynamic) */}

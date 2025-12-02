@@ -1,34 +1,48 @@
-import { Inter } from 'next/font/google';
+import { Carlito } from 'next/font/google';
 
-// Import Inter with Latin subset for better performance
-export const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
+// Import Carlito with Latin-ext for Turkish character support
+export const carlito = Carlito({
+  subsets: ['latin', 'latin-ext'], // Türkçe karakterler için latin-ext şart
+  weight: ['400', '700'], // Carlito sadece Regular ve Bold destekler
+  style: ['normal', 'italic'],
+  display: 'swap', // FOUT önleme, performans için swap
+  variable: '--font-carlito',
+  preload: true,
+  fallback: ['Calibri', 'Arial', 'Helvetica Neue', 'sans-serif'],
 });
 
 // CSS variables to be used in tailwind.config.ts
-// Temporary: brand font disabled until files are added; brand maps to Inter.
-export const fontVariables = `${inter.variable}`;
+export const fontVariables = `${carlito.variable}`;
 
 /**
  * Font preload optimization guide:
  * 
- * 1. Make sure fonts are placed in /public/fonts/ directory
- * 2. Use next/font/local for local fonts or next/font/google for Google fonts
- * 3. Use 'swap' display strategy for better UX during font loading
- * 4. Use subsets when possible to reduce font file size
- * 5. Include only the weights you actually use in your design
+ * Current font: Carlito (Google Fonts)
+ * - Weights: 400 (Regular), 700 (Bold)
+ * - Styles: normal, italic
+ * - Character sets: Latin, Latin Extended (Turkish support: ç, ğ, ı, ö, ş, ü)
+ * - Fallback chain: Calibri → Arial → Helvetica Neue → system sans-serif
  * 
- * In layout.tsx, add the font variables to the body className:
- * <body className={`${fontVariables} ...other classes`}>
+ * Optimization features:
+ * 1. 'swap' display strategy - prevents FOUT, shows fallback until font loads
+ * 2. Subset optimization - only Latin + Latin-ext characters loaded
+ * 3. Preload enabled - critical font loaded early in page lifecycle
+ * 4. Self-hosted - Next.js downloads and serves fonts (no runtime Google requests)
  * 
- * In tailwind.config.ts, reference the CSS variables:
+ * Usage in components:
+ * - Body text: font-normal (400)
+ * - Emphasized/Bold: font-bold (700)
+ * - Headings: font-bold (700)
+ * - Note: font-medium (500), font-semibold (600) will fallback to nearest weight
+ * 
+ * In layout.tsx, font variable is applied to <body>:
+ * <body className={`${fontVariables} font-sans antialiased`}>
+ * 
+ * In tailwind.config.ts, Carlito is the primary sans-serif font:
  * theme: {
  *   extend: {
  *     fontFamily: {
- *       sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
- *       brand: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+ *       sans: ['var(--font-carlito)', 'Calibri', 'Arial', ...],
  *     },
  *   },
  * },

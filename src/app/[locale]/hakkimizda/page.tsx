@@ -15,14 +15,13 @@ const BRAND_SECTIONS = [
       <>
         {/* apaz group start */}
         <p>
-          2007 yılında İzmir&apos;de kurulan Apaz Group, faaliyetlerine ilk olarak Baydöner markası ile başladı. Geçtiğimiz yıllarda çalışmalarına ara vermeden devam eden Apaz Group, Baydöner ile Türkiye&apos;nin dört bir yanında büyürken, yeme içme sektörüne 2 yeni marka kazandırdı:
+          2007 yılında İzmir&apos;de kurduğumuz Apaz Group olarak çalışmalarımıza ilk olarak Baydöner markamızla başladık. Geçtiğimiz yıllarda hiç ara vermeden sürdürdüğümüz büyüme yolculuğumuzda, Baydöner markamız ile Türkiye&apos;nin dört bir yanında büyürken yeme-içme sektörüne iki yeni marka daha kazandırdık.
         </p>
-        <ul className="list-disc ml-6">
-          <li>2018 yılında PidebyPide</li>
-          <li>2019 yılında ise Bursa İshakbey</li>
-        </ul>
         <p>
-          markaları Apaz Group çatısı altında misafirlerini ağırlamaya başladı. Apaz Group bünyesinde yer alan Baydöner, PidebyPide ve Bursa İshakbey markaları, Türk mutfağının yöresel lezzetlerini kaliteli hizmet ve uygun fiyat anlayışıyla lezzet tutkunlarıyla buluşturuyor.
+          2018 yılında PidebyPide, 2019 yılında ise Bursa İshakbey markalarımızı misafirlerimizle buluşturarak ailemizi büyüttük.
+        </p>
+        <p>
+          Apaz Group çatısı altında yer alan Baydöner, PidebyPide ve Bursa İshakbey markalarımızla, Türk mutfağının yöresel lezzetlerini, kaliteli hizmet ve uygun fiyat anlayışımızla lezzet tutkunlarıyla bir araya getirmeye devam ediyoruz.
         </p>
       </>
     )
@@ -34,7 +33,7 @@ const BRAND_SECTIONS = [
       <>
         {/* baydoner start */}
         <p>
-          2007 yılında büyük bir heyecanla Türkiye’nin geleneksel lezzeti iskendere hak ettiği değeri vermek için Baydöner markası ile yola çıktık. Türk mutfağının geleneksel ürünü iskenderi başarı ile hızlı servis restoran pazarına uyarlayan Baydöner, kısa sürede ülkenin en tanınmış Fast Casual restoran zincirlerinden biri oldu. Yeme-içme alanlarının en çok tercih edilen ürünü döner-iskender olurken bu kategoride akla gelen ilk marka olma başarısına ulaştık.
+          2007 yılında büyük bir heyecanla Türkiye&apos;nin geleneksel lezzeti iskendere hak ettiği değeri vermek için Baydöner markası ile yola çıktık. Türk mutfağının geleneksel ürünü iskenderi başarı ile hızlı servis restoran pazarına uyarladığımız Baydöner markamız, kısa sürede ülkenin en tanınmış Fast Casual restoran zincirlerinden biri oldu. Yeme-içme alanlarının en çok tercih edilen ürünü döner-iskender olurken AVM&apos;lerde bu kategoride akla gelen ilk marka olma başarısına Baydöner markamız ile sürdürmeye devam ediyoruz.
         </p>
       </>
     )
@@ -58,7 +57,7 @@ const BRAND_SECTIONS = [
       <>
         {/* bursaishakbey start */}
         <p>
-          Türk mutfağının klasikleşmiş tadı döneri en lezzetli ve en doyurucu haliyle sunmayı ilke edinen Bursa İshakbey, döner lezzetini taçlandıran ürün çeşitliliği, İskender ve ekmek arası ürün sunumları ile konuklarını ağırlıyor. Ayrıcalıklı konseptiyle yeme-içme sektöründe fark yaratan Bursa İshakbey, self servis konsepti ve uygun fiyatlı doyurucu menü anlayışıyla öne çıkıyor.
+          Türk mutfağının klasikleşmiş tadı döneri en lezzetli ve en doyurucu haliyle sunmayı ilke edindiğimiz Bursa İshakbey markamız ile döner lezzetini taçlandıran ürün çeşitliliği, İskender ve ekmek arası ürün sunumları ile konuklarını ağırlıyoruz. Ayrıcalıklı konseptiyle yeme-içme sektöründe fark yaratan Bursa İshakbey, self servis konsepti ve uygun fiyatlı doyurucu menü anlayışıyla öne çıkıyor.
         </p>
       </>
     )
@@ -70,15 +69,17 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
   if (!isLocale(locale)) return null;
   const accentCycle = ['brand-primary', 'brand-secondary', 'brand-accent', 'brand-yellow'] as const;
   return (
-    <main>
+    <main className="min-h-dvh">
       <HeroGradient
-        heading="Apaz Group Hakkında"
+  heading="Apaz Group Hakkında"
+  headingClassName="text-brand-primary"
         intro="Apaz Group'un kuruluşu, vizyonu, misyonu ve değerleri."
         minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[240px]', lg: 'lg:min-h-[260px]' }}
         contentClassName="max-w-4xl"
       />
-      <article className="prose prose-slate max-w-none px-6 py-10 md:py-12 mx-auto">
-      <section className="mb-12 space-y-10">
+      <section className="py-8 md:py-12">
+        <article className="prose prose-slate max-w-none px-6 mx-auto">
+          <div className="mb-12 space-y-10">
         {BRAND_SECTIONS.map((section, idx) => {
           const accent = accentCycle[idx % accentCycle.length]!; // safe
           // Map accent token to concrete utility sets (avoid dynamic class names for Tailwind)
@@ -115,7 +116,8 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
                 <div
                   className={(() => {
                     const common = 'w-full h-full flex items-center justify-center';
-                    if (section.key === 'apaz-group' || section.key === 'baydoner') return common + ' scale-150 sm:scale-125';
+                    if (section.key === 'apaz-group') return common + ' scale-[2] sm:scale-[1.8]';
+                    if (section.key === 'baydoner') return common + ' scale-150 sm:scale-125';
                     if (section.key === 'pidebypide') return common + ' scale-95 sm:scale-90';
                     return common;
                   })()}
@@ -152,12 +154,12 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
         <div className="grid md:grid-cols-3 gap-6 pt-4">
           <section className="relative p-6 md:p-7 rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
             <h2 className="text-xl font-semibold mb-3 text-brand-primary after:block after:mt-1 after:h-0.5 after:w-12 after:bg-brand-primary/60">Vizyonumuz</h2>
-            <p className="text-slate-900">İnovatif ve en iyilerin çalışmak istediği markalara sahip olmak.</p>
+            <p className="text-slate-900">İnovatif yaklaşımlarla büyüyen, sektörün en yetkin profesyonellerinin yer almak isteyeceği güçlü markalara sahip olmak.</p>
             <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-brand-primary/40 via-brand-accent/30 to-brand-yellow/40 rounded-b-xl" aria-hidden="true" />
           </section>
           <section className="relative p-6 md:p-7 rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
             <h2 className="text-xl font-semibold mb-3 text-brand-secondary after:block after:mt-1 after:h-0.5 after:w-12 after:bg-brand-secondary/60">Misyonumuz</h2>
-            <p className="text-slate-900">Yenilikçi ve güçlü fikirlerle müşterilerimizin kendilerini özel hissetmelerini sağlar, iş arkadaşlarımızın emeğine değer veririz.</p>
+            <p className="text-slate-900">Yenilikçi ve güçlü fikirlerle müşterilerimizin kendilerini özel hissetmelerini sağlar, çalışma arkadaşlarımızın emeğine değer veririz.</p>
             <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-brand-secondary/40 via-brand-accent/30 to-brand-primary/40 rounded-b-xl" aria-hidden="true" />
           </section>
           <section className="relative p-6 md:p-7 rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
@@ -170,8 +172,9 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
             <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-brand-accent/40 via-brand-yellow/30 to-brand-primary/40 rounded-b-xl" aria-hidden="true" />
           </section>
         </div>
+          </div>
+        </article>
       </section>
-      </article>
     </main>
   );
 }

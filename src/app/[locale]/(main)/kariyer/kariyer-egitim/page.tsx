@@ -33,15 +33,16 @@ export default function KariyerEgitimPage({ params }: PageProps) {
   const withLocale = (path: string) => (path === '/' ? `/${loc}` : `/${loc}${path}`);
 
   return (
-    <main className="relative">
+    <main className="min-h-dvh">
       {/* Gradient Hero */}
       <HeroGradient
-        heading="Eğitim ve Kariyer Olanaklarımız"
+  heading="Eğitim ve Kariyer Olanaklarımız"
+  headingClassName="text-brand-primary"
         intro="Apaz Group'ta çalışanlarımızın sürekli gelişimini destekliyor, kariyer yolculuklarında yanlarında oluyoruz. Sürekli öğrenme kültürü ile her çalışanımızın potansiyelini en üst düzeye çıkarmasına olanak tanıyoruz."
         radialPosition="circle_at_75%_35%"
       />
 
-      <section className="py-12 md:py-20">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-[1fr_320px] items-start">
             <article className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 md:p-10">
@@ -58,10 +59,10 @@ export default function KariyerEgitimPage({ params }: PageProps) {
                 </figure>
                 <CareerContent>
                   <CareerParagraph>Şirketimizde her sene sonunda bir sonraki yılın hedefleri ve mevcut senenin performans kriterlerinin sonuçları ve müşteri geri bildirimlerinin analizleri sonucunda eğitim ihtiyacı tespiti yapılmakta ve bu tespitler doğrultusunda gelişim planları oluşturulmaktadır.</CareerParagraph>
-                  <CareerParagraph>Apaz Gelişim Atölyesi ismini verdiğimiz online Eğitim Okulumuz’da çalışanlarımızın mesleki gelişimlerini sağlayan uygulamalı, interaktif eğitimlerimizin yanı sıra Eğitim Şubeleri’mizde yöneticilik pozisyonlarına aday olan çalışanlarımıza uzun süreli teorik ve pratik eğitimlerden oluşan geliştirme programları sunulmaktadır.</CareerParagraph>
-                  <CareerParagraph>Ayrıca Operasyon Yöneticilerimiz ve Saha Eğitim Müdürü’müz tarafından yapılan saha ziyaretlerinde yerinde uygulamalı eğitimler ile de çalışanlarımızın gelişimleri sağlanmaktadır.</CareerParagraph>
+                  <CareerParagraph>Apaz Gelişim Atölyesi ismini verdiğimiz online eğitim okulumuzda çalışanlarımızın mesleki gelişimlerini sağlayan uygulamalı, interaktif eğitimlerimizin yanı sıra eğitim şubelerimizde yöneticilik pozisyonlarına aday olan çalışanlarımıza uzun süreli teorik ve pratik eğitimlerden oluşan geliştirme programları sunulmaktadır.</CareerParagraph>
+                  <CareerParagraph>Ayrıca Operasyon Yöneticileri’miz ve Saha Eğitim Müdürü’müz tarafından yapılan saha ziyaretlerinde yerinde uygulamalı eğitimler ile de çalışanlarımızın gelişimleri sağlanmaktadır.</CareerParagraph>
                   <CareerParagraph>Yasal zorunluluk gereği alınması gerekli eğitimlerimiz de yine Apaz Gelişim Atölyesi üzerinden tüm çalışanlarımızın erişimine sunulmakta olup çalışanlarımız, zaman ve mekan kısıtlaması olmaksızın eğitimlerini tamamlayarak sertifikalarını alabilmektedirler.</CareerParagraph>
-                  <CareerParagraph>Genel Müdürlük çalışanlarımız ise, yıllık eğitim planları doğrultusunda şirket içi ve şirket dışı kaynaklardan mesleki gelişim konularında eğitim alırken teknolojiyi ve iş kollarındaki gelişmeleri takip edecek kongre ve konferanslara da katılmaktadırlar. </CareerParagraph>
+                  <CareerParagraph>Genel Müdürlük çalışanlarımız ise, yıllık eğitim planları doğrultusunda şirket içi ve şirket dışı kaynaklardan mesleki gelişim konularında eğitim alırken, teknolojiyi ve iş kollarındaki gelişmeleri takip edecek kongre ve konferanslara da katılmaktadırlar.</CareerParagraph>
                   <CareerParagraph>Ayrıca, tüm çalışanlarımız Apaz Gelişim Atölyemiz üzerinden kişisel gelişim ve misafir memnuniyeti konularında eğitim alabilmektedir.</CareerParagraph>
                 </CareerContent>
               </div>

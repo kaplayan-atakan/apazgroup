@@ -65,13 +65,13 @@ export function BasvuruForm({ locale = 'tr' }: { locale?: 'tr' | 'en' }) {
   <form onSubmit={handleSubmit(onSubmit)} className="not-prose grid gap-4 max-w-xl" noValidate aria-describedby="form-help">
       <fieldset className="grid md:grid-cols-2 gap-4">
       <div>
-          <label className="block text-sm font-medium" htmlFor="name">{t(locale, 'form.name')}</label>
-        <input id="name" className="mt-1 w-full border rounded px-3 py-2" {...register('name')} />
+          <label className="block text-sm font-medium text-brand-primary" htmlFor="name">{t(locale, 'form.name')}</label>
+        <input id="name" className="mt-1 w-full border rounded px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow" {...register('name')} />
           {errors.name && <p role="alert" className="mt-1 text-xs text-red-600">{t(locale, `form.errors.${errors.name.message}`, String(errors.name.message))}</p>}
       </div>
       <div>
-          <label className="block text-sm font-medium" htmlFor="surname">{locale === 'tr' ? 'Soyad' : 'Surname'}</label>
-          <input id="surname" className="mt-1 w-full border rounded px-3 py-2" {...register('surname')} />
+          <label className="block text-sm font-medium text-brand-primary" htmlFor="surname">{locale === 'tr' ? 'Soyad' : 'Surname'}</label>
+          <input id="surname" className="mt-1 w-full border rounded px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow" {...register('surname')} />
           {errors.surname && (
             <p role="alert" className="mt-1 text-xs text-red-600">
               {t(locale, `form.errors.${errors.surname.message}`, String(errors.surname.message))}
@@ -80,20 +80,20 @@ export function BasvuruForm({ locale = 'tr' }: { locale?: 'tr' | 'en' }) {
       </div>
       </fieldset>
       <div>
-        <label className="block text-sm font-medium" htmlFor="email">{t(locale, 'form.email')}</label>
-        <input id="email" type="email" className="mt-1 w-full border rounded px-3 py-2" {...register('email')} />
+        <label className="block text-sm font-medium text-brand-primary" htmlFor="email">{t(locale, 'form.email')}</label>
+        <input id="email" type="email" className="mt-1 w-full border rounded px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow" {...register('email')} />
         {errors.email && <p role="alert" className="mt-1 text-xs text-red-600">{t(locale, `form.errors.${errors.email.message}`, String(errors.email.message))}</p>}
       </div>
       <div>
-        <label className="block text-sm font-medium" htmlFor="phone">{t(locale, 'form.phone')}</label>
-        <input id="phone" className="mt-1 w-full border rounded px-3 py-2" {...register('phone')} />
+        <label className="block text-sm font-medium text-brand-primary" htmlFor="phone">{t(locale, 'form.phone')}</label>
+        <input id="phone" className="mt-1 w-full border rounded px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow" {...register('phone')} />
         {errors.phone && <p role="alert" className="mt-1 text-xs text-red-600">{t(locale, `form.errors.${errors.phone.message}`, String(errors.phone.message))}</p>}
       </div>
       <div>
-        <label className="block text-sm font-medium" htmlFor="position">{t(locale, 'form.position')}</label>
+        <label className="block text-sm font-medium text-brand-primary" htmlFor="position">{t(locale, 'form.position')}</label>
         <input
           id="position"
-          className="mt-1 w-full border rounded px-3 py-2"
+          className="mt-1 w-full border rounded px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow"
           maxLength={120}
           aria-describedby="position-count"
           {...register('position')}
@@ -104,11 +104,11 @@ export function BasvuruForm({ locale = 'tr' }: { locale?: 'tr' | 'en' }) {
         </div>
       </div>
       <div>
-        <label className="block text-sm font-medium" htmlFor="experience">{locale === 'tr' ? 'Deneyim' : 'Experience'}</label>
+        <label className="block text-sm font-medium text-brand-primary" htmlFor="experience">{locale === 'tr' ? 'Deneyim' : 'Experience'}</label>
         <textarea
           id="experience"
           rows={3}
-          className="mt-1 w-full border rounded px-3 py-2"
+          className="mt-1 w-full border rounded px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow"
           maxLength={400}
           aria-describedby="experience-count"
           {...register('experience')}
@@ -118,11 +118,11 @@ export function BasvuruForm({ locale = 'tr' }: { locale?: 'tr' | 'en' }) {
         </div>
       </div>
       <div>
-        <label className="block text-sm font-medium" htmlFor="message">{t(locale, 'form.message')}</label>
+        <label className="block text-sm font-medium text-brand-primary" htmlFor="message">{t(locale, 'form.message')}</label>
         <textarea
           id="message"
           rows={5}
-          className="mt-1 w-full border rounded px-3 py-2"
+          className="mt-1 w-full border rounded px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow"
           maxLength={2000}
           aria-describedby="message-count"
           {...register('message')}
@@ -141,7 +141,7 @@ export function BasvuruForm({ locale = 'tr' }: { locale?: 'tr' | 'en' }) {
 
       <div className="flex items-start gap-2">
         <input id="consent" type="checkbox" className="mt-1" aria-required="true" {...register('consent', { required: true })} />
-        <label htmlFor="consent" className="text-sm">
+        <label htmlFor="consent" className="text-sm text-brand-primary">
           {t(locale, 'form.consent')} (
           <Link href={{ pathname: '/pdf', query: { src: '/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf' } }} target="_blank" rel="noopener noreferrer" className="underline">
             {locale === 'tr' ? 'KVKK' : 'KVKK'}
@@ -152,12 +152,12 @@ export function BasvuruForm({ locale = 'tr' }: { locale?: 'tr' | 'en' }) {
       {errors.consent && <p role="alert" className="-mt-2 text-xs text-red-600">{t(locale, `form.errors.${errors.consent.message}`, String(errors.consent.message))}</p>}
 
       <div>
-        <label className="block text-sm font-medium" htmlFor="cv">{locale === 'tr' ? 'Özgeçmiş (PDF/DOC/DOCX, max 5MB)' : 'Resume (PDF/DOC/DOCX, max 5MB)'}</label>
+        <label className="block text-sm font-medium text-brand-primary" htmlFor="cv">{locale === 'tr' ? 'Özgeçmiş (PDF/DOC/DOCX, max 5MB)' : 'Resume (PDF/DOC/DOCX, max 5MB)'}</label>
         <input
           id="cv"
           type="file"
           accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-          className="mt-1 w-full border rounded px-3 py-2"
+          className="mt-1 w-full border rounded px-3 py-2 text-brand-primary shadow-sm focus:shadow-md transition-shadow"
           aria-describedby="form-help"
       onChange={(e) => {
             const f = e.target.files?.[0];

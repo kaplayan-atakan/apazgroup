@@ -30,14 +30,15 @@ export default function HaberlerPage({ params }: PageProps) {
   const news = getAllNews(locale);
 
   return (
-    <main>
+    <main className="min-h-dvh">
       <HeroGradient
-        heading="Haberler"
+  heading="Haberler"
+  headingClassName="text-brand-primary"
         intro="Şirketimiz ve markalarımız ile ilgili güncel gelişmeler."
         minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[230px]', lg: 'lg:min-h-[250px]' }}
         contentClassName="max-w-4xl"
       />
-      <section className="py-10 bg-gradient-to-b from-brand-bronze-50/30 to-white">
+      <section className="py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-6 grid gap-10 md:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {news.map(item => {
             const href = `/${locale}/haberler/${item.slug}`; // typedRoutes experimental: treat as dynamic string

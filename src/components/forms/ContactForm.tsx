@@ -66,11 +66,11 @@ export function ContactForm() {
       <input type="text" {...register('hp')} className="hidden" aria-hidden="true" tabIndex={-1} />
 
       <div>
-        <label className="block text-sm font-medium">Ad Soyad</label>
+        <label className="block text-sm font-medium text-brand-primary">Ad Soyad</label>
         <input
           {...register('fullName')}
           type="text"
-          className="mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+          className="mt-1 w-full rounded-md border-2 border-brand-accent px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-yellow"
           placeholder="Adınız Soyadınız"
         />
         {errors.fullName && <p className="text-sm text-red-600 mt-1">Lütfen adınızı girin.</p>}
@@ -78,21 +78,21 @@ export function ContactForm() {
 
       <div className="grid md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium">E-posta</label>
+          <label className="block text-sm font-medium text-brand-primary">E-posta</label>
           <input
             {...register('email')}
             type="email"
-            className="mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+            className="mt-1 w-full rounded-md border-2 border-brand-accent px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-yellow"
             placeholder="ornek@mail.com"
           />
           {errors.email && <p className="text-sm text-red-600 mt-1">Geçerli bir e-posta girin.</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium">Telefon</label>
+          <label className="block text-sm font-medium text-brand-primary">Telefon</label>
           <input
             {...register('phone')}
             type="tel"
-            className="mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+            className="mt-1 w-full rounded-md border-2 border-brand-accent px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-yellow"
             placeholder="05xx xxx xx xx"
           />
           {errors.phone && <p className="text-sm text-red-600 mt-1">Geçerli bir telefon girin.</p>}
@@ -100,14 +100,14 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium">Konu</label>
+        <label className="block text-sm font-medium text-brand-primary">Konu</label>
         <input
           {...register('subject')}
           type="text"
           maxLength={50}
           aria-invalid={!!errors.subject || subjectValue.length > 50}
           aria-describedby={`subject-count${errors.subject ? ' subject-error' : ''}`}
-          className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-yellow ${subjectValue.length > 50 ? 'border-red-500' : ''}`}
+          className={`mt-1 w-full rounded-md border-2 border-brand-accent px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-yellow ${subjectValue.length > 50 ? 'border-red-500' : ''}`}
           placeholder="Konu"
         />
         <div className="mt-1 flex items-center justify-between">
@@ -120,14 +120,14 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium">Mesaj</label>
+        <label className="block text-sm font-medium text-brand-primary">Mesaj</label>
         <textarea
           {...register('message')}
           rows={6}
           maxLength={500}
           aria-invalid={!!errors.message || messageValue.length > 500 || messageValue.length < 10 && messageValue.length>0}
           aria-describedby={`message-count${errors.message ? ' message-error' : ''}`}
-          className={`mt-1 w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-yellow ${messageValue.length > 500 ? 'border-red-500' : ''}`}
+          className={`mt-1 w-full rounded-md border-2 border-brand-accent px-3 py-2 text-brand-primary placeholder:text-brand-primary/60 shadow-sm focus:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-yellow ${messageValue.length > 500 ? 'border-red-500' : ''}`}
           placeholder="Mesajınız"
         />
         <div className="mt-1 flex items-start justify-between gap-4">
@@ -149,7 +149,7 @@ export function ContactForm() {
             {...register('kisiselVerilerinKorunmasi', { required: true })}
             aria-required="true"
           />
-          <label htmlFor="kvkk" className="text-sm leading-snug">
+          <label htmlFor="kvkk" className="text-sm leading-snug text-brand-primary">
             Kişisel verilerimin <NextLink href={{ pathname: '/pdf', query: { src: '/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf' } }} className="underline" target="_blank" rel="noopener noreferrer">KVKK Aydınlatma Metni</NextLink> kapsamında işlenmesini kabul ediyorum.
           </label>
         </div>
@@ -164,8 +164,8 @@ export function ContactForm() {
             {...register('cerezPolitikasi', { required: true })}
             aria-required="true"
           />
-          <label htmlFor="cerez" className="text-sm leading-snug">
-            Çerez politikasını <NextLink href={{ pathname: '/pdf', query: { src: '/hr/Çerez Politikası.pdf' } }} className="underline" target="_blank" rel="noopener noreferrer">okudum ve kabul ediyorum.</NextLink>
+          <label htmlFor="cerez" className="text-sm leading-snug text-brand-primary">
+            <NextLink href={{ pathname: '/pdf', query: { src: '/hr/Çerez Politikası.pdf' } }} className="underline" target="_blank" rel="noopener noreferrer">Çerez Politikası sözleşmesini</NextLink> okudum ve kabul ediyorum.
           </label>
         </div>
         {errors.cerezPolitikasi && (

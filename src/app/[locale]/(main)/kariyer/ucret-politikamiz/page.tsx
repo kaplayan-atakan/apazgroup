@@ -33,16 +33,17 @@ export default function UcretPolitikamizPage({ params }: PageProps) {
   const withLocale = (path: string) => (path === '/' ? `/${loc}` : `/${loc}${path}`);
 
   return (
-    <main className="relative">
+    <main className="min-h-dvh">
       <HeroGradient
-        heading="Ücret Politikamız"
-        intro="Apaz Group olarak, çalışanlarımıza adil, eşitlikçi ve şeffaf bir ücret politikası sunmayı taahhüt ediyoruz. Ücretlendirme sistemimiz, iş değeri, performans ve rekabetçi pazar dinamiklerine dayanmaktadır."
+  heading="Ücret Politikamız"
+  headingClassName="text-brand-primary"
+        intro="Apaz Group olarak, çalışanlarımıza adil, eşitlikçi ve şeffaf bir ücret politikası sunmayı taahhüt ediyoruz."
         radialPosition="circle_at_35%_30%"
       />
-      <section className="py-12 md:py-20">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-[1fr_320px] items-start">
-            <article className="relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-slate-200 shadow-sm p-6 md:p-10">
+            <article className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 md:p-10">
               <div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(circle_at_60%_40%,black,transparent_75%)] bg-gradient-to-br from-white/70 via-white/40 to-white/10" />
               <div className="relative">
                 <div className="md:flex md:items-start md:gap-8">
@@ -57,14 +58,15 @@ export default function UcretPolitikamizPage({ params }: PageProps) {
                     />
                   </figure>
                   <CareerContent>
-                    <CareerParagraph>Ücret politikamız, nitelikli çalışanları kurumumuza çekme, mevcut çalışanlarımızı elde tutma, performansı yüksek ve nitelikli çalışanlarımızı ödüllendirme ve yasal yükümlülüklerimizi tam ve eksiksiz yerine getirme prensiplerine dayanmaktadır.</CareerParagraph>
-                    <CareerParagraph>Bu politikadan hareketle ücret işgücü piyasalarındaki dengelere, işin içeriğine ve işi yapan bireyin yetkinliği ve performansına dayalı olarak kurgulanmıştır.</CareerParagraph>
+                    <CareerParagraph>Ücret politikamız, nitelikli çalışanları kurumumuza dahil etme, mevcut çalışanlarımız ile yolumuza devam etme, performansı yüksek ve nitelikli çalışanlarımızı ödüllendirme ve yasal yükümlülüklerimizi tam ve eksiksiz yerine getirme prensiplerine dayanmaktadır.</CareerParagraph>
+                    <CareerParagraph>Ücretlendirme sistemimiz, iş değeri, performans ve rekabetçi pazar dinamiklerine dayanmaktadır.</CareerParagraph>
+                    <CareerParagraph>Bu politikadan hareketle ücretler işgücü piyasalarındaki dengelere, işin içeriğine, işi yapan bireyin yetkinliği ve performansına dayalı olarak kurgulanmıştır.</CareerParagraph>
                   </CareerContent>
                 </div>
               </div>
             </article>
             <aside className="space-y-6">
-              <nav className="rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-slate-200 shadow-sm p-6 sticky top-8">
+              <nav className="rounded-2xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] p-6 sticky top-8">
                 <h3 className="text-base font-semibold tracking-tight text-slate-900 mb-4">Kariyer Bölümleri</h3>
                 <ul className="space-y-1 text-sm">
                   <li>
