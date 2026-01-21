@@ -1,8 +1,8 @@
 ---
 title: "İnsan Kaynakları Politikamız"
 seo:
-  title: "İK Politikamız | Apaz Group"
-  description: "İK prensipleri ve yaklaşımımız."
+  title: "İnsan Kaynakları Politikamız | Apaz Group"
+  description: "İnsan Kaynakları prensipleri ve yaklaşımımız."
 sections:
   - type: heroSimple
     heading: "İnsan Kaynakları Politikamız"

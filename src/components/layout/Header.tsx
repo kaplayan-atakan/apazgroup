@@ -69,11 +69,14 @@ export function Header({ locale }: { locale: Locale }) {
     <li className="odd:bg-brand-primary/5 even:bg-brand-accent/5 hover:odd:bg-brand-primary/10 hover:even:bg-brand-accent/10 transition-colors" key={i}>{children}</li>
   );
 
-  const mobileBg = (i: number) => i % 2 === 0 ? 'bg-brand-primary/5 hover:bg-brand-primary/10' : 'bg-brand-accent/5 hover:bg-brand-accent/10';
+  const mobileBg = (i: number) =>
+     i % 2 === 0
+       ? 'bg-white/85 hover:bg-white active:bg-white ring-1 ring-brand-primary/10 hover:ring-brand-primary/20'
+       : 'bg-white/85 hover:bg-white active:bg-white ring-1 ring-brand-accent/10 hover:ring-brand-accent/20';
   const mobileItemClasses = (i: number, active: boolean) => [
-    'justify-start h-10 px-2 text-sm rounded-md transition-colors',
+    'justify-start h-11 pl-5 pr-3 text-sm rounded-lg transition-colors font-semibold',
     mobileBg(i),
-    active ? 'text-brand-primary font-medium' : 'hover:text-brand-primary'
+    active ? 'text-brand-primary' : 'text-slate-900 hover:text-brand-primary'
   ].join(' ');
 
   // Lock scroll when mobile menu open
@@ -298,7 +301,7 @@ export function Header({ locale }: { locale: Locale }) {
       {/* Mobile hamburger side-drawer (portal) */}
       {mobileOpen && typeof window !== 'undefined' && createPortal(
         <div id="mobile-menu" className="fixed inset-0 z-[60]" role="dialog" aria-modal="true" aria-label={t(locale,'nav.mobileMenu','Mobil menü')}>
-          <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={() => setMobileOpen(false)} aria-hidden="true" />
+          <div className="absolute inset-0 bg-slate-900/85 backdrop-blur-sm" onClick={() => setMobileOpen(false)} aria-hidden="true" />
           <div ref={drawerRef} className="absolute right-0 top-0 h-full w-80 max-w-[85%] bg-gradient-to-br from-white via-brand-bronze-50/20 to-white shadow-2xl flex flex-col overflow-y-auto animate-slide-in-x focus:outline-none border-l border-brand-bronze-200" tabIndex={-1}>
             <div className="flex items-center justify-between px-5 h-16 border-b border-brand-bronze-200/50 bg-gradient-to-r from-white to-brand-bronze-50/30" role="none">
               {(() => { const href = withLocale('/'); return (// @ts-expect-error typedRoutes dynamic string

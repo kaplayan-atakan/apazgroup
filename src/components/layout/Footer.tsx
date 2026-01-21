@@ -11,6 +11,30 @@ interface FooterProps { locale: Locale }
 export function Footer({ locale }: FooterProps) {
   const withLocale = (path: string) => (path === '/' ? `/${locale}` : `/${locale}${path}`);
 
+  const aboutItems = [
+    ['/hakkimizda', 'Apaz Group Hakkında'],
+    ['/hakkimizda/kalite', 'Kalite'],
+    ['/haberler', 'Haberler'],
+    ['/kurumsal-sosyal-sorumluluk-politikasi', 'Kurumsal Sosyal Sorumluluk (KSS)'],
+    ['/seffaflik-ve-hesap-verebilirlik', 'Şeffaflık ve Hesap Verebilirlik'],
+  ] as const;
+
+  const brandItems = [
+    ['/markalarimiz/baydoner', 'Baydöner'],
+    ['/markalarimiz/pide-by-pide', 'PidebyPide'],
+    ['/markalarimiz/bursa-ishakbey', 'Bursa İshakbey'],
+  ] as const;
+
+  const careerItems = [
+    ['/kariyer/insan-kaynaklari-politikamiz', 'İnsan Kaynakları Politikamız'],
+    ['/kariyer/kurum-kulturumuz-ve-etik-degerlerimiz', 'Kurum Kültürümüz / Etik Değerlerimiz'],
+    ['/kariyer/ucret-politikamiz', 'Ücret Politikamız'],
+    ['/kariyer/performans', 'Hedeflerle Yönetim ve Performans'],
+    ['/kariyer/olanaklar', 'Sosyal Olanaklar'],
+    ['/kariyer/kariyer-egitim', 'Eğitim ve Kariyer Olanaklarımız'],
+    ['/bize-katilin', 'Bize Katılın'],
+  ] as const;
+
   return (
     <footer className="relative text-brand-primary">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -22,16 +46,17 @@ export function Footer({ locale }: FooterProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/20 via-transparent to-transparent" />
       </div>
       {/* 1) Footer widgets */}
-  <div className="bg-brand-bronze-900/10 backdrop-blur-sm border-t border-brand-bronze-300/20">
+      <div className="bg-brand-bronze-900/10 backdrop-blur-sm border-t border-brand-bronze-300/20">
         <div className="footer_widgets py-16">
           <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-brand-primary text-center mb-8">Site Haritası</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Contact Information */}
               <div className="f_widgets_item">
                 <div className="f_logo mb-6">
                   <div className="relative w-[180px] h-[60px]">
                     <Image
-                      src="/markalar/apaz_disi.png" /* legacy: /images/logo-dark.png */
+                      src="/brand/logo--global.png" /* legacy: /images/logo-dark.png */
                       alt="Apaz Group"
                       fill
                       sizes="180px"
@@ -66,67 +91,99 @@ export function Footer({ locale }: FooterProps) {
                 </div>
               </div>
 
-              {/* Site Map */}
+              {/* About + Brands */}
               <div className="f_widgets_item">
                 <div className="f_link">
                   <div className="f_title mb-6">
-                    <h3 className="text-xl font-semibold text-brand-primary">Site Haritası</h3>
+                    <h3 className="text-xl font-semibold text-brand-primary">Hakkımızda</h3>
                   </div>
-                  <ul className="list space-y-2 text-sm">
-                    <li>
-                      {(() => { const href = withLocale('/hakkimizda'); return (
-                        // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Hakkımızda</Link>
-                      ); })()}
-                    </li>
-                    <li>
-                      {(() => { const href = withLocale('/franchising'); return (
-                        // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Franchising</Link>
-                      ); })()}
-                    </li>
-                    <li>
-                      {(() => { const href = withLocale('/kariyer/insan-kaynaklari-politikamiz'); return (
-                        // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Kariyer</Link>
-                      ); })()}
-                    </li>
-                    <li>
-                      {(() => { const href = withLocale('/iletisim'); return (
-                        // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">İletişim</Link>
-                      ); })()}
-                    </li>
+                  <ul className="list text-sm">
+                    {aboutItems.map(([path, label]) => (
+                      <li key={path} className="py-1 first:pt-0 last:pb-0">
+                        {(() => {
+                          const href = withLocale(path);
+                          return (
+                            // @ts-expect-error typedRoutes experimental dynamic string
+                            <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">
+                              {label}
+                            </Link>
+                          );
+                        })()}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="f_title mt-10 mb-6">
+                    <h3 className="text-xl font-semibold text-brand-primary">Markalarımız</h3>
+                  </div>
+                  <ul className="list text-sm">
+                    {brandItems.map(([path, label]) => (
+                      <li key={path} className="py-1 first:pt-0 last:pb-0">
+                        {(() => {
+                          const href = withLocale(path);
+                          return (
+                            // @ts-expect-error typedRoutes experimental dynamic string
+                            <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">
+                              {label}
+                            </Link>
+                          );
+                        })()}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
-                
-              {/* Brands */}
+
+              {/* Navigation (Franchising + Contact + Career) */}
               <div className="f_widgets_item">
                 <div className="f_link">
-                  <div className="f_title mb-6">
-                    <h3 className="text-xl font-semibold text-brand-primary">Markalarımız</h3>
-                  </div>
-                  <ul className="list space-y-2 text-sm">
-                    <li>
-                      {(() => { const href = withLocale('/markalarimiz/baydoner'); return (
-                        // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Baydöner</Link>
-                      ); })()}
-                    </li>
-                    <li>
-                      {(() => { const href = withLocale('/markalarimiz/pide-by-pide'); return (
-                        // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">PidebyPide</Link>
-                      ); })()}
-                    </li>
-                    <li>
-                      {(() => { const href = withLocale('/markalarimiz/bursa-ishakbey'); return (
-                        // @ts-expect-error typedRoutes experimental dynamic string
-                        <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">Bursa İshakbey</Link>
-                      ); })()}
+                  <ul className="list text-xl mb-10">
+                    <li className="py-1 first:pt-0 last:pb-0">
+                      {(() => {
+                        const href = withLocale('/franchising');
+                        return (
+                          // @ts-expect-error typedRoutes experimental dynamic string
+                          <Link href={href} className="font-semibold text-brand-primary hover:text-brand-secondary transition-colors">
+                            Franchising
+                          </Link>
+                        );
+                      })()}
                     </li>
                   </ul>
+
+                  <div className="f_title mb-6">
+                    <h3 className="text-xl font-semibold text-brand-primary">Kariyer</h3>
+                  </div>
+                  <ul className="list text-sm">
+                    {careerItems.map(([path, label]) => (
+                      <li key={path} className="py-1 first:pt-0 last:pb-0">
+                        {(() => {
+                          const href = withLocale(path);
+                          return (
+                            // @ts-expect-error typedRoutes experimental dynamic string
+                            <Link href={href} className="text-brand-primary hover:text-brand-secondary transition-colors">
+                              {label}
+                            </Link>
+                          );
+                        })()}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <ul className="list text-xl mt-8 mb-10">
+                    <li className="py-1 first:pt-0 last:pb-0">
+                      {(() => {
+                        const href = withLocale('/iletisim');
+                        return (
+                          // @ts-expect-error typedRoutes experimental dynamic string
+                          <Link href={href} className="font-semibold text-brand-primary hover:text-brand-secondary transition-colors">
+                            İletişim
+                          </Link>
+                        );
+                      })()}
+                    </li>
+                  </ul>
+
                 </div>
               </div>
 
@@ -136,9 +193,9 @@ export function Footer({ locale }: FooterProps) {
                   <div className="f_title mb-6">
                     <h3 className="text-xl font-semibold text-brand-primary">Diğer</h3>
                   </div>
-                  <ul className="list space-y-2 text-sm">
+                  <ul className="list text-sm">
                     {/* KVKK main + sublinks */}
-                    <li>
+                    <li className="py-1 first:pt-0 last:pb-0">
                       <a
                         href={`/pdf?src=${encodeURI('/hr/Kişisel Verilerin Korunması Kanunu Uyarınca Kamuoyu Aydınlatma Metni .pdf')}`}
                         target="_blank"
@@ -147,8 +204,8 @@ export function Footer({ locale }: FooterProps) {
                       >
                         KVKK
                       </a>
-                      <ul className="mt-2 ml-4 space-y-1 text-[13px] text-brand-primary/90">
-                        <li>
+                      <ul className="mt-2 ml-4 text-[13px] text-brand-primary/90">
+                        <li className="py-0.5 first:pt-0 last:pb-0">
                           <a
                             href={`/pdf?src=${encodeURI('/hr/İnternet Sitesi Aydınlatma Metini.pdf')}`}
                             target="_blank"
@@ -158,7 +215,7 @@ export function Footer({ locale }: FooterProps) {
                             İnternet Sitesi Aydınlatma Metni
                           </a>
                         </li>
-                        <li>
+                        <li className="py-0.5 first:pt-0 last:pb-0">
                           <a
                             href={`/pdf?src=${encodeURI('/hr/Müşteriler, Tedarikçi Yetkilisi ve Tedarikçi Çalışanlarına Yönelik Aydınlatma Metni.pdf')}`}
                             target="_blank"
@@ -171,7 +228,7 @@ export function Footer({ locale }: FooterProps) {
                       </ul>
                     </li>
                     {/* Çerez Politikası */}
-                    <li>
+                    <li className="py-1 first:pt-0 last:pb-0">
                       <a
                         href={`/pdf?src=${encodeURI('/hr/Çerez Politikası.pdf')}`}
                         target="_blank"
@@ -189,8 +246,8 @@ export function Footer({ locale }: FooterProps) {
         </div>
       </div>
 
-  {/* Brand social (desktop grid) */}
-  <div className="hidden lg:block bg-white/5 backdrop-blur-sm border-t border-white/10 py-10">
+      {/* Brand social (desktop grid) */}
+      <div className="hidden lg:block bg-white/5 backdrop-blur-sm border-t border-white/10 py-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 gap-8">
             {[
@@ -226,7 +283,7 @@ export function Footer({ locale }: FooterProps) {
               }
             ].map((brand) => (
               <div key={brand.name} className="flex flex-col items-center text-center">
-                <div className={`relative mb-4 ${brand.name === 'Bursa İshakbey' ? 'h-[4.5rem] w-[15rem]' : 'h-12 w-40'}`}>
+                <div className={`relative mb-4 h-16 ${brand.name === 'Bursa İshakbey' ? 'w-[15rem]' : 'w-40'}`}>
                   <Image src={brand.logo} alt={brand.name} fill sizes={brand.name === 'Bursa İshakbey' ? '240px' : '160px'} className="object-contain" />
                 </div>
                 <div className="flex items-center gap-4 text-brand-primary">
@@ -241,8 +298,8 @@ export function Footer({ locale }: FooterProps) {
         </div>
       </div>
 
-  {/* Brand social (mobile horizontal scroll) */}
-  <div className="lg:hidden bg-white/5 backdrop-blur-sm border-t border-white/10 py-6">
+      {/* Brand social (mobile horizontal scroll) */}
+      <div className="lg:hidden bg-white/5 backdrop-blur-sm border-t border-white/10 py-6">
         <div className="container mx-auto px-4">
           <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2" aria-label="Marka sosyal bağlantıları">
             {[
@@ -278,7 +335,7 @@ export function Footer({ locale }: FooterProps) {
               }
             ].map((brand) => (
               <div key={brand.name} className="snap-center shrink-0 w-60 bg-white/10 rounded-lg border border-white/10 p-4 flex flex-col items-center">
-                <div className={`relative mb-3 ${brand.name === 'Bursa İshakbey' ? 'h-[3.75rem] w-[13.5rem]' : 'h-10 w-36'}`}>
+                <div className={`relative mb-3 h-12 ${brand.name === 'Bursa İshakbey' ? 'w-[13.5rem]' : 'w-36'}`}>
                   <Image src={brand.logo} alt={brand.name} fill sizes={brand.name === 'Bursa İshakbey' ? '216px' : '144px'} className="object-contain" />
                 </div>
                 <div className="flex items-center gap-3 text-brand-primary">
@@ -294,13 +351,13 @@ export function Footer({ locale }: FooterProps) {
       </div>
 
       {/* Unified social + copyright bar */}
-  <div className="border-t border-white/10 bg-black/40/60 backdrop-blur-sm py-8">
+      <div className="border-t border-white/10 bg-black/40/60 backdrop-blur-sm py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-    <span className="text-xs tracking-wide text-brand-primary/80">Güven, lezzet ve sürdürülebilir büyüme.</span>
-            <div className="flex items-center gap-5">
+            {/* <span className="text-xs tracking-wide text-brand-primary/80">Güven, lezzet ve sürdürülebilir büyüme.</span> */}
+            {/* <div className="flex items-center gap-5">
               <SocialIcon url="https://www.linkedin.com/company/apaz-group" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" fgColor="#1F3A52" bgColor="transparent" style={{ height: 30, width: 30 }} className="hover:opacity-90 transition-opacity" />
-            </div>
+            </div> */}
             <div className="text-center md:text-right text-[13px] text-brand-primary/80">
               © 2025 Apaz Group — Tüm Hakları Saklıdır.
             </div>

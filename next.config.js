@@ -7,8 +7,25 @@ const nextConfig = {
   images: {
     remotePatterns: []
   },
+  async rewrites() {
+    return [
+      {
+        source: '/kimyasal_bilgi.pdf',
+        destination: '/pdf-viewer/kimyasal-bilgi',
+      },
+    ];
+  },
   async headers() {
     return [
+      {
+        source: '/emo/:path*',
+        headers: [
+          // Allow other sites to embed/fetch these public emoji assets.
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Cross-Origin-Resource-Policy', value: 'cross-origin' },
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
       {
         source: '/package.json',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],

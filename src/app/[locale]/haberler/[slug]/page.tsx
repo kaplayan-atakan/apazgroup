@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { format } from 'date-fns';
-import { tr } from 'date-fns/locale';
 
 import { isLocale } from '../../../../lib/i18n';
 import { getAllNews, getPageBySlug } from '../../../../lib/content';
@@ -43,7 +41,6 @@ export default async function HaberPage({ params }: PageProps) {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const pageUrl = `${base}/${locale}/haberler/${slug}`;
   const imageUrl = doc.frontmatter.image ? `${base}${doc.frontmatter.image}` : undefined;
-  const published = doc.frontmatter.date ? new Date(doc.frontmatter.date) : undefined;
   // Collect prose sections and split into logical paragraphs (blank line => new paragraph).
   const proseSections = doc.sections.filter((s): s is { type: 'prose'; body: string } => s.type === 'prose');
   const paragraphMdBlocks: string[] = [];
@@ -128,13 +125,6 @@ export default async function HaberPage({ params }: PageProps) {
             <div className={doc.frontmatter.image ? 'md:col-span-7 lg:col-span-7' : 'md:col-span-12'}>
               <header>
                 <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-brand-primary leading-tight">{doc.frontmatter.title}</h1>
-                <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-500">
-                  {published && (
-                    <time dateTime={doc.frontmatter.date} className="inline-flex items-center gap-1 text-slate-600">
-                      {format(published, 'd MMMM yyyy', { locale: tr })}
-                    </time>
-                  )}
-                </div>
                 {doc.frontmatter.excerpt && (
                   <p className="mt-4 text-base text-slate-600 leading-relaxed max-w-prose">{doc.frontmatter.excerpt}</p>
                 )}
@@ -151,7 +141,6 @@ export default async function HaberPage({ params }: PageProps) {
               </div>
               <div className="mt-10 pt-6 border-t flex justify-between text-sm text-slate-500">
                 <Link href={`/${locale}/haberler`} className="font-medium text-brand-primary hover:underline">← Tüm Haberler</Link>
-                <span>{doc.frontmatter.date}</span>
               </div>
             </div>
           </div>

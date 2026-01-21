@@ -36,7 +36,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             <BrandCard
               logo="/markalar/baydoner_logo.svg"
-              image="/markalar/baydoner_foto.jpg"
+              image="/markalar/baydoner_foto.jpeg"
               title="Baydöner"
               description="Türk mutfağının en çok tercih edilen geleneksel iskenderin en lezzetli halini sunan Baydöner, fast casual restoran konseptiyle eksiksiz hizmet veriyor.​​"
               link={`/${locale}/markalarimiz/baydoner`}
@@ -48,16 +48,16 @@ export default function Home({ params }: { params: { locale: string } }) {
               logo="/markalar/pidebypide_logo.png"
               image="/markalar/pide_foto.jpg"
               title="PidebyPide"
-              description="PidebyPide, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu versiyonunu enfes bir lezzet ve self servis konseptiyle sunuyor."
+              description="PidebyPide, Türk mutfağının yöresel yemeği olan pideyi hızlı, doyurucu ve self servis konseptiyle sunuyor."
               link={`/${locale}/markalarimiz/pide-by-pide`}
               hideTitle
               emphasizeLogo
             />
             <BrandCard
               logo="/markalar/bursaishakbey_logo.png"
-              image="/markalar/bursaishakbey_foto.jpg"
+              image="/markalar/bursaishakbey_foto.jpeg"
               title="Bursa İshakbey"
-              description="İskender ve döner üzerine kurgulanan seçkin konseptiyle yeme-içme sektöründe fark yaratan Bursa İshakbey, uygun fiyatlı, doyurucu içerikleri ve self servis hizmeti ile ön plana çıkıyor.​​"
+              description="Bursa İshakbey, döner lezzetini taze, doyurucu porsiyonlarıyla ve self servis konseptiyle sunuyor."
               link={`/${locale}/markalarimiz/bursa-ishakbey`}
               hideTitle
               emphasizeLogo

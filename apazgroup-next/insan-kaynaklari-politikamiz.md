@@ -3,7 +3,7 @@ title: "İnsan Kaynakları Politikamız"
 route: "/insan-kaynaklari-politikamiz"
 originalUrl: "https://www.apazgroup.com/insan_kaynaklari_politikamiz"
 seo:
-  title: "İK Politikamız | Apaz Group"
+  title: "İnsan Kaynakları Politikamız | Apaz Group"
   description: "Çalışan odaklı, adil, gelişimi destekleyen insan kaynakları yaklaşımımız."
 layout: "content"
 hero:
@@ -13,7 +13,7 @@ sections:
     media:
       type: "image"
       src: "/images/ik/insan-kaynaklari-politikamiz-500x600.png"
-      alt: "İK Politikası görseli"
+      alt: "İnsan Kaynakları Politikası görseli"
     content:
       heading: ""
       paragraphs:

@@ -10,7 +10,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   return generateSeoMetadata({
     title: 'Apaz Group Hakkında',
-    description: "Apaz Group'un kuruluşu, vizyonu, misyonu ve değerleri.",
+    description: "",
     locale: params.locale,
     slug: 'hakkimizda/apaz-group-hakkinda',
     type: 'article',

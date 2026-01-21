@@ -2,6 +2,7 @@ import path from 'node:path';
 
 import { normalizeSlug } from '../slug';
 import { defaultLocale } from '../i18n';
+import { parseISODateToUTCNoon } from '../date';
 
 import { listMarkdownFiles, readMarkdownFile } from './fs';
 import { parseMarkdown } from './parser';
@@ -94,9 +95,9 @@ export function getAllNews(locale: string): PageDocument[] {
   // Exclude archived or draft news (optional flags default false)
   .filter((d: PageDocument) => !d.frontmatter.archived && !d.frontmatter.draft)
     // sort by date descending if available in frontmatter.date
-    .sort((a, b) => {
-      const da = a.frontmatter.date ? new Date(a.frontmatter.date).getTime() : 0;
-      const db = b.frontmatter.date ? new Date(b.frontmatter.date).getTime() : 0;
+      .sort((a, b) => {
+        const da = a.frontmatter.date ? (parseISODateToUTCNoon(a.frontmatter.date)?.getTime() ?? 0) : 0;
+        const db = b.frontmatter.date ? (parseISODateToUTCNoon(b.frontmatter.date)?.getTime() ?? 0) : 0;
       return db - da;
     });
   return docs;

@@ -9,7 +9,7 @@ sections:
     image: "/kss/seffaflik.png"
     alt: "Şeffaflık görseli"
     body: |-
-      ## ŞEFFAFLIK VE HESAP VEREBİLİRLİK POLİTİKASI
+      ## ŞEFFAFLIK VE HESAP VEREBİLİRLİnsan Kaynakları POLİTİKASI
 
       Kurum kültürümüzün en önemli unsurlarından biri çalışanlara, hissedarlarımıza ve paydaşlarımıza karşı şeffaf ve hesap verebilir bir yönetim anlayışını benimsemektir.
 

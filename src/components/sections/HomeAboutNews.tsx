@@ -3,6 +3,7 @@ import type { Route } from 'next';
 import Image from 'next/image';
 
 import { getAllNews } from '../../lib/content';
+import { formatDateLocale } from '../../lib/date';
 
 type Props = { locale: string };
 
@@ -51,11 +52,7 @@ export function HomeAboutNews({ locale }: Props) {
                     <div className="p-4">
                       {dateStr && (
                         <time className="text-xs uppercase tracking-wide text-brand-accent font-medium">
-                          {new Date(dateStr).toLocaleDateString(locale === 'tr' ? 'tr-TR' : 'en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
+                          {formatDateLocale(dateStr, locale)}
                         </time>
                       )}
                       <h3 className="mt-1 text-base font-bold leading-snug text-brand-secondary-light line-clamp-2">

@@ -7,6 +7,7 @@ import { isLocale } from '../../../lib/i18n';
 import { generateSeoMetadata } from '../../../lib/seo';
 import { getAllNews } from '../../../lib/content';
 import blurMap from '../../../lib/asset-blur-map.json';
+import { formatDateTR } from '../../../lib/date';
 
 interface PageProps { params: { locale: string } }
 
@@ -66,7 +67,11 @@ export default function HaberlerPage({ params }: PageProps) {
                 )}
                 <div className="p-5 flex flex-col flex-1">
                   <h2 className="text-lg font-bold tracking-tight text-brand-primary group-hover:text-brand-secondary transition-colors">{item.frontmatter.title}</h2>
-                  {item.frontmatter.date && <time className="mt-1 text-xs text-brand-accent font-medium" dateTime={item.frontmatter.date}>{item.frontmatter.date}</time>}
+                  {item.frontmatter.date && (
+                    <time className="mt-1 text-xs text-brand-accent font-medium" dateTime={item.frontmatter.date}>
+                      {formatDateTR(item.frontmatter.date)}
+                    </time>
+                  )}
                   {item.frontmatter.excerpt && <p className="mt-3 text-sm text-slate-700 line-clamp-4">{item.frontmatter.excerpt}</p>}
                   <span className="mt-4 inline-flex items-center text-[11px] font-bold uppercase tracking-wide text-brand-secondary group-hover:text-brand-accent">Haberi Oku →</span>
                 </div>

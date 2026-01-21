@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Route } from 'next';
 
+import { formatDateTR } from '../../lib/date';
+
 interface NewsCardProps {
   image: string;
   date: string;
@@ -25,7 +27,9 @@ export function NewsCard({ image, date, title, excerpt, link }: NewsCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-brand-bronze-900/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
       </div>
       <div className="p-4">
-        <time className="text-xs uppercase tracking-wide text-brand-accent font-medium">{date}</time>
+        <time className="text-xs uppercase tracking-wide text-brand-accent font-medium" dateTime={date}>
+          {formatDateTR(date)}
+        </time>
         <h3 className="mt-1 text-base font-bold leading-snug text-brand-primary">{title}</h3>
         <p className="mt-2 text-sm text-slate-600 line-clamp-3">{excerpt}</p>
         <div className="mt-3">

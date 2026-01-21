@@ -4,7 +4,7 @@ route: "/apaz-group-hakkinda"
 originalUrl: "https://www.apazgroup.com/apaz_group_hakkinda"
 seo:
   title: "Apaz Group Hakkında"
-  description: "Apaz Group'un kuruluşu, vizyonu, misyonu ve değerleri."
+  description: ""
 layout: "content"
 hero:
   heading: "Apaz Group Hakkında"

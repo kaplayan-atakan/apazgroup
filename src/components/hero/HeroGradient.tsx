@@ -7,6 +7,17 @@ import { usePrefersReducedMotion, motionConfig } from '../../lib/motion';
 interface HeroGradientProps {
   heading: string;
   headingClassName?: string;
+  logoSrc?: string;
+  logoAlt?: string;
+  logoClassName?: string;
+  logoWidth?: number;
+  logoHeight?: number;
+  logoPriority?: boolean;
+  logoHref?: string;
+  logoHrefAriaLabel?: string;
+  logoTarget?: '_self' | '_blank' | '_parent' | '_top';
+  logoRel?: string;
+  logoWrapperClassName?: string;
   intro?: string;
   imageSrc?: string; // optional background image
   imageAlt?: string;
@@ -26,6 +37,17 @@ interface HeroGradientProps {
 export const HeroGradient: React.FC<HeroGradientProps> = ({
   heading,
   headingClassName,
+  logoSrc,
+  logoAlt,
+  logoClassName,
+  logoWidth = 320,
+  logoHeight = 120,
+  logoPriority,
+  logoHref,
+  logoHrefAriaLabel,
+  logoTarget = '_self',
+  logoRel,
+  logoWrapperClassName,
   intro,
   imageSrc,
   imageAlt = heading,
@@ -92,6 +114,46 @@ export const HeroGradient: React.FC<HeroGradientProps> = ({
         {(() => {
           const base = 'text-balance text-3xl md:text-5xl font-bold tracking-tight leading-[1.15] py-1 drop-shadow-sm';
           const headingClasses = headingClassName ? `${base} ${headingClassName}` : `${base} bg-gradient-to-br from-brand-primary via-brand-accent to-brand-primary bg-clip-text text-transparent`;
+          if (logoSrc) {
+            const img = (
+              <Image
+                src={logoSrc}
+                alt={logoAlt || heading}
+                width={logoWidth}
+                height={logoHeight}
+                priority={logoPriority}
+                className={logoClassName || 'mx-auto h-14 w-auto md:h-16'}
+              />
+            );
+
+            return (
+              <h1 className={headingClasses}>
+                <span className="sr-only">{heading}</span>
+                {logoHref ? (
+                  <a
+                    href={logoHref}
+                    target={logoTarget}
+                    rel={logoRel || (logoTarget === '_blank' ? 'noopener noreferrer' : undefined)}
+                    className={
+                      (
+                        'inline-flex items-center justify-center rounded-full px-4 py-2 ' +
+                        'ring-2 ring-brand-bronze-200/40 bg-white/50 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] ' +
+                        'transition-shadow duration-300 hover:ring-brand-secondary/50 hover:shadow-xl ' +
+                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-white' +
+                        (logoWrapperClassName ? ` ${logoWrapperClassName}` : '')
+                      )
+                    }
+                    aria-label={logoHrefAriaLabel || `${heading} web sitesi`}
+                  >
+                    {img}
+                  </a>
+                ) : (
+                  img
+                )}
+              </h1>
+            );
+          }
+
           return <h1 className={headingClasses}>{heading}</h1>;
         })()}
         {intro && (

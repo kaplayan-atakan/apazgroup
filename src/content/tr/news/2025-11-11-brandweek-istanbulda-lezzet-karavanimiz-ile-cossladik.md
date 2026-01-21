@@ -1,11 +1,11 @@
 ---
 title: "BRANDWEEK İSTANBUL’DA LEZZET KARAVANIMIZ İLE ‘COSS’LADIK!"
-date: "2025-11-11"
+date: "2025-12-12"
 image: "/news/20250220092119706_news.JPG"
-excerpt: "Brandweek İstanbul'da deneyim alanında karavanımızdan ziyaretçilere Baydöner Dürüm deneyimi yaşattık."
+excerpt: "12–14 Aralık tarihleri arasında gerçekleşen Brandweek İstanbul’da, deneyim alanında konumlandırdığımız karavanımızdan, katılımcılara Baydöner dürüm deneyimi yaşattık."
 seo:
   title: "Brandweek İstanbul'da Lezzet Karavanımız | Haber"
-  description: "Brandweek İstanbul 12. yılında Baydöner lezzet karavanımız ziyaretçilere özel deneyim sundu."
+  description: "12–14 Aralık tarihleri arasında gerçekleşen Brandweek İstanbul’da, deneyim alanında konumlandırdığımız karavanımızdan, katılımcılara Baydöner dürüm deneyimi yaşattık."
 sections:
   - type: prose
     body: |-

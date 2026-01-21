@@ -17,7 +17,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const { locale } = params;
   if (!isLocale(locale)) return {};
   return generateSeoMetadata({
-    title: 'İK Politikamız | Apaz Group',
+    title: 'İnsan Kaynakları Politikamız | Apaz Group',
     description: 'İnsan Kaynakları ilkeleri ve süreçlerimiz',
     locale,
     slug: 'kariyer/insan-kaynaklari-politikamiz',
@@ -36,7 +36,7 @@ export default function IKPolitikamizPage({ params }: PageProps) {
       <HeroGradient
   heading="İnsan Kaynakları Politikamız"
   headingClassName="text-brand-primary"
-        intro="İnsan odaklı, şeffaf, gelişimi destekleyen ve kurumsal değerlerimizle uyumlu İK yaklaşımımız."
+        intro="İnsan odaklı, şeffaf, gelişimi destekleyen ve kurumsal değerlerimizle uyumlu İnsan Kaynakları yaklaşımımız."
         radialPosition="circle_at_30%_30%"
       />
       <section className="py-12 md:py-20">

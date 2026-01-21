@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Baydöner: ISO 22000 belgeli üreticilerle çalışan, ödüllü ve 100+ şubeli iskender lider markası.",
     locale,
     slug: 'markalarimiz/baydoner',
-  imagePath: '/markalar/baydoner_foto.jpg',
+    imagePath: '/markalar/baydoner_foto.jpeg',
     type: 'article'
   });
 }
@@ -34,8 +34,19 @@ export default async function Page({ params }: Props) {
   return (
     <main className="min-h-dvh">
       <HeroGradient
-  heading="Baydöner"
-  headingClassName="text-brand-primary"
+        heading="Baydöner"
+        headingClassName="text-brand-primary"
+        logoSrc="/markalar/baydoner_logo.svg"
+        logoAlt="Baydöner"
+        logoClassName="mx-auto h-16 w-auto object-contain md:h-20"
+        logoWidth={420}
+        logoHeight={160}
+        logoPriority
+        logoHref="https://www.baydoner.com"
+        logoTarget="_blank"
+        logoRel="noopener noreferrer"
+        logoHrefAriaLabel="Baydöner web sitesini yeni sekmede aç"
+        logoWrapperClassName="px-6 py-3 md:px-7 md:py-3"
         radialPosition="circle_at_20%_50%"
         contentClassName="max-w-4xl"
         minHeights={{ base: 'min-h-[220px]', md: 'md:min-h-[260px]', lg: 'lg:min-h-[300px]' }}
@@ -46,7 +57,7 @@ export default async function Page({ params }: Props) {
         <div className="max-w-6xl mx-auto px-6">
           <figure className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)]">
             <Image
-              src="/markalar/baydoner_foto.jpg"
+              src="/markalar/baydoner_foto.jpeg"
               alt="Baydöner marka görseli"
               fill
               sizes="(min-width: 1280px) 1200px, (min-width: 768px) 90vw, 100vw"
@@ -61,6 +72,17 @@ export default async function Page({ params }: Props) {
         <div className="max-w-4xl mx-auto px-6">
           <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 p-6 md:p-8 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)]">
             <p className="text-sm md:text-base leading-relaxed text-slate-700 whitespace-pre-line">{intro}</p>
+            <div className="mt-6 flex justify-center">
+              <a
+                href="https://www.baydoner.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold text-brand-primary ring-2 ring-brand-bronze-200/60 bg-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-shadow duration-300 hover:ring-brand-secondary/50 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                aria-label="Baydöner web sitesi: Detaylı Bilgilendirme için İncele"
+              >
+                Detaylı Bilgilendirme için İncele →
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -88,17 +110,17 @@ export default async function Page({ params }: Props) {
               logo="/markalar/pidebypide_logo.png"
               image="/markalar/pide_foto.jpg"
               title="PidebyPide"
-              description="PidebyPide, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu versiyonunu enfes bir lezzet ve self servis konseptiyle sunuyor."
+              description="PidebyPide, Türk mutfağının yöresel yemeği olan pideyi hızlı, doyurucu ve self servis konseptiyle sunuyor."
               link={`/${locale}/markalarimiz/pide-by-pide`}
               hideTitle
               emphasizeLogo
-              // logoScale={0.8}
+            // logoScale={0.8}
             />
             <BrandCard
               logo="/markalar/bursaishakbey_logo.png"
-              image="/markalar/bursaishakbey_foto.jpg"
+              image="/markalar/bursaishakbey_foto.jpeg"
               title="Bursa İshakbey"
-              description="İskender ve döner üzerine kurgulanan seçkin konseptiyle yeme-içme sektöründe fark yaratan Bursa İshakbey, uygun fiyatlı, doyurucu içerikleri ve self servis hizmeti ile ön plana çıkıyor.​​"
+              description="Bursa İshakbey, döner lezzetini taze, doyurucu porsiyonlarıyla ve self servis konseptiyle sunuyor."
               link={`/${locale}/markalarimiz/bursa-ishakbey`}
               hideTitle
               emphasizeLogo
@@ -107,6 +129,6 @@ export default async function Page({ params }: Props) {
           </div>
         </div>
       </section>
-  </main>
+    </main>
   );
 }

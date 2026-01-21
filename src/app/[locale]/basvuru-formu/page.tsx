@@ -16,7 +16,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     locale,
     slug: 'basvuru-formu',
     type: 'article',
-    imagePath: '/markalar/baydoner_foto.jpg'
+    imagePath: '/markalar/baydoner_foto.jpeg'
   });
 }
 

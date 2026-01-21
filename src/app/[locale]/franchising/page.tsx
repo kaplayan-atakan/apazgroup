@@ -25,7 +25,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     locale,
     slug: 'franchising',
     type: 'article',
-    imagePath: '/markalar/baydoner_foto.jpg',
+    imagePath: '/markalar/baydoner_foto.jpeg',
   });
 }
 
@@ -93,7 +93,7 @@ export default function FranchisingPage({ params }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             <FranchiseCard
               logo="/markalar/baydoner_logo.svg"
-              image="/markalar/baydoner_foto.jpg"
+              image="/markalar/baydoner_foto.jpeg"
               title="Baydöner"
               description={
                 loc === 'tr'
@@ -104,7 +104,7 @@ export default function FranchisingPage({ params }: PageProps) {
             />
             <FranchiseCard
               logo="/markalar/bursaishakbey_logo.png"
-              image="/markalar/bursaishakbey_foto.jpg"
+              image="/markalar/bursaishakbey_foto.jpeg"
               title="Bursa İshakbey"
               description={
                 loc === 'tr'
@@ -119,7 +119,7 @@ export default function FranchisingPage({ params }: PageProps) {
               title="PidebyPide"
               description={
                 loc === 'tr'
-                  ? 'PidebyPide, Türk mutfağının yöresel yemeği pidenin hızlı ve doyurucu versiyonunu enfes bir lezzet ve self servis konseptiyle sunuyor.'
+                  ? 'PidebyPide, Türk mutfağının yöresel yemeği olan pideyi hızlı, doyurucu ve self servis konseptiyle sunuyor.'
                   : 'Fast, satisfying pide in a streamlined self-service model.'
               }
               link="https://www.pidebypide.com/franchise"

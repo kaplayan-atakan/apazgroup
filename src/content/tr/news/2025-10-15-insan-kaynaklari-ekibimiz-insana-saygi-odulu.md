@@ -4,7 +4,7 @@ date: "2025-10-15"
 image: "/news/kariyernet_news_thumb.jpeg"
 excerpt: "15 Ekim 2025 tarihinde Kariyer.net tarafından düzenlenen törende İnsan Kaynakları işe alım ekibimiz 'İnsana Saygı Ödülü'ne layık görüldü."
 seo:
-  title: "İK Ekibimiz İnsana Saygı Ödülü Aldı | Apaz Group"
+  title: "İnsan Kaynakları Ekibimiz İnsana Saygı Ödülü Aldı | Apaz Group"
   description: "Apaz Group İnsan Kaynakları ekibi, Kariyer.net'in düzenlediği İnsana Saygı Ödülleri töreninde başarıyla ödüllendirildi."
 sections:
   - type: prose

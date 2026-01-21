@@ -190,7 +190,7 @@ view-source:https://www.apazgroup.com/seffaflik_ve_hesap_verebilirlik
         <div class="container">
             <div class="s_blog_text_inner video_s_blog pb-0">
                 <div class="blog_main_text">
-                    <h5>ŞEFFAFLIK VE HESAP VEREBİLİRLİK POLİTİKASI</h5>
+                    <h5>ŞEFFAFLIK VE HESAP VEREBİLİRLİnsan Kaynakları POLİTİKASI</h5>
                     <div class="row">
                         <div class="col-md-6 py-2">
                             <p>

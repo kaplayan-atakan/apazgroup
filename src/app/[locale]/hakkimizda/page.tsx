@@ -73,7 +73,7 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
       <HeroGradient
   heading="Apaz Group Hakkında"
   headingClassName="text-brand-primary"
-        intro="Apaz Group'un kuruluşu, vizyonu, misyonu ve değerleri."
+        intro=""
         minHeights={{ base: 'min-h-[200px]', md: 'md:min-h-[240px]', lg: 'lg:min-h-[260px]' }}
         contentClassName="max-w-4xl"
       />
@@ -154,7 +154,7 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
         <div className="grid md:grid-cols-3 gap-6 pt-4">
           <section className="relative p-6 md:p-7 rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
             <h2 className="text-xl font-semibold mb-3 text-brand-primary after:block after:mt-1 after:h-0.5 after:w-12 after:bg-brand-primary/60">Vizyonumuz</h2>
-            <p className="text-slate-900">İnovatif yaklaşımlarla büyüyen, sektörün en yetkin profesyonellerinin yer almak isteyeceği güçlü markalara sahip olmak.</p>
+            <p className="text-slate-900">İnovatif ve en iyilerin çalışmak istediği markalara sahip olmak.</p>
             <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-brand-primary/40 via-brand-accent/30 to-brand-yellow/40 rounded-b-xl" aria-hidden="true" />
           </section>
           <section className="relative p-6 md:p-7 rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
@@ -182,7 +182,7 @@ export default function HakkimizdaPage({ params }: { params: { locale: string } 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   return generateSeoMetadata({
     title: 'Apaz Group Hakkında',
-    description: "Apaz Group'un kuruluşu, vizyonu, misyonu ve değerleri.",
+    description: "",
     locale: params.locale,
     slug: 'hakkimizda',
     type: 'article',

@@ -14,9 +14,9 @@ const map: Record<string, PageAssetItem[]> = {
     { src: '/hr/ik-pidebypide--bize-katilin.jpg', alt: 'PidebyPide - Bize Katılın' },
     { src: '/hr/ik-bursaishakbey--bize-katilin.jpg', alt: 'Bursa İshakbey - Bize Katılın' }
   ],
-  // İK Politikamız (temsil görsel)
+  // İnsan Kaynakları Politikamız (temsil görsel)
   'insan-kaynaklari-politikamiz': [
-    { src: '/policies/insan-kaynaklari-politikamiz--policy.png', alt: 'İK Politikamız' }
+    { src: '/policies/insan-kaynaklari-politikamiz--policy.png', alt: 'İnsan Kaynakları Politikamız' }
   ],
   // Haberler (örnek thumbs)
   haberler: [

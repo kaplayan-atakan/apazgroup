@@ -33,8 +33,19 @@ export default function PideByPidePage({ params }: PageProps) {
   return (
     <main className="min-h-dvh">
       <HeroGradient
-  heading="PidebyPide"
-  headingClassName="text-brand-primary"
+        heading="PidebyPide"
+        headingClassName="text-brand-primary"
+        logoSrc="/markalar/pidebypide_logo.png"
+        logoAlt="PidebyPide"
+        logoClassName="mx-auto block h-10 w-auto object-contain md:h-12"
+        logoWidth={360}
+        logoHeight={120}
+        logoPriority
+        logoHref="https://www.pidebypide.com"
+        logoTarget="_blank"
+        logoRel="noopener noreferrer"
+        logoHrefAriaLabel="PidebyPide web sitesini yeni sekmede aç"
+        logoWrapperClassName="px-6 py-3 md:px-7 md:py-3"
         radialPosition="circle_at_20%_55%"
         contentClassName="max-w-4xl"
         minHeights={{ base: 'min-h-[220px]', md: 'md:min-h-[260px]', lg: 'lg:min-h-[300px]' }}
@@ -60,6 +71,17 @@ export default function PideByPidePage({ params }: PageProps) {
           <div className="mb-10">
           <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 ring-2 ring-brand-bronze-200/50 p-6 md:p-8 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)]">
             <p className="text-sm md:text-base leading-relaxed text-slate-700 whitespace-pre-line">{intro}</p>
+            <div className="mt-6 flex justify-center">
+              <a
+                href="https://www.pidebypide.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold text-brand-primary ring-2 ring-brand-bronze-200/60 bg-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-shadow duration-300 hover:ring-brand-secondary/50 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-yellow focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                aria-label="PidebyPide web sitesi: Detaylı Bilgilendirme için İncele"
+              >
+                Detaylı Bilgilendirme için İncele →
+              </a>
+            </div>
           </div>
           </div>
         </div>
@@ -81,7 +103,7 @@ export default function PideByPidePage({ params }: PageProps) {
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <BrandCard
               logo="/markalar/baydoner_logo.svg"
-              image="/markalar/baydoner_foto.jpg"
+              image="/markalar/baydoner_foto.jpeg"
               title="Baydöner"
               description="Türkiye'nin iskender deneyimini standart kalite ve müşteri memnuniyetiyle sunan lider zincir."
               link={`/${locale}/markalarimiz/baydoner`}
@@ -91,9 +113,9 @@ export default function PideByPidePage({ params }: PageProps) {
             />
             <BrandCard
               logo="/markalar/bursaishakbey_logo.png"
-              image="/markalar/bursaishakbey_foto.jpg"
+              image="/markalar/bursaishakbey_foto.jpeg"
               title="Bursa İshakbey"
-              description="İskender'de uzman, taze ve doyurucu porsiyonlarıyla fark yaratan markamız."
+              description="Bursa İshakbey, döner lezzetini taze, doyurucu porsiyonlarıyla ve self servis konseptiyle sunuyor."
               link={`/${locale}/markalarimiz/bursa-ishakbey`}
               hideTitle
               emphasizeLogo

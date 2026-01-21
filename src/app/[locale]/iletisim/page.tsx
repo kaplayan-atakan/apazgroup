@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 
 import { generateSeoMetadata } from '../../../lib/seo';
 import { isLocale } from '../../../lib/i18n';
@@ -79,76 +78,8 @@ export default function Page({ params }: Props) {
             </div>
           </div>
 
-          {/* Right: Kariyer.net + LinkedIn cards, then form */}
+          {/* Right: form */}
           <div className="space-y-10">
-            {/* Kariyer.net Card */}
-      <div>
-              <a
-                href="https://www.kariyer.net/is-ilanlari?fpi=10543&hc=T"
-                target="_blank"
-                rel="noopener noreferrer"
-        className="group block rounded-xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 md:p-7 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 hover:ring-brand-secondary/50 hover:shadow-xl transition focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40"
-                aria-label="Kariyer.net üzerinde Apaz Group iş ilanlarını görüntüle (yeni sekme)"
-              >
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                  <div className="w-48 flex justify-center">
-                    <Image
-                      src="/hr/kariyer-net.webp"
-                      alt="Kariyer.net üzerinde Apaz Group iş ilanları"
-                      width={360}
-                      height={120} 
-                      className="h-16 w-auto object-scale-down drop-shadow-sm transition-transform duration-300 group-hover:scale-[1.01]" />
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <h2 className="text-xl font-semibold tracking-tight text-brand-primary mb-2">Kariyer.net İlanlarımız</h2>
-                    <p className="text-sm text-brand-primary max-w-md">Güncel ilanlarımızı Kariyer.net sayfamızdan inceleyebilir ve doğrudan başvurabilirsiniz.</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-primary group-hover:text-brand-secondary">
-                      Kariyer.net&apos;te görüntüle
-                      <svg
-                        className="w-4 h-4 text-brand-accent transition-transform duration-300 group-hover:translate-x-0.5"
-                        fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            {/* LinkedIn Jobs Card */}
-      <div>
-              <a
-                href="https://www.linkedin.com/company/apaz-group/jobs/"
-                target="_blank"
-                rel="noopener noreferrer"
-        className="group block rounded-xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 md:p-7 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50 hover:ring-brand-secondary/50 hover:shadow-xl transition focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-secondary/40"
-                aria-label="LinkedIn üzerinde Apaz Group açık pozisyonlarını görüntüle (yeni sekme)"
-              >
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                  <div className="w-48 flex justify-center">
-                    <Image
-                      src="/hr/linkedin.png"
-                      alt="Apaz Group LinkedIn İlanları"
-                      width={360}
-                      height={120}
-                      className="h-16 w-auto object-scale-down drop-shadow-sm transition-transform duration-300 group-hover:scale-[1.01]" />
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <h2 className="text-xl font-semibold tracking-tight text-brand-primary mb-2">LinkedIn Üzerinden Açık Pozisyonlar</h2>
-                    <p className="text-sm text-brand-primary max-w-md">Güncel ilanlarımızı LinkedIn sayfamızdan inceleyebilir ve doğrudan başvurabilirsiniz.</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-primary group-hover:text-brand-secondary">
-                      LinkedIn&apos;de görüntüle
-                      <svg
-                        className="w-4 h-4 text-brand-accent transition-transform duration-300 group-hover:translate-x-0.5"
-                        fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </div>
             <div className="rounded-xl bg-gradient-to-br from-brand-bronze-100/90 via-white to-brand-gold-200/85 p-6 shadow-[0_2px_8px_rgba(184,155,111,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] ring-2 ring-brand-bronze-200/50">
               <h3 className="text-xl font-bold mb-4 text-brand-primary">İletişim Formu</h3>
               <ContactForm />
